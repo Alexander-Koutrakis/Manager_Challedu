@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
+  m_Name: Life_Bellow_Water
+  m_EditorClassIdentifier: 
+  trainning_info_text:
+  - Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_
+  - Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_
+  - Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_
