@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question_Manager: {fileID: 2103622899}
-  maxNumbQuestion: 3
+  maxNumbQuestion: 5
   continueQuiz: 0
   CorrectAnswers: 0
 --- !u!222 &675143035
@@ -5631,7 +5631,7 @@ MonoBehaviour:
     type: 3}
   CoverOutro: {fileID: 8682510090683990899, guid: 1b68fafe8c5b849408a1315e9fd0bb6a,
     type: 3}
-  sceneINT: 0
+  sceneINT: 1
 --- !u!114 &1690787974
 MonoBehaviour:
   m_ObjectHideFlags: 0

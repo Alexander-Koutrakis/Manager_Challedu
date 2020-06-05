@@ -45,15 +45,14 @@ public class GameMaster : MonoBehaviour
 
     public void NextRoundButton()
     {
-       // StopAllCoroutines();
-       // LeanTween.cancelAll();
+        StopAllCoroutines();
+        LeanTween.cancelAll();
         if (NextRound != null)
         {
             NextRound();
+            Player_Controller.player_Controller.RenewResources();
         }
-
         Debug.Log("nextRound");
-        
     }
 
     public void Avtivate_Offers()
@@ -127,6 +126,11 @@ public class GameMaster : MonoBehaviour
         {
             SaveSystem.DeleteSave();
             Debug.Log("Delete game");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            testingPanel.SetActive(true);
         }
 
     }

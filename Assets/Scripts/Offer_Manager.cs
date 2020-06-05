@@ -29,12 +29,8 @@ public class Offer_Manager : MonoBehaviour
     private float paidAmount;
     private float fractal;
     public bool ActiveOffer = false;
-
     public bool closedoffer = false;
-
-
     Offer_GPGraph offer_GPGraph;
-    // public Item item
     public RectTransform ApprovedImage;
     public RectTransform HideImage;
     public Color GrayOutColor;
@@ -43,6 +39,7 @@ public class Offer_Manager : MonoBehaviour
     
     public void GetOfferData(Offer offerDT) {
         ResetColors(startingcolors);
+        ActiveOffer = false;
         HideImage.GetComponent<Image>().raycastTarget = false;
         offer = offerDT;
         maxBudgetCost = offerDT.budgetCost;
@@ -68,8 +65,8 @@ public class Offer_Manager : MonoBehaviour
         total= offerDT.budgetCost + offerDT.peopleCost*100 + offerDT.productCost*10; // total cost
 
         offer_GPGraph = GetComponentInChildren<Offer_GPGraph>();
-       
 
+        
     }
 
     private void Awake()
@@ -79,28 +76,29 @@ public class Offer_Manager : MonoBehaviour
   
     public void CheckSliders()
     {
-
-
-        if (budgetSlider.value > Player_Controller.player_Controller.budget)
+        if (ActiveOffer)
         {
-            budgetSlider.value = Player_Controller.player_Controller.budget;
+
+            if (budgetSlider.value > Player_Controller.player_Controller.budget)
+            {
+                budgetSlider.value = Player_Controller.player_Controller.budget;
+            }
+
+            if (peopleSlider.value > Player_Controller.player_Controller.people)
+            {
+
+                peopleSlider.value = Player_Controller.player_Controller.people;
+            }
+
+            if (productSlider.value > Player_Controller.player_Controller.products)
+            {
+                productSlider.value = Player_Controller.player_Controller.products;
+            }
+
+            BudgetPaying_Text.text = budgetSlider.value.ToString();
+            PeoplePaying_Text.text = peopleSlider.value.ToString();
+            ProductPaying_Text.text = productSlider.value.ToString();
         }
-
-        if (peopleSlider.value > Player_Controller.player_Controller.people)
-        {
-            
-            peopleSlider.value = Player_Controller.player_Controller.people;
-        }
-
-        if (productSlider.value > Player_Controller.player_Controller.products)
-        {
-            productSlider.value = Player_Controller.player_Controller.products;
-        }
-
-        BudgetPaying_Text.text = budgetSlider.value.ToString();
-        PeoplePaying_Text.text = peopleSlider.value.ToString();
-        ProductPaying_Text.text = productSlider.value.ToString();
-
     }
 
     public void PayOffer()
@@ -118,6 +116,7 @@ public class Offer_Manager : MonoBehaviour
             Activate_Offer();
             closedoffer = true;
         }
+
     }
 
     private void PayBudgetCost() {
@@ -271,7 +270,7 @@ public class Offer_Manager : MonoBehaviour
             foreach (Image image in parentTab.GetComponentsInChildren<Image>()) {
                 if (image.transform.name != "Approved" && image.transform.name != "Hide")
                 {
-                    StartCoroutine(ChangeColor(image, GrayOutColor));
+                    LeanTween.color(image.rectTransform, GrayOutColor, 1f);
                 }
             }     
             if (budgetSlider.value == maxBudgetCost && peopleSlider.value == maxPeopleCost && productSlider.value == maxProductCost) {
@@ -283,7 +282,6 @@ public class Offer_Manager : MonoBehaviour
         else
         {
             HideImage.GetComponent<Image>().raycastTarget = false;
-           // LeanTween.alpha(ApprovedImage, 0, 0.1f);
             ApprovedImage.GetComponent<Image>().color = new Color(0, 0, 0, 0);
         }      
     }
@@ -305,14 +303,7 @@ public class Offer_Manager : MonoBehaviour
 
     }
 
-    private IEnumerator ChangeColor(Image image,Color color) {
-        while (image.color != color)
-        {
-            image.color = Color.Lerp(image.color, color, Time.deltaTime*2);
-            yield return null;
-        }
-    
-    }
+   
 
 
     public void Activate_Offer() {
@@ -325,7 +316,6 @@ public class Offer_Manager : MonoBehaviour
         active_Offer.ReputationScore = active_Offer.ReputationScore * fractal;
         active_Offer.Duration = offer.DurationInSec;
         GameMaster.gameMaster.active_Offer_List.Add(active_Offer);
-       // GameMaster.NextRound -= Activate_Offer;
         GameMaster.gameMaster.Avtivate_Offers();
     }
 
@@ -336,12 +326,7 @@ public class Offer_Manager : MonoBehaviour
         maxProductCost = OM.maxProductCost;
     }
 
-    private void ResetSliderValues()
-    {       
-            budgetSlider.value = 0;
-            peopleSlider.value = 0;
-            productSlider.value = 0;       
-    }
+   
 
     private void OnDisable()
     {

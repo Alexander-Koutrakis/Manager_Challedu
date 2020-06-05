@@ -5,12 +5,14 @@ using UnityEngine;
 public class Player_Controller : MonoBehaviour
 {
     public int budget=1000;
-    public int people=1000;
-    public int products=1000;
-    public float Reputation=0;
+    public int people=10;
+    public int products=100;
+    public float Reputation=1;
     public static Player_Controller player_Controller;
     public float[] SDGs=new float[17];
-
+    public int baseBudget = 1000;
+    public int basePeople = 10;
+    public int baseproducts = 100;
 
     private void Awake()
     {
@@ -51,4 +53,10 @@ public class Player_Controller : MonoBehaviour
         
     }
 
+    public void RenewResources() {
+        budget += Mathf.RoundToInt(baseBudget * Reputation);
+        people+= Mathf.RoundToInt(basePeople * Reputation);
+        products+= Mathf.RoundToInt(baseproducts * Reputation);
+        UI_Controller.ui_Controller.RefreshResourcesText();
+    }
 }

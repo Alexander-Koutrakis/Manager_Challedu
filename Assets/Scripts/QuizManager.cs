@@ -39,7 +39,11 @@ public class QuizManager : MonoBehaviour
         {
             continueQuiz = false;
             questionNum = 0;
-            
+            if (CorrectAnswers == maxNumbQuestion)
+            {
+                Player_Controller.player_Controller.Reputation += 0.2f;
+                UI_Controller.ui_Controller.RefreshResourcesText();
+            }
         }
         else
         {
