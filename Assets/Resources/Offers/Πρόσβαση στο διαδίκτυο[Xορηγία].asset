@@ -19,7 +19,7 @@ MonoBehaviour:
   title_Text: "\u03A0\u03C1\u03CC\u03C3\u03B2\u03B1\u03C3\u03B7 \u03C3\u03C4\u03BF
     \u03B4\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF"
   main_Text: "X\u03BF\u03C1\u03B7\u03B3\u03AF\u03B1"
-  DurationInSec: 60
+  DurationInSec: 10
   GP:
   - 0
   - 2
