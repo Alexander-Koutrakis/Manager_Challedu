@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e159bedd42d34b04b8342aa4fb10cea4, type: 3}
   m_Name: "\u03A0\u03C1\u03CC\u03C3\u03B2\u03B1\u03C3\u03B7 \u03C3\u03B5 \u03CD\u03B4\u03C1\u03B5\u03C5\u03C3\u03B7[\u03A7\u03BF\u03C1\u03B7\u03B3\u03AF\u03B1]"
   m_EditorClassIdentifier: 
-  OfferID: 100081
+  OfferID: 3015
   budgetCost: 5000
   productCost: 20
   peopleCost: 2
   title_Text: "\u03A0\u03C1\u03CC\u03C3\u03B2\u03B1\u03C3\u03B7 \u03C3\u03B5 \u03CD\u03B4\u03C1\u03B5\u03C5\u03C3\u03B7"
   main_Text: "\u03A7\u03BF\u03C1\u03B7\u03B3\u03AF\u03B1"
-  DurationInSec: 10
+  DurationInSec: 90
   GP:
   - 0
   - 1

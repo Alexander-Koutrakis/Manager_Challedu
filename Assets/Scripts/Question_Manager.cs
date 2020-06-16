@@ -12,7 +12,7 @@ public class Question_Manager : MonoBehaviour
     private List<Vector3> position_List = new List<Vector3>();
     private List<Vector3> starting_Pos = new List<Vector3>();
     public GameObject[] Answer_Button;
-    public Panel_Control panel_Control_Answers;
+
 
 
     private void Awake()
@@ -78,7 +78,7 @@ public class Question_Manager : MonoBehaviour
             Answer_Button[i].GetComponent<RectTransform>().anchoredPosition = position_List[i];
         }
 
-        panel_Control_Answers.OpenPanel();
+       
 
 
     }
@@ -93,7 +93,7 @@ public class Question_Manager : MonoBehaviour
         }
         position_List.Clear();
 
-        panel_Control_Answers.ClosePanel();
+      
 
         StartCoroutine("WaitForPanels");
     }

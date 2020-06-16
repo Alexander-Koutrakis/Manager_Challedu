@@ -14,7 +14,7 @@ MonoBehaviour:
     \u03B1\u03BD\u03B5\u03C1\u03B3\u03AF\u03B1\u03C2 [\u03A0\u03B1\u03C1\u03BF\u03C7\u03AE
     \u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03B9\u03CE\u03BD \u03C5\u03C0\u03BF\u03C3\u03C4\u03AE\u03C1\u03B9\u03BE\u03B7\u03C2]"
   m_EditorClassIdentifier: 
-  OfferID: 100033
+  OfferID: 2000
   budgetCost: 500
   productCost: 1
   peopleCost: 2
@@ -22,7 +22,7 @@ MonoBehaviour:
     \u03B1\u03BD\u03B5\u03C1\u03B3\u03AF\u03B1\u03C2"
   main_Text: "\u03A0\u03B1\u03C1\u03BF\u03C7\u03AE \u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03B9\u03CE\u03BD
     \u03C5\u03C0\u03BF\u03C3\u03C4\u03AE\u03C1\u03B9\u03BE\u03B7\u03C2"
-  DurationInSec: 10
+  DurationInSec: 60
   GP:
   - 1
   - 5

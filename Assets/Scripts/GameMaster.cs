@@ -4,135 +4,100 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
-{   
-    public delegate void nextRound();
-    public static nextRound NextRound;
-
-    public PieGraph pieGraph_Small;
-    public static GameMaster gameMaster;
-
-    public Panel_Control[] panel_controls;
-
-    public GameObject testingPanel;
-    public Active_Offer_Panel[] activeOfferPanels;
-    public List<Active_Offer> active_Offer_List = new List<Active_Offer>();
-
-
-
-    public List<Offer> offer_list_gm;
-    public List<Offer_Manager> offer_manager_gm;
-    public int[] activeOffersIDs;
-    public int[,] offerManagerIDs=new int[5,4];
+{
+    public static GameMaster Instance;
+    public Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();
+    public List<Offer> Group_A_Offers = new List<Offer>();
+    public List<Offer> Group_B_Offers = new List<Offer>();
+    public List<Offer> Group_C_Offers = new List<Offer>();
+    public List<Offer> Group_D_Offers = new List<Offer>();
+    private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
+    public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();
+    public int[] CampaignStars = new int[4];//<---------add the stars/ players choice
+    public int[] Campaign = new int[4];//<----------num of offers per campain
+    public int MaxOffers = 20;
+    public int total = 0;
 
     private void Awake()
     {
+        Instance = this;
 
+        InitializeDictionaries();
+        SelectCampaign(CampaignStars);
 
-        if (gameMaster == null)
-        {
-            gameMaster = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+    }
+
+    private void Start()
+    {
         
-        DontDestroyOnLoad(gameMaster);
-
     }
 
 
-
-    public void NextRoundButton()
+    public void SelectCampaign(int[] campaingStats)
     {
-        StopAllCoroutines();
-        LeanTween.cancelAll();
-        if (NextRound != null)
+      // get the total amount of campain stars in order to find Group Percent
+        foreach (int campaingStat in campaingStats)
         {
-            NextRound();
-            Player_Controller.player_Controller.RenewResources();
+            total += campaingStat;
         }
-        Debug.Log("nextRound");
+       
+        for (int i = 0; i < Campaign.Length; i++)
+        {
+            float x = (float)CampaignStars[i] / total;
+            Campaign[i] =Mathf.RoundToInt(x *(float) MaxOffers);
+        }
+
+        for(int i = 0; i < Campaign.Length; i++)
+        {           
+            int currentOffers=0;
+          while(currentOffers< Campaign[i])
+            {
+                int x = Random.Range(0, OffersGrouped[i].Count);
+                Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
+                currentOffers++;
+            }
+        }       
     }
 
-    public void Avtivate_Offers()
+
+
+
+    private void InitializeDictionaries()
     {
-        for(int i=0;i< active_Offer_List.Count; i++)
+
+        List<int> indexes = new List<int>();
+
+        // Get All offers
+        foreach (Offer offer in Resources.LoadAll<Offer>("Offers"))
         {
-            foreach (Active_Offer_Panel AOP in activeOfferPanels)
+            Offers.Add(offer.OfferID, offer);
+            indexes.Add(offer.OfferID);
+        }
+
+        // seperate the offers into groups
+        foreach(int index in indexes)
+        {
+            if (Offers[index].OfferID < 2000)
             {
-                if (!AOP.ActivePanel)
-                {
-                    Active_Offer active_Offer = AOP.gameObject.AddComponent<Active_Offer>();
-                    active_Offer.offer = active_Offer_List[i].offer;
-                    active_Offer.SDGscore = active_Offer_List[i].SDGscore;
-                    active_Offer.ReputationScore = active_Offer_List[i].ReputationScore;
-                    active_Offer.Duration = active_Offer_List[i].Duration;
-                    active_Offer.StartTimer();
-                    break;
-                }
+                Group_A_Offers.Add(Offers[index]);
+            }else if(Offers[index].OfferID < 3000)
+            {
+                Group_B_Offers.Add(Offers[index]);
+            }
+            else if(Offers[index].OfferID < 4000)
+            {
+                Group_C_Offers.Add(Offers[index]);
+            }
+            else
+            {
+                Group_D_Offers.Add( Offers[index]);
             }
         }
 
-        foreach(Active_Offer AO in GetComponents<Active_Offer>())
-        {
-            Destroy(AO);           
-        }
-        active_Offer_List.Clear();
+
+        OffersGrouped.Add(Group_A_Offers);
+        OffersGrouped.Add(Group_B_Offers);
+        OffersGrouped.Add(Group_C_Offers);
+        OffersGrouped.Add(Group_D_Offers);
     }
-
-    public void SaveGame() {
-        Debug.Log("Save game");
-        Offer_Tab_Controller.Instance.SaveOfferData();
-        SaveSystem.SaveGame();
-    }
-
-    public void LoadGame() {
-        Debug.Log("Load Game");
-       GameData gamedata= SaveSystem.LoadGame();
-        if (gamedata != null)
-        {
-            activeOffersIDs = gamedata.ActiveOffersIDs;
-            for(int i=0;i< gamedata.OfferManagerIDs.Length; i++)
-            {
-                offerManagerIDs[i, 0] = gamedata.OfferManagerIDs[i];
-                offerManagerIDs[i, 1] = gamedata.OfferManagerIDsBudget[i];
-                offerManagerIDs[i, 2] = gamedata.OfferManagerIDsPeople[i];
-                offerManagerIDs[i, 3] = gamedata.OfferManagerIDsProduct[i];
-            }
-
-            Player_Controller.player_Controller.budget = gamedata.PlayerBudget;
-            Player_Controller.player_Controller.people = gamedata.PlayerPeople;
-            Player_Controller.player_Controller.products = gamedata.PlayerProduct;
-            Player_Controller.player_Controller.Reputation = gamedata.PlayerReputation;
-            Offer_Tab_Controller.Instance.LoadData(activeOffersIDs, offerManagerIDs);            
-        }
-        UI_Controller.ui_Controller.RefreshResourcesText();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S)) {
-            SaveGame();
-
-        }
-        
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadGame();
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SaveSystem.DeleteSave();
-            Debug.Log("Delete game");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            testingPanel.SetActive(true);
-        }
-
-    }
-
 }

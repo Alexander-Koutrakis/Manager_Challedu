@@ -15,9 +15,8 @@ public class PieGraph : MonoBehaviour
 
     private void Start()
     {
-        GetValues();
-        RefreshGraph();
-        GameMaster.gameMaster.pieGraph_Small = this;
+
+        RefreshGraph();       
     }
 
 
@@ -39,11 +38,6 @@ public class PieGraph : MonoBehaviour
         GetTopSDGValues(values);
     }
 
-    public void GetValues()
-    {
-        values = Player_Controller.player_Controller.SDGs;
-        RefreshGraph();
-    }
 
 
     private void GetTopSDGValues(float[] Sdgs) {

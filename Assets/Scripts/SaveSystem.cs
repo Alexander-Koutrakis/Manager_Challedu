@@ -12,7 +12,7 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/gameData.save";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        GameData gameData = new GameData(GameMaster.gameMaster,Player_Controller.player_Controller);
+        GameData gameData = new GameData(GameMaster.Instance,Player.Instance);
         formatter.Serialize(stream, gameData);
         stream.Close();
     }

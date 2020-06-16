@@ -34,7 +34,6 @@ public class LoadToScene : MonoBehaviour
     private void StartLoading() {
         SceneManager.LoadScene(sceneINT);
         RefreshCanvas();
-        GameMaster.gameMaster.SaveGame();
         Resources.UnloadUnusedAssets();       
     }
 

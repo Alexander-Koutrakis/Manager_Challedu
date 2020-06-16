@@ -41,8 +41,7 @@ public class QuizManager : MonoBehaviour
             questionNum = 0;
             if (CorrectAnswers == maxNumbQuestion)
             {
-                Player_Controller.player_Controller.Reputation += 0.2f;
-                UI_Controller.ui_Controller.RefreshResourcesText();
+                Player.Instance.Reputation += 0.2f;               
             }
         }
         else

@@ -8,28 +8,27 @@ public class Offer_GPGraph : MonoBehaviour
    
     public Slider[] sliders;
     private IEnumerator[] coroutines=new IEnumerator[6];
+    public float[] sliderScore;
     public void ShowGraph(float[] GPs)
     {
         GetSliders();
 
-       foreach(Slider slider in sliders)
+       foreach (Slider slider in sliders)
         {
             slider.value = 0;
         }
        
         for(int i = 0; i < sliders.Length; i++)
-        {//here
+        {
+            
             coroutines[i] = CalculateGraph(sliders[i], GPs[i]);
             StartCoroutine(coroutines[i]);
         }
-
-
     }
 
     public void HideGraph() {
         for (int i = 0; i < sliders.Length; i++)
-        {//here
-           
+        {           
             StopCoroutine(coroutines[i]);
         }
     }
