@@ -42,6 +42,13 @@ public class Offer_GPGraph : MonoBehaviour
 
     private IEnumerator CalculateGraph(Slider slider, float targetValue) {
         float speed = 10;
+        foreach (Slider slider0 in sliders)
+        {
+            slider0.value = 0;
+        }
+
+        yield return new WaitForSeconds(0.5f); //--------Delay for tab movement
+
         while (slider.value != targetValue)
         {
             slider.value = Mathf.Lerp(slider.value, targetValue, speed * Time.deltaTime);

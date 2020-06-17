@@ -46,6 +46,12 @@ public class Offer_Manager : MonoBehaviour
     public void OpenOfferTab()
     {
         offer_GPGraph.ShowGraph(offer.GP);
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
     }
-    
+
+    public void CloseTab()
+    {
+        offer_GPGraph.HideGraph();
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+    }
 }

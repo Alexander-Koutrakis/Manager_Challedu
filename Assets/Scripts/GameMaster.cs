@@ -27,14 +27,12 @@ public class GameMaster : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        
-    }
+   
 
 
     public void SelectCampaign(int[] campaingStats)
     {
+        total = 0;
       // get the total amount of campain stars in order to find Group Percent
         foreach (int campaingStat in campaingStats)
         {
@@ -47,7 +45,33 @@ public class GameMaster : MonoBehaviour
             Campaign[i] =Mathf.RoundToInt(x *(float) MaxOffers);
         }
 
-        for(int i = 0; i < Campaign.Length; i++)
+        total = 0;
+        foreach (int campaingStat in Campaign)
+        {
+            total += campaingStat;
+        }
+
+        while (total > MaxOffers)
+        {
+            int x = Random.Range(0, Campaign.Length);
+            if (Campaign[x] > 0)
+            {
+                Campaign[x] = Campaign[x] - 1;
+                total--; ;
+            }
+        }
+
+        while (total < MaxOffers)
+        {
+            int x = Random.Range(0, Campaign.Length);
+            if (Campaign[x] > 0)
+            {
+                //  Campaign[x] = Campaign[x] + 1;
+                total++; ;
+            }
+        }
+
+        for (int i = 0; i < Campaign.Length; i++)
         {           
             int currentOffers=0;
           while(currentOffers< Campaign[i])
