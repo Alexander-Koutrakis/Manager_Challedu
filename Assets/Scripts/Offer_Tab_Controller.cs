@@ -25,8 +25,6 @@ public class Offer_Tab_Controller : MonoBehaviour
         {
             offer_Managers.Add(offer_Manager);
         }
-
-      
     }
 
     private void Start()
@@ -88,7 +86,6 @@ public class Offer_Tab_Controller : MonoBehaviour
     {
 
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, RightPos.x, 0.5f);
-       // used_Managers[currentTabIndex].CloseTab();
         currentTabIndex--;
         if (currentTabIndex < 0)
         {
