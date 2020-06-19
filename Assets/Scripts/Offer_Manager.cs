@@ -36,7 +36,7 @@ public class Offer_Manager : MonoBehaviour
     }
 
     public void SetOfferValues() {
-        title_Text.text = offer.title_Text;
+        title_Text.text = offer.title_Text+" Offer ID : "+offer.OfferID;
         main_Text.text = offer.main_Text;
         budget_Text.text = offer.budgetCost.ToString();
         people_Text.text = offer.peopleCost.ToString();

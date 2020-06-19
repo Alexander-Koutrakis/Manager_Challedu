@@ -77,29 +77,33 @@ public class GameMaster : MonoBehaviour
         // Add number of offers according to Campain index
         for (int i = 0; i < Campaign.Length; i++)
         {           
-            int currentOffers=0;
-          while(currentOffers< Campaign[i])
-          {
-                int x = Random.Range(0, OffersGrouped[i].Count);
-                Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
-                currentOffers++;
-          }
+                for (int j = 0; j < Campaign[i]; j++)
+                {
+                    int x = Random.Range(0, OffersGrouped[i].Count);
+                    Debug.Log(OffersGrouped[i][x].OfferID);
+                    Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
+                    OffersGrouped[i].RemoveAt(x);
+                }
         }
 
 
         // Fill the extra Offers with random "Non strategic" Offers
-        //int extraOffers = 0;
-        //while(extraOffers<8)
-        //{
-        //    int r1 = Random.Range(0, CampaignStars.Length);
-        //    if (CampaignStars[r1] == 0)
-        //    {
-        //        int r2 = Random.Range(0, OffersGrouped[r1].Count);
-        //        Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[r1][r2]);
-        //    }
-        //}
+        int extraOffers = 0;
+        while (extraOffers < 8)
+        {
+            int r1 = Random.Range(0, CampaignStars.Length);
+            if (CampaignStars[r1] == 0)
+            {
+                int r2 = Random.Range(0, OffersGrouped[r1].Count);
+                Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[r1][r2]);
+                OffersGrouped[r1].RemoveAt(r2);
+                extraOffers++;
+            }
+        }
 
 
+
+        Offer_Tab_Controller.Instance.FillOfferManagers();
 
     }
 

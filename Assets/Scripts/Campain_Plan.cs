@@ -29,7 +29,7 @@ public class Campain_Plan : MonoBehaviour
         int index = System.Array.IndexOf(campaing_Strategies, campaing_Strategy);
         Debug.Log(index);
         campaingStars[index]= campaing_Strategy.stars;
-        GameMaster.Instance.CampaignStars[index] = campaing_Strategy.stars;
+       // GameMaster.Instance.CampaignStars[index] = campaing_Strategy.stars;
     }
 
     public void StartCampaing()

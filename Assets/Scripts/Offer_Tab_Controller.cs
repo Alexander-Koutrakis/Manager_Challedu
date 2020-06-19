@@ -27,22 +27,7 @@ public class Offer_Tab_Controller : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        FillOfferManagers();
-        LookForEmptyTabs();
-        
-               
-        foreach (Offer_Manager offer_Manager in offer_Managers)
-        {
-            if (offer_Manager.offer != null)
-            {
-                offer_Manager.SetOfferValues();
-            }
-        }
-
-     
-    }
+   
 
     public void LookForEmptyTabs()
     {
@@ -58,10 +43,22 @@ public class Offer_Tab_Controller : MonoBehaviour
 
     public void FillOfferManagers()
     {
+        PreferedOffers.Shuffle();
         for(int i = 0; i < PreferedOffers.Count; i++)
         {
             offer_Managers[i].offer = PreferedOffers[i];
             used_Managers.Add(offer_Managers[i]);
+        }
+
+        LookForEmptyTabs();
+
+
+        foreach (Offer_Manager offer_Manager in offer_Managers)
+        {
+            if (offer_Manager.offer != null)
+            {
+                offer_Manager.SetOfferValues();
+            }
         }
     }
 
