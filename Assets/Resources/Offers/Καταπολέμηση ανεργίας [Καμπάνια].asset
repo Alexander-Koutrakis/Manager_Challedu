@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u039A\u03B1\u03C4\u03B1\u03C0\u03BF\u03BB\u03AD\u03BC\u03B7\u03C3\u03B7
     \u03B1\u03BD\u03B5\u03C1\u03B3\u03AF\u03B1\u03C2 [\u039A\u03B1\u03BC\u03C0\u03AC\u03BD\u03B9\u03B1]"
   m_EditorClassIdentifier: 
-  OfferID: 1009
+  OfferID: 3002
   budgetCost: 2000
   productCost: 2
   peopleCost: 10

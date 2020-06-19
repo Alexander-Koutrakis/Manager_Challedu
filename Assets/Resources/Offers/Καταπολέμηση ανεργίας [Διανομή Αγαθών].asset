@@ -14,7 +14,7 @@ MonoBehaviour:
     \u03B1\u03BD\u03B5\u03C1\u03B3\u03AF\u03B1\u03C2 [\u0394\u03B9\u03B1\u03BD\u03BF\u03BC\u03AE
     \u0391\u03B3\u03B1\u03B8\u03CE\u03BD]"
   m_EditorClassIdentifier: 
-  OfferID: 1010
+  OfferID: 2008
   budgetCost: 500
   productCost: 10
   peopleCost: 1

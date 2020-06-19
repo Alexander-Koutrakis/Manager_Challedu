@@ -32,22 +32,22 @@ public class GameMaster : MonoBehaviour
    
 
 
-    public void SelectCampaign(int[] campaingStats)
+    public void StartCampaign()
     {
         total = 0;
       // get the total amount of campain stars in order to find Group Percent
-        foreach (int campaingStat in campaingStats)
+        foreach (int campaingStar in CampaignStars)
         {
-            total += campaingStat;
+            total += campaingStar;
         }
 
         // get the int number of Offers according to starr %
-        for (int i = 0; i < Campaign.Length; i++)
+        for (int i = 0; i < CampaignStars.Length; i++)
         {
-            float x = (float)campaingStats[i] / total;
+            float x = (float)CampaignStars[i] / total;
             Campaign[i] =Mathf.RoundToInt(x *(float) MaxOffers);
         }
-
+        Debug.Log("here");
         total = 0;
         foreach (int campaingStat in Campaign)
         {
@@ -88,16 +88,16 @@ public class GameMaster : MonoBehaviour
 
 
         // Fill the extra Offers with random "Non strategic" Offers
-        int extraOffers = 0;
-        while(extraOffers<8)
-        {
-            int r1 = Random.Range(0, CampaignStars.Length);
-            if (CampaignStars[r1] == 0)
-            {
-                int r2 = Random.Range(0, OffersGrouped[r1].Count);
-                Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[r1][r2]);
-            }
-        }
+        //int extraOffers = 0;
+        //while(extraOffers<8)
+        //{
+        //    int r1 = Random.Range(0, CampaignStars.Length);
+        //    if (CampaignStars[r1] == 0)
+        //    {
+        //        int r2 = Random.Range(0, OffersGrouped[r1].Count);
+        //        Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[r1][r2]);
+        //    }
+        //}
 
 
 

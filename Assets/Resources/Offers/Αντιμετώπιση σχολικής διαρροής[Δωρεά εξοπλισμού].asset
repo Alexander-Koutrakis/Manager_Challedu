@@ -14,7 +14,7 @@ MonoBehaviour:
     \u03C3\u03C7\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u03B4\u03B9\u03B1\u03C1\u03C1\u03BF\u03AE\u03C2[\u0394\u03C9\u03C1\u03B5\u03AC
     \u03B5\u03BE\u03BF\u03C0\u03BB\u03B9\u03C3\u03BC\u03BF\u03CD]"
   m_EditorClassIdentifier: 
-  OfferID: 4002
+  OfferID: 1002
   budgetCost: 0
   productCost: 1000
   peopleCost: 5

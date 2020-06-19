@@ -19,6 +19,7 @@ public class Campaing_Star_Button : MonoBehaviour
         {
             pressed = false;
             GetComponentInParent<Campaing_Strategy>().ButtonUnPress(this);
+            
         }
 
         

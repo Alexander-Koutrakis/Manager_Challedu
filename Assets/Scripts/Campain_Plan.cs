@@ -31,4 +31,18 @@ public class Campain_Plan : MonoBehaviour
         campaingStars[index]= campaing_Strategy.stars;
         GameMaster.Instance.CampaignStars[index] = campaing_Strategy.stars;
     }
+
+    public void StartCampaing()
+    {
+        if(stars > 0)
+        {
+            Debug.Log("Use All the Stars first");
+            // force the player to use all the stars
+        }
+        else
+        {
+            ChangePlayerCampaing();
+            GameMaster.Instance.StartCampaign();
+        }
+    }
 }

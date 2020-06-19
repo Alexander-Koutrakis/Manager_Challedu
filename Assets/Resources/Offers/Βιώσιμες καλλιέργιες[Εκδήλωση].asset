@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e159bedd42d34b04b8342aa4fb10cea4, type: 3}
   m_Name: "\u0392\u03B9\u03CE\u03C3\u03B9\u03BC\u03B5\u03C2 \u03BA\u03B1\u03BB\u03BB\u03B9\u03AD\u03C1\u03B3\u03B9\u03B5\u03C2[\u0395\u03BA\u03B4\u03AE\u03BB\u03C9\u03C3\u03B7]"
   m_EditorClassIdentifier: 
-  OfferID: 4005
+  OfferID: 1005
   budgetCost: 1000
   productCost: 200
   peopleCost: 5
