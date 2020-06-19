@@ -5,10 +5,10 @@ using UnityEngine;
 public class Campain_Plan : MonoBehaviour
 {
     public static Campain_Plan Instance;
-    public int[] campaingStars = new int[6];
-    public Campaing_Strategy[] campaing_Strategies;
+    private int[] campaingStars = new int[6];
+    private Campaing_Strategy[] campaing_Strategies;
     public int stars = 5;
-    public int maxStars = 5;
+    private int maxStars = 5;
 
 
     private void Start()

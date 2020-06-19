@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster Instance;
-    public Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
-    public List<Offer> Group_A_Offers = new List<Offer>();// Offers belong to Strategy A; 
-    public List<Offer> Group_B_Offers = new List<Offer>();// Offers belong to Strategy B; 
-    public List<Offer> Group_C_Offers = new List<Offer>();// Offers belong to Strategy C; 
-    public List<Offer> Group_D_Offers = new List<Offer>();// Offers belong to Strategy D; 
-    public List<Offer> Group_E_Offers = new List<Offer>();// Offers belong to Strategy E; 
-    public List<Offer> Group_F_Offers = new List<Offer>();// Offers belong to Strategy F; 
+    private Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
+    private List<Offer> Group_A_Offers = new List<Offer>();// Offers belong to Strategy A; 
+    private List<Offer> Group_B_Offers = new List<Offer>();// Offers belong to Strategy B; 
+    private List<Offer> Group_C_Offers = new List<Offer>();// Offers belong to Strategy C; 
+    private List<Offer> Group_D_Offers = new List<Offer>();// Offers belong to Strategy D; 
+    private List<Offer> Group_E_Offers = new List<Offer>();// Offers belong to Strategy E; 
+    private List<Offer> Group_F_Offers = new List<Offer>();// Offers belong to Strategy F; 
     private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
     public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
-    public int MaxOffers = 20;
-    public int total = 0;
+    public int MaxOffers;
+    private int total = 0;
 
     private void Awake()
     {
@@ -80,7 +80,7 @@ public class GameMaster : MonoBehaviour
                 for (int j = 0; j < Campaign[i]; j++)
                 {
                     int x = Random.Range(0, OffersGrouped[i].Count);
-                    Debug.Log(OffersGrouped[i][x].OfferID);
+
                     Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
                     OffersGrouped[i].RemoveAt(x);
                 }
