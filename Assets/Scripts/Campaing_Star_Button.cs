@@ -18,8 +18,7 @@ public class Campaing_Star_Button : MonoBehaviour
         else if(pressed)
         {
             pressed = false;
-            GetComponentInParent<Campaing_Strategy>().ButtonUnPress(this);
-            
+            GetComponentInParent<Campaing_Strategy>().ButtonUnPress(this);           
         }
 
         

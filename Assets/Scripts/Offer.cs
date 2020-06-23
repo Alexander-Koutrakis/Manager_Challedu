@@ -21,6 +21,8 @@ public class Offer : ScriptableObject
 
     public float[] SDGs;
 
-    
+    public Sprite SDG1;
+    public Sprite SDG2;
+    public Sprite SDG3;
 
 }

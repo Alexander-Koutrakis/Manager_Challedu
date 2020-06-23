@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster Instance;
-    private Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
+    public Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
     private List<Offer> Group_A_Offers = new List<Offer>();// Offers belong to Strategy A; 
     private List<Offer> Group_B_Offers = new List<Offer>();// Offers belong to Strategy B; 
     private List<Offer> Group_C_Offers = new List<Offer>();// Offers belong to Strategy C; 
