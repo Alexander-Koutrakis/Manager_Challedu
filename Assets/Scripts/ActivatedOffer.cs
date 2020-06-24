@@ -55,9 +55,12 @@ public class ActivatedOffer : MonoBehaviour
             sliderTimer.value += Time.deltaTime;
             yield return null;
         }
+
+        Debug.Break();
         canBeClaimed = true;
         activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, paidPeople, paidProducts, canBeClaimed, Claimed);
         claimButton.interactable = true;
+        yield return null;
     }
 
     public void ButtonPress()

@@ -16,6 +16,7 @@ public class OfferResults : MonoBehaviour
 
     public void InitializeOfferResults(Offer offer , int paidBudgert, int paidPeople, int paidProducts, bool canBeClaimed , bool claimed)
     {
+        Debug.Log("Here");
         titleText = GetComponentsInChildren<TMP_Text>()[0];
         subtitleText = GetComponentsInChildren<TMP_Text>()[1];
         infoText = GetComponentsInChildren<TMP_Text>()[2];

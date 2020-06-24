@@ -7,17 +7,24 @@ public class GameMaster : MonoBehaviour
 {
     public static GameMaster Instance;
     public Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
+    [SerializeField]
     private List<Offer> Group_A_Offers = new List<Offer>();// Offers belong to Strategy A; 
+    [SerializeField]
     private List<Offer> Group_B_Offers = new List<Offer>();// Offers belong to Strategy B; 
-    private List<Offer> Group_C_Offers = new List<Offer>();// Offers belong to Strategy C; 
-    private List<Offer> Group_D_Offers = new List<Offer>();// Offers belong to Strategy D; 
+    [SerializeField]
+    private List<Offer> Group_C_Offers = new List<Offer>();// Offers belong to Strategy C;
+    [SerializeField]
+    private List<Offer> Group_D_Offers = new List<Offer>();// Offers belong to Strategy D;
+    [SerializeField]
     private List<Offer> Group_E_Offers = new List<Offer>();// Offers belong to Strategy E; 
+    [SerializeField]
     private List<Offer> Group_F_Offers = new List<Offer>();// Offers belong to Strategy F; 
     private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
     public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
     public int MaxOffers;
+    [SerializeField]
     private int total = 0;
 
     private void Awake()
@@ -47,7 +54,7 @@ public class GameMaster : MonoBehaviour
             float x = (float)CampaignStars[i] / total;
             Campaign[i] =Mathf.RoundToInt(x *(float) MaxOffers);
         }
-        Debug.Log("here");
+
         total = 0;
         foreach (int campaingStat in Campaign)
         {
