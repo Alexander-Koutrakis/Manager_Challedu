@@ -15,7 +15,7 @@ public class GameData
     public int[] OfferManagerIDsProduct;
 
     public GameData(GameMaster gamemaster, Player player) {
-        PlayerReputation = player.Reputation;
+        PlayerReputation = player.Expirience;
         PlayerBudget = player.budget;
         PlayerPeople = player.people;
         PlayerProduct = player.products;

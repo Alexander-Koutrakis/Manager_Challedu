@@ -56,7 +56,7 @@ public class ActivatedOffer : MonoBehaviour
             yield return null;
         }
 
-        Debug.Break();
+
         canBeClaimed = true;
         activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, paidPeople, paidProducts, canBeClaimed, Claimed);
         claimButton.interactable = true;

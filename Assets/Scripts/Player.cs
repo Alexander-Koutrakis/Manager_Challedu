@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int budget;
     public int people;
     public int products;
-    public float Reputation;
+    public float Expirience;
     public float[] SDGs;
 
     private void Awake()

@@ -41,7 +41,7 @@ public class QuizManager : MonoBehaviour
             questionNum = 0;
             if (CorrectAnswers == maxNumbQuestion)
             {
-                Player.Instance.Reputation += 0.2f;               
+                Player.Instance.Expirience += 0.2f; // <---------------this will change              
             }
         }
         else

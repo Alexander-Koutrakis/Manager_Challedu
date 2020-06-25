@@ -1,0 +1,6 @@
+- Deactivate offer after paying
+- Inform player that an offer is ready to be claimed
+- Claim Exp after each offer
+- Implement Exp bar
+
+-Force player to interact with campaing stars

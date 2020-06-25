@@ -302,8 +302,12 @@ public class Offer_Manager : MonoBehaviour
         Player.Instance.budget -= BudgetAmount;
         Player.Instance.people -= PeopleAmount;
         Player.Instance.people -= ProductAmount;
-
+        GetComponentsInChildren<Button>()[10].interactable = false;
         LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, PeopleAmount, ProductAmount, true, true);
+        foreach(Button button in GetComponentsInChildren<Button>())
+        {
+            button.interactable = false;
+        }
     }
 
 }

@@ -20,7 +20,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     private List<Offer> Group_F_Offers = new List<Offer>();// Offers belong to Strategy F; 
     private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
-    public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
+   // public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
     public int MaxOffers;
@@ -42,6 +42,12 @@ public class GameMaster : MonoBehaviour
     public void StartCampaign()
     {
         total = 0;
+        // make every button interactable
+        foreach(Button button in Offer_Tab_Controller.Instance.GetComponentsInChildren<Button>())
+        {
+            button.interactable = true;
+        }
+
       // get the total amount of campain stars in order to find Group Percent
         foreach (int campaingStar in CampaignStars)
         {
@@ -75,8 +81,7 @@ public class GameMaster : MonoBehaviour
         {
             int x = Random.Range(0, Campaign.Length);
             if (Campaign[x] > 0)
-            {
-                //  Campaign[x] = Campaign[x] + 1;
+            {               
                 total++; ;
             }
         }
@@ -108,13 +113,8 @@ public class GameMaster : MonoBehaviour
             }
         }
 
-
-
         Offer_Tab_Controller.Instance.FillOfferManagers();
-
     }
-
-
 
 
     public void InitializeDictionaries()

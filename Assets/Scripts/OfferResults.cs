@@ -24,17 +24,17 @@ public class OfferResults : MonoBehaviour
         SDG2 = GetComponentsInChildren<Image>()[2];
         SDG3 = GetComponentsInChildren<Image>()[3];
         CoverImage= GetComponentsInChildren<Image>()[5];
-
+        ClaimButton = GetComponentInChildren<Button>();
         titleText.text = offer.title_Text;
         subtitleText.text = offer.main_Text;
         subtitleText.text = "Paid Budget : " + paidBudgert.ToString() + "\\n Paid People : " + paidPeople.ToString() + "\\n Paid Poducts : " + paidProducts.ToString();
         SDG1.sprite = offer.SDG1;
         SDG2.sprite = offer.SDG2;
         SDG3.sprite = offer.SDG3;
-
+        CoverImage.gameObject.SetActive(false);
         if (canBeClaimed)
         {
-            CoverImage.gameObject.SetActive(false);
+            
             if (!claimed)
             {
                 ClaimButton.interactable = true;
