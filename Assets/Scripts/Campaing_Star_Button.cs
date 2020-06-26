@@ -21,7 +21,7 @@ public class Campaing_Star_Button : MonoBehaviour
             GetComponentInParent<Campaing_Strategy>().ButtonUnPress(this);           
         }
 
-        
+        Campain_Plan.Instance.RemainingStars();        
     }
 
 }

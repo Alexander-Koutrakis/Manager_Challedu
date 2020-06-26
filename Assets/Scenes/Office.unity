@@ -1207,8 +1207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66, y: 445.6}
-  m_SizeDelta: {x: 160, y: 105.06861}
+  m_AnchoredPosition: {x: 0, y: 445.6}
+  m_SizeDelta: {x: 906.99, y: 105.06861}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107888449
 MonoBehaviour:
@@ -1234,7 +1234,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1255,6 +1255,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554774358}
         m_MethodName: StartCampaing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1660363292}
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5156,7 +5167,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Start \nStrategy\n"
+  m_text: 'Start Strategy
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5184,13 +5197,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 43.1
-  m_fontSizeBase: 24
+  m_fontSize: 94
+  m_fontSizeBase: 58.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontSizeMin: 80
+  m_fontSizeMax: 160
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5225,12 +5238,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 589227936}
-    characterCount: 16
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 3
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -5381,7 +5394,7 @@ MonoBehaviour:
   budget: 3000
   people: 3000
   products: 3000
-  Reputation: 0
+  Expirience: 0
   SDGs: []
 --- !u!4 &654685761
 Transform:
@@ -15224,7 +15237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9591b5ca464374ea8e3aa8aa119f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stars: 5
+  stars: 3
+  StartCampaingButton: {fileID: 107888449}
+  HideButton: {fileID: 1707467430}
+  ReadyToStartSprite: {fileID: 0}
+  WaitingForStarsSprite: {fileID: 0}
 --- !u!1 &1564808985
 GameObject:
   m_ObjectHideFlags: 0
@@ -17591,7 +17608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1707467429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25981,6 +25998,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5172554571534190722, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172554571534190722, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172554571534190722, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172554571534190722, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5183574093124354996, guid: 3b5511061436e954ba7ec60c67c28ff4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -28942,6 +28979,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8305413993180002178, guid: 05ca9e694fccb8b449dbcf8260c1f4e9,
         type: 3}
+    - target: {fileID: 8404362033887690339, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404362033887690339, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404362033887690339, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404362033887690339, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1644599323}
+    - target: {fileID: 8404362033887690339, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404362033887690339, guid: 3b5511061436e954ba7ec60c67c28ff4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8406682421436353802, guid: 3b5511061436e954ba7ec60c67c28ff4,
         type: 3}
       propertyPath: m_AnchorMax.y

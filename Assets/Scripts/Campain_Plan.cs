@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Campain_Plan : MonoBehaviour
 {
     public static Campain_Plan Instance;
@@ -9,12 +10,15 @@ public class Campain_Plan : MonoBehaviour
     private Campaing_Strategy[] campaing_Strategies;
     public int stars = 5;
     private int maxStars = 5;
-
-
+    public Button StartCampaingButton;
+    public Button HideButton;
+    public Sprite ReadyToStartSprite;
+    public Sprite WaitingForStarsSprite;
     private void Start()
     {
         Instance = this;
         campaing_Strategies = GetComponentsInChildren<Campaing_Strategy>();
+        RemainingStars();
     }
     public void ChangePlayerCampaing()
     {
@@ -32,6 +36,24 @@ public class Campain_Plan : MonoBehaviour
        // GameMaster.Instance.CampaignStars[index] = campaing_Strategy.stars;
     }
 
+
+    public void RemainingStars()
+    {
+
+        if (stars <= 0)
+        {
+            StartCampaingButton.GetComponent<Image>().sprite = ReadyToStartSprite;
+            StartCampaingButton.interactable = true;
+            StartCampaingButton.GetComponentInChildren<TMP_Text>().text = "Start Campaing";
+        }
+        else if(stars>0)
+        {
+            StartCampaingButton.GetComponent<Image>().sprite = WaitingForStarsSprite;
+            StartCampaingButton.GetComponentInChildren<TMP_Text>().text = "Place All Stars";
+            StartCampaingButton.interactable = false;
+        }
+    }
+
     public void StartCampaing()
     {
         if(stars > 0)
@@ -41,8 +63,31 @@ public class Campain_Plan : MonoBehaviour
         }
         else
         {
+            
             ChangePlayerCampaing();
             GameMaster.Instance.StartCampaign();
+            LockCampaing();
         }
+    }
+
+    public void LockCampaing()
+    {
+        foreach(Button button in GetComponentsInChildren<Button>())
+        {
+            button.interactable = false;
+        }
+        StartCampaingButton.interactable = false;
+        HideButton.gameObject.SetActive(true);
+    }
+
+    public void UnlockCampaing()
+    {
+        foreach (Button button in GetComponentsInChildren<Button>())
+        {
+            button.interactable = true;
+        }
+        StartCampaingButton.interactable = true;
+        HideButton.gameObject.SetActive(false);
+        stars = maxStars;
     }
 }

@@ -41,6 +41,9 @@ public class GameMaster : MonoBehaviour
 
     public void StartCampaign()
     {
+        Offer_Tab_Controller.Instance.PreferedOffers.Clear();
+       
+        
         total = 0;
         // make every button interactable
         foreach(Button button in Offer_Tab_Controller.Instance.GetComponentsInChildren<Button>())
@@ -92,9 +95,8 @@ public class GameMaster : MonoBehaviour
                 for (int j = 0; j < Campaign[i]; j++)
                 {
                     int x = Random.Range(0, OffersGrouped[i].Count);
-
                     Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
-                    OffersGrouped[i].RemoveAt(x);
+                   // OffersGrouped[i].RemoveAt(x);
                 }
         }
 
@@ -108,7 +110,7 @@ public class GameMaster : MonoBehaviour
             {
                 int r2 = Random.Range(0, OffersGrouped[r1].Count);
                 Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[r1][r2]);
-                OffersGrouped[r1].RemoveAt(r2);
+              //  OffersGrouped[r1].RemoveAt(r2);
                 extraOffers++;
             }
         }
@@ -165,4 +167,6 @@ public class GameMaster : MonoBehaviour
         OffersGrouped.Add(Group_E_Offers);
         OffersGrouped.Add(Group_F_Offers);
     }
+
+    
 }
