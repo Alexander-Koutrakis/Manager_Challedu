@@ -1,6 +1,7 @@
-- Deactivate offer after paying
+- Deactivate offer after paying (Done)
 - Inform player that an offer is ready to be claimed
-- Claim Exp after each offer
+- Claim Exp after each offer (Done)
 - Implement Exp bar
-
--Force player to interact with campaing stars
+-reduce resources to budget only (Done)
+-increase bugdet ovet time
+-Force player to interact with campaing stars (Done)

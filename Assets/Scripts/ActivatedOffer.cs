@@ -20,11 +20,11 @@ public class ActivatedOffer : MonoBehaviour
     bool canBeClaimed=false;
     bool Claimed = false;
     Offer offer;
-  [SerializeField]
+    [SerializeField]
     private Sprite ClaimedOffer;// swap sprite if offer is claimed
    
 
-    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid, int peoplePaid , int productPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed)
+    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed)
     {
         offer = GameMaster.Instance.Offers[INofferIDin];
         titleText = offer.title_Text;
@@ -43,12 +43,12 @@ public class ActivatedOffer : MonoBehaviour
         subtitleTextComp.text = subtitleText;
         sliderTimer.maxValue = timer;
         sliderTimer.value = 0;
-        // if can be claimed or Claimed sliderTimer.value=0.1f;
-        StartCoroutine(startCooldown(budgetPaid, peoplePaid, productPaid));
+        // if can be claimed or Claimed sliderTimer.maxvalue=0.1f;
+        StartCoroutine(startCooldown(budgetPaid));
 
     }
 
-    IEnumerator startCooldown(int paidBudget,int paidPeople , int paidProducts)
+    IEnumerator startCooldown(int paidBudget)
     {
         while (sliderTimer.value < sliderTimer.maxValue)
         {
@@ -58,7 +58,7 @@ public class ActivatedOffer : MonoBehaviour
 
 
         canBeClaimed = true;
-        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, paidPeople, paidProducts, canBeClaimed, Claimed);
+        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed);
         claimButton.interactable = true;
         yield return null;
     }

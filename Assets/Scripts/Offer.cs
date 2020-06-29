@@ -9,7 +9,7 @@ public class Offer : ScriptableObject
     public int budgetCost;    
     public int productCost;
     public int peopleCost;
-
+    public float expiriencePoints;
     public string title_Text;
     public string main_Text;
 
@@ -24,5 +24,8 @@ public class Offer : ScriptableObject
     public Sprite SDG1;
     public Sprite SDG2;
     public Sprite SDG3;
+
+
+    
 
 }

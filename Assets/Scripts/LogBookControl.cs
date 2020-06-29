@@ -9,13 +9,13 @@ public class LogBookControl : MonoBehaviour
     public Transform OfferResults_Log; 
     public GameObject activatedOfferGO;
     public GameObject OfferResultsGO;
-    public Dictionary<int, ActivatedOffer> LogOffers = new Dictionary<int, ActivatedOffer>();
-
+    // public Dictionary<int, ActivatedOffer> LogOffers = new Dictionary<int, ActivatedOffer>(); //<----changed to list , since we repeat the same offers
+    public List<ActivatedOffer> LogOffers = new List<ActivatedOffer>();
     private void Start()
     {
         Instance = this;
     }
-    public void AddOffer(int offerID,int paidBudget,int paidPeople,int paidProducts, bool canBeClaimed, bool Claimed)
+    public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed)
     {
         //create 2 gameobjects 
         // one is for the list area and one for the info area
@@ -27,7 +27,7 @@ public class LogBookControl : MonoBehaviour
         GameObject OfferResults_Clone = Instantiate(OfferResultsGO, OfferResults_Log);
         activatedOfferGO_Clone.transform.SetAsFirstSibling();
         activatedOffer = activatedOfferGO_Clone.GetComponent<ActivatedOffer>();        
-        activatedOffer.InitializeActivatedOffer(offerID, paidBudget, paidPeople, paidProducts, OfferResults_Clone, canBeClaimed,Claimed);
+        activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed);
     }
 
 }

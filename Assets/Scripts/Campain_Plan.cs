@@ -14,6 +14,8 @@ public class Campain_Plan : MonoBehaviour
     public Button HideButton;
     public Sprite ReadyToStartSprite;
     public Sprite WaitingForStarsSprite;
+    [SerializeField]
+    Panel_Control panel_Control;
     private void Start()
     {
         Instance = this;
@@ -89,5 +91,11 @@ public class Campain_Plan : MonoBehaviour
         StartCampaingButton.interactable = true;
         HideButton.gameObject.SetActive(false);
         stars = maxStars;
+    }
+
+    public void NewCampaing()
+    {
+        panel_Control.OpenPanel();
+        UnlockCampaing();
     }
 }

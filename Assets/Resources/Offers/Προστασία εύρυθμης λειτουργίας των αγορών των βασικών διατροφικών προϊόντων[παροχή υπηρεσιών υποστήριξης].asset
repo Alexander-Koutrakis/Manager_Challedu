@@ -17,9 +17,10 @@ MonoBehaviour:
     \u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03B9\u03CE\u03BD \u03C5\u03C0\u03BF\u03C3\u03C4\u03AE\u03C1\u03B9\u03BE\u03B7\u03C2]"
   m_EditorClassIdentifier: 
   OfferID: 7001
-  budgetCost: 0
+  budgetCost: 1000
   productCost: 0
-  peopleCost: 5
+  peopleCost: 0
+  expiriencePoints: 100
   title_Text: "\u03A0\u03C1\u03BF\u03C3\u03C4\u03B1\u03C3\u03AF\u03B1 \u03B5\u03CD\u03C1\u03C5\u03B8\u03BC\u03B7\u03C2
     \u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1\u03C2 \u03C4\u03C9\u03BD
     \u03B1\u03B3\u03BF\u03C1\u03CE\u03BD \u03C4\u03C9\u03BD \u03B2\u03B1\u03C3\u03B9\u03BA\u03CE\u03BD
@@ -52,3 +53,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  SDG1: {fileID: 0}
+  SDG2: {fileID: 0}
+  SDG3: {fileID: 0}

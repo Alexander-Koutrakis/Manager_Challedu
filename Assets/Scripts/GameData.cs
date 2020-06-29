@@ -16,11 +16,6 @@ public class GameData
 
     public GameData(GameMaster gamemaster, Player player) {
         PlayerReputation = player.Expirience;
-        PlayerBudget = player.budget;
-        PlayerPeople = player.people;
-        PlayerProduct = player.products;
-
-       
-        
+        PlayerBudget = player.budget;         
     }
 }

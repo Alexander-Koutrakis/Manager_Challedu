@@ -15,9 +15,10 @@ MonoBehaviour:
     \u0397\u03BC\u03AD\u03C1\u03B1\u03C2]"
   m_EditorClassIdentifier: 
   OfferID: 5004
-  budgetCost: 5000
-  productCost: 500
-  peopleCost: 10
+  budgetCost: 1000
+  productCost: 0
+  peopleCost: 0
+  expiriencePoints: 100
   title_Text: "\u039C\u03B5\u03AF\u03C9\u03C3\u03B7 \u03B8\u03B1\u03BD\u03AC\u03C4\u03C9\u03BD
     \u03BD\u03B5\u03BF\u03B3\u03BD\u03CE\u03BD"
   main_Text: "\u039A\u03AD\u03BD\u03C4\u03C1\u03BF \u0397\u03BC\u03AD\u03C1\u03B1\u03C2"
@@ -47,3 +48,6 @@ MonoBehaviour:
   - 0
   - 4
   - 2
+  SDG1: {fileID: 0}
+  SDG2: {fileID: 0}
+  SDG3: {fileID: 0}

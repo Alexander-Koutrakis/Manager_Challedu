@@ -30,10 +30,7 @@ public class GameMaster : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-       InitializeDictionaries();
-     //  SelectCampaign(CampaignStars);
-
+        InitializeDictionaries();
     }
 
    
@@ -95,11 +92,16 @@ public class GameMaster : MonoBehaviour
                 for (int j = 0; j < Campaign[i]; j++)
                 {
                     int x = Random.Range(0, OffersGrouped[i].Count);
-                    Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
+                  Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
                    // OffersGrouped[i].RemoveAt(x);
                 }
         }
 
+        // randomize Gp points for each offer
+        foreach(Offer offer in Offer_Tab_Controller.Instance.PreferedOffers)
+        {
+            offer.GP = RandomizedGPpoints();
+        }
 
         // Fill the extra Offers with random "Non strategic" Offers
         int extraOffers = 0;
@@ -168,5 +170,20 @@ public class GameMaster : MonoBehaviour
         OffersGrouped.Add(Group_F_Offers);
     }
 
-    
+    private float[] RandomizedGPpoints()
+    {
+        int totalPoints = 15;
+        float[] GPpoints=new float[6];
+
+        while (totalPoints > 0)
+        {
+            int x = Random.Range(0, GPpoints.Length);
+            if (GPpoints[x] < 5)
+            {
+                GPpoints[x]++;
+                totalPoints--;
+            }
+        }
+        return GPpoints;
+    }
 }

@@ -15,17 +15,18 @@ MonoBehaviour:
   OfferID: 2006
   budgetCost: 1000
   productCost: 0
-  peopleCost: 1
+  peopleCost: 0
+  expiriencePoints: 100
   title_Text: "\u0392\u03B9\u03CE\u03C3\u03B9\u03BC\u03B7 \u03BA\u03C4\u03B7\u03BD\u03BF\u03C4\u03C1\u03BF\u03C6\u03AF\u03B1"
   main_Text: "\u03C7\u03BF\u03C1\u03B7\u03B3\u03AF\u03B1"
   DurationInSec: 60
   GP:
-  - 5
-  - 4
+  - 3
   - 2
   - 1
+  - 1
+  - 5
   - 3
-  - 0
   SDGs:
   - 1
   - 5
@@ -44,3 +45,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  SDG1: {fileID: 0}
+  SDG2: {fileID: 0}
+  SDG3: {fileID: 0}
