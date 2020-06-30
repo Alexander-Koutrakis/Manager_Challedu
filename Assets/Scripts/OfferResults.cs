@@ -14,10 +14,14 @@ public class OfferResults : MonoBehaviour
     private Image CoverImage;
     private Button ClaimButton;
     private Offer readyOffer;
-    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed)
+    private int claimedPaidBudget;
+    private int ExtraExp;
+    private int Booster;
+    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster)
     {
-        Debug.Log("Here");
+        Booster = booster;
         readyOffer = offer;
+        claimedPaidBudget = paidBudgert;
         titleText = GetComponentsInChildren<TMP_Text>()[0];
         subtitleText = GetComponentsInChildren<TMP_Text>()[1];
         infoText = GetComponentsInChildren<TMP_Text>()[2];
@@ -50,7 +54,10 @@ public class OfferResults : MonoBehaviour
 
     public void Claim_Offer()
     {
-        Player.Instance.Expirience += readyOffer.expiriencePoints;
+        Debug.Log(Booster);
+        int claimedExp =Mathf.RoundToInt(claimedPaidBudget / readyOffer.budgetCost);
+        claimedExp = Mathf.RoundToInt(claimedExp * ((Booster + 100) / 100));
+        Player.Instance.Expirience += claimedExp* readyOffer.expiriencePoints;
         Player.Instance.budget += Mathf.RoundToInt(readyOffer.budgetCost * 0.1f);        
         ClaimButton.interactable = false;
         Player.Instance.Calculate_UI_Info();

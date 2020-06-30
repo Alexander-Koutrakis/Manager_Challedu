@@ -11,6 +11,7 @@ public class Offer_Tab_Controller : MonoBehaviour
     public List<Offer_Manager> used_Managers = new List<Offer_Manager>();
     public static Offer_Tab_Controller Instance;
     public RectTransform groupTab;
+    public Panel_Control panel_Control;
     int tweenID;
     int currentTabIndex=19;
     public Vector3 LeftPos;

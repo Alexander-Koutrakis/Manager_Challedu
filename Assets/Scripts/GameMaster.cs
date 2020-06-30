@@ -43,10 +43,10 @@ public class GameMaster : MonoBehaviour
         
         total = 0;
         // make every button interactable
-        foreach(Button button in Offer_Tab_Controller.Instance.GetComponentsInChildren<Button>())
-        {
-            button.interactable = true;
-        }
+        //foreach(Button button in Offer_Tab_Controller.Instance.GetComponentsInChildren<Button>())
+        //{
+        //    button.interactable = true;
+        //}
 
       // get the total amount of campain stars in order to find Group Percent
         foreach (int campaingStar in CampaignStars)
@@ -160,7 +160,6 @@ public class GameMaster : MonoBehaviour
                 Group_F_Offers.Add( Offers[index]);
             }
         }
-
 
         OffersGrouped.Add(Group_A_Offers);
         OffersGrouped.Add(Group_B_Offers);

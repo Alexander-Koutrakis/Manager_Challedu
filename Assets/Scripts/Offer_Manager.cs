@@ -36,7 +36,7 @@ public class Offer_Manager : MonoBehaviour
     [SerializeField]
     private Sprite selectedButton;
     bool offerClosed = false;
-
+    private int Booster=0;
     private void Awake()
     {
         InitializeValues();
@@ -47,31 +47,62 @@ public class Offer_Manager : MonoBehaviour
     private void InitializeValues()
     {
         TMP_Text[] tMP_Texts = GetComponentsInChildren<TMP_Text>();
-        title_Text = tMP_Texts[0];
-        main_Text= tMP_Texts[1];
-        budget_Text= tMP_Texts[2];
+        title_Text = tMP_Texts[1];
+        main_Text= tMP_Texts[2];
+        budget_Text= tMP_Texts[3];
         //people_Text= tMP_Texts[3];
-        //product_Text= tMP_Texts[4];     
+        //product_Text= tMP_Texts[4];
+       
     }
+
+   
+
 
     public void SetOfferValues() {
         title_Text.text = offer.title_Text+" Offer ID : "+offer.OfferID;
         main_Text.text = offer.main_Text;
         budget_Text.text = offer.budgetCost.ToString();
-        //people_Text.text = offer.peopleCost.ToString();
-        //product_Text.text = offer.peopleCost.ToString();  
-
-        GetButtons();
+        GetBooster();
+    }
+    private void GetBooster()
+    {
+        if (offer.OfferID < 2000 && GameMaster.Instance.CampaignStars[0] > 0)
+        {
+            Booster = GameMaster.Instance.CampaignStars[0] * 10;
+        }
+        else if (offer.OfferID < 3000 && GameMaster.Instance.CampaignStars[1] > 0)
+        {
+            Booster = GameMaster.Instance.CampaignStars[1] * 10;
+        }
+        if (offer.OfferID < 4000 && GameMaster.Instance.CampaignStars[2] > 0)
+        {
+            Booster = GameMaster.Instance.CampaignStars[2] * 10;
+        }
+        else if (offer.OfferID < 5000 && GameMaster.Instance.CampaignStars[3] > 0)
+        {
+            Booster = GameMaster.Instance.CampaignStars[3] * 10;
+        }
+        else if (offer.OfferID < 6000 && GameMaster.Instance.CampaignStars[4] > 0)
+        {
+            Booster = GameMaster.Instance.CampaignStars[4] * 10;
+        }
+        else if (offer.OfferID < 7000 && GameMaster.Instance.CampaignStars[5] > 0)
+        {
+            Booster = GameMaster.Instance.CampaignStars[5] * 10;
+        }
+        
     }
 
     public void OpenOfferTab()
     {
         offer_GPGraph.ShowGraph(offer.GP);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
-        //if (!offerClosed)
-        //{
-        //    GetButtons();
-        //}
+       
+        if (!offerClosed)
+        {
+            GetButtons();
+            Debug.Log("here");
+        }
     }
 
     public void CloseTab()
@@ -132,91 +163,6 @@ public class Offer_Manager : MonoBehaviour
         PayButton = GetComponentsInChildren<Button>()[3];
 
 
-        //people50 = GetComponentsInChildren<Button>()[3];
-        //if (offer.peopleCost * 0.5f > Player.Instance.people)
-        //{
-        //    people50.interactable = false;
-        //    people50.GetComponent<Image>().sprite = unavailableButton;
-        //    // swap sprite
-        //}
-        //else if (offer.peopleCost * 0.5f <= Player.Instance.people)
-        //{
-        //    people50.interactable = true;
-        //    people50.GetComponent<Image>().sprite = availableButton;
-        //    // swap sprite
-        //}
-
-        //people100 = GetComponentsInChildren<Button>()[4];
-        //if (offer.peopleCost * 1f > Player.Instance.people)
-        //{
-        //    people100.interactable = false;
-        //    people100.GetComponent<Image>().sprite = unavailableButton;
-        //    //swap sprite
-        //}
-        //else if (offer.peopleCost * 1f <= Player.Instance.people)
-        //{
-        //    people100.interactable = true;
-        //    people100.GetComponent<Image>().sprite = availableButton;
-        //    //swap sprite
-        //}
-
-        //people130 = GetComponentsInChildren<Button>()[5];
-        //if (offer.peopleCost * 1.3f > Player.Instance.people)
-        //{
-        //    people130.interactable = false;
-        //    people130.GetComponent<Image>().sprite = unavailableButton;
-        //    //swap sprite
-        //}
-        //else if (offer.peopleCost * 1.3f <= Player.Instance.people)
-        //{
-        //    people130.interactable = true;
-        //    people130.GetComponent<Image>().sprite = availableButton;
-        //    //swap sprite
-        //}
-
-        //product50 =GetComponentsInChildren<Button>()[6];
-        //if (offer.productCost * 0.5f > Player.Instance.products)
-        //{
-        //    product50.interactable = false;
-        //    product50.GetComponent<Image>().sprite = unavailableButton;
-        //    //swap sprite
-        //}
-        //else if (offer.productCost * 0.5f <= Player.Instance.products)
-        //{
-        //    product50.interactable = true;
-        //    product50.GetComponent<Image>().sprite = availableButton;
-        //    //swap sprite
-        //}
-
-        //product100 = GetComponentsInChildren<Button>()[7];
-        //if (offer.productCost * 1f > Player.Instance.products)
-        //{
-        //    product100.interactable = false;
-        //    product100.GetComponent<Image>().sprite = unavailableButton;
-        //    //swap sprite
-        //}
-        //else if (offer.productCost * 1f <= Player.Instance.products)
-        //{
-        //    product100.interactable = true;
-        //    product100.GetComponent<Image>().sprite = availableButton;
-        //    //swap sprite
-        //}
-
-        //product130 = GetComponentsInChildren<Button>()[8];
-        //if (offer.productCost * 1.3f > Player.Instance.products)
-        //{
-        //    product130.interactable = false;
-        //    product130.GetComponent<Image>().sprite = unavailableButton;
-        //    //swap sprite
-        //}
-        //else if (offer.productCost * 1.3f <= Player.Instance.products)
-        //{
-        //    product130.interactable = true;
-        //    product130.GetComponent<Image>().sprite = availableButton;
-        //    //swap sprite
-        //}
-
-
     }
 
 
@@ -228,6 +174,7 @@ public class Offer_Manager : MonoBehaviour
         budget100.GetComponent<Image>().sprite = availableButton;
         budget130.GetComponent<Image>().sprite = availableButton;
         // swap other buttons
+        PayButton.interactable = true;
     }
 
     public void PayBudget100()
@@ -237,6 +184,7 @@ public class Offer_Manager : MonoBehaviour
         budget50.GetComponent<Image>().sprite = availableButton;
         budget130.GetComponent<Image>().sprite = availableButton;
         // swap other buttons
+        PayButton.interactable = true;
     }
 
     public void PayBudget130()
@@ -246,63 +194,10 @@ public class Offer_Manager : MonoBehaviour
         budget50.GetComponent<Image>().sprite = availableButton;
         budget100.GetComponent<Image>().sprite = availableButton;
         // swap other buttons
+        PayButton.interactable = true;
     }
 
-    //public void PayPeople50()
-    //{
-    //    PeopleAmount = Mathf.RoundToInt(offer.peopleCost * 0.5f);
-    //    people50.GetComponent<Image>().sprite = selectedButton;
-    //    people100.GetComponent<Image>().sprite = availableButton;
-    //    people130.GetComponent<Image>().sprite = availableButton;
-    //    // swap other buttons
-    //}
-
-    //public void PayPeople100()
-    //{
-    //    PeopleAmount = Mathf.RoundToInt(offer.peopleCost * 1f);
-    //    people100.GetComponent<Image>().sprite = selectedButton;
-    //    people50.GetComponent<Image>().sprite = availableButton;
-    //    people130.GetComponent<Image>().sprite = availableButton;
-    //    // swap other buttons
-    //}
-
-    //public void PayPeople130()
-    //{
-    //    PeopleAmount = Mathf.RoundToInt(offer.peopleCost * 1.3f);
-    //    people130.GetComponent<Image>().sprite = selectedButton;
-    //    people50.GetComponent<Image>().sprite = availableButton;
-    //    people100.GetComponent<Image>().sprite = availableButton;
-    //    // swap other buttons
-    //}
-
-    //public void PayProducts50()
-    //{
-    //    ProductAmount = Mathf.RoundToInt(offer.productCost * 0.5f);
-    //    product50.GetComponent<Image>().sprite = selectedButton;
-    //    product100.GetComponent<Image>().sprite = availableButton;
-    //    product130.GetComponent<Image>().sprite = availableButton;
-    //    // swap other buttons
-    //}
-
-    //public void PayProducts100()
-    //{
-
-    //    ProductAmount = Mathf.RoundToInt(offer.productCost * 1.0f);
-    //    product100.GetComponent<Image>().sprite = selectedButton;
-    //    product50.GetComponent<Image>().sprite = availableButton;
-    //    product130.GetComponent<Image>().sprite = availableButton;
-    //    // swap other buttons
-    //}
-
-    //public void PayProducts130()
-    //{
-    //    ProductAmount = Mathf.RoundToInt(offer.productCost * 1.3f);
-    //    product130.GetComponent<Image>().sprite = selectedButton;
-    //    product50.GetComponent<Image>().sprite = availableButton;
-    //    product100.GetComponent<Image>().sprite = availableButton;
-    //    // swap other buttons
-    //}
-
+ 
 
 
     public void CloseOffer()
@@ -311,7 +206,8 @@ public class Offer_Manager : MonoBehaviour
         //Player.Instance.people -= PeopleAmount;
         //Player.Instance.people -= ProductAmount;
         PayButton.interactable = false;
-        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false);
+
+        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster);
         foreach(Button button in GetComponentsInChildren<Button>())
         {
             button.interactable = false;

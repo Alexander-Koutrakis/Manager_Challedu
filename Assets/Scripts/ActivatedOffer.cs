@@ -22,9 +22,9 @@ public class ActivatedOffer : MonoBehaviour
     Offer offer;
     [SerializeField]
     private Sprite ClaimedOffer;// swap sprite if offer is claimed
-   
+    private int Booster;
 
-    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed)
+    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster)
     {
         offer = GameMaster.Instance.Offers[INofferIDin];
         titleText = offer.title_Text;
@@ -33,6 +33,7 @@ public class ActivatedOffer : MonoBehaviour
         activatedResultsGO = offerResult;
         canBeClaimed = INcanBeClaimed;
         Claimed = INClaimed;
+        Booster = booster;
 
         titlteTextComp = GetComponentsInChildren<TMP_Text>()[0];
         subtitleTextComp = GetComponentsInChildren<TMP_Text>()[1];
@@ -58,7 +59,7 @@ public class ActivatedOffer : MonoBehaviour
 
 
         canBeClaimed = true;
-        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed);
+        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster);
         claimButton.interactable = true;
         yield return null;
     }

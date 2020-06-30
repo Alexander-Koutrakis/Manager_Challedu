@@ -14,12 +14,12 @@ public class Campain_Plan : MonoBehaviour
     public Button HideButton;
     public Sprite ReadyToStartSprite;
     public Sprite WaitingForStarsSprite;
-    [SerializeField]
-    Panel_Control panel_Control;
+    public Panel_Control panel_Control;
     private void Start()
     {
         Instance = this;
         campaing_Strategies = GetComponentsInChildren<Campaing_Strategy>();
+        panel_Control = GameObject.Find("Stats_Panel_Button").GetComponent<Panel_Control>();
         RemainingStars();
     }
     public void ChangePlayerCampaing()
@@ -33,7 +33,6 @@ public class Campain_Plan : MonoBehaviour
     public void GetStars(Campaing_Strategy campaing_Strategy)
     {
         int index = System.Array.IndexOf(campaing_Strategies, campaing_Strategy);
-        Debug.Log(index);
         campaingStars[index]= campaing_Strategy.stars;
        // GameMaster.Instance.CampaignStars[index] = campaing_Strategy.stars;
     }
@@ -90,11 +89,12 @@ public class Campain_Plan : MonoBehaviour
         }
         StartCampaingButton.interactable = true;
         HideButton.gameObject.SetActive(false);
-        stars = maxStars;
+        //stars = maxStars;
     }
 
     public void NewCampaing()
     {
+       
         panel_Control.OpenPanel();
         UnlockCampaing();
     }

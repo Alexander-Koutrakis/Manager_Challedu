@@ -15,7 +15,7 @@ public class AchievementManager : MonoBehaviour
     public Sprite unlockedSprite;
     public TMP_Text pointText; 
     public static AchievementManager Instance;
-
+    public Panel_Control panel_Control;
     private void Awake()
     {
         Instance = this;
