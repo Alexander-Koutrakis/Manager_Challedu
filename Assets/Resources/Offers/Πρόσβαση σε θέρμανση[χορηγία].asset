@@ -19,7 +19,7 @@ MonoBehaviour:
   expiriencePoints: 100
   title_Text: "\u03A0\u03C1\u03CC\u03C3\u03B2\u03B1\u03C3\u03B7 \u03C3\u03B5 \u03B8\u03AD\u03C1\u03BC\u03B1\u03BD\u03C3\u03B7"
   main_Text: "\u03A7\u03BF\u03C1\u03B7\u03B3\u03AF\u03B1"
-  DurationInSec: 60
+  DurationInSec: 10
   GP:
   - 3
   - 1

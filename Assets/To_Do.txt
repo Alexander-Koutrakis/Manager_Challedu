@@ -3,7 +3,9 @@
 -(Done) Claim Exp after each offer 
 -(Done) Implement Exp bar 
 -(Done) Reduce resources to budget only 
-- Level up system
-- Increase bugdet ovet time
-- Stop deals when no bugdet
+-(Done) Level up system
+-(Done) Increase bugdet ovet time
+-(Done) Stop deals when no bugdet
+-pay budget button refreshes button sprites wrongly
+- refresh buttons on money tics;
 -(Done) Force player to interact with campaing stars 

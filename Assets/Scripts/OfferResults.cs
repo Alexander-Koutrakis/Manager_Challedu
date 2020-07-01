@@ -16,7 +16,7 @@ public class OfferResults : MonoBehaviour
     private Offer readyOffer;
     private int claimedPaidBudget;
     private int ExtraExp;
-    private int Booster;
+    private float Booster;
     public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster)
     {
         Booster = booster;
@@ -54,9 +54,11 @@ public class OfferResults : MonoBehaviour
 
     public void Claim_Offer()
     {
-        Debug.Log(Booster);
-        int claimedExp =Mathf.RoundToInt(claimedPaidBudget / readyOffer.budgetCost);
-        claimedExp = Mathf.RoundToInt(claimedExp * ((Booster + 100) / 100));
+        Booster= (Booster + 100) / 100;
+        float x = (float)claimedPaidBudget /(float) readyOffer.budgetCost;       
+        float claimedExp =x* readyOffer.expiriencePoints;
+        claimedExp = Mathf.RoundToInt(claimedExp * Booster);
+        Debug.Log(claimedExp);
         Player.Instance.Expirience += claimedExp* readyOffer.expiriencePoints;
         Player.Instance.budget += Mathf.RoundToInt(readyOffer.budgetCost * 0.1f);        
         ClaimButton.interactable = false;

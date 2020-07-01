@@ -78,10 +78,14 @@ public class AchievementManager : MonoBehaviour
        if(achievements[title].EarnAchievement())
         {
             GameObject achievement = Instantiate(visualAchievement);
-            SetAchievement_Info("EarnCanvas", title, achievement);
+            SetAchievement_Info("EarnAchievementCanvas", title, achievement);
             pointText.text = "Points : " + PlayerPrefs.GetInt("Points");
             StartCoroutine(FadeAchivement(achievement));
-        }
+
+            Player.Instance.Calculate_UI_Info();
+            PieGraph.Instance.RefreshGraph();
+
+       }
     }
 
     private IEnumerator HideAchievement(GameObject achievement)
@@ -127,7 +131,6 @@ public class AchievementManager : MonoBehaviour
 
                 canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, progress);
                 progress += Time.deltaTime *0.5f;
-                Debug.Log(progress);
                 yield return null;
             }
             startAlpha = 1;

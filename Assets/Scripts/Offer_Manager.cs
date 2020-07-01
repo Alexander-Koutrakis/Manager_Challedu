@@ -90,7 +90,8 @@ public class Offer_Manager : MonoBehaviour
         {
             Booster = GameMaster.Instance.CampaignStars[5] * 10;
         }
-        
+
+        Debug.Log("Get Booster " + Booster);
     }
 
     public void OpenOfferTab()
@@ -101,7 +102,6 @@ public class Offer_Manager : MonoBehaviour
         if (!offerClosed)
         {
             GetButtons();
-            Debug.Log("here");
         }
     }
 
@@ -168,7 +168,7 @@ public class Offer_Manager : MonoBehaviour
 
     public void PayBudget50()
     {
-        Debug.Log("here");
+        
         BudgetAmount = Mathf.RoundToInt(offer.budgetCost * 0.5f);
         budget50.GetComponent<Image>().sprite = selectedButton;
         budget100.GetComponent<Image>().sprite = availableButton;
@@ -203,10 +203,7 @@ public class Offer_Manager : MonoBehaviour
     public void CloseOffer()
     {
         Player.Instance.budget -= BudgetAmount;
-        //Player.Instance.people -= PeopleAmount;
-        //Player.Instance.people -= ProductAmount;
         PayButton.interactable = false;
-
         LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster);
         foreach(Button button in GetComponentsInChildren<Button>())
         {
@@ -215,6 +212,7 @@ public class Offer_Manager : MonoBehaviour
         offerClosed = true;
 
         Player.Instance.Calculate_UI_Info();
+        PieGraph.Instance.RefreshGraph();
     }
 
 }

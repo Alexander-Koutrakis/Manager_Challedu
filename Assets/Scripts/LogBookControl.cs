@@ -33,7 +33,6 @@ public class LogBookControl : MonoBehaviour
         activatedOfferGO_Clone.transform.SetAsFirstSibling();
         activatedOffer = activatedOfferGO_Clone.GetComponent<ActivatedOffer>();        
         activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed,booster);
-        Debug.Log(scrollRectContent.position.y);
        //scrollRectContent.position = new Vector2(scrollRectContent.anchoredPosition.x, 0);
 
         //scrollRect.content.gameObject.transform.position = new Vector3(scrollRect.content.gameObject.transform.position.x, 0, scrollRect.content.gameObject.transform.position.z);

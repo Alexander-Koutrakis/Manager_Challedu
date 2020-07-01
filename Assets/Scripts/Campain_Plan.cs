@@ -15,6 +15,15 @@ public class Campain_Plan : MonoBehaviour
     public Sprite ReadyToStartSprite;
     public Sprite WaitingForStarsSprite;
     public Panel_Control panel_Control;
+    [SerializeField]
+    private RectTransform CampainrectTransform;
+    [SerializeField]
+    private RectTransform StatsrectTransform;
+    [SerializeField]
+    private Button toStatsBTN;
+    [SerializeField]
+    private Button toCampainBTN;
+
     private void Start()
     {
         Instance = this;
@@ -97,5 +106,21 @@ public class Campain_Plan : MonoBehaviour
        
         panel_Control.OpenPanel();
         UnlockCampaing();
+    }
+
+    public void ToStats()
+    {
+        LeanTween.moveLocalX(StatsrectTransform.gameObject,0, 0.5f);
+        LeanTween.moveLocalX(CampainrectTransform.gameObject, -1920, 0.5f);
+        toStatsBTN.gameObject.SetActive(false);
+        toCampainBTN.gameObject.SetActive(true);
+    }
+
+    public void ToCampain()
+    {
+        LeanTween.moveLocalX(CampainrectTransform.gameObject, 0, 0.5f);
+        LeanTween.moveLocalX(StatsrectTransform.gameObject, 1920, 0.5f);
+        toStatsBTN.gameObject.SetActive(true);
+        toCampainBTN.gameObject.SetActive(false);
     }
 }

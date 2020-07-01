@@ -15,12 +15,10 @@ public class Achievement_Button : MonoBehaviour
 
     public void Click()
     {
-        Debug.Log("here");
         Button thisButton = GetComponent<Button>();
          SpriteState st = new SpriteState();
         if (sprite.sprite == neutral_Sprite)
         {
-            Debug.Log("here");
             sprite.sprite = highlight_Sprite;
             achievement_List.SetActive(true);            
             st.highlightedSprite = highlight_Sprite;
