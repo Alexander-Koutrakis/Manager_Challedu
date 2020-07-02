@@ -84,7 +84,6 @@ public class AchievementManager : MonoBehaviour
 
             Player.Instance.Calculate_UI_Info();
             PieGraph.Instance.RefreshGraph();
-
        }
     }
 
@@ -128,7 +127,6 @@ public class AchievementManager : MonoBehaviour
             float progress = 0.0f;
             while (progress < 1.0)
             {
-
                 canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, progress);
                 progress += Time.deltaTime *0.5f;
                 yield return null;

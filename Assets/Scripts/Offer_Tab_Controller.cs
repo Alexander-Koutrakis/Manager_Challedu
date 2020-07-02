@@ -12,13 +12,13 @@ public class Offer_Tab_Controller : MonoBehaviour
     public static Offer_Tab_Controller Instance;
     public RectTransform groupTab;
     public Panel_Control panel_Control;
-    int tweenID;
     int currentTabIndex=19;
     public Vector3 LeftPos;
     public Vector3 CentralPos;
     public Vector3 RightPos;
-    private IEnumerator coroutine1;
-    private IEnumerator coroutine2;
+    public Offer_Manager shown_Offer_Manager;
+
+
     private void Awake()
     {
         Instance = this;
@@ -26,6 +26,7 @@ public class Offer_Tab_Controller : MonoBehaviour
         {
             offer_Managers.Add(offer_Manager);
         }
+
     }
 
    
@@ -66,13 +67,13 @@ public class Offer_Tab_Controller : MonoBehaviour
     public void NextOfferTab() {
       
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, LeftPos.x, 0.5f);
-
+       
         currentTabIndex++;
         if (currentTabIndex >= used_Managers.Count)
         {
             currentTabIndex = 0;
         }
-
+        shown_Offer_Manager = used_Managers[currentTabIndex];
         used_Managers[currentTabIndex].gameObject.transform.localPosition = RightPos;
 
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f);
@@ -84,13 +85,14 @@ public class Offer_Tab_Controller : MonoBehaviour
     {
 
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, RightPos.x, 0.5f);
+
         currentTabIndex--;
         if (currentTabIndex < 0)
         {
             Debug.Log("Here");
             currentTabIndex = used_Managers.Count-1;
         }
-
+        shown_Offer_Manager = used_Managers[currentTabIndex];
         used_Managers[currentTabIndex].gameObject.transform.localPosition = LeftPos;
 
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f);
@@ -98,16 +100,12 @@ public class Offer_Tab_Controller : MonoBehaviour
 
     }
 
-    private IEnumerator MoveToPosition(Vector3 pos, GameObject obj)
-    {
-        while (Vector3.Distance(obj.transform.localPosition, pos) > 0.05f)
-        {
-            obj.transform.localPosition = Vector3.Lerp(obj.transform.localPosition, pos, Time.deltaTime);
-            yield return null;
-        }
 
-        used_Managers[currentTabIndex].OpenOfferTab();
-    }   
+
+
+
+
+  
 }
 
    

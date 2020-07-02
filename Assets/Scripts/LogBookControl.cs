@@ -27,7 +27,6 @@ public class LogBookControl : MonoBehaviour
         // both objects are connected through the ActivatedOffer script
 
         ActivatedOffer activatedOffer;
-        Debug.Log("here");
         GameObject activatedOfferGO_Clone = Instantiate(activatedOfferGO, OfferList_log);
         GameObject OfferResults_Clone = Instantiate(OfferResultsGO, OfferResults_Log);
         activatedOfferGO_Clone.transform.SetAsFirstSibling();

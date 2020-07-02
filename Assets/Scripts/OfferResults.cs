@@ -23,8 +23,8 @@ public class OfferResults : MonoBehaviour
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
         titleText = GetComponentsInChildren<TMP_Text>()[0];
-        subtitleText = GetComponentsInChildren<TMP_Text>()[1];
-        infoText = GetComponentsInChildren<TMP_Text>()[2];
+        subtitleText = GetComponentsInChildren<TMP_Text>()[1];// probably removed
+        infoText = GetComponentsInChildren<TMP_Text>()[2];// probably removed
         SDG1 = GetComponentsInChildren<Image>()[1];
         SDG2 = GetComponentsInChildren<Image>()[2];
         SDG3 = GetComponentsInChildren<Image>()[3];
@@ -59,7 +59,7 @@ public class OfferResults : MonoBehaviour
         float claimedExp =x* readyOffer.expiriencePoints;
         claimedExp = Mathf.RoundToInt(claimedExp * Booster);
         Debug.Log(claimedExp);
-        Player.Instance.Expirience += claimedExp* readyOffer.expiriencePoints;
+        Player.Instance.Expirience += claimedExp;
         Player.Instance.budget += Mathf.RoundToInt(readyOffer.budgetCost * 0.1f);        
         ClaimButton.interactable = false;
         Player.Instance.Calculate_UI_Info();

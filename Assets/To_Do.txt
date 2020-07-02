@@ -6,6 +6,10 @@
 -(Done) Level up system
 -(Done) Increase bugdet ovet time
 -(Done) Stop deals when no bugdet
--pay budget button refreshes button sprites wrongly
-- refresh buttons on money tics;
+-(Done) pay budget button refreshes button sprites wrongly
+-(Done)refresh buttons on money tics;
 -(Done) Force player to interact with campaing stars 
+-prepare for graphic swap
+-unlock tools while leveling
+-Create achievement abstract class to parent different Achievements
+ Achievement hold a conditions function and a reward function

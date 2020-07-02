@@ -31,9 +31,17 @@ public class GameMaster : MonoBehaviour
     {
         Instance = this;
         InitializeDictionaries();
+       
     }
 
-   
+   private void TestIDs(){
+
+    foreach(Offer offer in Resources.LoadAll<Offer>("Offers"))
+        {
+            Debug.Log(offer.OfferID);
+        }
+
+    }
 
 
     public void StartCampaign()

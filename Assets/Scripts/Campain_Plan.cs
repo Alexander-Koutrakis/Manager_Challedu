@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Campain_Plan : MonoBehaviour
 {
+
     public static Campain_Plan Instance;
     private int[] campaingStars = new int[6];
     private Campaing_Strategy[] campaing_Strategies;

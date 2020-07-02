@@ -79,6 +79,11 @@ public class Player : MonoBehaviour
         {
             budget += budgetRegenerationRate;
             budget_Text.text = budget.ToString();
+
+           if(!Offer_Tab_Controller.Instance.shown_Offer_Manager.offerClosed)
+            {
+                Offer_Tab_Controller.Instance.shown_Offer_Manager.GetButtons();
+            }
         }
     }
 }
