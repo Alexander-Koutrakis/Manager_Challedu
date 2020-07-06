@@ -9,7 +9,7 @@
 -(Done) pay budget button refreshes button sprites wrongly
 -(Done)refresh buttons on money tics;
 -(Done) Force player to interact with campaing stars 
--prepare for graphic swap
+-(keep it up)prepare for graphic swap
 -unlock tools while leveling
 -Create achievement abstract class to parent different Achievements
  Achievement hold a conditions function and a reward function

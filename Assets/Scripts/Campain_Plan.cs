@@ -31,6 +31,7 @@ public class Campain_Plan : MonoBehaviour
         campaing_Strategies = GetComponentsInChildren<Campaing_Strategy>();
         panel_Control = GameObject.Find("Stats_Panel_Button").GetComponent<Panel_Control>();
         RemainingStars();
+        HideButton.interactable = false;
     }
     public void ChangePlayerCampaing()
     {
@@ -53,14 +54,13 @@ public class Campain_Plan : MonoBehaviour
 
         if (stars <= 0)
         {
-            StartCampaingButton.GetComponent<Image>().sprite = ReadyToStartSprite;
+            //StartCampaingButton.GetComponent<Image>().sprite = ReadyToStartSprite;
             StartCampaingButton.interactable = true;
-            StartCampaingButton.GetComponentInChildren<TMP_Text>().text = "Start Campaing";
+           
         }
         else if(stars>0)
         {
-            StartCampaingButton.GetComponent<Image>().sprite = WaitingForStarsSprite;
-            StartCampaingButton.GetComponentInChildren<TMP_Text>().text = "Place All Stars";
+            //StartCampaingButton.GetComponent<Image>().sprite = WaitingForStarsSprite;
             StartCampaingButton.interactable = false;
         }
     }
@@ -88,7 +88,8 @@ public class Campain_Plan : MonoBehaviour
             button.interactable = false;
         }
         StartCampaingButton.interactable = false;
-        HideButton.gameObject.SetActive(true);
+        HideButton.interactable=true;
+        toStatsBTN.interactable = true;
     }
 
     public void UnlockCampaing()
@@ -98,7 +99,7 @@ public class Campain_Plan : MonoBehaviour
             button.interactable = true;
         }
         StartCampaingButton.interactable = true;
-        HideButton.gameObject.SetActive(false);
+        HideButton.interactable = false;
         //stars = maxStars;
     }
 
@@ -113,15 +114,15 @@ public class Campain_Plan : MonoBehaviour
     {
         LeanTween.moveLocalX(StatsrectTransform.gameObject,0, 0.5f);
         LeanTween.moveLocalX(CampainrectTransform.gameObject, -1920, 0.5f);
-        toStatsBTN.gameObject.SetActive(false);
-        toCampainBTN.gameObject.SetActive(true);
+        toStatsBTN.interactable = false;
+        toCampainBTN.interactable=true;
     }
 
     public void ToCampain()
     {
         LeanTween.moveLocalX(CampainrectTransform.gameObject, 0, 0.5f);
         LeanTween.moveLocalX(StatsrectTransform.gameObject, 1920, 0.5f);
-        toStatsBTN.gameObject.SetActive(true);
-        toCampainBTN.gameObject.SetActive(false);
+        toStatsBTN.interactable=true;
+        toCampainBTN.interactable=false;
     }
 }

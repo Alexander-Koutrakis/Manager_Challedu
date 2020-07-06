@@ -37,10 +37,9 @@ public class GameMaster : MonoBehaviour
    private void TestIDs(){
 
     foreach(Offer offer in Resources.LoadAll<Offer>("Offers"))
-        {
+    {
             Debug.Log(offer.OfferID);
-        }
-
+    }
     }
 
 
@@ -101,15 +100,12 @@ public class GameMaster : MonoBehaviour
                 {
                     int x = Random.Range(0, OffersGrouped[i].Count);
                   Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
-                   // OffersGrouped[i].RemoveAt(x);
                 }
         }
 
-        // randomize Gp points for each offer
-        foreach(Offer offer in Offer_Tab_Controller.Instance.PreferedOffers)
-        {
-            offer.GP = RandomizedGPpoints();
-        }
+
+
+       
 
         // Fill the extra Offers with random "Non strategic" Offers
         int extraOffers = 0;
@@ -120,10 +116,16 @@ public class GameMaster : MonoBehaviour
             {
                 int r2 = Random.Range(0, OffersGrouped[r1].Count);
                 Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[r1][r2]);
-              //  OffersGrouped[r1].RemoveAt(r2);
                 extraOffers++;
             }
         }
+
+        // randomize Gp points for each offer
+        foreach (Offer offer in Offer_Tab_Controller.Instance.PreferedOffers)
+        {
+            offer.GP = RandomizedGPpoints();
+        }
+
 
         Offer_Tab_Controller.Instance.FillOfferManagers();
     }
@@ -179,7 +181,8 @@ public class GameMaster : MonoBehaviour
 
     private float[] RandomizedGPpoints()
     {
-        int totalPoints = 15;
+
+        int totalPoints = Random.Range(15, 21);
         float[] GPpoints=new float[6];
 
         while (totalPoints > 0)

@@ -77,7 +77,7 @@ public class Offer_Tab_Controller : MonoBehaviour
         used_Managers[currentTabIndex].gameObject.transform.localPosition = RightPos;
 
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f);
-        used_Managers[currentTabIndex].OpenOfferTab();
+        shown_Offer_Manager.OpenOfferTab();
     }
 
 
@@ -89,14 +89,13 @@ public class Offer_Tab_Controller : MonoBehaviour
         currentTabIndex--;
         if (currentTabIndex < 0)
         {
-            Debug.Log("Here");
             currentTabIndex = used_Managers.Count-1;
         }
         shown_Offer_Manager = used_Managers[currentTabIndex];
         used_Managers[currentTabIndex].gameObject.transform.localPosition = LeftPos;
 
         LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f);
-        used_Managers[currentTabIndex].OpenOfferTab();
+        shown_Offer_Manager.OpenOfferTab();
 
     }
 
