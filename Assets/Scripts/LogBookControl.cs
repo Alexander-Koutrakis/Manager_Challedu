@@ -39,7 +39,15 @@ public class LogBookControl : MonoBehaviour
 
     public void CorrentScrollPos()
     {
-        scrollRectContent.position = new Vector2(scrollRectContent.anchoredPosition.x, 0);
+        scrollRectContent.anchoredPosition = new Vector2(0, 0);
+    }
+
+    public void DeselectOffers()
+    {
+        foreach(ActivatedOffer AO in LogOffers)
+        {
+            AO.DeselectActivatedOffer();
+        }
     }
 
 }

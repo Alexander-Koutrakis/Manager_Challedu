@@ -59,6 +59,21 @@ TextureImporter:
   - first:
       213: 8777043916292279066
     second: CSR_Unavailable_130
+  - first:
+      213: 3494633142638694665
+    second: CSR_Strategy_Buttons_19
+  - first:
+      213: 6085708672092975147
+    second: CSR_Strategy_Buttons_20
+  - first:
+      213: -7973185080227619933
+    second: CSR_Strategy_Buttons_21
+  - first:
+      213: 4186287457935274009
+    second: CSR_Strategy_Buttons_22
+  - first:
+      213: -6665276754428672094
+    second: CSR_Strategy_Buttons_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -512,7 +527,7 @@ TextureImporter:
         width: 139
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,7 +548,7 @@ TextureImporter:
         width: 183
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,7 +569,7 @@ TextureImporter:
         width: 221
         height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -562,6 +577,111 @@ TextureImporter:
       bones: []
       spriteID: a1bca9860f25ec970800000000000000
       internalID: 8777043916292279066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_19
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 987
+        width: 444
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901594fe35e6f7030800000000000000
+      internalID: 3494633142638694665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_20
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 865
+        width: 444
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20bd963bc7c47450800000000000000
+      internalID: 6085708672092975147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_21
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 719
+        width: 444
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab969cc96e895190800000000000000
+      internalID: -7973185080227619933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_22
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 572
+        width: 444
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910b7e9534ea81a30800000000000000
+      internalID: 4186287457935274009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_23
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 486
+        width: 318
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a74c922b1e2083a0800000000000000
+      internalID: -6665276754428672094
       vertices: []
       indices: 
       edges: []

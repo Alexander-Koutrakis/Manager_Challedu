@@ -31,17 +31,7 @@ public class Offer_Tab_Controller : MonoBehaviour
 
    
 
-    public void LookForEmptyTabs()
-    {
-        foreach(Offer_Manager offer_Manager in offer_Managers)
-        {
-            if (offer_Manager.offer == null)
-            {
-                offer_Manager.gameObject.SetActive(false);
-            }
-           
-        }
-    }
+   
 
     public void FillOfferManagers()
     {
@@ -52,15 +42,10 @@ public class Offer_Tab_Controller : MonoBehaviour
             used_Managers.Add(offer_Managers[i]);
         }
 
-        LookForEmptyTabs();
-
 
         foreach (Offer_Manager offer_Manager in offer_Managers)
-        {
-            if (offer_Manager.offer != null)
-            {
-                offer_Manager.SetOfferValues();
-            }
+        {           
+                offer_Manager.SetOfferValues();            
         }
     }
 

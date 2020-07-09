@@ -5,12 +5,18 @@ using TMPro;
 using UnityEngine.UI;
 public class OfferResults : MonoBehaviour
 {
-    private TMP_Text titleText;
-    private TMP_Text subtitleText;
-    private TMP_Text infoText;
-    private Image SDG1;
-    private Image SDG2;
-    private Image SDG3;
+    [SerializeField]
+    private TMP_Text titleText=null;
+    [SerializeField]
+    private TMP_Text subtitleText=null;
+    [SerializeField]
+    private TMP_Text infoText=null;
+    [SerializeField]
+    private Image SDG1=null;
+    [SerializeField]
+    private Image SDG2=null;
+    [SerializeField]
+    private Image SDG3=null;
     private Image CoverImage;
     private Button ClaimButton;
     private Offer readyOffer;
@@ -34,6 +40,7 @@ public class OfferResults : MonoBehaviour
         subtitleText.text = offer.main_Text;
         subtitleText.text = "Paid Budget : " + paidBudgert.ToString();
         SDG1.sprite = offer.SDG1;
+        Debug.Log(offer.SDG1.name);
         SDG2.sprite = offer.SDG2;
         SDG3.sprite = offer.SDG3;
         CoverImage.gameObject.SetActive(false);
@@ -62,6 +69,7 @@ public class OfferResults : MonoBehaviour
         Player.Instance.Expirience += claimedExp;
         Player.Instance.budget += Mathf.RoundToInt(readyOffer.budgetCost * 0.1f);        
         ClaimButton.interactable = false;
+        Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
     }
 }

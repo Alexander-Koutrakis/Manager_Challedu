@@ -21,7 +21,15 @@ public class ActivatedOffer : MonoBehaviour
     bool Claimed = false;
     Offer offer;
     [SerializeField]
-    private Sprite ClaimedOffer;// swap sprite if offer is claimed
+    private Image Main_Image = null;
+    [SerializeField]
+    private Sprite ClaimedOffer_Sprite=null;// swap sprite if offer is claimed
+    [SerializeField]
+    private Sprite ReadyToBeClaimedOffer_Sprite=null;// swap sprite if offer is claimed
+    [SerializeField]
+    private Sprite ProccessingOffer_Sprite=null;// swap sprite if offer is claimed
+    [SerializeField]
+    private Sprite SelectedOffer_Sprite = null;// swap sprite if offer is claimed
     private int Booster;
 
     public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster)
@@ -44,7 +52,10 @@ public class ActivatedOffer : MonoBehaviour
         subtitleTextComp.text = subtitleText;
         sliderTimer.maxValue = timer;
         sliderTimer.value = 0;
-        // if can be claimed or Claimed sliderTimer.maxvalue=0.1f;
+        Main_Image.sprite = ProccessingOffer_Sprite;
+
+
+        GetComponentInParent<LogBookControl>().LogOffers.Add(this);
         StartCoroutine(startCooldown(budgetPaid));
 
     }
@@ -57,8 +68,8 @@ public class ActivatedOffer : MonoBehaviour
             yield return null;
         }
 
-
-        canBeClaimed = true;
+       Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
+       canBeClaimed = true;
         activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster);
         claimButton.interactable = true;
         yield return null;
@@ -66,7 +77,22 @@ public class ActivatedOffer : MonoBehaviour
 
     public void ButtonPress()
     {
+        LogBookControl.Instance.DeselectOffers();
+        Main_Image.sprite = SelectedOffer_Sprite;
         activatedResultsGO.transform.SetAsLastSibling();
     }
 
+    public void DeselectActivatedOffer()
+    {
+        if (canBeClaimed)
+        {
+            Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
+        }else if (Claimed)
+        {
+            Main_Image.sprite = ClaimedOffer_Sprite;
+        }else
+        {
+            Main_Image.sprite = ProccessingOffer_Sprite;
+        }
+    }
 }

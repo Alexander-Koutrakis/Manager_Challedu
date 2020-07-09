@@ -20,6 +20,8 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     private List<Offer> Group_F_Offers = new List<Offer>();// Offers belong to Strategy F; 
     private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
+    [SerializeField]
+    private Sprite[] SDG_Sprites = new Sprite[17];
    // public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
@@ -33,6 +35,8 @@ public class GameMaster : MonoBehaviour
         InitializeDictionaries();
        
     }
+
+  
 
    private void TestIDs(){
 
@@ -49,12 +53,7 @@ public class GameMaster : MonoBehaviour
        
         
         total = 0;
-        // make every button interactable
-        //foreach(Button button in Offer_Tab_Controller.Instance.GetComponentsInChildren<Button>())
-        //{
-        //    button.interactable = true;
-        //}
-
+    
       // get the total amount of campain stars in order to find Group Percent
         foreach (int campaingStar in CampaignStars)
         {
@@ -120,10 +119,10 @@ public class GameMaster : MonoBehaviour
             }
         }
 
-        // randomize Gp points for each offer
+        // randomize Gp points and budget cost for each offer
         foreach (Offer offer in Offer_Tab_Controller.Instance.PreferedOffers)
         {
-            offer.GP = RandomizedGPpoints();
+            RandomizeOffer(offer);
         }
 
 
@@ -181,8 +180,8 @@ public class GameMaster : MonoBehaviour
 
     private float[] RandomizedGPpoints()
     {
-
-        int totalPoints = Random.Range(15, 21);
+        
+        int totalPoints = Random.Range(15, 15+Player.Instance.Player_Level);
         float[] GPpoints=new float[6];
 
         while (totalPoints > 0)
@@ -195,5 +194,48 @@ public class GameMaster : MonoBehaviour
             }
         }
         return GPpoints;
+    }
+
+
+
+
+    private void RandomizeOffer(Offer offer)
+    {
+        offer.GP = RandomizedGPpoints();
+        float x = Random.Range(1, 1.21f);
+        x = Player.Instance.Player_Level * x * 1000;
+        x = Mathf.Round(x / 100) * 100;
+        offer.budgetCost = Mathf.RoundToInt(x);
+        int y = Random.Range(1, 20)*10;
+        offer.DurationInSec = y;
+        offer.expiriencePoints =Mathf.RoundToInt(x / 10);
+        GetTopSDGs(offer);
+    }
+
+    private void GetTopSDGs(Offer offer)
+    {
+        float[] Sdgs = offer.SDGs;
+        float top1 = 0;
+        float top2 = 0;
+        float top3 = 0;
+
+        for (int i = 0; i < Sdgs.Length; i++)
+        {
+            if (Sdgs[i] > top1)
+            {
+                top1 = Sdgs[i];
+                offer.SDG1 = SDG_Sprites[i];
+            }
+            else if (Sdgs[i] > top2)
+            {
+                top2 = Sdgs[i];
+                offer.SDG2 = SDG_Sprites[i];
+            }
+            else if (Sdgs[i] > top3)
+            {
+                top3 = Sdgs[i];
+                offer.SDG3 = SDG_Sprites[i];
+            }
+        }
     }
 }

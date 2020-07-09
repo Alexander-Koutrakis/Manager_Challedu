@@ -35,7 +35,7 @@ public class Campaing_Strategy : MonoBehaviour
 
     }
 
-
+    
     public void ButtonUnPress(Campaing_Star_Button button)
     {
         int index = System.Array.IndexOf(starButtons, button);

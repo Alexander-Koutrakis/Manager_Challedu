@@ -10,7 +10,7 @@ public class Offer_Manager : MonoBehaviour
 {
     public Offer offer;
     public TMP_Text title_Text;
- // public TMP_Text main_Text;
+    public int offerBudget;
     public TMP_Text budget_Text;
     private Button budget50;
     private Button budget100;
@@ -19,23 +19,35 @@ public class Offer_Manager : MonoBehaviour
     private Offer_GPGraph offer_GPGraph;
     private int BudgetAmount;
     [SerializeField]
-    private Sprite availableButton50;
+    private TMP_Text Duration_text;
     [SerializeField]
-    private Sprite unavailableButton50;
+    private Image BudgetImage = null;
     [SerializeField]
-    private Sprite selectedButton50;
+    private Sprite availableButton50=null;
     [SerializeField]
-    private Sprite availableButton100;
+    private Sprite unavailableButton50=null;
     [SerializeField]
-    private Sprite unavailableButton100;
+    private Sprite selectedButton50=null;
     [SerializeField]
-    private Sprite selectedButton100;
+    private Sprite availableButton100=null;
     [SerializeField]
-    private Sprite availableButton130;
+    private Sprite unavailableButton100=null;
     [SerializeField]
-    private Sprite unavailableButton130;
+    private Sprite selectedButton100=null;
     [SerializeField]
-    private Sprite selectedButton130;
+    private Sprite availableButton130=null;
+    [SerializeField]
+    private Sprite unavailableButton130=null;
+    [SerializeField]
+    private Sprite selectedButton130=null;
+    [SerializeField]
+    private Sprite BudgetImageEmpty = null;
+    [SerializeField]
+    private Sprite BudgetImage30 = null;
+    [SerializeField]
+    private Sprite BudgetImage100 = null;
+    [SerializeField]
+    private Sprite BudgetImage120 = null;
     public bool offerClosed = false;
     private int Booster=0;
     private void Awake()
@@ -53,7 +65,15 @@ public class Offer_Manager : MonoBehaviour
 
     public void SetOfferValues() {
         title_Text.text = offer.title_Text;
-        budget_Text.text = offer.budgetCost.ToString();
+        BudgetAmount = 0;
+        budget_Text.text = BudgetAmount.ToString() + "/" + offer.budgetCost.ToString();
+        Duration_text.text = "Report: " + offer.DurationInSec + "\"";
+        budget50 = GetComponentsInChildren<Button>()[0];
+        budget50.GetComponent<Image>().sprite = availableButton50;
+        budget100 = GetComponentsInChildren<Button>()[1];
+        budget100.GetComponent<Image>().sprite = availableButton100;
+        budget130 = GetComponentsInChildren<Button>()[2];
+        budget130.GetComponent<Image>().sprite = availableButton130;
         GetBooster();
     }
     private void GetBooster()
@@ -95,23 +115,20 @@ public class Offer_Manager : MonoBehaviour
         }
     }
 
-   
-
- 
     public void GetButtons()
     {
 
         budget50 = GetComponentsInChildren<Button>()[0];
-        if (offer.budgetCost * 0.5f > Player.Instance.budget)
+        if (offer.budgetCost * 0.3f > Player.Instance.budget)
         {
             budget50.interactable = false;
-            budget50.GetComponent<Image>().sprite = unavailableButton50;
+           // budget50.GetComponent<Image>().sprite = unavailableButton50;
             //swap sprite
         }
-        else if(offer.budgetCost * 0.5f <= Player.Instance.budget)
+        else if(offer.budgetCost * 0.3f <= Player.Instance.budget)
         {
             budget50.interactable = true;
-            budget50.GetComponent<Image>().sprite = availableButton50;
+          //  budget50.GetComponent<Image>().sprite = availableButton50;
             //swap sprite
         }
 
@@ -120,13 +137,13 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 1f > Player.Instance.budget)
         {
             budget100.interactable = false;
-            budget100.GetComponent<Image>().sprite = unavailableButton100;
+          //  budget100.GetComponent<Image>().sprite = unavailableButton100;
             //swap sprite
         }
         else if(offer.budgetCost * 1f <= Player.Instance.budget)
         {
             budget100.interactable = true;
-            budget100.GetComponent<Image>().sprite = availableButton100;
+          //  budget100.GetComponent<Image>().sprite = availableButton100;
             //swap sprite
         }
 
@@ -135,13 +152,13 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 1.3f > Player.Instance.budget)
         {
             budget130.interactable = false;
-            budget130.GetComponent<Image>().sprite = unavailableButton130;
+         //   budget130.GetComponent<Image>().sprite = unavailableButton130;
             //swap sprite
         }
         else if(offer.budgetCost * 1.3f <= Player.Instance.budget)
         {
             budget130.interactable = true;
-            budget130.GetComponent<Image>().sprite = availableButton130;
+          //  budget130.GetComponent<Image>().sprite = availableButton130;
             //swap sprite
         }
 
@@ -151,11 +168,10 @@ public class Offer_Manager : MonoBehaviour
 
     }
 
-
     public void PayBudget50()
     {
         
-        BudgetAmount = Mathf.RoundToInt(offer.budgetCost * 0.5f);
+        BudgetAmount = Mathf.RoundToInt(offer.budgetCost * 0.3f);
         budget50.GetComponent<Image>().sprite = selectedButton50;
 
 
@@ -164,7 +180,7 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 1f > Player.Instance.budget)
         {
             budget100.interactable = false;
-            budget100.GetComponent<Image>().sprite = unavailableButton100;
+            budget100.GetComponent<Image>().sprite = availableButton100;
             //swap sprite
         }
         else if (offer.budgetCost * 1f <= Player.Instance.budget)
@@ -177,7 +193,7 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 1.3f > Player.Instance.budget)
         {
             budget130.interactable = false;
-            budget130.GetComponent<Image>().sprite = unavailableButton130;
+            budget130.GetComponent<Image>().sprite = availableButton130;
             //swap sprite
         }
         else if (offer.budgetCost * 1.3f <= Player.Instance.budget)
@@ -187,7 +203,9 @@ public class Offer_Manager : MonoBehaviour
             //swap sprite
         }
 
-        // swap other buttons
+
+        BudgetImage.sprite = BudgetImage30;
+        budget_Text.text = BudgetAmount.ToString() + "/" + offer.budgetCost.ToString();
         PayButton.interactable = true;
     }
 
@@ -200,7 +218,7 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 0.5f > Player.Instance.budget)
         {
             budget50.interactable = false;
-            budget50.GetComponent<Image>().sprite = unavailableButton50;
+            budget50.GetComponent<Image>().sprite = availableButton50;
             //swap sprite
         }
         else if (offer.budgetCost * 0.5f <= Player.Instance.budget)
@@ -213,7 +231,7 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 1.3f > Player.Instance.budget)
         {
             budget130.interactable = false;
-            budget130.GetComponent<Image>().sprite = unavailableButton130;
+            budget130.GetComponent<Image>().sprite = availableButton130;
             //swap sprite
         }
         else if (offer.budgetCost * 1.3f <= Player.Instance.budget)
@@ -222,7 +240,8 @@ public class Offer_Manager : MonoBehaviour
             budget130.GetComponent<Image>().sprite = availableButton130;
             //swap sprite
         }
-
+        BudgetImage.sprite = BudgetImage100;
+        budget_Text.text = BudgetAmount.ToString() + "/" + offer.budgetCost.ToString();
         // swap other buttons
         PayButton.interactable = true;
     }
@@ -236,7 +255,7 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 0.5f > Player.Instance.budget)
         {
             budget50.interactable = false;
-            budget50.GetComponent<Image>().sprite = unavailableButton50;
+            budget50.GetComponent<Image>().sprite = availableButton50;
             //swap sprite
         }
         else if (offer.budgetCost * 0.5f <= Player.Instance.budget)
@@ -250,7 +269,7 @@ public class Offer_Manager : MonoBehaviour
         if (offer.budgetCost * 1f > Player.Instance.budget)
         {
             budget100.interactable = false;
-            budget100.GetComponent<Image>().sprite = unavailableButton100;
+            budget100.GetComponent<Image>().sprite = availableButton100;
             //swap sprite
         }
         else if (offer.budgetCost * 1f <= Player.Instance.budget)
@@ -260,12 +279,11 @@ public class Offer_Manager : MonoBehaviour
             //swap sprite
         }
 
-
+        BudgetImage.sprite = BudgetImage120;
+        budget_Text.text = BudgetAmount.ToString() + "/" + offer.budgetCost.ToString();
         // swap other buttons
         PayButton.interactable = true;
     }
-
- 
 
 
     public void CloseOffer()

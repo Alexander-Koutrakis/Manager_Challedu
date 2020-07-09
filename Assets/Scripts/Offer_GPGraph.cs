@@ -45,7 +45,6 @@ public class Offer_GPGraph : MonoBehaviour
 
     private IEnumerator CalculateGraph(Slider slider, float targetValue) {
 
-        Debug.Log("Calculate graph");
         slider.value = 0;
         yield return new WaitForSeconds(0.5f); //--------Delay for tab movement
 

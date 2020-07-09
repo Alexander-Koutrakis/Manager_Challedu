@@ -13,13 +13,9 @@ public class Player : MonoBehaviour
     //public int products;
     public int Player_Level=1;
     public float Expirience;
-    public float[] SDGs;
+    public float[] SDGs=new float[17];
     [SerializeField]
     private TMP_Text budget_Text;
-    //[SerializeField]
-    //private TMP_Text people_Text;
-    //[SerializeField]
-    //private TMP_Text product_Text;
     [SerializeField]
     private Slider Expirience_Slider;
     [SerializeField]
@@ -86,4 +82,18 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+
+    public void GetSDG(float[] addedSDGs)
+    {
+        for(int i = 0; i < 17; i++)
+        {
+            Debug.Log(i);
+            SDGs[i] += addedSDGs[i];
+        }
+
+        SDG_Stats.instance.GetSDGStats();
+
+    }
+
 }
