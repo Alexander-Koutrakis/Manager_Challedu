@@ -10,6 +10,8 @@ public class Campaing_Strategy : MonoBehaviour
     public Sprite pressedSprite;
     public Sprite unPressedSprite;
     public int stars;
+    [SerializeField]
+    private GameObject starPS;
     private void Start()
     {
         starButtons = GetComponentsInChildren<Campaing_Star_Button>();
@@ -26,7 +28,9 @@ public class Campaing_Strategy : MonoBehaviour
             {
                 starButtons[j].GetComponent<Image>().sprite = pressedSprite;
                 starButtons[j].pressed = true;
+
                 Campain_Plan.Instance.stars--;
+                Instantiate(starPS, starButtons[j].transform.position, Quaternion.identity);
                 // swap sprites to pressed
             }
         }

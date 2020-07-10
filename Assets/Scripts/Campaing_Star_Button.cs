@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Campaing_Star_Button : MonoBehaviour
 {
-    public bool pressed = false;   
-
+    public bool pressed = false;
+  
 
  
     public void PressButton()
@@ -14,6 +14,7 @@ public class Campaing_Star_Button : MonoBehaviour
         {
            // pressed = true;
             GetComponentInParent<Campaing_Strategy>().ButtonPress(this);
+           
         }
         else if(pressed)
         {
