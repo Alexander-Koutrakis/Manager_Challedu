@@ -38,13 +38,6 @@ public class GameMaster : MonoBehaviour
 
   
 
-   private void TestIDs(){
-
-    foreach(Offer offer in Resources.LoadAll<Offer>("Offers"))
-    {
-            Debug.Log(offer.OfferID);
-    }
-    }
 
 
     public void StartCampaign()

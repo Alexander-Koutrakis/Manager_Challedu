@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Arrow_Controller
+  m_Controller: {fileID: 9100000, guid: 44f445491a7dc7047916cb3205696002, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -4256475576934756378, guid: 44f445491a7dc7047916cb3205696002,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9b6c7bbb89321ae4c914a2ad8e786fc3, type: 2}
+  - m_OriginalClip: {fileID: -7263055947517789697, guid: 44f445491a7dc7047916cb3205696002,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 94ad665caf8911f498bc1090e28e5c58, type: 2}
+  - m_OriginalClip: {fileID: -3400342647098603556, guid: 44f445491a7dc7047916cb3205696002,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5fb740f2074439c45ba769235aa8f801, type: 2}
+  - m_OriginalClip: {fileID: -1648994784753562729, guid: 44f445491a7dc7047916cb3205696002,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1a369c551a381ce4782d743764eb3403, type: 2}
+  - m_OriginalClip: {fileID: 1031549922823583164, guid: 44f445491a7dc7047916cb3205696002,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7b282c2d249ba9d4885c37b495417ec4, type: 2}

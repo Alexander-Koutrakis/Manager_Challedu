@@ -19,7 +19,7 @@ public class Offer_Manager : MonoBehaviour
     private Offer_GPGraph offer_GPGraph;
     private int BudgetAmount;
     [SerializeField]
-    private TMP_Text Duration_text;
+    private TMP_Text Duration_text=null;
     [SerializeField]
     private Image BudgetImage = null;
     [SerializeField]

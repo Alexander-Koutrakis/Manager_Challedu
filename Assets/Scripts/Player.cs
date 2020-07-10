@@ -15,11 +15,11 @@ public class Player : MonoBehaviour
     public float Expirience;
     public float[] SDGs=new float[17];
     [SerializeField]
-    private TMP_Text budget_Text;
+    private TMP_Text budget_Text=null;
     [SerializeField]
-    private Slider Expirience_Slider;
+    private Slider Expirience_Slider=null;
     [SerializeField]
-    private Button claimLevel_Button;
+    private Button claimLevel_Button=null;
     private float Next_Level_Exp=500;
     public int budgetRegenerationRate = 20;
     private void Awake()

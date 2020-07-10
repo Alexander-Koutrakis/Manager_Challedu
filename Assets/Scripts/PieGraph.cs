@@ -12,7 +12,7 @@ public class PieGraph : MonoBehaviour
     private Image[] images;
     private float zRotation;
     [SerializeField]
-    private Transform ImageParentGO;
+    private Transform ImageParentGO=null;
     private Slider[] sliders = new Slider[17];
     public static PieGraph Instance;
 

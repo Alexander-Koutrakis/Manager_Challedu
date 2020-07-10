@@ -4,16 +4,16 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -1605055230618960953
-    second: SDGs_Sprites_0
+    second: E4233A
   - first:
       213: 1917187907484397126
-    second: SDGs_Sprites_1
+    second: DFA737
   - first:
       213: -4233753125102508131
-    second: SDGs_Sprites_2
+    second: 49A249
   - first:
       213: 2542812349123870586
-    second: SDGs_Sprites_3
+    second: CB2030
   - first:
       213: 2204373736445059693
     second: SDGs_Sprites_4
@@ -22,28 +22,28 @@ TextureImporter:
     second: SDGs_Sprites_5
   - first:
       213: -3901999012250730484
-    second: SDGs_Sprites_6
+    second: E44323
   - first:
       213: 2715726532584941515
-    second: SDGs_Sprites_7
+    second: 22BEE7
   - first:
       213: -2908928215502471139
-    second: SDGs_Sprites_8
+    second: FBC711
   - first:
       213: -6316262900430801238
-    second: SDGs_Sprites_9
+    second: A61C45
   - first:
       213: -5775165713901464177
-    second: SDGs_Sprites_10
+    second: F3692D
   - first:
       213: 4619217937523531959
-    second: SDGs_Sprites_11
+    second: DF1869
   - first:
       213: 3746516377447622752
-    second: SDGs_Sprites_12
+    second: F89E2C
   - first:
       213: 6135423279708272947
-    second: SDGs_Sprites_13
+    second: C3922C
   - first:
       213: 5313093483840186288
     second: SDGs_Sprites_14
@@ -52,16 +52,16 @@ TextureImporter:
     second: SDGs_Sprites_15
   - first:
       213: 4848577049414669200
-    second: SDGs_Sprites_16
+    second: 3C7D45
   - first:
       213: -5239346927581623896
-    second: SDGs_Sprites_17
+    second: 2096D3
   - first:
       213: 1042495092324131493
-    second: SDGs_Sprites_18
+    second: 58BA49
   - first:
       213: 2507179355020928102
-    second: SDGs_Sprites_19
+    second: 186AA2
   - first:
       213: 302653571470304868
     second: SDGs_Sprites_20
@@ -177,7 +177,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SDGs_Sprites_0
+      name: E4233A
       rect:
         serializedVersion: 2
         x: 366
@@ -185,7 +185,7 @@ TextureImporter:
         width: 114
         height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,15 +198,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_1
+      name: DFA737
       rect:
         serializedVersion: 2
-        x: 657
+        x: 658
         y: 605
         width: 113
         height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -219,7 +219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_2
+      name: 49A249
       rect:
         serializedVersion: 2
         x: 948
@@ -227,7 +227,7 @@ TextureImporter:
         width: 115
         height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -240,7 +240,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_3
+      name: CB2030
       rect:
         serializedVersion: 2
         x: 1238
@@ -248,7 +248,7 @@ TextureImporter:
         width: 114
         height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,7 +261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_6
+      name: E44323
       rect:
         serializedVersion: 2
         x: 366
@@ -269,7 +269,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -282,7 +282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_7
+      name: 22BEE7
       rect:
         serializedVersion: 2
         x: 657
@@ -290,7 +290,7 @@ TextureImporter:
         width: 113
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -303,7 +303,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_8
+      name: FBC711
       rect:
         serializedVersion: 2
         x: 948
@@ -311,7 +311,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -324,7 +324,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_9
+      name: A61C45
       rect:
         serializedVersion: 2
         x: 1238
@@ -332,7 +332,7 @@ TextureImporter:
         width: 119
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -345,7 +345,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_10
+      name: F3692D
       rect:
         serializedVersion: 2
         x: 366
@@ -353,7 +353,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -366,7 +366,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_11
+      name: DF1869
       rect:
         serializedVersion: 2
         x: 656
@@ -374,7 +374,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,7 +387,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_12
+      name: F89E2C
       rect:
         serializedVersion: 2
         x: 949
@@ -395,7 +395,7 @@ TextureImporter:
         width: 113
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -408,7 +408,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_13
+      name: C3922C
       rect:
         serializedVersion: 2
         x: 1238
@@ -416,7 +416,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -429,7 +429,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_16
+      name: 3C7D45
       rect:
         serializedVersion: 2
         x: 366
@@ -437,7 +437,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -450,7 +450,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_17
+      name: 2096D3
       rect:
         serializedVersion: 2
         x: 656
@@ -458,7 +458,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_18
+      name: 58BA49
       rect:
         serializedVersion: 2
         x: 949
@@ -479,7 +479,7 @@ TextureImporter:
         width: 113
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -492,7 +492,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SDGs_Sprites_19
+      name: 186AA2
       rect:
         serializedVersion: 2
         x: 1238
@@ -500,7 +500,7 @@ TextureImporter:
         width: 114
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -521,7 +521,7 @@ TextureImporter:
         width: 113
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -542,7 +542,7 @@ TextureImporter:
         width: 111
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

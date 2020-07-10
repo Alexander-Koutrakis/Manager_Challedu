@@ -74,6 +74,12 @@ TextureImporter:
   - first:
       213: -6665276754428672094
     second: CSR_Strategy_Buttons_23
+  - first:
+      213: 2315970260435902913
+    second: CSR_Strategy_Buttons_24
+  - first:
+      213: 4083904833054120031
+    second: CSR_Strategy_Buttons_25
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -674,7 +680,7 @@ TextureImporter:
         width: 318
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -682,6 +688,48 @@ TextureImporter:
       bones: []
       spriteID: 2a74c922b1e2083a0800000000000000
       internalID: -6665276754428672094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_24
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 982
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1a6ab6eaaf32020800000000000000
+      internalID: 2315970260435902913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_25
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 378
+        width: 282
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5811b6eec1fca830800000000000000
+      internalID: 4083904833054120031
       vertices: []
       indices: 
       edges: []
