@@ -51,6 +51,7 @@ public class Offer_Manager : MonoBehaviour
     IEnumerator sliderCoRoutine;
     public bool offerClosed = false;
     private int Booster=0;
+    private float commitPercent;
     private void Awake()
     {
         InitializeValues();
@@ -71,10 +72,13 @@ public class Offer_Manager : MonoBehaviour
         Duration_text.text = "Report: " + offer.DurationInSec + "\"";
         budget50 = GetComponentsInChildren<Button>()[0];
         budget50.GetComponent<Image>().sprite = availableButton50;
+        budget50.interactable = true;
         budget100 = GetComponentsInChildren<Button>()[1];
         budget100.GetComponent<Image>().sprite = availableButton100;
+        budget100.interactable = true;
         budget130 = GetComponentsInChildren<Button>()[2];
         budget130.GetComponent<Image>().sprite = availableButton130;
+        budget130.interactable = true;
         GetBooster();
     }
     private void GetBooster()
@@ -182,7 +186,7 @@ public class Offer_Manager : MonoBehaviour
         
         BudgetAmount = Mathf.RoundToInt(offer.budgetCost * 0.3f);
         budget50.GetComponent<Image>().sprite = selectedButton50;
-
+        commitPercent = 30;
         if (sliderCoRoutine != null)
             StopCoroutine(sliderCoRoutine);
         sliderCoRoutine = MoveBudgetSlider(30);
@@ -225,6 +229,7 @@ public class Offer_Manager : MonoBehaviour
     {
         BudgetAmount = Mathf.RoundToInt(offer.budgetCost * 1.0f);
         budget100.GetComponent<Image>().sprite = selectedButton100;
+        commitPercent = 100;
         if (sliderCoRoutine != null)
             StopCoroutine(sliderCoRoutine);
         sliderCoRoutine = MoveBudgetSlider(100);
@@ -266,7 +271,8 @@ public class Offer_Manager : MonoBehaviour
     {
         BudgetAmount = Mathf.RoundToInt(offer.budgetCost * 1.3f);
         budget130.GetComponent<Image>().sprite = selectedButton130;
-        if(sliderCoRoutine!=null)
+        commitPercent = 130;
+        if (sliderCoRoutine!=null)
             StopCoroutine(sliderCoRoutine);
         sliderCoRoutine = MoveBudgetSlider(120);
         StartCoroutine(sliderCoRoutine);
@@ -310,7 +316,7 @@ public class Offer_Manager : MonoBehaviour
     {
         Player.Instance.budget -= BudgetAmount;
         PayButton.interactable = false;
-        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster);
+        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent);
         foreach(Button button in GetComponentsInChildren<Button>())
         {
             button.interactable = false;

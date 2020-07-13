@@ -61,12 +61,15 @@ public class Player : MonoBehaviour
         Campain_Plan.Instance.NewCampaing();
 
         Expirience -= Expirience_Slider.maxValue;
+        Player_Level++;
         Expirience_Slider.maxValue = Player_Level * Next_Level_Exp;       
         Expirience_Slider.value = Expirience;
+        
         LogBookControl.Instance.panel_Control.ClosePanel();
         Offer_Tab_Controller.Instance.panel_Control.ClosePanel();
         AchievementManager.Instance.panel_Control.ClosePanel();
         Campain_Plan.Instance.panel_Control.OpenPanel();
+        AchievementManager.Instance.CheckAchievements();
     }
 
     private void BudgetRate()

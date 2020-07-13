@@ -16,6 +16,8 @@ public class AchievementManager : MonoBehaviour
     public TMP_Text pointText; 
     public static AchievementManager Instance;
     public Panel_Control panel_Control;
+    public List<Achievement_Main> achievement_Mains = new List<Achievement_Main>();
+    
     private void Awake()
     {
         Instance = this;
@@ -35,6 +37,15 @@ public class AchievementManager : MonoBehaviour
         }
        
         activeButton.Click();
+
+
+
+        foreach(Achievement_Main AM in GetComponents<Achievement_Main>())
+        {
+            achievement_Mains.Add(AM);
+            AM.CreateAchievement();
+        }
+
     }
     public void CreateAchievement(string parent, string Title, string Description, int Points, int SpriteIndex, string[] dependencies = null)
     {
@@ -81,9 +92,7 @@ public class AchievementManager : MonoBehaviour
             SetAchievement_Info("EarnAchievementCanvas", title, achievement);
             pointText.text = "Points : " + PlayerPrefs.GetInt("Points");
             StartCoroutine(FadeAchivement(achievement));
-
-            Player.Instance.Calculate_UI_Info();
-            PieGraph.Instance.RefreshGraph();
+            Player.Instance.Calculate_UI_Info();          
        }
     }
 
@@ -111,6 +120,17 @@ public class AchievementManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             EarnAchievement("Earn Exp");
+        }
+    }
+
+    public void CheckAchievements()
+    {
+        foreach(Achievement_Main AM in achievement_Mains)
+        {
+            if (!AM.activated)
+            {
+                AM.Requirements();
+            }
         }
     }
 

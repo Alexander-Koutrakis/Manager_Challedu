@@ -13,6 +13,7 @@ public class LogBookControl : MonoBehaviour
     public Panel_Control panel_Control;
     private ScrollRect scrollRect;
     public RectTransform scrollRectContent;
+    
     // public Dictionary<int, ActivatedOffer> LogOffers = new Dictionary<int, ActivatedOffer>(); //<----changed to list , since we repeat the same offers
     public List<ActivatedOffer> LogOffers = new List<ActivatedOffer>();
     private void Start()
@@ -20,7 +21,7 @@ public class LogBookControl : MonoBehaviour
         Instance = this;
         scrollRectContent = GetComponentInChildren<ScrollRect>().content;
     }
-    public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster)
+    public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent)
     {
         //create 2 gameobjects 
         // one is for the list area and one for the info area
@@ -31,10 +32,8 @@ public class LogBookControl : MonoBehaviour
         GameObject OfferResults_Clone = Instantiate(OfferResultsGO, OfferResults_Log);
         activatedOfferGO_Clone.transform.SetAsFirstSibling();
         activatedOffer = activatedOfferGO_Clone.GetComponent<ActivatedOffer>();        
-        activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed,booster);
-       //scrollRectContent.position = new Vector2(scrollRectContent.anchoredPosition.x, 0);
-
-        //scrollRect.content.gameObject.transform.position = new Vector3(scrollRect.content.gameObject.transform.position.x, 0, scrollRect.content.gameObject.transform.position.z);
+        activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed,booster,commitPercent);
+    
     }
 
     public void CorrentScrollPos()

@@ -13,9 +13,8 @@ public class ActivatedOffer : MonoBehaviour
     public float timer;
     public string resultText;
     private TMP_Text titlteTextComp;
-    private TMP_Text subtitleTextComp;
+
     private Slider sliderTimer;
-    private Button claimButton;
     public GameObject activatedResultsGO;
     bool canBeClaimed=false;
     bool Claimed = false;
@@ -30,31 +29,40 @@ public class ActivatedOffer : MonoBehaviour
     private Sprite ProccessingOffer_Sprite=null;// swap sprite if offer is claimed
     [SerializeField]
     private Sprite SelectedOffer_Sprite = null;// swap sprite if offer is claimed
+    [SerializeField]
+    private Sprite NonSelected_Sprite = null;
+    [SerializeField]
+    private Image SDG1_Image = null;
+    [SerializeField]
+    private Image SDG2_Image = null;
+    [SerializeField]
+    private Image SDG3_Image = null;
     private int Booster;
-
-    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster)
+    float commitPercentMain;
+    [SerializeField]
+    Button reportButton;
+    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent)
     {
+
         offer = GameMaster.Instance.Offers[INofferIDin];
         titleText = offer.title_Text;
         subtitleText = offer.main_Text;
         timer = offer.DurationInSec;
         activatedResultsGO = offerResult;
-        canBeClaimed = INcanBeClaimed;
+        canBeClaimed = false;
         Claimed = INClaimed;
         Booster = booster;
-
-        titlteTextComp = GetComponentsInChildren<TMP_Text>()[0];
-        subtitleTextComp = GetComponentsInChildren<TMP_Text>()[1];
+        commitPercentMain = commitPercent;
+        titlteTextComp = GetComponentInChildren<TMP_Text>();
         sliderTimer = GetComponentInChildren<Slider>();
-        claimButton = GetComponentsInChildren<Button>()[1];
-        claimButton.interactable = false;
         titlteTextComp.text = titleText;
-        subtitleTextComp.text = subtitleText;
+
         sliderTimer.maxValue = timer;
         sliderTimer.value = 0;
         Main_Image.sprite = ProccessingOffer_Sprite;
 
-
+        
+        reportButton.interactable = false;
         GetComponentInParent<LogBookControl>().LogOffers.Add(this);
         StartCoroutine(startCooldown(budgetPaid));
 
@@ -68,10 +76,11 @@ public class ActivatedOffer : MonoBehaviour
             yield return null;
         }
 
-       Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
-       canBeClaimed = true;
-        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster);
-        claimButton.interactable = true;
+        Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
+        canBeClaimed = true;
+        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this);
+        reportButton.interactable = true;
+        gameObject.transform.SetAsFirstSibling();
         yield return null;
     }
 
@@ -82,17 +91,43 @@ public class ActivatedOffer : MonoBehaviour
         activatedResultsGO.transform.SetAsLastSibling();
     }
 
+
+    public void ReportPress()
+    {
+        activatedResultsGO.GetComponent<OfferResults>().ShowReportButton();
+        reportButton.interactable = false;
+    }
+
     public void DeselectActivatedOffer()
     {
-        if (canBeClaimed)
+        if (canBeClaimed&&!Claimed)
         {
             Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
         }else if (Claimed)
         {
-            Main_Image.sprite = ClaimedOffer_Sprite;
-        }else
+            Main_Image.sprite = ProccessingOffer_Sprite;
+        }else 
         {
             Main_Image.sprite = ProccessingOffer_Sprite;
         }
     }
+
+    public void ClaimedOffer(Sprite SDG1, Sprite SDG2, Sprite SDG3) {
+        Main_Image.sprite = ClaimedOffer_Sprite;
+        Claimed = true;
+
+        SDG1_Image.gameObject.SetActive(true);
+        SDG1_Image.sprite = SDG1;
+
+        SDG2_Image.gameObject.SetActive(true);
+        SDG2_Image.sprite = SDG2;
+
+        SDG3_Image.gameObject.SetActive(true);
+        SDG3_Image.sprite = SDG3;
+        reportButton.interactable = false;
+        sliderTimer.gameObject.SetActive(false);
+        transform.SetAsLastSibling();
+        
+    }
+
 }
