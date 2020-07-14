@@ -60,8 +60,8 @@ public class Offer_Tab_Controller : MonoBehaviour
         }
         shown_Offer_Manager = used_Managers[currentTabIndex];
         used_Managers[currentTabIndex].gameObject.transform.localPosition = RightPos;
-
-        LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f);
+        used_Managers[currentTabIndex].gameObject.SetActive(true);
+        LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(DisableAllOffers);
         shown_Offer_Manager.OpenOfferTab();
     }
 
@@ -78,14 +78,22 @@ public class Offer_Tab_Controller : MonoBehaviour
         }
         shown_Offer_Manager = used_Managers[currentTabIndex];
         used_Managers[currentTabIndex].gameObject.transform.localPosition = LeftPos;
-
-        LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f);
+        used_Managers[currentTabIndex].gameObject.SetActive(true);
+        LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(DisableAllOffers);
         shown_Offer_Manager.OpenOfferTab();
-
+        
     }
 
 
-
+   private void DisableAllOffers()
+    {
+        Debug.Log("here");
+        foreach(Offer_Manager offer_Manager in used_Managers)
+        {           
+             offer_Manager.gameObject.SetActive(false);           
+        }
+        shown_Offer_Manager.gameObject.SetActive(true);
+    }
 
 
 

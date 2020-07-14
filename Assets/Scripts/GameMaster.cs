@@ -214,21 +214,27 @@ public class GameMaster : MonoBehaviour
 
         for (int i = 0; i < Sdgs.Length; i++)
         {
-            if (Sdgs[i] > top1)
+            if (Sdgs[i] >= top1)
             {
                 top1 = Sdgs[i];
                 offer.SDG1 = SDG_Sprites[i];
             }
-            else if (Sdgs[i] > top2)
+            else if (Sdgs[i] >= top2)
             {
                 top2 = Sdgs[i];
                 offer.SDG2 = SDG_Sprites[i];
             }
-            else if (Sdgs[i] > top3)
+            else if (Sdgs[i] >= top3)
             {
                 top3 = Sdgs[i];
                 offer.SDG3 = SDG_Sprites[i];
             }
+            
+        }
+
+        if (offer.SDG1==null|| offer.SDG2==null|| offer.SDG3==null)
+        {
+            Debug.LogWarning("SDG error " + offer.title_Text);
         }
     }
 }

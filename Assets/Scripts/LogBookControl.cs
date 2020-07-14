@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class LogBookControl : MonoBehaviour
 {
     public static LogBookControl Instance;
@@ -10,16 +10,18 @@ public class LogBookControl : MonoBehaviour
     public Transform OfferResults_Log; 
     public GameObject activatedOfferGO;
     public GameObject OfferResultsGO;
-    public Panel_Control panel_Control;
-    private ScrollRect scrollRect;
-    public RectTransform scrollRectContent;
-    
-    // public Dictionary<int, ActivatedOffer> LogOffers = new Dictionary<int, ActivatedOffer>(); //<----changed to list , since we repeat the same offers
+    public Panel_Control panel_Control;  
     public List<ActivatedOffer> LogOffers = new List<ActivatedOffer>();
+    [SerializeField]
+    private RectTransform LogBookRect;
+    private int currentPage=0;
+    private int totalPages=0;
+    [SerializeField]
+    private TMP_Text page_Text;
     private void Start()
     {
         Instance = this;
-        scrollRectContent = GetComponentInChildren<ScrollRect>().content;
+
     }
     public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent)
     {
@@ -33,12 +35,15 @@ public class LogBookControl : MonoBehaviour
         activatedOfferGO_Clone.transform.SetAsFirstSibling();
         activatedOffer = activatedOfferGO_Clone.GetComponent<ActivatedOffer>();        
         activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed,booster,commitPercent);
-    
-    }
+        OrganiseActivatedOffers();
 
-    public void CorrentScrollPos()
-    {
-        scrollRectContent.anchoredPosition = new Vector2(0, 0);
+        int x = Mathf.FloorToInt(LogOffers.Count / 4);
+        if (LogOffers.Count % 4 == 0)
+        {
+            x--;
+        }       
+        totalPages = x;
+        page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
     }
 
     public void DeselectOffers()
@@ -49,4 +54,41 @@ public class LogBookControl : MonoBehaviour
         }
     }
 
+    
+    public void NextPage()
+    {       
+       int x = totalPages * -588;
+        if (LogBookRect.anchoredPosition.x > x)
+        {
+            LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x - 598, 0.5f);
+            currentPage++;
+            page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+        }
+    }
+
+    public void PrevPage()
+    {
+        if (LogBookRect.anchoredPosition.x < 0)
+        {
+            LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x + 598, 0.5f);
+            currentPage--;
+            page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+        }
+    }
+
+    public void OrganiseActivatedOffers()
+    {
+        foreach(ActivatedOffer AO in LogOffers)
+        {
+            if (AO.canBeClaimed)
+            {
+                AO.transform.SetAsFirstSibling();
+            }
+
+            if (AO.Claimed)
+            {
+                AO.transform.SetAsLastSibling();
+            }
+        }
+    }
 }

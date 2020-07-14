@@ -105,7 +105,7 @@ public class OfferResults : MonoBehaviour
         MainText.color = Color.black;
         SubText.color = Color.black;
         GetComponent<Image>().sprite = Claimed_Sprite;
-        connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite);
+        connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite, Exp);
         Player.Instance.Expirience += Exp;       
         ClaimButton.interactable = false;
         Player.Instance.GetSDG(readyOffer.SDGs);
