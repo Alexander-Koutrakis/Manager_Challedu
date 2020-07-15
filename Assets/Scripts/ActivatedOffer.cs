@@ -37,7 +37,7 @@ public class ActivatedOffer : MonoBehaviour
     private int Booster;
     float commitPercentMain;
     [SerializeField]
-    Button reportButton;
+    private Button reportButton=null;
     public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent)
     {
 
@@ -74,7 +74,7 @@ public class ActivatedOffer : MonoBehaviour
         canBeClaimed = true;
         activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this);
         reportButton.interactable = true;
-        LogBookControl.Instance.OrganiseActivatedOffers();
+       // LogBookControl.Instance.OrganiseActivatedOffers();
         yield return null;
     }
 
@@ -89,6 +89,9 @@ public class ActivatedOffer : MonoBehaviour
     public void ReportPress()
     {
         activatedResultsGO.GetComponent<OfferResults>().ShowReportButton();
+        activatedResultsGO.transform.SetAsLastSibling();
+        LogBookControl.Instance.DeselectOffers();
+        Selected_Image.gameObject.SetActive(true);
         reportButton.interactable = false;
     }
 

@@ -79,20 +79,21 @@ public class Offer_Tab_Controller : MonoBehaviour
         shown_Offer_Manager = used_Managers[currentTabIndex];
         used_Managers[currentTabIndex].gameObject.transform.localPosition = LeftPos;
         used_Managers[currentTabIndex].gameObject.SetActive(true);
-        LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(DisableAllOffers);
         shown_Offer_Manager.OpenOfferTab();
+        LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(DisableAllOffers);
+        
         
     }
 
 
    private void DisableAllOffers()
     {
-        Debug.Log("here");
         foreach(Offer_Manager offer_Manager in used_Managers)
-        {           
+        {       
+            if(shown_Offer_Manager!= offer_Manager)
              offer_Manager.gameObject.SetActive(false);           
         }
-        shown_Offer_Manager.gameObject.SetActive(true);
+       // shown_Offer_Manager.gameObject.SetActive(true);
     }
 
 

@@ -13,11 +13,11 @@ public class LogBookControl : MonoBehaviour
     public Panel_Control panel_Control;  
     public List<ActivatedOffer> LogOffers = new List<ActivatedOffer>();
     [SerializeField]
-    private RectTransform LogBookRect;
-    private int currentPage=0;
+    private RectTransform LogBookRect=null;
+    private int currentPage=1;
     private int totalPages=0;
     [SerializeField]
-    private TMP_Text page_Text;
+    private TMP_Text page_Text=null;
     private void Start()
     {
         Instance = this;
@@ -42,7 +42,8 @@ public class LogBookControl : MonoBehaviour
         {
             x--;
         }       
-        totalPages = x;
+        totalPages = x+1;
+
         page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
     }
 
@@ -57,7 +58,7 @@ public class LogBookControl : MonoBehaviour
     
     public void NextPage()
     {       
-       int x = totalPages * -588;
+       int x = (totalPages-1) * -588;
         if (LogBookRect.anchoredPosition.x > x)
         {
             LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x - 598, 0.5f);

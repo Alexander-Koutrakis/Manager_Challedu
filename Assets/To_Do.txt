@@ -11,5 +11,6 @@
 -(Done) Force player to interact with campaing stars 
 -(keep it up)prepare for graphic swap
 -unlock tools while leveling
--Create achievement abstract class to parent different Achievements
+-(Done)Create achievement abstract class to parent different Achievements
  Achievement hold a conditions function and a reward function
+ -Change when logbook orginizes active offers

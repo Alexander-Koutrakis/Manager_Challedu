@@ -28,7 +28,7 @@ public class OfferResults : MonoBehaviour
     [SerializeField]
     private Image CoverImage=null;
     [SerializeField]
-    private Sprite Claimed_Sprite;
+    private Sprite Claimed_Sprite=null;
     private Button ClaimButton;
     private Offer readyOffer;
     private int claimedPaidBudget;

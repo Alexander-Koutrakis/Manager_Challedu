@@ -52,6 +52,10 @@ public class Offer_Manager : MonoBehaviour
     public bool offerClosed = false;
     private int Booster=0;
     private float commitPercent;
+
+
+    private Color32 greenColor= new Color32(57,181,74,255);
+    private Color32 goldColor=new Color32(255,170,0,255);
     private void Awake()
     {
         InitializeValues();
@@ -111,6 +115,7 @@ public class Offer_Manager : MonoBehaviour
 
     public void OpenOfferTab()
     {
+
         offer_GPGraph.ShowGraph(offer.GP);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
        
@@ -317,10 +322,27 @@ public class Offer_Manager : MonoBehaviour
         Player.Instance.budget -= BudgetAmount;
         PayButton.interactable = false;
         LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent);
-        foreach(Button button in GetComponentsInChildren<Button>())
-        {
-            button.interactable = false;
-        }
+       
+        
+        
+        if (budget50.GetComponent<Image>().sprite!=selectedButton50)
+        budget50.GetComponent<Image>().sprite = unavailableButton50;
+        budget50.interactable = false;
+        
+        if (budget100.GetComponent<Image>().sprite != selectedButton100)           
+        budget100.GetComponent<Image>().sprite = unavailableButton100;
+        budget100.interactable = false;
+
+        if(budget130.GetComponent<Image>().sprite!=selectedButton130)
+        budget130.GetComponent<Image>().sprite = unavailableButton130;
+        budget130.interactable = false;
+       
+        
+        
+        
+        
+        
+        
         offerClosed = true;
 
         Player.Instance.Calculate_UI_Info();
@@ -332,6 +354,14 @@ public class Offer_Manager : MonoBehaviour
         while (Mathf.Abs(BudgetSlider.value - target) > 0.1f)
         {
             BudgetSlider.value = Mathf.Lerp(BudgetSlider.value, target, 5 * Time.deltaTime);
+            if (BudgetSlider.value > 100)
+            {
+                BudgetSlider.GetComponentsInChildren<Image>()[2].color = goldColor;
+            }
+            else if(BudgetSlider.value<=102)
+            {
+                BudgetSlider.GetComponentsInChildren<Image>()[2].color = greenColor;
+            }
             yield return null;
         }
        

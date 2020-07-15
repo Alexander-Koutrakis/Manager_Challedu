@@ -11,7 +11,7 @@ public class Campaing_Strategy : MonoBehaviour
     public Sprite unPressedSprite;
     public int stars;
     [SerializeField]
-    private GameObject starPS;
+    private GameObject starPS=null;
     private void Start()
     {
         starButtons = GetComponentsInChildren<Campaing_Star_Button>();
