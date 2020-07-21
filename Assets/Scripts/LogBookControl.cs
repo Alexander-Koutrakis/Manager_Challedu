@@ -18,6 +18,10 @@ public class LogBookControl : MonoBehaviour
     private int totalPages=0;
     [SerializeField]
     private TMP_Text page_Text=null;
+    public bool warning = false;
+    [SerializeField]
+    private RectTransform warningSign;
+    private bool waitButtonBool;
     private void Start()
     {
         Instance = this;
@@ -59,22 +63,33 @@ public class LogBookControl : MonoBehaviour
     public void NextPage()
     {       
        int x = (totalPages-1) * -588;
-        if (LogBookRect.anchoredPosition.x > x)
+        if (LogBookRect.anchoredPosition.x > x&&!waitButtonBool)
         {
-            LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x - 598, 0.5f);
+            LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x - 598, 0.5f).setOnComplete(buttonReady);
             currentPage++;
             page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+            waitButtonBool = true;
+            
         }
     }
 
     public void PrevPage()
     {
-        if (LogBookRect.anchoredPosition.x < 0)
+        if (LogBookRect.anchoredPosition.x < 0&&!waitButtonBool)
         {
-            LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x + 598, 0.5f);
+            LeanTween.moveLocalX(LogBookRect.gameObject, LogBookRect.anchoredPosition.x + 598, 0.5f).setOnComplete(buttonReady);
             currentPage--;
             page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+            waitButtonBool = true;
         }
+    }
+
+
+    public void OpenLogBook()
+    {
+        LogBookRect.anchoredPosition=new Vector3(0,0,0);
+        currentPage = 1;
+        page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
     }
 
     public void OrganiseActivatedOffers()
@@ -92,4 +107,37 @@ public class LogBookControl : MonoBehaviour
             }
         }
     }
+
+    public void ShowWarning()
+    {
+        if (!warning)
+        {
+            warning = true;
+            LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setOnComplete(WarningFollowUp);
+        }
+    }
+
+
+    private void WarningFollowUp()
+    {
+        LeanTween.scale(warningSign.gameObject, new Vector3(2.5f, 2.5f, 2.5f), 0.5f).setLoopPingPong();
+    }
+
+    public void HideWarning()
+    {
+        if (warning)
+        {
+            warning = false;
+            LeanTween.cancel(warningSign.gameObject);
+            LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
+        }
+    }
+
+
+
+    private void buttonReady()
+    {
+        waitButtonBool = false;
+    }
+
 }

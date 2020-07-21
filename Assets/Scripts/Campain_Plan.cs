@@ -38,6 +38,7 @@ public class Campain_Plan : MonoBehaviour
         for(int i = 0; i < campaingStars.Length; i++)
         {
             GameMaster.Instance.CampaignStars[i] = campaingStars[i];
+            PieGraph.Instance.AddStrategySprites();
         }
     }
 

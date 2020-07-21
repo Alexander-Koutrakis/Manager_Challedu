@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,20 +9,20 @@ public class GameMaster : MonoBehaviour
     public static GameMaster Instance;
     public Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
     [SerializeField]
-    private List<Offer> Group_A_Offers = new List<Offer>();// Offers belong to Strategy A; 
+    private List<Offer> Enviroment_Offers = new List<Offer>();// Offers belong to Strategy A; 
     [SerializeField]
-    private List<Offer> Group_B_Offers = new List<Offer>();// Offers belong to Strategy B; 
+    private List<Offer> Education_Offers = new List<Offer>();// Offers belong to Strategy B; 
     [SerializeField]
-    private List<Offer> Group_C_Offers = new List<Offer>();// Offers belong to Strategy C;
+    private List<Offer> Quality_Of_Life_Offers = new List<Offer>();// Offers belong to Strategy C;
     [SerializeField]
-    private List<Offer> Group_D_Offers = new List<Offer>();// Offers belong to Strategy D;
+    private List<Offer> Economy_Offers = new List<Offer>();// Offers belong to Strategy D;
     [SerializeField]
-    private List<Offer> Group_E_Offers = new List<Offer>();// Offers belong to Strategy E; 
+    private List<Offer> Health_Offers = new List<Offer>();// Offers belong to Strategy E; 
     [SerializeField]
-    private List<Offer> Group_F_Offers = new List<Offer>();// Offers belong to Strategy F; 
+    private List<Offer> Equality_Offers = new List<Offer>();// Offers belong to Strategy F; 
     private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
-    [SerializeField]
-    private Sprite[] SDG_Sprites = new Sprite[17];
+    public Sprite[] SDG_Sprites = new Sprite[17];
+   
    // public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
@@ -37,11 +38,9 @@ public class GameMaster : MonoBehaviour
     }
 
   
-
-
-
     public void StartCampaign()
     {
+        Debug.developerConsoleVisible=true;
         Offer_Tab_Controller.Instance.PreferedOffers.Clear();
        
         
@@ -57,7 +56,7 @@ public class GameMaster : MonoBehaviour
         for (int i = 0; i < CampaignStars.Length; i++)
         {
             float x = (float)CampaignStars[i] / total;
-            Campaign[i] =Mathf.RoundToInt(x *(float) MaxOffers);
+            Campaign[i] =Mathf.RoundToInt(x * (float)MaxOffers);
         }
 
         total = 0;
@@ -118,7 +117,6 @@ public class GameMaster : MonoBehaviour
             RandomizeOffer(offer);
         }
 
-
         Offer_Tab_Controller.Instance.FillOfferManagers();
     }
 
@@ -140,35 +138,35 @@ public class GameMaster : MonoBehaviour
         {
             if (Offers[index].OfferID < 2000)
             {
-                Group_A_Offers.Add(Offers[index]);
+                Enviroment_Offers.Add(Offers[index]);
             }else if(Offers[index].OfferID < 3000)
             {
-                Group_B_Offers.Add(Offers[index]);
+                Education_Offers.Add(Offers[index]);
             }
             else if(Offers[index].OfferID < 4000)
             {
-                Group_C_Offers.Add(Offers[index]);
+                Quality_Of_Life_Offers.Add(Offers[index]);
             }
             else if (Offers[index].OfferID < 5000)
             {
-                Group_D_Offers.Add(Offers[index]);
+                Economy_Offers.Add(Offers[index]);
             }
             else if (Offers[index].OfferID < 6000)
             {
-                Group_E_Offers.Add(Offers[index]);
+                Health_Offers.Add(Offers[index]);
             }
             else
             {
-                Group_F_Offers.Add( Offers[index]);
+                Equality_Offers.Add( Offers[index]);
             }
         }
 
-        OffersGrouped.Add(Group_A_Offers);
-        OffersGrouped.Add(Group_B_Offers);
-        OffersGrouped.Add(Group_C_Offers);
-        OffersGrouped.Add(Group_D_Offers);
-        OffersGrouped.Add(Group_E_Offers);
-        OffersGrouped.Add(Group_F_Offers);
+        OffersGrouped.Add(Enviroment_Offers);
+        OffersGrouped.Add(Education_Offers);
+        OffersGrouped.Add(Quality_Of_Life_Offers);
+        OffersGrouped.Add(Economy_Offers);
+        OffersGrouped.Add(Health_Offers);
+        OffersGrouped.Add(Equality_Offers);
     }
 
     private float[] RandomizedGPpoints()
@@ -189,9 +187,6 @@ public class GameMaster : MonoBehaviour
         return GPpoints;
     }
 
-
-
-
     private void RandomizeOffer(Offer offer)
     {
         offer.GP = RandomizedGPpoints();
@@ -199,7 +194,7 @@ public class GameMaster : MonoBehaviour
         x = Player.Instance.Player_Level * x * 1000;
         x = Mathf.Round(x / 100) * 100;
         offer.budgetCost = Mathf.RoundToInt(x);
-        int y = Random.Range(1, 20)*10;
+        int y = Random.Range(1, 10)*10;
         offer.DurationInSec = y;
         offer.expiriencePoints =Mathf.RoundToInt(x / 10);
         GetTopSDGs(offer);
@@ -214,18 +209,25 @@ public class GameMaster : MonoBehaviour
 
         for (int i = 0; i < Sdgs.Length; i++)
         {
-            if (Sdgs[i] >= top1)
+            if (Sdgs[i] > top1)
             {
+                top3 = top2;
+                offer.SDG3 = offer.SDG2;
+                top2 = top1;
+                offer.SDG2 = offer.SDG1;
                 top1 = Sdgs[i];
                 offer.SDG1 = SDG_Sprites[i];
             }
-            else if (Sdgs[i] >= top2)
+            else  if (Sdgs[i] > top2)
             {
+                top3 = top2;
+                offer.SDG3 = offer.SDG2;
                 top2 = Sdgs[i];
                 offer.SDG2 = SDG_Sprites[i];
             }
-            else if (Sdgs[i] >= top3)
+            else if (Sdgs[i] > top3)
             {
+
                 top3 = Sdgs[i];
                 offer.SDG3 = SDG_Sprites[i];
             }
@@ -235,6 +237,18 @@ public class GameMaster : MonoBehaviour
         if (offer.SDG1==null|| offer.SDG2==null|| offer.SDG3==null)
         {
             Debug.LogWarning("SDG error " + offer.title_Text);
+            Debug.Log(top1 );
+            Debug.Log(top2);
+            Debug.Log(top3);
         }
     }
+
+
+
+   
+
+
+
+
+
 }

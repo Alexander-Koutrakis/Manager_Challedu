@@ -47,7 +47,7 @@ public class OfferResults : MonoBehaviour
         {
             MainText.text = "Η προταση που επέλεξες συμβαδίζει με \n τη στρατιγική της εταιρείας";
         }
-        else
+        else if(Booster==0)
         {
             MainText.text = "Η προταση που επέλεξες δεν συμβαδίζει με \n τη στρατιγική της εταιρείας";
         }
@@ -102,6 +102,7 @@ public class OfferResults : MonoBehaviour
 
     public void Claim_Offer()
     {
+        Debug.Log(Booster);
         MainText.color = Color.black;
         SubText.color = Color.black;
         GetComponent<Image>().sprite = Claimed_Sprite;
@@ -111,6 +112,7 @@ public class OfferResults : MonoBehaviour
         Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
         AchievementManager.Instance.CheckAchievements();
+        PieGraph.Instance.RefreshGraph();
     }
 
     public void ShowReportButton()

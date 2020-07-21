@@ -13,4 +13,4 @@
 -unlock tools while leveling
 -(Done)Create achievement abstract class to parent different Achievements
  Achievement hold a conditions function and a reward function
- -Change when logbook orginizes active offers
+ -(Done)Change when logbook orginizes active offers

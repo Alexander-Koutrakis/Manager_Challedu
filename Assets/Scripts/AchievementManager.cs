@@ -26,11 +26,7 @@ public class AchievementManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();//----------------------------delete saves---------------
         scrollRect = GetComponentInChildren<ScrollRect>();
-        activeButton = GameObject.Find("GeneralCategory_Button").GetComponent<Achievement_Button>();
-        CreateAchievement("General", "Press W", "Press W key", 5, 0);
-        CreateAchievement("General", "Press S", "Press S key", 5, 0);
-        CreateAchievement("General", "Press D", "Press D key", 5, 0);
-        CreateAchievement("General", "Press WS", "Press WS key", 5, 0,new string[] { "Press W", "Press S" });
+        activeButton = GameObject.Find("GeneralCategory_Button").GetComponent<Achievement_Button>();       
         foreach (GameObject achievement in GameObject.FindGameObjectsWithTag("Achievement_List"))
         {
             achievement.SetActive(false);

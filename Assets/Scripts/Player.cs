@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Security.Claims;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance;
     public int budget;
-    //public int people;
-    //public int products;
     public int Player_Level=1;
     public float Expirience;
     public float[] SDGs=new float[17];
@@ -20,8 +18,12 @@ public class Player : MonoBehaviour
     private Slider Expirience_Slider=null;
     [SerializeField]
     private Button claimLevel_Button=null;
-    private float Next_Level_Exp=500;
+    [SerializeField]
+    private TMP_Text level_Text;
+    public float Next_Level_Exp=1000;
+    public float expRate=1000;
     public int budgetRegenerationRate = 20;
+    IEnumerator expBarRoutine;
     private void Awake()
     {
         Instance = this;
@@ -36,23 +38,23 @@ public class Player : MonoBehaviour
     }
     public void Calculate_UI_Info()
     {
-        budget_Text.text = budget.ToString();       
-        Expirience_Slider.maxValue = Player_Level * Next_Level_Exp;
+        budget_Text.text = budget.ToString();
+
        
-        if (Player_Level > 1)
-        {
-            Expirience_Slider.value = Expirience - Player_Level * Next_Level_Exp;
-        }
-        else
-        {
-            Expirience_Slider.value = Expirience;
-        }
-        if(Expirience_Slider.value>= Player_Level * Next_Level_Exp)
+        if(Expirience >= Expirience_Slider.maxValue)
         {
             // level up button true
             //
             claimLevel_Button.interactable = true;
         }
+        if (expBarRoutine != null){
+            StopCoroutine(expBarRoutine);
+        }
+       
+        expBarRoutine = changeSlider(Expirience);
+        
+        StartCoroutine(expBarRoutine);
+
     }
 
 
@@ -62,14 +64,19 @@ public class Player : MonoBehaviour
 
         Expirience -= Expirience_Slider.maxValue;
         Player_Level++;
-        Expirience_Slider.maxValue = Player_Level * Next_Level_Exp;       
-        Expirience_Slider.value = Expirience;
-        
+        level_Text.text = Player_Level.ToString();
+
+        expRate += expRate * Player_Level * 0.1f;
+        Next_Level_Exp = Player_Level * expRate;
+        Expirience_Slider.maxValue =Next_Level_Exp;       
+               
         LogBookControl.Instance.panel_Control.ClosePanel();
         Offer_Tab_Controller.Instance.panel_Control.ClosePanel();
         AchievementManager.Instance.panel_Control.ClosePanel();
         Campain_Plan.Instance.panel_Control.OpenPanel();
         AchievementManager.Instance.CheckAchievements();
+        Expirience_Slider.value = Expirience;
+        claimLevel_Button.interactable = false;
     }
 
     private void BudgetRate()
@@ -78,10 +85,12 @@ public class Player : MonoBehaviour
         {
             budget += budgetRegenerationRate;
             budget_Text.text = budget.ToString();
-
-           if(!Offer_Tab_Controller.Instance.shown_Offer_Manager.offerClosed)
+            if (Offer_Tab_Controller.Instance.shown_Offer_Manager != null)
             {
-                Offer_Tab_Controller.Instance.shown_Offer_Manager.GetButtons();
+                if (!Offer_Tab_Controller.Instance.shown_Offer_Manager.offerClosed)
+                {
+                    Offer_Tab_Controller.Instance.shown_Offer_Manager.GetButtons();
+                }
             }
         }
     }
@@ -91,7 +100,6 @@ public class Player : MonoBehaviour
     {
         for(int i = 0; i < 17; i++)
         {
-            Debug.Log(i);
             SDGs[i] += addedSDGs[i];
         }
 
@@ -99,4 +107,19 @@ public class Player : MonoBehaviour
 
     }
 
+
+
+    private IEnumerator changeSlider(float value)
+    {
+        if(value> Expirience_Slider.maxValue)
+        {
+            value = Expirience_Slider.maxValue;
+        }
+        while (Mathf.Abs(Expirience_Slider.value - value) > 0.1f)
+        {
+            Expirience_Slider.value = Mathf.Lerp(Expirience_Slider.value, value, Time.deltaTime * 10);
+            yield return null;
+
+        }
+    }
 }

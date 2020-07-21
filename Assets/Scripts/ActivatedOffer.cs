@@ -74,7 +74,7 @@ public class ActivatedOffer : MonoBehaviour
         canBeClaimed = true;
         activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this);
         reportButton.interactable = true;
-       // LogBookControl.Instance.OrganiseActivatedOffers();
+        LogBookControl.Instance.ShowWarning();
         yield return null;
     }
 
@@ -83,6 +83,10 @@ public class ActivatedOffer : MonoBehaviour
         LogBookControl.Instance.DeselectOffers();
         Selected_Image.gameObject.SetActive(true);
         activatedResultsGO.transform.SetAsLastSibling();
+        if (reportButton.interactable == true)
+        {
+            ReportPress();
+        }
     }
 
 
@@ -90,14 +94,15 @@ public class ActivatedOffer : MonoBehaviour
     {
         activatedResultsGO.GetComponent<OfferResults>().ShowReportButton();
         activatedResultsGO.transform.SetAsLastSibling();
+        activatedResultsGO.GetComponent<OfferResults>().Claim_Offer();
         LogBookControl.Instance.DeselectOffers();
         Selected_Image.gameObject.SetActive(true);
         reportButton.interactable = false;
+
     }
 
     public void DeselectActivatedOffer()
     {
-
         Selected_Image.gameObject.SetActive(false);
     }
 

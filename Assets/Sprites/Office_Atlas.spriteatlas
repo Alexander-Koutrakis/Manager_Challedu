@@ -48,19 +48,17 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 34e6bd8a108802f4eb154a37cbb801ff, type: 3}
     - {fileID: 2800000, guid: 954cd86fa59bc2f4ea2fc3eaeb9d6e8a, type: 3}
     - {fileID: 2800000, guid: 758de12336e17fa43b36f226c35ee045, type: 3}
-    - {fileID: 2800000, guid: 0eacc341d9b5ef148b4efe33b3338595, type: 3}
     - {fileID: 2800000, guid: 1f19b69c771f51146a19ce853d6d8a34, type: 3}
     - {fileID: 2800000, guid: 11ae3b8c55112ac43ac0002157ba74b5, type: 3}
     - {fileID: 2800000, guid: 17cf105065c55c64ebfb59ec3e97f2ba, type: 3}
     - {fileID: 2800000, guid: 34f66ef810f6eaf4aa97c4539bac684d, type: 3}
     - {fileID: 2800000, guid: 696ee07784bb1394fa8d030061cb2303, type: 3}
     - {fileID: 2800000, guid: f9856445c532d0c4c8be137ccaacc7c4, type: 3}
-    totalSpriteSurfaceArea: 6319941
+    totalSpriteSurfaceArea: 5961240
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 17cf105065c55c64ebfb59ec3e97f2ba, type: 3}
-  - {fileID: -8036326495941109154, guid: 0eacc341d9b5ef148b4efe33b3338595, type: 3}
   - {fileID: -8905598852591556622, guid: fcb70952b967c344e961f1840384bc66, type: 3}
   - {fileID: -2823838568841336431, guid: 758de12336e17fa43b36f226c35ee045, type: 3}
   - {fileID: 21300000, guid: cfb020344bfb7c64cb4f78eb41c7918e, type: 3}
@@ -81,7 +79,6 @@ SpriteAtlas:
   - {fileID: -9136572144232859775, guid: 954cd86fa59bc2f4ea2fc3eaeb9d6e8a, type: 3}
   m_PackedSpriteNamesToIndex:
   - Manager_UI
-  - Cmputer_0
   - OutLine_Cmputer_0
   - Keyboard_0
   - OutLine_Manager_UI_2
