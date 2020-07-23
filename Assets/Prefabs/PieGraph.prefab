@@ -36,6 +36,154 @@ RectTransform:
   m_AnchoredPosition: {x: -0.95751953, y: 0.11000061}
   m_SizeDelta: {x: -1.91539, y: -3.1915512}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &299483634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299483635}
+  - component: {fileID: 299483637}
+  - component: {fileID: 299483636}
+  m_Layer: 5
+  m_Name: Strategy_Star_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &299483635
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299483634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1928961198497269281}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 57.4, y: 467}
+  m_SizeDelta: {x: 167.02, y: 159.64262}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &299483637
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299483634}
+  m_CullTransparentMesh: 0
+--- !u!114 &299483636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299483634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &440141478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440141479}
+  - component: {fileID: 440141481}
+  - component: {fileID: 440141480}
+  m_Layer: 5
+  m_Name: Strategy_Star_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &440141479
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440141478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1928961198497269281}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 442, y: 467}
+  m_SizeDelta: {x: 167.02, y: 159.64262}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &440141481
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440141478}
+  m_CullTransparentMesh: 0
+--- !u!114 &440141480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440141478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &450685350
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +1062,80 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1714312027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714312028}
+  - component: {fileID: 1714312030}
+  - component: {fileID: 1714312029}
+  m_Layer: 5
+  m_Name: Strategy_Star_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1714312028
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714312027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1928961198497269281}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 248, y: 467}
+  m_SizeDelta: {x: 167.02, y: 159.64262}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1714312030
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714312027}
+  m_CullTransparentMesh: 0
+--- !u!114 &1714312029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714312027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2089161561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2306,9 @@ RectTransform:
   - {fileID: 1576354352}
   - {fileID: 1178379986}
   - {fileID: 592427042}
+  - {fileID: 299483635}
+  - {fileID: 1714312028}
+  - {fileID: 440141479}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2136,7 +2361,29 @@ MonoBehaviour:
   - {fileID: 1576354353}
   - {fileID: 1178379987}
   - {fileID: 592427043}
-  strategyImages: []
+  initialStrategySprites:
+  - {fileID: -5621547847033144245, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 4264250957593735244, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 8501944948057475184, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 2967042846639848796, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -2907431828886512256, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -9128883792736512384, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -1787561241887584017, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 1419909869839122058, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 3951131380130288179, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 225791207131923992, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -1049824094313329679, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 6545015646706203281, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 8159782820664287741, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -9205053597277090703, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -5229520002380261612, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 3389708292965895819, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: 6379795189098704545, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  - {fileID: -5790599145887362226, guid: 6002d4dd17e68a84e82f18094610ab74, type: 3}
+  strategyImages:
+  - {fileID: 299483636}
+  - {fileID: 1714312029}
+  - {fileID: 440141480}
 --- !u!1 &2062986147745591475
 GameObject:
   m_ObjectHideFlags: 0

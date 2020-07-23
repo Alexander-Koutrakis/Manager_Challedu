@@ -66,8 +66,10 @@ public class ActivatedOffer : MonoBehaviour
     {
         while (sliderTimer.value < sliderTimer.maxValue)
         {
-            sliderTimer.value += Time.deltaTime;
-            yield return null;
+            //sliderTimer.value += Time.deltaTime;
+            //yield return null;
+            sliderTimer.value++;
+            yield return new WaitForSeconds(1);
         }
 
         Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;

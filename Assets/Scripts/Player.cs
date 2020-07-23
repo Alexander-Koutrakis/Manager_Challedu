@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
     public int budget;
-    public int Player_Level=1;
+    public int Player_Level=4;
     public float Expirience;
     public float[] SDGs=new float[17];
     [SerializeField]
@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
     private Button claimLevel_Button=null;
     [SerializeField]
     private TMP_Text level_Text;
-    public float Next_Level_Exp=1000;
-    public float expRate=1000;
+    public float Next_Level_Exp=0;
+    public float expRate=100;
     public int budgetRegenerationRate = 20;
     IEnumerator expBarRoutine;
     private void Awake()

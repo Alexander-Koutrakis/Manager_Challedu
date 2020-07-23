@@ -131,6 +131,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5449901507857417630}
+        m_MethodName: HideWarning
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &36453987
 Animator:
   serializedVersion: 3
@@ -647,7 +658,7 @@ RectTransform:
   m_GameObject: {fileID: 5449901507857417602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children:
   - {fileID: 2137748061905549298}
   - {fileID: 3397759697733653658}
@@ -691,7 +702,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f0fc8320e2d934346a6ada10c63756af, type: 3}
+  m_Sprite: {fileID: 8438582981687008652, guid: f0fc8320e2d934346a6ada10c63756af,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -723,6 +735,8 @@ MonoBehaviour:
   LogOffers: []
   LogBookRect: {fileID: 2583808647120912016}
   page_Text: {fileID: 5596098985715602391}
+  warning: 0
+  warningSign: {fileID: 0}
 --- !u!1 &6283205663680259256
 GameObject:
   m_ObjectHideFlags: 0

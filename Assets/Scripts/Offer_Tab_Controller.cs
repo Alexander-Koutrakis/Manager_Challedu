@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class Offer_Tab_Controller : MonoBehaviour
     public static Offer_Tab_Controller Instance;
     public RectTransform groupTab;
     public Panel_Control panel_Control;
-    int currentTabIndex = 19;
+    int currentTabIndex ;
     public Vector3 LeftPos;
     public Vector3 CentralPos;
     public Vector3 RightPos;
@@ -27,6 +28,10 @@ public class Offer_Tab_Controller : MonoBehaviour
     public bool noAvailableOffers;
     [SerializeField]
     private Image noOffersImage;
+    [SerializeField]
+    private TMP_Text current_Offer_text;
+    private GameObject closetab;
+    public int closedOffers_Num=0;
     private void Awake()
     {
         Instance = this;
@@ -43,10 +48,13 @@ public class Offer_Tab_Controller : MonoBehaviour
 
     public void FillOfferManagers()
     {
+        
+        currentTabIndex = GameMaster.Instance.MaxOffers - 1;
         noAvailableOffers = false;
         LeanTween.alpha(noOffersImage.GetComponent<RectTransform>(), 0, 0.1f);
         noOffersImage.raycastTarget = false;
         PreferedOffers.Shuffle();
+        used_Managers.Clear();
         for (int i = 0; i < PreferedOffers.Count; i++)
         {
             offer_Managers[i].offer = PreferedOffers[i];
@@ -56,17 +64,32 @@ public class Offer_Tab_Controller : MonoBehaviour
 
         foreach (Offer_Manager offer_Manager in offer_Managers)
         {
-            offer_Manager.SetOfferValues();
+
+            if (offer_Manager.offer != null)
+            {
+                offer_Manager.gameObject.SetActive(true);
+                offer_Manager.SetOfferValues();
+                offer_Manager.gameObject.SetActive(false);
+            }
+            else
+            {
+                offer_Manager.offerClosed = true;
+                offer_Manager.gameObject.SetActive(false);
+            }
+            
         }
 
         ShowWarning();
+        closedOffers_Num = used_Managers.Count;
+
     }
 
     public void NextOfferTab() {
-        if (!waitButtonBool)
-        {
-            LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, LeftPos.x, 0.5f);
-
+        StopAllCoroutines();
+        if (!waitButtonBool && closedOffers_Num > 1)
+        {          
+                LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, LeftPos.x, 0.5f).setOnComplete(HideTab);
+                closetab = used_Managers[currentTabIndex].gameObject;
             if (!noAvailableOffers)
             {
                 do
@@ -78,16 +101,15 @@ public class Offer_Tab_Controller : MonoBehaviour
                     }
 
                 } while (used_Managers[currentTabIndex].offerClosed);
-
-
                 shown_Offer_Manager = used_Managers[currentTabIndex];
                 used_Managers[currentTabIndex].gameObject.transform.localPosition = RightPos;
-                used_Managers[currentTabIndex].gameObject.SetActive(true);
-                LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(DisableAllOffers).setOnComplete(buttonReady);
+                used_Managers[currentTabIndex].gameObject.SetActive(true);                
+                LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(buttonReady);
                 shown_Offer_Manager.OpenOfferTab();
                 waitButtonBool = true;
+                current_Offer_text.text = (currentTabIndex+1).ToString();
             }
-            else
+            else if(noAvailableOffers)
             {
                 NoOffersAvailable();
             }
@@ -97,10 +119,12 @@ public class Offer_Tab_Controller : MonoBehaviour
 
     public void PrevOfferTab()
     {
-        if (!waitButtonBool)
+        StopAllCoroutines();
+        if (!waitButtonBool&& closedOffers_Num>1)
         {
-            LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, RightPos.x, 0.5f);
-
+           
+                LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, RightPos.x, 0.5f).setOnComplete(HideTab);
+                closetab = used_Managers[currentTabIndex].gameObject;
             if (!noAvailableOffers)
             {
                 do
@@ -118,28 +142,25 @@ public class Offer_Tab_Controller : MonoBehaviour
                 used_Managers[currentTabIndex].gameObject.transform.localPosition = LeftPos;
                 used_Managers[currentTabIndex].gameObject.SetActive(true);
                 shown_Offer_Manager.OpenOfferTab();
-                LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(DisableAllOffers).setOnComplete(buttonReady);
+                LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(buttonReady);
                 waitButtonBool = true;
+                current_Offer_text.text = (currentTabIndex+1).ToString();
             }
-            else
+            else if(noAvailableOffers)
             {
                 NoOffersAvailable();
             }
         }
     }
 
-
-    private void DisableAllOffers()
+    private void HideTab()
     {
-        foreach (Offer_Manager offer_Manager in used_Managers)
-        {
-            if (shown_Offer_Manager != offer_Manager)
-                offer_Manager.gameObject.SetActive(false);
-        }
-        // shown_Offer_Manager.gameObject.SetActive(true);
+       
+            closetab.SetActive(false);
+        
     }
-
-
+   
+   
     public void ShowWarning()
     {
         if (!warning)
@@ -178,16 +199,24 @@ public class Offer_Tab_Controller : MonoBehaviour
 
     public void checkForOtherOffers()
     {
-        foreach (Offer_Manager OM in offer_Managers)
+        closedOffers_Num--;
+        if (closedOffers_Num >1)
         {
-            if (!OM.offerClosed)
-            {
-                noAvailableOffers = false;
-            }
-            else
-            {
-                noAvailableOffers = true;
-            }
+            noAvailableOffers = false;
+        }
+        else if(closedOffers_Num == 1)
+        {
+            closedOffers_Num++;
+            NextOfferTab();
+            noAvailableOffers = false;
+            closedOffers_Num--;
+
+
+        }
+        else
+        {
+            noAvailableOffers = true;
+            NoOffersAvailable();
         }
     }
 

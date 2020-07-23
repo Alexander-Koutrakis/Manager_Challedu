@@ -40,6 +40,8 @@ public class GameMaster : MonoBehaviour
   
     public void StartCampaign()
     {
+        MaxOffers = Player.Instance.Player_Level + 2*Player.Instance.Player_Level;
+
         Debug.developerConsoleVisible=true;
         Offer_Tab_Controller.Instance.PreferedOffers.Clear();
        
@@ -56,7 +58,7 @@ public class GameMaster : MonoBehaviour
         for (int i = 0; i < CampaignStars.Length; i++)
         {
             float x = (float)CampaignStars[i] / total;
-            Campaign[i] =Mathf.RoundToInt(x * (float)MaxOffers);
+            Campaign[i] =Mathf.RoundToInt(x * (float)MaxOffers/2);
         }
 
         total = 0;
@@ -100,7 +102,7 @@ public class GameMaster : MonoBehaviour
 
         // Fill the extra Offers with random "Non strategic" Offers
         int extraOffers = 0;
-        while (extraOffers < 8)
+        while (extraOffers < MaxOffers/2)
         {
             int r1 = Random.Range(0, CampaignStars.Length);
             if (CampaignStars[r1] == 0)

@@ -30,7 +30,7 @@ public class Campaing_Strategy : MonoBehaviour
                 starButtons[j].pressed = true;
 
                 Campain_Plan.Instance.stars--;
-                Instantiate(starPS, starButtons[j].transform.position, Quaternion.identity);
+                Instantiate(starPS, starButtons[j].transform.position, Quaternion.identity, starButtons[j].transform);
                 // swap sprites to pressed
             }
         }

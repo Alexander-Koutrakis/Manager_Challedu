@@ -99,26 +99,6 @@ public class AchievementManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            EarnAchievement("Press W");
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            EarnAchievement("Press S");
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            EarnAchievement("Press D");
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EarnAchievement("Earn Exp");
-        }
-    }
-
     public void CheckAchievements()
     {
         foreach(Achievement_Main AM in achievement_Mains)

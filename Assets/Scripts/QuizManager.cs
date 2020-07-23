@@ -41,7 +41,11 @@ public class QuizManager : MonoBehaviour
             questionNum = 0;
             if (CorrectAnswers == maxNumbQuestion)
             {
-                Player.Instance.Expirience += 0.2f; // <---------------this will change              
+                Debug.Log("Bravo !!! all correct");
+            }
+            else
+            {
+                Debug.Log(CorrectAnswers + " Correct answers");
             }
         }
         else

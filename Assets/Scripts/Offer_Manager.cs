@@ -73,6 +73,10 @@ public class Offer_Manager : MonoBehaviour
         title_Text.text = offer.title_Text;
         BudgetAmount = 0;
         budget_Text.text = BudgetAmount.ToString() + "/" + offer.budgetCost.ToString();
+       
+        BudgetSlider.value = 0;
+        BudgetSlider.GetComponentsInChildren<Image>()[2].color = minimumGreen;
+       
         offerBudget = offer.budgetCost;
         Duration_text.text = "Report: " + offer.DurationInSec + "\"";
         budget30 = GetComponentsInChildren<Button>()[0];
@@ -84,7 +88,6 @@ public class Offer_Manager : MonoBehaviour
         budget120 = GetComponentsInChildren<Button>()[2];
         budget120.GetComponent<Image>().sprite = availableButton120;
         budget120.interactable = true;
-        StartCoroutine(MoveBudgetSlider(0));
         GetButtons();
         offerClosed = false;
     }
