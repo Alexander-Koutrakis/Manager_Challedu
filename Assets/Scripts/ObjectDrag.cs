@@ -5,14 +5,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class ObjectDrag : MonoBehaviour , IDragHandler , IEndDragHandler  ,IBeginDragHandler
 {
-    private Transform parent;
+    public Transform oldparent;
     private RectTransform rectTransform;   
     private Canvas canvas;
     private CanvasGroup canvasGroup;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        parent = transform.parent;
         canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
@@ -30,22 +29,26 @@ public class ObjectDrag : MonoBehaviour , IDragHandler , IEndDragHandler  ,IBegi
         canvasGroup.blocksRaycasts = true;
         if (!IsMouseOverLayoutGroup())
         {
-            Debug.Log("not over ui");
-            transform.SetParent(parent);
-          
-            
-        }
-    }
+            transform.SetParent(oldparent);
+            rectTransform.anchoredPosition = new Vector3(0, 0, 0);
 
+        }
+        else
+        {
+            GetComponentInParent<DropSpot>().emptyslot = false;
+        }
+
+      
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        DropGroup dropgroup = GetComponentInParent<DropGroup>();
+        oldparent = transform.parent;
+        GetComponentInParent<DropSpot>().emptyslot = true;
         canvasGroup.blocksRaycasts=false;
-
         transform.SetParent(canvas.transform);
         transform.SetAsLastSibling();
-        dropgroup.CheckNumOfAnswers();
+
     }
 
 
@@ -57,9 +60,12 @@ public class ObjectDrag : MonoBehaviour , IDragHandler , IEndDragHandler  ,IBegi
         List<RaycastResult> raycastResultsList = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, raycastResultsList);
         for (int i=0; i < raycastResultsList.Count; i++){
-            if (raycastResultsList[i].gameObject.GetComponent<DropGroup>() != null)
+            if (raycastResultsList[i].gameObject.GetComponent<DropSpot>() != null)
             {
-                    return true;              
+                if (raycastResultsList[i].gameObject.GetComponent<DropSpot>().emptyslot)
+                {
+                    return true;
+                }
             }
         }
 

@@ -22,14 +22,16 @@ public class GameMaster : MonoBehaviour
     private List<Offer> Equality_Offers = new List<Offer>();// Offers belong to Strategy F; 
     private List<List<Offer>> OffersGrouped = new List<List<Offer>>();
     public Sprite[] SDG_Sprites = new Sprite[17];
-   
-   // public Dictionary<int, Offer> DeletedOffers= new Dictionary<int, Offer>();// Offers already used by offer Tab Controller
+    [SerializeField]
+    private Image fadeImage;
+
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
     public int MaxOffers;
     [SerializeField]
     private int total = 0;
-
+    [SerializeField]
+    private Canvas[] canvases;
     private void Awake()
     {
         Instance = this;
@@ -246,11 +248,23 @@ public class GameMaster : MonoBehaviour
     }
 
 
+    public void LoadCanvas(Canvas targetCanvas)
+    {
 
+        foreach (Canvas canvas in canvases)
+        {
+            canvas.gameObject.SetActive(false);
+        }
+        targetCanvas.gameObject.SetActive(true);
+        
+        if (targetCanvas.GetComponent<IMiniGame>() != null)
+        {
+            targetCanvas.GetComponent<IMiniGame>().CloseMiniGame();
+            targetCanvas.GetComponent<IMiniGame>().StartMiniGame();
+        }
+       
+    }
    
-
-
-
-
+  
 
 }

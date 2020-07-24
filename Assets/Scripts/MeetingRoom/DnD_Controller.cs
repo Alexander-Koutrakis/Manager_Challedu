@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class DnD_Controller : MonoBehaviour
 {
+    public static DnD_Controller Instance;
     [SerializeField]
     private DropGroup startingGroup;
     [SerializeField]
@@ -13,26 +16,39 @@ public class DnD_Controller : MonoBehaviour
     private List<DnD_Answer> DnDanswers = new List<DnD_Answer>();
     [SerializeField]
     private TMP_Text question_text;
+    [SerializeField]
+    private Button presentationButton;
+    [SerializeField]
+    private Presentation_results results;
+    [SerializeField]
+    private Panel_Control presentationPanelControl;
+    [SerializeField]
+    private Panel_Control wrongPanelControl;
 
-    public void selectRandomQuestion()
+
+    private void Awake()
     {
-        // select a random question from resources
+        Instance = this;
     }
     private void Start()
     {
+       
         FillDnDAnswers();
         RandomizeAnswer();
     }
 
 
+    private void selectRandomQuestion()
+    {
+        question = question;
+    }
+
     public void FillDnDAnswers()
     {
-
         foreach(DnD_Answer answer in GetComponentsInChildren<DnD_Answer>())
         {
             DnDanswers.Add(answer);
         }
-
         question_text.text = question.question;
         for (int i = 0; i < question.answers.Length; i++)
         {
@@ -44,9 +60,7 @@ public class DnD_Controller : MonoBehaviour
             {
                 DnDanswers[i].FillAnswer(question.answers[i], false);
             }
-        }
-
-      
+        }     
     }
 
     private void RandomizeAnswer()
@@ -57,25 +71,23 @@ public class DnD_Controller : MonoBehaviour
 
     public void ResetController()
     {
-        foreach(DnD_Answer answer in DnDanswers)
-        {
-            answer.transform.SetParent(startingGroup.layoutgroupTransform);
-        }
-        startingGroup.currentAnswers = 0;
-        finalGroup.currentAnswers = 0;
+
+        startingGroup.restartAnswerPositions();
+        finalGroup.EmptyAnswerSlots();
         selectRandomQuestion();
         FillDnDAnswers();
         RandomizeAnswer();
-    }
-    
-
+    }   
     public void CheckAnswers()
     { int correctAnswers = 0;
+        string[] answersString=new string[2];
+       
         foreach(DnD_Answer answer in finalGroup.GetComponentsInChildren<DnD_Answer>())
         {
             if (answer.CorrectAnswer)
             {
-                correctAnswers++;
+                answersString[correctAnswers] = answer.choice_text.text;
+                correctAnswers++;                
             }
         }
 
@@ -83,11 +95,28 @@ public class DnD_Controller : MonoBehaviour
         if (correctAnswers > 1)
         {
             Debug.Log("Correct !!!!");
+            results.StartPresentration(question.question, answersString[0], answersString[1]);
+            presentationPanelControl.OpenPanel();
             // show correct messege
         }
         else
         {
             Debug.Log("Wrong !!!");
+            wrongPanelControl.OpenPanel();
         }
     }
+
+    public void CheckIFreadyForPresentation()
+    {
+        if (finalGroup.GetComponentsInChildren<DnD_Answer>().Length > 1)
+        {
+            presentationButton.interactable = true;
+        }
+        else
+        {
+            presentationButton.interactable = false;
+        }
+    }
+
+
 }
