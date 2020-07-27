@@ -18,9 +18,9 @@ public class PieGraph : MonoBehaviour
     [SerializeField]
     private Sprite[,] StrategySprites=new Sprite[6,3];
     [SerializeField]
-    private Sprite[] initialStrategySprites;
+    private Sprite[] initialStrategySprites=null;
     [SerializeField]
-    private Image[] strategyImages;
+    private Image[] strategyImages=null;
     private void Awake()
     {
         Instance = this;

@@ -22,14 +22,14 @@ public class Offer_Tab_Controller : MonoBehaviour
     private bool waitButtonBool;
     public bool warning = false;
     [SerializeField]
-    private RectTransform warningSign;
+    private RectTransform warningSign=null;
     [SerializeField]
-    private GameObject file_Up_Image;
+    private GameObject file_Up_Image=null;
     public bool noAvailableOffers;
     [SerializeField]
-    private Image noOffersImage;
+    private Image noOffersImage=null;
     [SerializeField]
-    private TMP_Text current_Offer_text;
+    private TMP_Text current_Offer_text=null;
     private GameObject closetab;
     public int closedOffers_Num=0;
     private void Awake()

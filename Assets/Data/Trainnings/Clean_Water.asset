@@ -16,3 +16,7 @@ MonoBehaviour:
   - '"Clean_Water_0_"+"  \n "+"Clean_Water_0 \n _  Clean\\n_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_'
   - Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_
   - Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_
+  trainning_Sprites:
+  - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}

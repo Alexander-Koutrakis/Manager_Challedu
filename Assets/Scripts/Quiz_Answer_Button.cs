@@ -10,13 +10,14 @@ public class Quiz_Answer_Button : MonoBehaviour
     {
         if (correct_Answer)
         {
-            GetComponentInParent<QuizManager>().CloseQuestionManager();
-            GetComponentInParent<QuizManager>().CorrectAnswers++;
+            Question_Manager.Instance.CorrectAnswers++;
+            Question_Manager.Instance.NextQuestion();
+           
             Debug.Log("Correct!!!");
         }
         else if(!correct_Answer)
         {
-            GetComponentInParent<QuizManager>().CloseQuestionManager();
+            Question_Manager.Instance.NextQuestion();
             Debug.Log("Wrong");
         }
     }

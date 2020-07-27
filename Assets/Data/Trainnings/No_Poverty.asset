@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: No_Poverty
   m_EditorClassIdentifier: 
+  trainning_Level: 1
   trainning_info_text:
-  - no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_
+  - no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_no_poverty_0_
   - no_poverty_1_no_poverty_1_no_poverty_1_no_poverty_1_no_poverty_1_no_poverty_1_no_poverty_1_no_poverty_1_no_poverty_1_
   - no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_no_poverty_2_
+  trainning_Sprites:
+  - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  QuizInfo:
+  - {fileID: 11400000, guid: 2e30a9b07ed19e445948523534c761db, type: 2}
+  - {fileID: 11400000, guid: 973556a6084ed2d468e6a498a8c36b09, type: 2}
+  - {fileID: 11400000, guid: d8c41c3ad96efcd43a20c6dc2433b6b7, type: 2}
+  - {fileID: 11400000, guid: 2ec4e38922313044d81a3d6d998c65c9, type: 2}

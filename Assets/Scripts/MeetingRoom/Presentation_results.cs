@@ -7,11 +7,11 @@ using UnityEngine.WSA;
 public class Presentation_results : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text presentation_text;
+    private TMP_Text presentation_text=null;
     [SerializeField]
-    private TMP_Text answer_1;
+    private TMP_Text answer_1=null;
     [SerializeField]
-    private TMP_Text answer_2;
+    private TMP_Text answer_2=null;
 
     public void StartPresentration(string title , string answer1, string answer2)
     {

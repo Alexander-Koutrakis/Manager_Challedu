@@ -16,3 +16,7 @@ MonoBehaviour:
   - Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_
   - Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_
   - Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_
+  trainning_Sprites:
+  - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}

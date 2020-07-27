@@ -16,3 +16,7 @@ MonoBehaviour:
   - Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0
   - Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_
   - Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_
+  trainning_Sprites:
+  - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}

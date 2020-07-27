@@ -16,3 +16,7 @@ MonoBehaviour:
   - Climate_Action_0_Climate_Action_0_Climate_Action_0_Climate_Action_0_Climate_Action_0_Climate_Action_0_Climate_Action_0_Climate_Action_0_
   - Climate_Action_1_Climate_Action_1_Climate_Action_1_Climate_Action_1_Climate_Action_1_Climate_Action_1_Climate_Action_1_Climate_Action_1_
   - Climate_Action_2_Climate_Action_2_Climate_Action_2_Climate_Action_2_Climate_Action_2_Climate_Action_2_Climate_Action_2_Climate_Action_2_
+  trainning_Sprites:
+  - {fileID: 4848577049414669200, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 4848577049414669200, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 4848577049414669200, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}

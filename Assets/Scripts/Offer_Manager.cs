@@ -331,7 +331,6 @@ public class Offer_Manager : MonoBehaviour
         Offer_Tab_Controller.Instance.FileUP_Animation();
         Offer_Tab_Controller.Instance.checkForOtherOffers();
         Player.Instance.Calculate_UI_Info();
-       // PieGraph.Instance.RefreshGraph();
     }
 
     private IEnumerator  MoveBudgetSlider(float target)

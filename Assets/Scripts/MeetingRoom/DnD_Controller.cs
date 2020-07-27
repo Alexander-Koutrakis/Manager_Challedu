@@ -8,22 +8,22 @@ public class DnD_Controller : MonoBehaviour
 {
     public static DnD_Controller Instance;
     [SerializeField]
-    private DropGroup startingGroup;
+    private DropGroup startingGroup=null;
     [SerializeField]
-    private DropGroup finalGroup;
+    private DropGroup finalGroup=null;
     [SerializeField]
-    private Drag_n_Drop_Question question;
+    private Drag_n_Drop_Question question=null;
     private List<DnD_Answer> DnDanswers = new List<DnD_Answer>();
     [SerializeField]
-    private TMP_Text question_text;
+    private TMP_Text question_text=null;
     [SerializeField]
-    private Button presentationButton;
+    private Button presentationButton=null;
     [SerializeField]
-    private Presentation_results results;
+    private Presentation_results results=null;
     [SerializeField]
-    private Panel_Control presentationPanelControl;
+    private Panel_Control presentationPanelControl=null;
     [SerializeField]
-    private Panel_Control wrongPanelControl;
+    private Panel_Control wrongPanelControl=null;
 
 
     private void Awake()
@@ -40,6 +40,7 @@ public class DnD_Controller : MonoBehaviour
 
     private void selectRandomQuestion()
     {
+        //create more question and randomly select one
         question = question;
     }
 

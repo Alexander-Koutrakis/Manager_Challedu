@@ -28,10 +28,7 @@ public class QuizManager : MonoBehaviour
         question_Manager.gameObject.SetActive(true);
     }
 
-    public void CloseQuestionManager()
-    {
-        question_Manager.CloseQuestionManager();
-    }
+   
 
     public void ContinueQuiz()
     {
