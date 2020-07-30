@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: Zero_Hunger
   m_EditorClassIdentifier: 
-  trainning_info_text:
-  - Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0Zero_0
-  - Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_Zero_1_
-  - Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_Zero_2_
+  trainning_Level: 0
+  trainning_info_text1: []
+  trainning_info_text2: []
+  trainning_info_text3: []
   trainning_Sprites:
   - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  QuizInfo1: []
+  QuizInfo2: []
+  QuizInfo3: []

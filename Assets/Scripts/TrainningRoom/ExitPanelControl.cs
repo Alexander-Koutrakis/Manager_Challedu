@@ -13,7 +13,5 @@ public class ExitPanelControl : MonoBehaviour
         {
             PC.ClosePanel();
         }
-    }
-
-   
+    }  
 }

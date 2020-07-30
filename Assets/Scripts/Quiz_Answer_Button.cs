@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Quiz_Answer_Button : MonoBehaviour
 {
@@ -11,8 +9,7 @@ public class Quiz_Answer_Button : MonoBehaviour
         if (correct_Answer)
         {
             Question_Manager.Instance.CorrectAnswers++;
-            Question_Manager.Instance.NextQuestion();
-           
+            Question_Manager.Instance.NextQuestion();           
             Debug.Log("Correct!!!");
         }
         else if(!correct_Answer)
@@ -21,4 +18,5 @@ public class Quiz_Answer_Button : MonoBehaviour
             Debug.Log("Wrong");
         }
     }
+
 }

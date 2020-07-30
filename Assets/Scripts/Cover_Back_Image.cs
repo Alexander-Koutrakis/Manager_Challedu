@@ -14,13 +14,11 @@ public class Cover_Back_Image : MonoBehaviour
     public void ShowImage() {
         LeanTween.alpha(GetComponent<RectTransform>(), 0.4f, 0.5f);
         GetComponent<Image>().raycastTarget = true;
-        Debug.Log("show image");
     }
 
     public void HideImage()
     {
         LeanTween.alpha(GetComponent<RectTransform>(), 0f, 0.5f);
         GetComponent<Image>().raycastTarget = false;
-        Debug.Log("cover image");
     }
 }

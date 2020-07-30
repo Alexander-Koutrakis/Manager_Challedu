@@ -7,9 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Trainning_Info", menuName = "Trainning_Info")]
 public class Trainning_Info : ScriptableObject
 {
-    public int trainning_Level=-1;
-    public string[] trainning_info_text;
+    public int trainning_Level=0;
+    public string[] trainning_info_text1;
+    public string[] trainning_info_text2;
+    public string[] trainning_info_text3;
     public Sprite[] trainning_Sprites;
-    public List<Question> QuizInfo = new List<Question>();
+
+    public Question[] QuizInfo1 ;
+    public Question[] QuizInfo2 ;
+    public Question[] QuizInfo3 ;
 
 }

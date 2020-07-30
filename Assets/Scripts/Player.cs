@@ -29,8 +29,7 @@ public class Player : MonoBehaviour
         Instance = this;
     }
 
-    
-
+   
     private void Start()
     {
         Calculate_UI_Info();
@@ -54,7 +53,8 @@ public class Player : MonoBehaviour
         expBarRoutine = changeSlider(Expirience);
         
         StartCoroutine(expBarRoutine);
-
+        if(Training_Canvas_Control.Instance!=null)
+        Training_Canvas_Control.Instance.CheckForTrainning();
     }
 
 

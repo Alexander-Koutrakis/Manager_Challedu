@@ -1,1 +1,8 @@
 -when i spread campainn stars on few offers i get an error
+-Reset Training canvas on Exit
+-Reset Meeting Canvas on Exit
+-Create more meeting projects for testing
+-Add result screen on meeting projects
+-Add quit panel on meeting projects
+-Add "News panel" in office canvas
+-Allow only one canvas to be active each time

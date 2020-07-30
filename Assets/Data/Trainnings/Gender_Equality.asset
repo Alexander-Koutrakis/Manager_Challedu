@@ -12,17 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: Gender_Equality
   m_EditorClassIdentifier: 
-  trainning_info_text:
-  - 'Gender_Equality_0_
-
-    Gender_Equality_0_
-
-
-
-    Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_Gender_Equality_0_'
-  - Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_Gender_Equality_1_
-  - Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_Gender_Equality_2_
+  trainning_Level: 0
+  trainning_info_text1: []
+  trainning_info_text2: []
+  trainning_info_text3: []
   trainning_Sprites:
   - {fileID: -3901999012250730484, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -3901999012250730484, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -3901999012250730484, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  QuizInfo1: []
+  QuizInfo2: []
+  QuizInfo3: []

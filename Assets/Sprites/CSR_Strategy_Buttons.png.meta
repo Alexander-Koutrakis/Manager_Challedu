@@ -152,6 +152,15 @@ TextureImporter:
   - first:
       213: 1373064874979284117
     second: CSR_Strategy_Buttons_49
+  - first:
+      213: -6898146160354226546
+    second: CSR_Strategy_Buttons_50
+  - first:
+      213: -2094531490173776200
+    second: CSR_Strategy_Buttons_51
+  - first:
+      213: 4683113134465953612
+    second: CSR_Strategy_Buttons_52
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1306,6 +1315,69 @@ TextureImporter:
       bones: []
       spriteID: 594d4be9a3b1e0310800000000000000
       internalID: 1373064874979284117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_50
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 427
+        width: 422
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e8c577d9cd440a0800000000000000
+      internalID: -6898146160354226546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_51
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 35
+        width: 354
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be825df4babee2e0800000000000000
+      internalID: -2094531490173776200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CSR_Strategy_Buttons_52
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 141
+        width: 205
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f2fc66592cdf040800000000000000
+      internalID: 4683113134465953612
       vertices: []
       indices: 
       edges: []

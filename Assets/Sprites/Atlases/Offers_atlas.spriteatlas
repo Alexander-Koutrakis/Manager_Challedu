@@ -34,7 +34,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: e0182c4dd6d399241817c60fe280450f, type: 3}
     - {fileID: 2800000, guid: 55367bd63f3a45f41ae60fd4796cbf7b, type: 3}
     - {fileID: 2800000, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
-    totalSpriteSurfaceArea: 3862545
+    totalSpriteSurfaceArea: 3924809
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -83,6 +83,9 @@ SpriteAtlas:
   - {fileID: 4981758770970254718, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
   - {fileID: -6242673853858239064, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
   - {fileID: -3467337752885062611, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
+  - {fileID: 4683113134465953612, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
+  - {fileID: -2094531490173776200, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
+  - {fileID: -6898146160354226546, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
   - {fileID: 1418410026197924868, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
   - {fileID: -1733818076761585428, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
   - {fileID: 4004942876270632992, guid: 89b909a7ca4b1794d9cb5f4afad05bff, type: 3}
@@ -136,6 +139,9 @@ SpriteAtlas:
   - CSR_Unavailable_50
   - CSR_Exit
   - CSR_RightArrow
+  - CSR_Strategy_Buttons_52
+  - CSR_Strategy_Buttons_51
+  - CSR_Strategy_Buttons_50
   - CSR_LeftArrow
   - CSR_NotSelected_30
   - CSR_PurpleStar

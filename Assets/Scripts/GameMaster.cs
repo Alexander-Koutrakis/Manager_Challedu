@@ -123,8 +123,6 @@ public class GameMaster : MonoBehaviour
 
         Offer_Tab_Controller.Instance.FillOfferManagers();
     }
-
-
     public void InitializeDictionaries()
     {
 
@@ -172,7 +170,6 @@ public class GameMaster : MonoBehaviour
         OffersGrouped.Add(Health_Offers);
         OffersGrouped.Add(Equality_Offers);
     }
-
     private float[] RandomizedGPpoints()
     {
         
@@ -190,7 +187,6 @@ public class GameMaster : MonoBehaviour
         }
         return GPpoints;
     }
-
     private void RandomizeOffer(Offer offer)
     {
         offer.GP = RandomizedGPpoints();
@@ -203,7 +199,6 @@ public class GameMaster : MonoBehaviour
         offer.expiriencePoints =Mathf.RoundToInt(x / 10);
         GetTopSDGs(offer);
     }
-
     private void GetTopSDGs(Offer offer)
     {
         float[] Sdgs = offer.SDGs;
@@ -246,8 +241,6 @@ public class GameMaster : MonoBehaviour
             Debug.Log(top3);
         }
     }
-
-
     public void LoadCanvas(Canvas targetCanvas)
     {
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TrainningButton : MonoBehaviour
 {
-    [SerializeField]
-    private Trainning_Info buttonInfo=null;
+    
+    public Trainning_Info buttonInfo=null;
 
 
     public void StartTraining()

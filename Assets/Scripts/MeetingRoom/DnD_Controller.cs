@@ -24,15 +24,15 @@ public class DnD_Controller : MonoBehaviour
     private Panel_Control presentationPanelControl=null;
     [SerializeField]
     private Panel_Control wrongPanelControl=null;
-
+    [SerializeField]
+    private Panel_Control congrats_PanelControl = null;
 
     private void Awake()
     {
         Instance = this;
     }
     private void Start()
-    {
-       
+    {       
         FillDnDAnswers();
         RandomizeAnswer();
     }
@@ -72,7 +72,6 @@ public class DnD_Controller : MonoBehaviour
 
     public void ResetController()
     {
-
         startingGroup.restartAnswerPositions();
         finalGroup.EmptyAnswerSlots();
         selectRandomQuestion();
@@ -80,7 +79,8 @@ public class DnD_Controller : MonoBehaviour
         RandomizeAnswer();
     }   
     public void CheckAnswers()
-    { int correctAnswers = 0;
+    {   
+        int correctAnswers = 0;
         string[] answersString=new string[2];
        
         foreach(DnD_Answer answer in finalGroup.GetComponentsInChildren<DnD_Answer>())
@@ -98,6 +98,7 @@ public class DnD_Controller : MonoBehaviour
             Debug.Log("Correct !!!!");
             results.StartPresentration(question.question, answersString[0], answersString[1]);
             presentationPanelControl.OpenPanel();
+            congrats_PanelControl.OpenPanel();
             // show correct messege
         }
         else

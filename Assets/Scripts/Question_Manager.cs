@@ -1,16 +1,15 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Question_Manager : MonoBehaviour
 {
-    public Question question;
+    private Question question;
     public TMP_Text question_Text;
     private List<Vector3> position_List = new List<Vector3>();
     private List<Vector3> starting_Pos = new List<Vector3>();
+    public Question[] questions=new Question[3];
     public GameObject[] Answer_Button;
     public static Question_Manager Instance;
     public int CorrectAnswers=0;
@@ -25,9 +24,7 @@ public class Question_Manager : MonoBehaviour
     }
     public void StartQuestion()
     {
-
-  
-        question_Text.text = question.question_Text;
+        question_Text.text = questions[questionIndex].question_Text;
 
         if (starting_Pos != null)
         {
@@ -40,10 +37,10 @@ public class Question_Manager : MonoBehaviour
 
         for(int i = 0; i < 4; i++)
         {
-            if (i < question.answers_Text.Length)
+            if (i < questions[questionIndex].answers_Text.Length)
             {
                
-                Answer_Button[i].GetComponentInChildren<TMP_Text>().text = question.answers_Text[i];
+                Answer_Button[i].GetComponentInChildren<TMP_Text>().text = questions[questionIndex].answers_Text[i];
                 Answer_Button[i].gameObject.SetActive(true);
                 if (i == 0)
                 {
@@ -57,9 +54,7 @@ public class Question_Manager : MonoBehaviour
             else
             {
                 Answer_Button[i].SetActive(false);
-            }
-          
-           
+            }          
         }
 
         foreach(GameObject GO in Answer_Button)
@@ -86,9 +81,9 @@ public class Question_Manager : MonoBehaviour
     public void NextQuestion()
     {
         questionIndex++;
-        if (questionIndex < 3)
+        if (questionIndex < questions.Length)
         {
-            Question_Manager.Instance.question =InfoPanelControl.Instance.trainning_Info.QuizInfo[(InfoPanelControl.Instance.trainning_Info.trainning_Level * 3) + questionIndex];
+            Question_Manager.Instance.question = questions[questionIndex];
             Question_Manager.Instance.StartQuestion();
         }
         else
@@ -96,6 +91,7 @@ public class Question_Manager : MonoBehaviour
             Question_Manager.Instance.GetComponent<Panel_Control>().ClosePanel();
             QuizResults.Instance.ShowResults(CorrectAnswers);
             CorrectAnswers = 0;
+            questionIndex = 0;
             //show results
         }
     }

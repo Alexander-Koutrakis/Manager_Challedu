@@ -15,6 +15,6 @@ public class QuizResults : MonoBehaviour
     public void ShowResults(int correctAnswers)
     {
         GetComponent<Panel_Control>().OpenPanel();
-        result_Text.text = correctAnswers.ToString() + " Correct answers \n You Won : " + correctAnswers * (100);// * Player.Instance.Player_Level);
+        result_Text.text =(correctAnswers * (100)).ToString();
     }
 }

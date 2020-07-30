@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: Life_Bellow_Water
   m_EditorClassIdentifier: 
-  trainning_info_text:
-  - Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_Life_Bellow_Water_0_
-  - Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_Life_Bellow_Water_1_
-  - Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_Life_Bellow_Water_2_
+  trainning_Level: 0
+  trainning_info_text1: []
+  trainning_info_text2: []
+  trainning_info_text3: []
   trainning_Sprites:
   - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  QuizInfo1: []
+  QuizInfo2: []
+  QuizInfo3: []

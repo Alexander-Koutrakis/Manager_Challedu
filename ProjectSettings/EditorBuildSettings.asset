@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Office.unity
     guid: e21f964008d0ace4885aed2f650c217e
   - enabled: 0
-    path: Assets/Scenes/Trainning.unity
+    path: Assets/Scenes/Unused_Scenes/Trainning.unity
     guid: dbd7755b9be22754f849bdd83ae611f6
   m_configObjects: {}
