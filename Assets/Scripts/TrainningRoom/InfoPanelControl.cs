@@ -43,17 +43,17 @@ public class InfoPanelControl : MonoBehaviour
     public void StartTrainning()
     {
 
-        if (trainning_Info.trainning_Level == 1)
+        if (trainning_Info.current_Level == 0)
         {
             trainningSlides = trainning_Info.trainning_info_text1;
             Question_Manager.Instance.questions = trainning_Info.QuizInfo1;
         }
-        else if(trainning_Info.trainning_Level == 2)
+        else if(trainning_Info.current_Level == 1)
         {
             trainningSlides = trainning_Info.trainning_info_text2;
             Question_Manager.Instance.questions = trainning_Info.QuizInfo2;
         }
-        else if (trainning_Info.trainning_Level == 3)
+        else if (trainning_Info.current_Level == 2)
         {
             trainningSlides = trainning_Info.trainning_info_text3;
             Question_Manager.Instance.questions = trainning_Info.QuizInfo3;
@@ -70,7 +70,7 @@ public class InfoPanelControl : MonoBehaviour
         trainningImage.sprite = trainning_Info.trainning_Sprites[trainningIndex];
         trainningText.text = trainningSlides[trainningIndex];
         pageIndex_text.text = (trainningIndex + 1).ToString() + " / " + (trainningSlides.Length + 1).ToString();
-
+        trainning_Info.current_Level++;
     }
 
     public void NextPage()
@@ -120,7 +120,8 @@ public class InfoPanelControl : MonoBehaviour
  
     public void StartQuiz()
     {
-        Question_Manager.Instance.StartQuestion();
+
+        Question_Manager.Instance.StartQuestion(Question_Manager.Instance.questions[0]);
         GetComponent<Panel_Control>().ClosePanel();
     }
 

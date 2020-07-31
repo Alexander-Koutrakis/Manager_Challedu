@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: No_Poverty
   m_EditorClassIdentifier: 
-  trainning_Level: 0
+  current_Level: 1
+  max_Level: 1
   trainning_info_text1:
   - "\u03A3\u03C4\u03CC\u03C7\u03BF\u03C2 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BD\u03B1
     \u03B5\u03BE\u03B1\u03BB\u03B5\u03B9\u03C6\u03B8\u03B5\u03AF \u03B7 \u03B1\u03BA\u03C1\u03B1\u03AF\u03B1
@@ -80,10 +81,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ec4e38922313044d81a3d6d998c65c9, type: 2}
   - {fileID: 11400000, guid: 973556a6084ed2d468e6a498a8c36b09, type: 2}
   QuizInfo2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d8c41c3ad96efcd43a20c6dc2433b6b7, type: 2}
+  - {fileID: 11400000, guid: 71ab0c3bc9b03f1468eed0d2da2b4a82, type: 2}
+  - {fileID: 11400000, guid: 06ca0fce32857144294d1da0c9a13b37, type: 2}
   QuizInfo3:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 46760924507447f49b264dd5316c1c4c, type: 2}
+  - {fileID: 11400000, guid: 978fd40beff1f5144a08bebdbfd80bae, type: 2}
+  - {fileID: 11400000, guid: 887646dcb2676934ab8130d1baffec2f, type: 2}

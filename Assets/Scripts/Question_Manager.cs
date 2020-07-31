@@ -5,7 +5,6 @@ using TMPro;
 
 public class Question_Manager : MonoBehaviour
 {
-    private Question question;
     public TMP_Text question_Text;
     private List<Vector3> position_List = new List<Vector3>();
     private List<Vector3> starting_Pos = new List<Vector3>();
@@ -22,8 +21,9 @@ public class Question_Manager : MonoBehaviour
         }       
         Instance = this;
     }
-    public void StartQuestion()
+    public void StartQuestion(Question question) 
     {
+
         question_Text.text = questions[questionIndex].question_Text;
 
         if (starting_Pos != null)
@@ -71,10 +71,7 @@ public class Question_Manager : MonoBehaviour
         {
             Answer_Button[i].GetComponent<RectTransform>().anchoredPosition = position_List[i];
         }
-
-
         position_List.Clear();
-
     }
 
 
@@ -83,12 +80,12 @@ public class Question_Manager : MonoBehaviour
         questionIndex++;
         if (questionIndex < questions.Length)
         {
-            Question_Manager.Instance.question = questions[questionIndex];
-            Question_Manager.Instance.StartQuestion();
+           // question = questions[questionIndex];
+            StartQuestion(questions[questionIndex]);
         }
         else
         {
-            Question_Manager.Instance.GetComponent<Panel_Control>().ClosePanel();
+            GetComponent<Panel_Control>().ClosePanel();
             QuizResults.Instance.ShowResults(CorrectAnswers);
             CorrectAnswers = 0;
             questionIndex = 0;

@@ -13,8 +13,10 @@ public class Warning_Panel : MonoBehaviour
 
     public void ShowMessege(string messege)
     {
+        LeanTween.cancel(gameObject);
         GetComponentInChildren<TMP_Text>().text = messege;
         OpenPanel();
+       
     }
 
     private void OpenPanel()

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Security.Claims;
+using System.Configuration;
 
 public class Player : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class Player : MonoBehaviour
     public float expRate=100;
     public int budgetRegenerationRate = 20;
     IEnumerator expBarRoutine;
+    [SerializeField]
+    List<Trainning_Info> trainnings = new List<Trainning_Info>();
+    [SerializeField]
+    float trainningTheshold_1;
+    [SerializeField]
+    float trainningTheshold_2;
+    [SerializeField]
+    float trainningTheshold_3;
     private void Awake()
     {
         Instance = this;
@@ -32,6 +41,7 @@ public class Player : MonoBehaviour
    
     private void Start()
     {
+        RestartTrainnings();
         Calculate_UI_Info();
         InvokeRepeating("BudgetRate", 1, 1f);
     }
@@ -53,8 +63,7 @@ public class Player : MonoBehaviour
         expBarRoutine = changeSlider(Expirience);
         
         StartCoroutine(expBarRoutine);
-        if(Training_Canvas_Control.Instance!=null)
-        Training_Canvas_Control.Instance.CheckForTrainning();
+        CheckTrainnings();
     }
 
 
@@ -120,6 +129,53 @@ public class Player : MonoBehaviour
             Expirience_Slider.value = Mathf.Lerp(Expirience_Slider.value, value, Time.deltaTime * 10);
             yield return null;
 
+        }
+    }
+
+
+    private void CheckTrainnings()
+    {
+        for(int i = 0; i < trainnings.Count; i++)
+        {
+            if (SDGs[i] >= trainningTheshold_3)
+            {
+                if (trainnings[i].max_Level != 3)
+                {
+                    trainnings[i].max_Level = 3;
+                    Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                }
+            }else if(SDGs[i] >= trainningTheshold_2)
+            {
+                if (trainnings[i].max_Level != 2)
+                {
+                    trainnings[i].max_Level = 2;
+                    Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                }
+            }
+            else if (SDGs[i] >= trainningTheshold_1)
+            {
+                if (trainnings[i].max_Level != 1)
+                {
+                    trainnings[i].max_Level = 1;
+                    Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                }
+
+            }
+            else
+            {
+                trainnings[i].max_Level = 0;
+            }
+        
+              
+        }
+    }
+
+    private void RestartTrainnings()
+    {
+        foreach(Trainning_Info trainning in trainnings)
+        {
+            trainning.current_Level = 0;
+            trainning.max_Level = 0;
         }
     }
 }

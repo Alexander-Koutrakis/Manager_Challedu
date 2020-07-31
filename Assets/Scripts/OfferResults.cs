@@ -102,7 +102,7 @@ public class OfferResults : MonoBehaviour
 
     public void Claim_Offer()
     {
-        Debug.Log(Booster);
+
         MainText.color = Color.black;
         SubText.color = Color.black;
         GetComponent<Image>().sprite = Claimed_Sprite;
