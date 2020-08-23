@@ -34,14 +34,18 @@ public class OfferResults : MonoBehaviour
     private int claimedPaidBudget;
     private float Exp;
     private float Booster;
+    private float[] GPs = new float[6];
+    
     ActivatedOffer connectedActivatedOffer;
-    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO)
+    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO,float[] gps)
     {
         Booster = booster;
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
         ClaimButton = GetComponentInChildren<Button>();
         connectedActivatedOffer = ConnectedAO;
+        GPs = gps;
+
 
         if (Booster > 0)
         {
@@ -61,6 +65,7 @@ public class OfferResults : MonoBehaviour
         Exp = claimedExp;
         SubText.text = "Επέλεξες να υποστηρίξεις την πρόταση κατά " + commitPercent + "% \n Πήρες "+ Exp+" βαθμούς εμπειρίας";
         BudgetText.text =paidBudgert.ToString();
+        Player.Instance.totalbudgetPaid += paidBudgert;// just for achievement checking
         ExpText.text = Exp.ToString();
         SDG1.sprite = offer.SDG1;
         SDG2.sprite = offer.SDG2;
@@ -111,6 +116,9 @@ public class OfferResults : MonoBehaviour
         ClaimButton.interactable = false;
         Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
+        Player.Instance.GetGPs(GPs);
+        Player.Instance.offersAccepted++;
+        
         AchievementManager.Instance.CheckAchievements();
         PieGraph.Instance.RefreshGraph();
     }

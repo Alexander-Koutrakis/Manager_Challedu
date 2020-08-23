@@ -14,6 +14,7 @@ public class Offer_Tab_Controller : MonoBehaviour
     public static Offer_Tab_Controller Instance;
     public RectTransform groupTab;
     public Panel_Control panel_Control;
+    [SerializeField]
     int currentTabIndex ;
     public Vector3 LeftPos;
     public Vector3 CentralPos;
@@ -49,7 +50,7 @@ public class Offer_Tab_Controller : MonoBehaviour
     public void FillOfferManagers()
     {
         
-        currentTabIndex = GameMaster.Instance.MaxOffers - 1;
+        
         noAvailableOffers = false;
         LeanTween.alpha(noOffersImage.GetComponent<RectTransform>(), 0, 0.1f);
         noOffersImage.raycastTarget = false;
@@ -81,17 +82,20 @@ public class Offer_Tab_Controller : MonoBehaviour
 
         ShowWarning();
         closedOffers_Num = used_Managers.Count;
-
+        // currentTabIndex = GameMaster.Instance.MaxOffers - 1;
+        currentTabIndex = used_Managers.Count - 1;
     }
 
     public void NextOfferTab() {
         StopAllCoroutines();
         if (!waitButtonBool && closedOffers_Num > 1)
-        {          
+        {
+
                 LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, LeftPos.x, 0.5f).setOnComplete(HideTab);
                 closetab = used_Managers[currentTabIndex].gameObject;
             if (!noAvailableOffers)
             {
+
                 do
                 {
                     currentTabIndex++;
@@ -111,6 +115,7 @@ public class Offer_Tab_Controller : MonoBehaviour
             }
             else if(noAvailableOffers)
             {
+
                 NoOffersAvailable();
             }
         }

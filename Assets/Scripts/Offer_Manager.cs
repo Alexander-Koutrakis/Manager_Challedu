@@ -311,7 +311,7 @@ public class Offer_Manager : MonoBehaviour
         GetBooster();
         Player.Instance.budget -= BudgetAmount;
         PayButton.interactable = false;
-        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent);
+        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent,offer.GP);
 
         
         if (budget30.GetComponent<Image>().sprite!=selectedButton30)

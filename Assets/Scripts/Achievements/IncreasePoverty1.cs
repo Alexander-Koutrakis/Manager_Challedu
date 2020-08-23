@@ -6,15 +6,15 @@ public class IncreasePoverty1 : Achievement_Main
 {
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "Increase SDG against poverty to 20", "Get 500 expirience points", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "Increase SDG against poverty to 5", "Get 100 expirience points", 10, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
     public override void Requirements()
     {
-        if (Player.Instance.SDGs[0] >= 20)
+        if (Player.Instance.SDGs[0] >= 5)
         {
-            AchievementManager.Instance.EarnAchievement("Increase SDG against poverty to 20");
+            AchievementManager.Instance.EarnAchievement("Increase SDG against poverty to 5");
             activated = true;
             Rewards();
         }
@@ -22,7 +22,7 @@ public class IncreasePoverty1 : Achievement_Main
 
     public override void Rewards()
     {
-        Player.Instance.Expirience += 500;
+        Player.Instance.Expirience += 100;
         Player.Instance.Calculate_UI_Info();
     }
 }

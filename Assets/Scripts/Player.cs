@@ -10,9 +10,12 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
     public int budget;
-    public int Player_Level=4;
+    public int Player_Level=4;  
     public float Expirience;
     public float[] SDGs=new float[17];
+    public float[] GPs = new float[6];
+    public float totalbudgetPaid = 0;
+    public int offersAccepted = 0;
     [SerializeField]
     private TMP_Text budget_Text=null;
     [SerializeField]
@@ -52,8 +55,6 @@ public class Player : MonoBehaviour
        
         if(Expirience >= Expirience_Slider.maxValue)
         {
-            // level up button true
-            //
             claimLevel_Button.interactable = true;
         }
         if (expBarRoutine != null){
@@ -116,7 +117,13 @@ public class Player : MonoBehaviour
 
     }
 
-
+    public void GetGPs(float[] gps)
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            GPs[i] += gps[i];
+        }
+    }
 
     private IEnumerator changeSlider(float value)
     {

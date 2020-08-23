@@ -35,8 +35,7 @@ public class GameMaster : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        InitializeDictionaries();
-       
+        InitializeDictionaries();      
     }
 
   
@@ -60,33 +59,40 @@ public class GameMaster : MonoBehaviour
         for (int i = 0; i < CampaignStars.Length; i++)
         {
             float x = (float)CampaignStars[i] / total;
-            Campaign[i] =Mathf.RoundToInt(x * (float)MaxOffers/2);
+            Debug.Log(x);
+            Campaign[i] =Mathf.RoundToInt(x * MaxOffers/2);
+            if (x > 0&& Campaign[i]==0)
+            {
+                Campaign[i] = 1;
+            }
         }
 
-        total = 0;
+        total = 0;// total show how many "Correct" offers will be generted
         foreach (int campaingStat in Campaign)
         {
             total += campaingStat;
         }
 
-        while (total > MaxOffers)
-        {
-            int x = Random.Range(0, Campaign.Length);
-            if (Campaign[x] > 0)
-            {
-                Campaign[x] = Campaign[x] - 1;
-                total--;
-            }
-        }
+        // if total offers are more than the max offers reduce a random Campain offer by 1 and recalculate
+        //while (total > MaxOffers)
+        //{
+        //    int x = Random.Range(0, Campaign.Length);
+        //    if (Campaign[x] > 0)
+        //    {
+        //        Campaign[x] = Campaign[x] - 1;
+        //        total--;
+        //    }
+        //}
 
-        while (total < MaxOffers)
-        {
-            int x = Random.Range(0, Campaign.Length);
-            if (Campaign[x] > 0)
-            {               
-                total++; ;
-            }
-        }
+
+        //while (total < MaxOffers)
+        //{
+        //    int x = Random.Range(0, Campaign.Length);
+        //    if (Campaign[x] > 0)
+        //    {
+        //        total++; ;
+        //    }
+        //}
 
         // Add number of offers according to Campain index
         for (int i = 0; i < Campaign.Length; i++)
