@@ -50,19 +50,15 @@ public class Player : MonoBehaviour
     }
     public void Calculate_UI_Info()
     {
-        budget_Text.text = budget.ToString();
-
-       
+        budget_Text.text = budget.ToString(); 
         if(Expirience >= Expirience_Slider.maxValue)
         {
             claimLevel_Button.interactable = true;
         }
         if (expBarRoutine != null){
             StopCoroutine(expBarRoutine);
-        }
-       
-        expBarRoutine = changeSlider(Expirience);
-        
+        }       
+        expBarRoutine = changeSlider(Expirience);        
         StartCoroutine(expBarRoutine);
         CheckTrainnings();
     }
@@ -85,8 +81,11 @@ public class Player : MonoBehaviour
         AchievementManager.Instance.panel_Control.ClosePanel();
         Campain_Plan.Instance.panel_Control.OpenPanel();
         AchievementManager.Instance.CheckAchievements();
+        MeetingRoomController.Instance.AddDnDQuestion();
         Expirience_Slider.value = Expirience;
         claimLevel_Button.interactable = false;
+
+
     }
 
     private void BudgetRate()
@@ -150,6 +149,8 @@ public class Player : MonoBehaviour
                 {
                     trainnings[i].max_Level = 3;
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                    Training_Canvas_Control.Instance.ShowWarning();
+                    break;
                 }
             }else if(SDGs[i] >= trainningTheshold_2)
             {
@@ -157,6 +158,8 @@ public class Player : MonoBehaviour
                 {
                     trainnings[i].max_Level = 2;
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                    Training_Canvas_Control.Instance.ShowWarning();
+                    break;
                 }
             }
             else if (SDGs[i] >= trainningTheshold_1)
@@ -165,6 +168,8 @@ public class Player : MonoBehaviour
                 {
                     trainnings[i].max_Level = 1;
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                    Training_Canvas_Control.Instance.ShowWarning();
+                    break;
                 }
 
             }

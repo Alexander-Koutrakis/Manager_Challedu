@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Achievement_Main : MonoBehaviour
 {
-   public bool activated = false;
+    public bool activated = false;
     public abstract void CreateAchievement();
     public abstract void Requirements();
 

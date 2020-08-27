@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_Level: 0
   max_Level: 0
+  level_Limit: 5
   trainning_info_text1:
   - "\u03A3\u03C4\u03CC\u03C7\u03BF\u03C2 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BD\u03B1
     \u03B5\u03BE\u03B1\u03BB\u03B5\u03B9\u03C6\u03B8\u03B5\u03AF \u03B7 \u03B1\u03BA\u03C1\u03B1\u03AF\u03B1
@@ -146,6 +147,7 @@ MonoBehaviour:
     \u03C4\u03C9\u03BD \u03B5\u03C0\u03B5\u03BD\u03B4\u03CD\u03C3\u03B5\u03C9\u03BD
     \u03C3\u03B5 \u03B4\u03C1\u03AC\u03C3\u03B5\u03B9\u03C2 \u03B5\u03BE\u03AC\u03BB\u03B5\u03B9\u03C8\u03B7\u03C2
     \u03C4\u03B7\u03C2 \u03C6\u03C4\u03CE\u03C7\u03B5\u03B9\u03B1\u03C2."
+  trainning_info_text6: []
   trainning_Sprites:
   - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
@@ -176,3 +178,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7fa2ab149d0dff408d8960381b5f671, type: 2}
   - {fileID: 11400000, guid: cad27d610905ca34da63dda20cf5b099, type: 2}
   - {fileID: 11400000, guid: 7ccef247f7d1c3049aa86cca4216f283, type: 2}
+  QuizInfo6: []

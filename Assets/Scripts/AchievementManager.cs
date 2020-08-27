@@ -34,13 +34,14 @@ public class AchievementManager : MonoBehaviour
        
         activeButton.Click();
 
+        Debug.Log("here");
 
-
-        foreach(Achievement_Main AM in GetComponents<Achievement_Main>())
+        foreach (Achievement_Main AM in GetComponents<Achievement_Main>())
         {
-            achievement_Mains.Add(AM);
             AM.CreateAchievement();
         }
+
+
 
     }
     public void CreateAchievement(string parent, string Title, string Description, int Points, int SpriteIndex, string[] dependencies = null)

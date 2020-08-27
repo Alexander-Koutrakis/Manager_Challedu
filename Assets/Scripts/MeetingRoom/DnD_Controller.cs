@@ -38,11 +38,7 @@ public class DnD_Controller : MonoBehaviour
     }
 
 
-    private void selectRandomQuestion()
-    {
-        //create more question and randomly select one
-        question = question;
-    }
+   
 
     public void FillDnDAnswers()
     {
@@ -70,11 +66,11 @@ public class DnD_Controller : MonoBehaviour
         DnDanswers[x].transform.SetAsLastSibling();
     }
 
-    public void ResetController()
+    public void ResetController(Drag_n_Drop_Question dnd_Question)
     {
         startingGroup.restartAnswerPositions();
         finalGroup.EmptyAnswerSlots();
-        selectRandomQuestion();
+        question = dnd_Question;
         FillDnDAnswers();
         RandomizeAnswer();
     }   

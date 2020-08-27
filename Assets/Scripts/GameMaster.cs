@@ -44,9 +44,7 @@ public class GameMaster : MonoBehaviour
         MaxOffers = Player.Instance.Player_Level + 2*Player.Instance.Player_Level;
 
         Debug.developerConsoleVisible=true;
-        Offer_Tab_Controller.Instance.PreferedOffers.Clear();
-       
-        
+        Offer_Tab_Controller.Instance.PreferedOffers.Clear();       
         total = 0;
     
       // get the total amount of campain stars in order to find Group Percent

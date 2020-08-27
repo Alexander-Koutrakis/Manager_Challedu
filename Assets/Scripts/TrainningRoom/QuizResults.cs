@@ -7,6 +7,7 @@ public class QuizResults : MonoBehaviour
     public static QuizResults Instance;
     [SerializeField]
     private TMP_Text result_Text;
+
     private void Awake()
     {
         Instance = this;
@@ -16,5 +17,6 @@ public class QuizResults : MonoBehaviour
     {
         GetComponent<Panel_Control>().OpenPanel();
         result_Text.text =(correctAnswers * (100)).ToString();
+
     }
 }
