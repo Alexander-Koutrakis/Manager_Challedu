@@ -57,7 +57,6 @@ public class GameMaster : MonoBehaviour
         for (int i = 0; i < CampaignStars.Length; i++)
         {
             float x = (float)CampaignStars[i] / total;
-            Debug.Log(x);
             Campaign[i] =Mathf.RoundToInt(x * MaxOffers/2);
             if (x > 0&& Campaign[i]==0)
             {

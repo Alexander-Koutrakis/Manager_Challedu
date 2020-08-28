@@ -12,14 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: Peace_Justice
   m_EditorClassIdentifier: 
-  trainning_Level: 0
+  current_Level: 0
+  max_Level: 0
+  level_Limit: 0
   trainning_info_text1: []
   trainning_info_text2: []
   trainning_info_text3: []
+  trainning_info_text4: []
+  trainning_info_text5: []
+  trainning_info_text6: []
   trainning_Sprites:
+  - {fileID: 2507179355020928102, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 2507179355020928102, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 2507179355020928102, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 2507179355020928102, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 2507179355020928102, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   QuizInfo1: []
   QuizInfo2: []
   QuizInfo3: []
+  QuizInfo4: []
+  QuizInfo5: []
+  QuizInfo6: []
