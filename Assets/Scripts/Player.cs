@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
     public float Next_Level_Exp=0;
     public float expRate=100;
     public int budgetRegenerationRate = 20;
+    public int successfulPresentation = 0;
+    public int successfulSDGTrainings = 0;
+    public int netWorks = 0;
     IEnumerator expBarRoutine;
     [SerializeField]
     List<Trainning_Info> trainnings = new List<Trainning_Info>();
@@ -36,6 +39,12 @@ public class Player : MonoBehaviour
     float trainningTheshold_2;
     [SerializeField]
     float trainningTheshold_3;
+    [SerializeField]
+    float trainningTheshold_4;
+    [SerializeField]
+    float trainningTheshold_5;
+    [SerializeField]
+    float trainningTheshold_6;
     private void Awake()
     {
         Instance = this;
@@ -47,6 +56,12 @@ public class Player : MonoBehaviour
         RestartTrainnings();
         Calculate_UI_Info();
         InvokeRepeating("BudgetRate", 1, 1f);
+
+        foreach(Trainning_Info TI in trainnings)
+        {
+            TI.current_Level = 0;
+            TI.max_Level = 0;
+        }
     }
     public void Calculate_UI_Info()
     {
@@ -80,12 +95,12 @@ public class Player : MonoBehaviour
         Offer_Tab_Controller.Instance.panel_Control.ClosePanel();
         AchievementManager.Instance.panel_Control.ClosePanel();
         Campain_Plan.Instance.panel_Control.OpenPanel();
-        AchievementManager.Instance.CheckAchievements();
+        
         MeetingRoomController.Instance.AddDnDQuestion();
         Expirience_Slider.value = Expirience;
         claimLevel_Button.interactable = false;
 
-
+        AchievementManager.Instance.CheckAchievements();
     }
 
     private void BudgetRate()
@@ -143,40 +158,47 @@ public class Player : MonoBehaviour
     {
         for(int i = 0; i < trainnings.Count; i++)
         {
-            if (SDGs[i] >= trainningTheshold_3)
+            if (SDGs[i] >= trainningTheshold_6 && trainnings[i].level_Limit>=6&& trainnings[i].max_Level < 6)
+            {        
+                
+                    trainnings[i].max_Level = 6;
+                    Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                    Training_Canvas_Control.Instance.ShowWarning();                             
+            }else if(SDGs[i] >= trainningTheshold_5 && trainnings[i].level_Limit >= 5 && trainnings[i].max_Level < 5)
             {
-                if (trainnings[i].max_Level != 3)
-                {
+                    trainnings[i].max_Level = 5;
+                    Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                    Training_Canvas_Control.Instance.ShowWarning();
+            }
+            else if (SDGs[i] >= trainningTheshold_4 && trainnings[i].level_Limit >= 4 && trainnings[i].max_Level < 4)
+            {
+                    trainnings[i].max_Level = 4;
+                    Warning_Panel.Instance.ShowMessege("Νέο trainning");
+                    Training_Canvas_Control.Instance.ShowWarning();
+            }
+            else if (SDGs[i] >= trainningTheshold_3 && trainnings[i].level_Limit >= 3 && trainnings[i].max_Level < 3)
+            {
                     trainnings[i].max_Level = 3;
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
                     Training_Canvas_Control.Instance.ShowWarning();
-                    break;
-                }
-            }else if(SDGs[i] >= trainningTheshold_2)
+
+            }
+            else if (SDGs[i] >= trainningTheshold_2 && trainnings[i].max_Level < 2)
             {
-                if (trainnings[i].max_Level != 2)
-                {
                     trainnings[i].max_Level = 2;
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
                     Training_Canvas_Control.Instance.ShowWarning();
-                    break;
-                }
             }
-            else if (SDGs[i] >= trainningTheshold_1)
+            else if (SDGs[i] >= trainningTheshold_1 && trainnings[i].max_Level < 1)
             {
-                if (trainnings[i].max_Level != 1)
-                {
                     trainnings[i].max_Level = 1;
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
                     Training_Canvas_Control.Instance.ShowWarning();
-                    break;
-                }
-
             }
-            else
-            {
-                trainnings[i].max_Level = 0;
-            }
+            //else
+            //{
+            //    trainnings[i].max_Level = 0;
+            //}
         
               
         }

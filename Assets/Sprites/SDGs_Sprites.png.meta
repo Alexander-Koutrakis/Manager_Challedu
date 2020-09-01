@@ -16,10 +16,10 @@ TextureImporter:
     second: CB2030
   - first:
       213: 2204373736445059693
-    second: SDGs_Sprites_4
+    second: no_poverty
   - first:
       213: -7488040109004919498
-    second: SDGs_Sprites_5
+    second: Gender_Equalities
   - first:
       213: -3901999012250730484
     second: E44323
@@ -46,10 +46,10 @@ TextureImporter:
     second: C3922C
   - first:
       213: 5313093483840186288
-    second: SDGs_Sprites_14
+    second: Industry
   - first:
       213: 1694669577758486161
-    second: SDGs_Sprites_15
+    second: Climate_Action
   - first:
       213: 4848577049414669200
     second: 3C7D45
@@ -68,6 +68,48 @@ TextureImporter:
   - first:
       213: 39391006223683559
     second: SDGs_Sprites_21
+  - first:
+      213: 5097531224466372186
+    second: zero_hunger
+  - first:
+      213: -2662888375259071472
+    second: Clean_water
+  - first:
+      213: 3676038355674803125
+    second: Reduce_Inequalities
+  - first:
+      213: -1046678917263672386
+    second: LIfe_Bellow_Water
+  - first:
+      213: -2011512788846954574
+    second: SDGs_Sprites_26
+  - first:
+      213: -8807145442865684101
+    second: Good_health
+  - first:
+      213: 4383055203469618052
+    second: SDGs_Sprites_28
+  - first:
+      213: 7100125293386137329
+    second: Affordable_energy
+  - first:
+      213: 8278372038580908410
+    second: Sustainable_Cities
+  - first:
+      213: 3620787389911710644
+    second: Life_OnLand
+  - first:
+      213: -1602467716198116476
+    second: Quality_Education
+  - first:
+      213: -4878181854927419756
+    second: Decent_Work
+  - first:
+      213: -4524648559528916035
+    second: Responsible_Consumption
+  - first:
+      213: 984136809713027383
+    second: Peace_Justice
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,6 +131,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -123,6 +166,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -201,9 +245,9 @@ TextureImporter:
       name: DFA737
       rect:
         serializedVersion: 2
-        x: 658
+        x: 657
         y: 605
-        width: 113
+        width: 114
         height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -222,7 +266,7 @@ TextureImporter:
       name: 49A249
       rect:
         serializedVersion: 2
-        x: 948
+        x: 947
         y: 605
         width: 115
         height: 114
@@ -287,7 +331,7 @@ TextureImporter:
         serializedVersion: 2
         x: 657
         y: 488
-        width: 113
+        width: 114
         height: 113
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -329,7 +373,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1238
         y: 488
-        width: 119
+        width: 114
         height: 113
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -435,7 +479,7 @@ TextureImporter:
         x: 366
         y: 250
         width: 114
-        height: 113
+        height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,7 +520,7 @@ TextureImporter:
         serializedVersion: 2
         x: 949
         y: 250
-        width: 113
+        width: 114
         height: 113
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -550,6 +594,384 @@ TextureImporter:
       bones: []
       spriteID: 7efce4559e1fb8000800000000000000
       internalID: 39391006223683559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: no_poverty
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 606
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d622209eb32879e10800000000000000
+      internalID: 2204373736445059693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gender_Equalities
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 488
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d62e6b133251890800000000000000
+      internalID: -7488040109004919498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Industry
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 369
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7acb2af56ebb940800000000000000
+      internalID: 5313093483840186288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Climate_Action
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 250
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ea4f1900da48710800000000000000
+      internalID: 1694669577758486161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zero_hunger
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 606
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56b7c904a11eb640800000000000000
+      internalID: 5097531224466372186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clean_water
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 488
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c7a2c91258b0bd0800000000000000
+      internalID: -2662888375259071472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reduce_Inequalities
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 370
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb25b27869e30330800000000000000
+      internalID: 3676038355674803125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIfe_Bellow_Water
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 250
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbbb9ef1137971f0800000000000000
+      internalID: -1046678917263672386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SDGs_Sprites_26
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 131
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b73f97a6cba514e0800000000000000
+      internalID: -2011512788846954574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Good_health
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 606
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b716ac8c1ebb6c580800000000000000
+      internalID: -8807145442865684101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SDGs_Sprites_28
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 571
+        width: 2
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bebb13c7db3dc30800000000000000
+      internalID: 4383055203469618052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Affordable_energy
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 488
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fefb051656b88260800000000000000
+      internalID: 7100125293386137329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sustainable_Cities
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 369
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a713426228fa2e270800000000000000
+      internalID: 8278372038580908410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Life_OnLand
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 252
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbb6e682fe9f3230800000000000000
+      internalID: 3620787389911710644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quality_Education
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 606
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483daf33a14e2c9e0800000000000000
+      internalID: -1602467716198116476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decent_Work
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 488
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4968b4bd2773d4cb0800000000000000
+      internalID: -4878181854927419756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Responsible_Consumption
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 370
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbcbc39b183531c0800000000000000
+      internalID: -4524648559528916035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Peace_Justice
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 250
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739c459d63b58ad00800000000000000
+      internalID: 984136809713027383
       vertices: []
       indices: 
       edges: []

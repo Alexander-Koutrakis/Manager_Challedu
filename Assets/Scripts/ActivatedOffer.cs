@@ -125,8 +125,10 @@ public class ActivatedOffer : MonoBehaviour
         SDG3_Image.sprite = SDG3;
         points_Text.text = points.ToString();
         points_Text.gameObject.SetActive(true);
-        reportButton.gameObject.SetActive(false);
-        sliderTimer.gameObject.SetActive(false);
+        Destroy(reportButton.gameObject);
+        Destroy(sliderTimer.gameObject);
+       // reportButton.gameObject.SetActive(false);
+       // sliderTimer.gameObject.SetActive(false);
     }
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Training_Canvas_Control : MonoBehaviour
+public class Training_Canvas_Control : MonoBehaviour, IMiniGame
 {   
     [SerializeField]
     private List<TrainningButton> trainningButtons = new List<TrainningButton>();
@@ -11,8 +11,10 @@ public class Training_Canvas_Control : MonoBehaviour
     [SerializeField]
     private RectTransform warningSign = null;
     public static Training_Canvas_Control Instance;
-
-   
+    [SerializeField]
+    private Panel_Control SDG_buttons_Panel;
+    [SerializeField]
+    private Panel_Control info_Panel_Control;
     private void Awake()
     {
         Instance = this;
@@ -20,25 +22,14 @@ public class Training_Canvas_Control : MonoBehaviour
     }
     
     
-    private void OnEnable()
-    {
+    //private void OnEnable()
+    //{
        
 
-        foreach (TrainningButton button in trainningButtons)
-        {
-            if(button.buttonInfo.current_Level< button.buttonInfo.max_Level)
-            {
-                
-                button.GetComponent<Button>().interactable = true;
-            }
-            else
-            {
-                button.GetComponent<Button>().interactable = false;
-            }
-        }
+        
 
      
-    }
+    //}
 
 
     public void ShowWarning()
@@ -54,7 +45,7 @@ public class Training_Canvas_Control : MonoBehaviour
 
     private void WarningFollowUp()
     {
-        LeanTween.scale(warningSign.gameObject, new Vector3(2.0f, 2.0f, 2.0f), 0.5f).setLoopPingPong();
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setLoopPingPong();
     }
 
     public void HideWarning()
@@ -65,5 +56,31 @@ public class Training_Canvas_Control : MonoBehaviour
             LeanTween.cancel(warningSign.gameObject);
             LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
         }
+    }
+
+    public void StartMiniGame()
+    {
+
+        SDG_buttons_Panel.OpenPanel();
+
+        foreach (TrainningButton button in trainningButtons)
+        {
+            if (button.buttonInfo.current_Level < button.buttonInfo.max_Level&& button.buttonInfo.current_Level<= button.buttonInfo.level_Limit)
+            {
+
+                button.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                button.GetComponent<Button>().interactable = false;
+            }
+        }
+
+
+    }
+
+    public void CloseMiniGame()
+    {
+        info_Panel_Control.OpenPanel();
     }
 }

@@ -42,7 +42,10 @@ public class GameMaster : MonoBehaviour
     public void StartCampaign()
     {
         MaxOffers = Player.Instance.Player_Level + 2*Player.Instance.Player_Level;
-
+        if (MaxOffers > 12)
+        {
+            MaxOffers = 12;
+        }
         Debug.developerConsoleVisible=true;
         Offer_Tab_Controller.Instance.PreferedOffers.Clear();       
         total = 0;
@@ -197,7 +200,7 @@ public class GameMaster : MonoBehaviour
         x = Player.Instance.Player_Level * x * 1000;
         x = Mathf.Round(x / 100) * 100;
         offer.budgetCost = Mathf.RoundToInt(x);
-        int y = Random.Range(1, 10)*10;
+        int y = Random.Range(1, 10)*5;
         offer.DurationInSec = y;
         offer.expiriencePoints =Mathf.RoundToInt(x / 10);
         GetTopSDGs(offer);

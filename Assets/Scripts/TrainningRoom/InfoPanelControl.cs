@@ -129,7 +129,7 @@ public class InfoPanelControl : MonoBehaviour
 
     private void ReadyToStartQuiz()
     {
-        trainningText.text = readyForQuiz_text;
+        trainningText.text = "Πατώντας το κουμπί Ερωτηματολόγιο θα σου ζητηθεί να απαντήσεις ερωτήσεις σχετικά με όσα έμαθες στο trainning  \n  Αν θες να επαναλάβεις το trainning πάτα τα βελάκια";//readyForQuiz_text;
         startQuizButton.gameObject.SetActive(true);
     }
  

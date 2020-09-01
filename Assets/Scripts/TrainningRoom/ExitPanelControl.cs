@@ -9,6 +9,7 @@ public class ExitPanelControl : MonoBehaviour
 
     public void CloseAllPanels()
     {
+        Cover_Back_Image.Instance.HideImage();
         foreach(Panel_Control PC in panel_controls)
         {
             PC.ClosePanel();

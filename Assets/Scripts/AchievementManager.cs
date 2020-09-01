@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -102,13 +103,14 @@ public class AchievementManager : MonoBehaviour
 
     public void CheckAchievements()
     {
-        foreach(Achievement_Main AM in achievement_Mains)
+        foreach (Achievement_Main AM in achievement_Mains.ToList())
         {
             if (!AM.activated)
             {
                 AM.Requirements();
             }
         }
+        // StartCoroutine(WaitForFrame());
     }
 
 
@@ -136,5 +138,17 @@ public class AchievementManager : MonoBehaviour
         Destroy(earnedachievement);
         
 
+    }
+
+    IEnumerator WaitForFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        foreach (Achievement_Main AM in achievement_Mains)
+        {
+            if (!AM.activated)
+            {
+                AM.Requirements();
+            }
+        }
     }
 }

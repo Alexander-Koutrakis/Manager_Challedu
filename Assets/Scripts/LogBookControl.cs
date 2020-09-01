@@ -121,7 +121,7 @@ public class LogBookControl : MonoBehaviour
 
     private void WarningFollowUp()
     {
-        LeanTween.scale(warningSign.gameObject, new Vector3(2.5f, 2.5f, 2.5f), 0.5f).setLoopPingPong();
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setLoopPingPong();
     }
 
     public void HideWarning()

@@ -33,29 +33,47 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
     - {fileID: 2800000, guid: f0fc8320e2d934346a6ada10c63756af, type: 3}
     - {fileID: 2800000, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
-    totalSpriteSurfaceArea: 3813754
+    totalSpriteSurfaceArea: 4034591
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 8438582981687008652, guid: f0fc8320e2d934346a6ada10c63756af, type: 3}
+  - {fileID: -4878181854927419756, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 984136809713027383, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -4524648559528916035, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 2542812349123870586, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -1602467716198116476, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -2662888375259071472, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 1917187907484397126, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 4619217937523531959, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 1694669577758486161, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 5097531224466372186, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 4383055203469618052, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -1046678917263672386, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -8807145442865684101, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 302653571470304868, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 39391006223683559, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 3746516377447622752, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -2011512788846954574, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 3620787389911710644, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 3676038355674803125, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -5239346927581623896, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 2204373736445059693, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 5313093483840186288, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 7100125293386137329, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 1042495092324131493, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 2507179355020928102, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -5775165713901464177, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -2908928215502471139, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: -7488040109004919498, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 6135423279708272947, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -3901999012250730484, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 4848577049414669200, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -4233753125102508131, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 8278372038580908410, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -6316262900430801238, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 7883007845951701040, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
@@ -68,22 +86,40 @@ SpriteAtlas:
   - {fileID: 8618452330374987370, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
   m_PackedSpriteNamesToIndex:
   - LogBooK_Sprites_Main_0
+  - Decent_Work
+  - Peace_Justice
+  - Responsible_Consumption
   - CB2030
+  - Quality_Education
+  - Clean_water
   - DFA737
   - DF1869
+  - Climate_Action
+  - zero_hunger
+  - SDGs_Sprites_28
+  - LIfe_Bellow_Water
+  - Good_health
   - SDGs_Sprites_20
   - SDGs_Sprites_21
   - F89E2C
+  - SDGs_Sprites_26
+  - Life_OnLand
   - 22BEE7
+  - Reduce_Inequalities
   - 2096D3
+  - no_poverty
+  - Industry
+  - Affordable_energy
   - 58BA49
   - 186AA2
   - F3692D
   - FBC711
+  - Gender_Equalities
   - C3922C
   - E44323
   - 3C7D45
   - 49A249
+  - Sustainable_Cities
   - E4233A
   - A61C45
   - LogBooK_Sprites_2

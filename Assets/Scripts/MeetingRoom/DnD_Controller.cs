@@ -57,7 +57,9 @@ public class DnD_Controller : MonoBehaviour
             {
                 DnDanswers[i].FillAnswer(question.answers[i], false);
             }
-        }     
+        }  
+        
+
     }
 
     private void RandomizeAnswer()
@@ -68,6 +70,7 @@ public class DnD_Controller : MonoBehaviour
 
     public void ResetController(Drag_n_Drop_Question dnd_Question)
     {
+       
         startingGroup.restartAnswerPositions();
         finalGroup.EmptyAnswerSlots();
         question = dnd_Question;
@@ -116,5 +119,8 @@ public class DnD_Controller : MonoBehaviour
         }
     }
 
-
+    public void StartPresentation()
+    {
+        MeetingRoomController.Instance.Active_DnD_Questions.Remove(question);
+    }
 }

@@ -21,6 +21,9 @@ public class PieGraph : MonoBehaviour
     private Sprite[] initialStrategySprites=null;
     [SerializeField]
     private Image[] strategyImages=null;
+    [SerializeField]
+    private RectTransform Strategies_Transform;
+    
     private void Awake()
     {
         Instance = this;
@@ -150,8 +153,33 @@ public class PieGraph : MonoBehaviour
                
             }
         }
+        count = 0;
+        foreach(Image image in strategyImages)
+        {
+            if (image.sprite != null)
+            {
+                image.gameObject.SetActive(true);
+                count++;
+            }
+            else
+            {
+                image.gameObject.SetActive(false);
+            }
+        }
 
-       
+        if (count <= 1)
+        {
+            Strategies_Transform.anchoredPosition = new Vector3(216, 480, 0);
+        }
+        else if (count <= 2)
+        {
+            Strategies_Transform.anchoredPosition = new Vector3(164, 480, 0);
+        }
+        else
+        {
+            Strategies_Transform.anchoredPosition = new Vector3(60, 480, 0);
+        }
+
     }
 
 
@@ -167,12 +195,15 @@ public class PieGraph : MonoBehaviour
             }
           
         }
-
+        counter = 0;
+       
+        
+        
         foreach(Image image in strategyImages)
         {
             image.sprite = null;
         }
 
-
+        
     }
 }

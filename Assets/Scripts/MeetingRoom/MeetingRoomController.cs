@@ -30,7 +30,7 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
             int x = Random.Range(0, Active_DnD_Questions.Count);
             DnD_Controller.Instance.ResetController(Active_DnD_Questions[x]);
             emptyMeetingRoom.SetActive(false);
-            Active_DnD_Questions.RemoveAt(x);
+           // Active_DnD_Questions.RemoveAt(x);
         }
         else
         {
@@ -76,7 +76,7 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
 
     private void WarningFollowUp()
     {
-        LeanTween.scale(warningSign.gameObject, new Vector3(2.0f, 2.0f, 2.0f), 0.5f).setLoopPingPong();
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setLoopPingPong();
     }
 
     public void HideWarning()
