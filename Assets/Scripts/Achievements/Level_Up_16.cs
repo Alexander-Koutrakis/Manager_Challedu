@@ -7,7 +7,7 @@ public class Level_Up_16 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΛΙΞΗ 4", "Ανέβα στο επίπεδο 16", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΛΙΞΗ 4", "Ανέβα στο επίπεδο 16", 1000, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

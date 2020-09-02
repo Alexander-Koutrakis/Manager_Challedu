@@ -7,7 +7,7 @@ public class Expirience_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΜΠΕΙΡΙΑ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης εμπειρίας προτάσεων", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΜΠΕΙΡΙΑ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης εμπειρίας προτάσεων", 300, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

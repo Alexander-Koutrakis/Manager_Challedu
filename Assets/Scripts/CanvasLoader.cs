@@ -24,6 +24,7 @@ public class CanvasLoader : MonoBehaviour
 
     private void GameMasterLoad()
     {
+        GameMaster.Instance.DelayedExpAdded();
         Cover_Back_Image.Instance.HideImage();
         LeanTween.moveLocalX(fadeImage.gameObject, -2500, 0.5f);
     }

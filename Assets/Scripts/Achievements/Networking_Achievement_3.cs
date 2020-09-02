@@ -7,7 +7,7 @@ public class Networking_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΔΙΚΤΥΩΣΗ 3", "Παρακολούθησε 7 παρουσιάσεις οργανισμών", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΔΙΚΤΥΩΣΗ 3", "Παρακολούθησε 7 παρουσιάσεις οργανισμών", 1200, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

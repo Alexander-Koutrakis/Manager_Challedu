@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MeetingRoomController : MonoBehaviour , IMiniGame
 {
     [SerializeField]
@@ -15,7 +15,10 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
     public bool warning = false;
     [SerializeField]
     private RectTransform warningSign = null;
-
+    [SerializeField]
+    private Image fadeImage = null;
+    [SerializeField]
+    private RectTransform fadeTransform = null;
     private void Awake()
     {
         Instance = this;
@@ -25,6 +28,7 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
     
     public void StartMiniGame()
     {
+        HideImage();
         if (Active_DnD_Questions.Count > 0)
         {
             int x = Random.Range(0, Active_DnD_Questions.Count);
@@ -87,5 +91,19 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
             LeanTween.cancel(warningSign.gameObject);
             LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
         }
+    }
+
+    public void ShowImage()
+    {
+        Debug.Log("show");
+        LeanTween.alpha(fadeTransform, 0.4f, 0.5f);
+        fadeImage.raycastTarget = true;
+    }
+
+    public void HideImage()
+    {
+        Debug.Log("hide");
+        LeanTween.alpha(fadeTransform, 0f, 0.5f);
+        fadeImage.raycastTarget = false;
     }
 }

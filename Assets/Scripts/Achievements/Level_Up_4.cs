@@ -7,7 +7,7 @@ public class Level_Up_4 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΛΙΞΗ 2", "Ανέβα στο επίπεδο 4", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΛΙΞΗ 2", "Ανέβα στο επίπεδο 4", 400, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

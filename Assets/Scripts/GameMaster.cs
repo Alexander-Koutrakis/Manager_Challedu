@@ -24,7 +24,7 @@ public class GameMaster : MonoBehaviour
     public Sprite[] SDG_Sprites = new Sprite[17];
     [SerializeField]
     private Image fadeImage;
-
+    public float DelayedExp;
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
     public int MaxOffers;
@@ -73,26 +73,6 @@ public class GameMaster : MonoBehaviour
             total += campaingStat;
         }
 
-        // if total offers are more than the max offers reduce a random Campain offer by 1 and recalculate
-        //while (total > MaxOffers)
-        //{
-        //    int x = Random.Range(0, Campaign.Length);
-        //    if (Campaign[x] > 0)
-        //    {
-        //        Campaign[x] = Campaign[x] - 1;
-        //        total--;
-        //    }
-        //}
-
-
-        //while (total < MaxOffers)
-        //{
-        //    int x = Random.Range(0, Campaign.Length);
-        //    if (Campaign[x] > 0)
-        //    {
-        //        total++; ;
-        //    }
-        //}
 
         // Add number of offers according to Campain index
         for (int i = 0; i < Campaign.Length; i++)
@@ -103,10 +83,7 @@ public class GameMaster : MonoBehaviour
                   Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
                 }
         }
-
-
-
-       
+      
 
         // Fill the extra Offers with random "Non strategic" Offers
         int extraOffers = 0;
@@ -264,6 +241,10 @@ public class GameMaster : MonoBehaviour
        
     }
    
-  
+    public void DelayedExpAdded()
+    {
+        Player.Instance.Expirience += DelayedExp;
+        DelayedExp = 0;
+    }
 
 }

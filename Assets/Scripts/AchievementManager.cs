@@ -110,7 +110,7 @@ public class AchievementManager : MonoBehaviour
                 AM.Requirements();
             }
         }
-        // StartCoroutine(WaitForFrame());
+        
     }
 
 
@@ -140,15 +140,5 @@ public class AchievementManager : MonoBehaviour
 
     }
 
-    IEnumerator WaitForFrame()
-    {
-        yield return new WaitForEndOfFrame();
-        foreach (Achievement_Main AM in achievement_Mains)
-        {
-            if (!AM.activated)
-            {
-                AM.Requirements();
-            }
-        }
-    }
+   
 }

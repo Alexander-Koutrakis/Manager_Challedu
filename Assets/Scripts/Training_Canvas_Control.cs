@@ -15,23 +15,17 @@ public class Training_Canvas_Control : MonoBehaviour, IMiniGame
     private Panel_Control SDG_buttons_Panel;
     [SerializeField]
     private Panel_Control info_Panel_Control;
+    [SerializeField]
+    private Image fadeImage = null;
+    [SerializeField]
+    private RectTransform fadeTransform = null;
     private void Awake()
     {
         Instance = this;
         gameObject.SetActive(false);
     }
     
-    
-    //private void OnEnable()
-    //{
-       
-
-        
-
-     
-    //}
-
-
+ 
     public void ShowWarning()
     {
         if (!warning)
@@ -60,7 +54,7 @@ public class Training_Canvas_Control : MonoBehaviour, IMiniGame
 
     public void StartMiniGame()
     {
-
+        HideWarning();
         SDG_buttons_Panel.OpenPanel();
 
         foreach (TrainningButton button in trainningButtons)
@@ -82,5 +76,20 @@ public class Training_Canvas_Control : MonoBehaviour, IMiniGame
     public void CloseMiniGame()
     {
         info_Panel_Control.OpenPanel();
+    }
+
+
+    public void ShowImage()
+    {
+        Debug.Log("show");
+        LeanTween.alpha(fadeTransform, 0.4f, 0.5f);
+        fadeImage.raycastTarget = true;
+    }
+
+    public void HideImage()
+    {
+        Debug.Log("hide");
+        LeanTween.alpha(fadeTransform, 0f, 0.5f);
+        fadeImage.raycastTarget = false;
     }
 }

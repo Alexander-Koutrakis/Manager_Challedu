@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
     {
         if (budget < Player_Level * 3000)
         {
-            budget += budgetRegenerationRate;
+            budget += budgetRegenerationRate*Player_Level;
             budget_Text.text = budget.ToString();
             if (Offer_Tab_Controller.Instance.shown_Offer_Manager != null)
             {

@@ -7,6 +7,7 @@ public class Cover_Back_Image : MonoBehaviour
 {
     public static Cover_Back_Image Instance;
 
+
     private void Start()
     {
         Instance = this;

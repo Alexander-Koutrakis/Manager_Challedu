@@ -7,7 +7,7 @@ public class Impact_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΑΝΤΙΚΤΥΠΟ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης αντίκτυπου προτάσεων", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΑΝΤΙΚΤΥΠΟ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης αντίκτυπου προτάσεων", 300, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

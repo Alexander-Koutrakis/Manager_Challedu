@@ -29,6 +29,7 @@ public class QuizResults : MonoBehaviour
             GetComponent<Panel_Control>().OpenPanel();
             result_Text.gameObject.SetActive(true);
             result_Text.text = (correctAnswers * (100)).ToString();
+            GameMaster.Instance.DelayedExp = correctAnswers * 100;
         }
         else
         {
