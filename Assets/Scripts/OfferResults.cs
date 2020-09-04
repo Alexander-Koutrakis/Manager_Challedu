@@ -35,9 +35,10 @@ public class OfferResults : MonoBehaviour
     private float Exp;
     private float Booster;
     private float[] GPs = new float[6];
-    
+    [SerializeField]
+    private Image OfferStrategyImage = null;
     ActivatedOffer connectedActivatedOffer;
-    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO,float[] gps)
+    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO,float[] gps,Sprite CampaingSprite)
     {
         Booster = booster;
         readyOffer = offer;

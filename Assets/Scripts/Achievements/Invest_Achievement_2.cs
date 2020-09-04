@@ -7,7 +7,7 @@ public class Invest_Achievement_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΠΕΝΔΥΣΗ 2", "Διέθεσε 9000 χρήματα σε χρηματοδότηση προτάσεων", 600, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΠΕΝΔΥΣΗ 2", "Διέθεσε 9000 χρήματα σε χρηματοδότηση προτάσεων", 200, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Invest_Achievement_2 : Achievement_Main
     {
         gameObject.AddComponent<Invest_Achievement_3>();
         GetComponent<Invest_Achievement_3>().CreateAchievement();
-        Player.Instance.Expirience += 600;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 200;
         Player.Instance.Calculate_UI_Info();
     }
 }

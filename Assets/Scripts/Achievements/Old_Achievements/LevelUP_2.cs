@@ -22,7 +22,7 @@ public class LevelUP_2 : Achievement_Main
 
     public override void Rewards()
     {
-        Player.Instance.budgetRegenerationRate += 60;
+        Player.Instance.incomeRate += 60;
         Player.Instance.Calculate_UI_Info();
     }
 }

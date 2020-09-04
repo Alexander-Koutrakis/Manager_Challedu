@@ -27,7 +27,7 @@ public class LogBookControl : MonoBehaviour
         Instance = this;
 
     }
-    public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent, float[] gps)
+    public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent, float[] gps,Sprite CampaingSprite)
     {
         //create 2 gameobjects 
         // one is for the list area and one for the info area
@@ -38,7 +38,7 @@ public class LogBookControl : MonoBehaviour
         GameObject OfferResults_Clone = Instantiate(OfferResultsGO, OfferResults_Log);
         activatedOfferGO_Clone.transform.SetAsFirstSibling();
         activatedOffer = activatedOfferGO_Clone.GetComponent<ActivatedOffer>();        
-        activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed,booster,commitPercent,gps);
+        activatedOffer.InitializeActivatedOffer(offerID, paidBudget, OfferResults_Clone, canBeClaimed,Claimed,booster,commitPercent,gps, CampaingSprite);
         OrganiseActivatedOffers();
 
         int x = Mathf.FloorToInt(LogOffers.Count / 4);
@@ -113,7 +113,7 @@ public class LogBookControl : MonoBehaviour
         if (!warning)
         {
             warning = true;
-            LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setOnComplete(WarningFollowUp);
+            LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
         }
         Warning_Panel.Instance.ShowMessege("Προσφορά ολοκληρώθηκε");
     }

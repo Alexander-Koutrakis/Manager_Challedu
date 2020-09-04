@@ -7,7 +7,7 @@ public class SDG_Training_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ SDG 1", "Ολοκλήρωσε επιτυχώς 3 εκπαιδεύσεις SDG", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ SDG 1", "Ολοκλήρωσε επιτυχώς 3 εκπαιδεύσεις SDG", 50, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class SDG_Training_1 : Achievement_Main
     {
         gameObject.AddComponent<SDG_Training_2>();
         GetComponent<SDG_Training_2>().CreateAchievement();
-        Player.Instance.Expirience += 300;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 50;
         Player.Instance.Calculate_UI_Info();
     }
 }

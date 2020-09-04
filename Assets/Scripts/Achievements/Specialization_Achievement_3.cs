@@ -7,7 +7,7 @@ public class Specialization_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΙΔΙΚΕΥΣΗ 3", "Συγκέντρωσε 140 μονάδες υποστήριξης εξειδίκευσης προτάσεων", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΙΔΙΚΕΥΣΗ 3", "Συγκέντρωσε 140 μονάδες υποστήριξης εξειδίκευσης προτάσεων", 600, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Specialization_Achievement_3 : Achievement_Main
     {
         gameObject.AddComponent<Specialization_achievement_4>();
         GetComponent<Specialization_achievement_4>().CreateAchievement();
-        Player.Instance.Expirience += 1200;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 600;
         Player.Instance.Calculate_UI_Info();
     }
 }

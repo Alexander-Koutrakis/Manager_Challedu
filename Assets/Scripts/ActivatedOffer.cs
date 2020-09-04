@@ -39,10 +39,12 @@ public class ActivatedOffer : MonoBehaviour
     [SerializeField]
     private Button reportButton=null;
     [SerializeField]
+    Sprite PlayerCampaingSprite;
     float[] gps=new float[6];
 
-    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent, float[] GPs)
+    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent, float[] GPs, Sprite CampaingSprite)
     {
+        PlayerCampaingSprite = CampaingSprite;
         gps = GPs;
         offer = GameMaster.Instance.Offers[INofferIDin];
         titleText = offer.title_Text;
@@ -77,7 +79,7 @@ public class ActivatedOffer : MonoBehaviour
 
         Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
         canBeClaimed = true;
-        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this,gps);
+        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this,gps, PlayerCampaingSprite);
         reportButton.interactable = true;
         LogBookControl.Instance.ShowWarning();
         yield return null;

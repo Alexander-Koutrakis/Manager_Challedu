@@ -7,7 +7,7 @@ public class Networking_Achievement_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΔΙΚΤΥΩΣΗ 2", "Παρακολούθησε 3 παρουσιάσεις οργανισμών", 600, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΔΙΚΤΥΩΣΗ 2", "Παρακολούθησε 3 παρουσιάσεις οργανισμών", 200, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Networking_Achievement_2 : Achievement_Main
     {
         gameObject.AddComponent<Networking_Achievement_3>();
         GetComponent<Networking_Achievement_3>().CreateAchievement();
-        Player.Instance.Expirience += 600;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 200;
         Player.Instance.Calculate_UI_Info();
     }
 }

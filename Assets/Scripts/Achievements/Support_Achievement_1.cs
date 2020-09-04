@@ -7,7 +7,7 @@ public class Support_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΥΠΟΣΤΗΡΙΞΗ 1", "Χρηματοδότησε 3 Προτάσεις", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΥΠΟΣΤΗΡΙΞΗ 1", "Χρηματοδότησε 3 Προτάσεις", 50, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Support_Achievement_1 : Achievement_Main
     {
         gameObject.AddComponent<Support_Achievement_2>();
         GetComponent<Support_Achievement_2>().CreateAchievement();
-        Player.Instance.Expirience += 300;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 50;
         Player.Instance.Calculate_UI_Info();
     }
 }

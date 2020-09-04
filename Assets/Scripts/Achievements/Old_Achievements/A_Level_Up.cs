@@ -24,7 +24,7 @@ public class A_Level_Up : Achievement_Main
 
     public override void Rewards()
     {
-        Player.Instance.budgetRegenerationRate += 20;
+        Player.Instance.incomeRate += 20;
         Player.Instance.Calculate_UI_Info();
     }
 }

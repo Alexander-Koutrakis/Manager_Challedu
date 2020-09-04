@@ -27,6 +27,7 @@ public class Level_Up_8 : Achievement_Main
         Player.Instance.Expirience += 600;
         gameObject.AddComponent<Level_Up_16>();
         GetComponent<Level_Up_16>().CreateAchievement();
+        AchievementManager.Instance.achievement_Mains.Remove(this);
         Player.Instance.Calculate_UI_Info();
     }
 }

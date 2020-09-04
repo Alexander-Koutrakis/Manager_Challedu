@@ -31,7 +31,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -429,7 +429,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3604,7 +3604,7 @@ RectTransform:
   - {fileID: 5674192897352146991}
   - {fileID: 919679220}
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4561,6 +4561,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5674192898902792992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4596,11 +4608,11 @@ RectTransform:
   - {fileID: 3166676785967496790}
   - {fileID: 5674192898738773529}
   - {fileID: 1984866010653680369}
+  - {fileID: 457574559}
   - {fileID: 1809709630784983376}
   - {fileID: 4725791411216177500}
   - {fileID: 5674192897431782787}
   - {fileID: 5674192899443739230}
-  - {fileID: 457574559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4703,6 +4715,8 @@ MonoBehaviour:
   warningSign: {fileID: 0}
   SDG_buttons_Panel: {fileID: 0}
   info_Panel_Control: {fileID: 0}
+  fadeImage: {fileID: 0}
+  fadeTransform: {fileID: 0}
 --- !u!1 &5674192899143890470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,7 +4940,7 @@ RectTransform:
   - {fileID: 5674192899299636036}
   - {fileID: 5674192898821850861}
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5685,7 +5699,7 @@ PrefabInstance:
     - target: {fileID: 1093154391314926625, guid: 435e52c68e608d443976e8c40eca8399,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1093154391314926625, guid: 435e52c68e608d443976e8c40eca8399,
         type: 3}
@@ -6615,6 +6629,18 @@ PrefabInstance:
     - {fileID: 4776969654335328485, guid: 435e52c68e608d443976e8c40eca8399, type: 3}
     - {fileID: 4538244037724794924, guid: 435e52c68e608d443976e8c40eca8399, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 435e52c68e608d443976e8c40eca8399, type: 3}
+--- !u!1 &4725791411216177499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1093154391314926630, guid: 435e52c68e608d443976e8c40eca8399,
+    type: 3}
+  m_PrefabInstance: {fileID: 5674192897438504317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4725791411216177500 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1093154391314926625, guid: 435e52c68e608d443976e8c40eca8399,
+    type: 3}
+  m_PrefabInstance: {fileID: 5674192897438504317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4725791411216177501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1093154391314926624, guid: 435e52c68e608d443976e8c40eca8399,
@@ -6630,18 +6656,6 @@ MonoBehaviour:
 --- !u!224 &2998253565672495100 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7432390581842133633, guid: 435e52c68e608d443976e8c40eca8399,
-    type: 3}
-  m_PrefabInstance: {fileID: 5674192897438504317}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &4725791411216177500 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1093154391314926625, guid: 435e52c68e608d443976e8c40eca8399,
-    type: 3}
-  m_PrefabInstance: {fileID: 5674192897438504317}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4725791411216177499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1093154391314926630, guid: 435e52c68e608d443976e8c40eca8399,
     type: 3}
   m_PrefabInstance: {fileID: 5674192897438504317}
   m_PrefabAsset: {fileID: 0}

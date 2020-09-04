@@ -7,7 +7,7 @@ public class Publicity_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΔΗΜΟΣΙΟΤΗΤΑ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης δημοσιότητας προτάσεων", 300, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΔΗΜΟΣΙΟΤΗΤΑ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης δημοσιότητας προτάσεων", 50, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Publicity_Achievement_1 : Achievement_Main
     {
         gameObject.AddComponent<Publicity_achievement_2>();
         GetComponent<Publicity_achievement_2>().CreateAchievement();
-        Player.Instance.Expirience += 300;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 50;
         Player.Instance.Calculate_UI_Info();
     }
 }

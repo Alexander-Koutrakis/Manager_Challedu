@@ -7,14 +7,14 @@ public class Resources_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 1", "Ανέβασε τον ρυθμό ροής χρηματοδότησης σε 100 ευρώ/δευτερόλεπτο", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 1", "Ανέβασε τον ρυθμό ροής χρηματοδότησης σε 100 ευρώ/δευτερόλεπτο", 50, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
     public override void Requirements()
     {
 
-        if (Player.Instance.budgetRegenerationRate >= 100)
+        if (Player.Instance.incomeRate >= 100)
         {
             AchievementManager.Instance.EarnAchievement("ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 1");
             activated = true;
@@ -26,7 +26,8 @@ public class Resources_Achievement_1 : Achievement_Main
     {
         gameObject.AddComponent<Resources_Achievement_2>();
         GetComponent<Resources_Achievement_2>().CreateAchievement();
-        Player.Instance.Expirience += 300;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 50;
         Player.Instance.Calculate_UI_Info();
     }
 }

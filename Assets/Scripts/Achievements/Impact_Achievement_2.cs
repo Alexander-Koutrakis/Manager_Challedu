@@ -7,7 +7,7 @@ public class Impact_Achievement_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΑΝΤΙΚΤΥΠΟ 2", "Συγκέντρωσε 60 μονάδες υποστήριξης αντίκτυπου προτάσεων", 600, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΑΝΤΙΚΤΥΠΟ 2", "Συγκέντρωσε 60 μονάδες υποστήριξης αντίκτυπου προτάσεων", 200, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Impact_Achievement_2 : Achievement_Main
     {
         gameObject.AddComponent<Impact_Achievement_3>();
         GetComponent<Impact_Achievement_3>().CreateAchievement();
-        Player.Instance.Expirience += 600;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 200;
         Player.Instance.Calculate_UI_Info();
     }
 }

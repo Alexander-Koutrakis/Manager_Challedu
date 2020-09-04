@@ -32,6 +32,7 @@ public class GameMaster : MonoBehaviour
     private int total = 0;
     [SerializeField]
     private Canvas[] canvases;
+
     private void Awake()
     {
         Instance = this;
@@ -105,6 +106,7 @@ public class GameMaster : MonoBehaviour
         }
 
         Offer_Tab_Controller.Instance.FillOfferManagers();
+        Player.Instance.FillStrategyImages();
     }
     public void InitializeDictionaries()
     {
@@ -244,7 +246,9 @@ public class GameMaster : MonoBehaviour
     public void DelayedExpAdded()
     {
         Player.Instance.Expirience += DelayedExp;
+        Debug.Log("Delayed Exp :" + DelayedExp);
         DelayedExp = 0;
+        Player.Instance.Calculate_UI_Info();
     }
 
 }

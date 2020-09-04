@@ -7,7 +7,7 @@ public class Presentation_Knowledge_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ ΕΚΕ 3", "Ολοκλήρωσε επιτυχώς 7 παρουσιάσεις ΕΚΕ", 1200, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ ΕΚΕ 3", "Ολοκλήρωσε επιτυχώς 7 παρουσιάσεις ΕΚΕ", 600, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Presentation_Knowledge_3 : Achievement_Main
     {
         gameObject.AddComponent<Presentation_Knowledge_4>();
         GetComponent<Presentation_Knowledge_4>().CreateAchievement();
-        Player.Instance.Expirience += 1200;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 600;
         Player.Instance.Calculate_UI_Info();
     }
 }

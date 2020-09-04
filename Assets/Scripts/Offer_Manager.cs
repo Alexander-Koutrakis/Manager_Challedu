@@ -311,7 +311,13 @@ public class Offer_Manager : MonoBehaviour
         GetBooster();
         Player.Instance.budget -= BudgetAmount;
         PayButton.interactable = false;
-        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent,offer.GP);
+        // add campaing sprite here
+        //--
+        //--
+        //--
+        //--
+        //---------------------
+        LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent,offer.GP,GetCampaingSprite());
 
         
         if (budget30.GetComponent<Image>().sprite!=selectedButton30)
@@ -355,5 +361,39 @@ public class Offer_Manager : MonoBehaviour
        
     }
 
+    private Sprite GetCampaingSprite()
+    {
 
+        if (offer.OfferID < 2000)
+        {
+            return Player.Instance.ActiveStrategySprites[0];
+        }
+        else if (offer.OfferID < 3000)
+        {
+            return Player.Instance.ActiveStrategySprites[1];
+        }
+        else if (offer.OfferID < 4000)
+        {
+            return Player.Instance.ActiveStrategySprites[2];
+        }
+        else if (offer.OfferID < 5000)
+        {
+            return Player.Instance.ActiveStrategySprites[3];
+        }
+        else if (offer.OfferID < 6000)
+        {
+            return Player.Instance.ActiveStrategySprites[4];
+        }
+        else if (offer.OfferID < 7000)
+        {
+            return Player.Instance.ActiveStrategySprites[5];
+        }
+        else
+        {
+            return null;
+        }
+
+
+        
+    }
 }

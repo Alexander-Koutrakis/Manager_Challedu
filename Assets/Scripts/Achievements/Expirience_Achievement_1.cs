@@ -7,7 +7,7 @@ public class Expirience_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΜΠΕΙΡΙΑ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης εμπειρίας προτάσεων", 300, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΜΠΕΙΡΙΑ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης εμπειρίας προτάσεων", 50, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -26,7 +26,8 @@ public class Expirience_Achievement_1 : Achievement_Main
     {
         gameObject.AddComponent<Expirience_Achievement_2>();
         GetComponent<Expirience_Achievement_2>().CreateAchievement();
-        Player.Instance.Expirience += 300;
+        AchievementManager.Instance.achievement_Mains.Remove(this);
+        Player.Instance.Expirience += 50;
         Player.Instance.Calculate_UI_Info();
     }
 }

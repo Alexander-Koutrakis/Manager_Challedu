@@ -24,6 +24,7 @@ public class Level_Up_16 : Achievement_Main
 
     public override void Rewards()
     {
+        AchievementManager.Instance.achievement_Mains.Remove(this);
         Player.Instance.Expirience += 1000;      
         Player.Instance.Calculate_UI_Info();
     }

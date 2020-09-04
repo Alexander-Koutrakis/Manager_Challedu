@@ -7,7 +7,7 @@ public class SDG_Focus_Sept_4 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΔΕΣΜΗ ΣΤΟΧΩΝ 4", "Συνέβαλε σε 7 SDG κατά 150 μονάδες", 10, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΔΕΣΜΗ ΣΤΟΧΩΝ 4", "Συνέβαλε σε 7 SDG κατά 150 μονάδες", 3000, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -32,6 +32,7 @@ public class SDG_Focus_Sept_4 : Achievement_Main
 
     public override void Rewards()
     {
+        AchievementManager.Instance.achievement_Mains.Remove(this);
         Player.Instance.Expirience += 3000;
         Player.Instance.Calculate_UI_Info();
     }
