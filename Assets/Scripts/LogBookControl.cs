@@ -25,7 +25,6 @@ public class LogBookControl : MonoBehaviour
     private void Start()
     {
         Instance = this;
-
     }
     public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent, float[] gps,Sprite CampaingSprite)
     {
