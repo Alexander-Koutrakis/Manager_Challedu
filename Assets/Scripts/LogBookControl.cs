@@ -114,7 +114,7 @@ public class LogBookControl : MonoBehaviour
             warning = true;
             LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
         }
-        Warning_Panel.Instance.ShowMessege("Προσφορά ολοκληρώθηκε");
+        Warning_Panel.Instance.ShowMessege("το Έργο ολοκληρώθηκε");
     }
 
 
