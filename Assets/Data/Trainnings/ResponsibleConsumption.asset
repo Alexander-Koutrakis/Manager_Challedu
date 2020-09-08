@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: ResponsibleConsumption
   m_EditorClassIdentifier: 
-  trainning_info_text:
-  - ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_ResponsibleConsumption_0_
-  - ResponsibleConsumption_1_ResponsibleConsumption_1_ResponsibleConsumption_1_ResponsibleConsumption_1_ResponsibleConsumption_1_ResponsibleConsumption_1_ResponsibleConsumption_1_ResponsibleConsumption_1_
-  - ResponsibleConsumption_2_ResponsibleConsumption_2_ResponsibleConsumption_2_ResponsibleConsumption_2_ResponsibleConsumption_2_ResponsibleConsumption_2_ResponsibleConsumption_2_ResponsibleConsumption_2_
+  trainning_Level: 0
+  trainning_info_text1: []
+  trainning_info_text2: []
+  trainning_info_text3: []
+  trainning_Sprites:
+  - {fileID: 6135423279708272947, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 6135423279708272947, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 6135423279708272947, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  QuizInfo1: []
+  QuizInfo2: []
+  QuizInfo3: []

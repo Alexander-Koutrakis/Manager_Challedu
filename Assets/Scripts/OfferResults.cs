@@ -5,38 +5,86 @@ using TMPro;
 using UnityEngine.UI;
 public class OfferResults : MonoBehaviour
 {
-    private TMP_Text titleText;
-    private TMP_Text subtitleText;
-    private TMP_Text infoText;
-    private Image SDG1;
-    private Image SDG2;
-    private Image SDG3;
-    private Image CoverImage;
+    [SerializeField]
+    private TMP_Text MainText=null;
+    [SerializeField]
+    private TMP_Text SubText = null;
+    [SerializeField]
+    private TMP_Text ExpText=null;
+    [SerializeField]
+    private TMP_Text BudgetText=null;
+    [SerializeField]
+    private Image SDG1=null;
+    [SerializeField]
+    private Image SDG2=null;
+    [SerializeField]
+    private Image SDG3=null;
+    [SerializeField]
+    private Image SliderFill_Image_1=null;
+    [SerializeField]
+    private Image SliderFill_Image_2=null;
+    [SerializeField]
+    private Image SliderFill_Image_3=null;
+    [SerializeField]
+    private Image CoverImage=null;
+    [SerializeField]
+    private Sprite Claimed_Sprite=null;
     private Button ClaimButton;
     private Offer readyOffer;
     private int claimedPaidBudget;
-    private int ExtraExp;
+    private float Exp;
     private float Booster;
-    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster)
+    ActivatedOffer connectedActivatedOffer;
+    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO)
     {
         Booster = booster;
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
-        titleText = GetComponentsInChildren<TMP_Text>()[0];
-        subtitleText = GetComponentsInChildren<TMP_Text>()[1];// probably removed
-        infoText = GetComponentsInChildren<TMP_Text>()[2];// probably removed
-        SDG1 = GetComponentsInChildren<Image>()[1];
-        SDG2 = GetComponentsInChildren<Image>()[2];
-        SDG3 = GetComponentsInChildren<Image>()[3];
-        CoverImage= GetComponentsInChildren<Image>()[5];
         ClaimButton = GetComponentInChildren<Button>();
-        titleText.text = offer.title_Text;
-        subtitleText.text = offer.main_Text;
-        subtitleText.text = "Paid Budget : " + paidBudgert.ToString();
+        connectedActivatedOffer = ConnectedAO;
+
+        if (Booster > 0)
+        {
+            MainText.text = "Η προταση που επέλεξες συμβαδίζει με \n τη στρατιγική της εταιρείας";
+        }
+        else if(Booster==0)
+        {
+            MainText.text = "Η προταση που επέλεξες δεν συμβαδίζει με \n τη στρατιγική της εταιρείας";
+        }
+
+
+
+        Booster = (Booster + 100) / 100;
+        float x = (float)claimedPaidBudget / (float)readyOffer.budgetCost;
+        float claimedExp = x * readyOffer.expiriencePoints;
+        claimedExp = Mathf.RoundToInt(claimedExp * Booster);
+        Exp = claimedExp;
+        SubText.text = "Επέλεξες να υποστηρίξεις την πρόταση κατά " + commitPercent + "% \n Πήρες "+ Exp+" βαθμούς εμπειρίας";
+        BudgetText.text =paidBudgert.ToString();
+        ExpText.text = Exp.ToString();
         SDG1.sprite = offer.SDG1;
         SDG2.sprite = offer.SDG2;
         SDG3.sprite = offer.SDG3;
-        CoverImage.gameObject.SetActive(false);
+        // change slider collor according to SDG spite name(hex Color ID)
+        Color sliderColor = new Color();
+        if(ColorUtility.TryParseHtmlString("#" + offer.SDG1.name, out sliderColor))
+        {
+            SliderFill_Image_1.color = sliderColor;
+        }
+
+        if (ColorUtility.TryParseHtmlString("#" + offer.SDG2.name, out sliderColor))
+        {
+            SliderFill_Image_2.color = sliderColor;
+        }
+
+        if (ColorUtility.TryParseHtmlString("#" + offer.SDG3.name, out sliderColor))
+        {
+            SliderFill_Image_3.color = sliderColor;
+        }
+
+
+
+       // CoverImage.gameObject.SetActive(false); fade it in  a function
         if (canBeClaimed)
         {
             
@@ -54,14 +102,24 @@ public class OfferResults : MonoBehaviour
 
     public void Claim_Offer()
     {
-        Booster= (Booster + 100) / 100;
-        float x = (float)claimedPaidBudget /(float) readyOffer.budgetCost;       
-        float claimedExp =x* readyOffer.expiriencePoints;
-        claimedExp = Mathf.RoundToInt(claimedExp * Booster);
-        Debug.Log(claimedExp);
-        Player.Instance.Expirience += claimedExp;
-        Player.Instance.budget += Mathf.RoundToInt(readyOffer.budgetCost * 0.1f);        
+
+        MainText.color = Color.black;
+        SubText.color = Color.black;
+        GetComponent<Image>().sprite = Claimed_Sprite;
+        connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite, Exp);
+        Player.Instance.Expirience += Exp;       
         ClaimButton.interactable = false;
+        Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
+        AchievementManager.Instance.CheckAchievements();
+        PieGraph.Instance.RefreshGraph();
     }
+
+    public void ShowReportButton()
+    {
+        LeanTween.alpha(CoverImage.rectTransform, 0, 0.5f);
+        CoverImage.raycastTarget = false;
+    }
+
+   
 }

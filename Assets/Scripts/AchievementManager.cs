@@ -16,6 +16,8 @@ public class AchievementManager : MonoBehaviour
     public TMP_Text pointText; 
     public static AchievementManager Instance;
     public Panel_Control panel_Control;
+    public List<Achievement_Main> achievement_Mains = new List<Achievement_Main>();
+    
     private void Awake()
     {
         Instance = this;
@@ -24,17 +26,22 @@ public class AchievementManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();//----------------------------delete saves---------------
         scrollRect = GetComponentInChildren<ScrollRect>();
-        activeButton = GameObject.Find("GeneralCategory_Button").GetComponent<Achievement_Button>();
-        CreateAchievement("General", "Press W", "Press W key", 5, 0);
-        CreateAchievement("General", "Press S", "Press S key", 5, 0);
-        CreateAchievement("General", "Press D", "Press D key", 5, 0);
-        CreateAchievement("General", "Press WS", "Press WS key", 5, 0,new string[] { "Press W", "Press S" });
+        activeButton = GameObject.Find("GeneralCategory_Button").GetComponent<Achievement_Button>();       
         foreach (GameObject achievement in GameObject.FindGameObjectsWithTag("Achievement_List"))
         {
             achievement.SetActive(false);
         }
        
         activeButton.Click();
+
+
+
+        foreach(Achievement_Main AM in GetComponents<Achievement_Main>())
+        {
+            achievement_Mains.Add(AM);
+            AM.CreateAchievement();
+        }
+
     }
     public void CreateAchievement(string parent, string Title, string Description, int Points, int SpriteIndex, string[] dependencies = null)
     {
@@ -81,9 +88,7 @@ public class AchievementManager : MonoBehaviour
             SetAchievement_Info("EarnAchievementCanvas", title, achievement);
             pointText.text = "Points : " + PlayerPrefs.GetInt("Points");
             StartCoroutine(FadeAchivement(achievement));
-
-            Player.Instance.Calculate_UI_Info();
-            PieGraph.Instance.RefreshGraph();
+            Player.Instance.Calculate_UI_Info();          
        }
     }
 
@@ -94,23 +99,14 @@ public class AchievementManager : MonoBehaviour
     }
 
 
-    private void Update()
+    public void CheckAchievements()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        foreach(Achievement_Main AM in achievement_Mains)
         {
-            EarnAchievement("Press W");
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            EarnAchievement("Press S");
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            EarnAchievement("Press D");
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EarnAchievement("Earn Exp");
+            if (!AM.activated)
+            {
+                AM.Requirements();
+            }
         }
     }
 

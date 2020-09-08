@@ -6,67 +6,124 @@ using UnityEngine.UI;
 public class ActivatedOffer : MonoBehaviour
 {    
     private string titleText;
-    private string subtitleText;
     private int paidBudget;
-    private int paidPeople;
-    private int paidProducts;
     public float timer;
     public string resultText;
     private TMP_Text titlteTextComp;
-    private TMP_Text subtitleTextComp;
+
     private Slider sliderTimer;
-    private Button claimButton;
     public GameObject activatedResultsGO;
-    bool canBeClaimed=false;
-    bool Claimed = false;
+   public bool canBeClaimed=false;
+   public bool Claimed = false;
     Offer offer;
     [SerializeField]
-    private Sprite ClaimedOffer;// swap sprite if offer is claimed
+    private Image Main_Image = null;
+    [SerializeField]
+    private Image Selected_Image = null;
+    [SerializeField]
+    private Sprite ClaimedOffer_Sprite=null;// swap sprite if offer is claimed
+    [SerializeField]
+    private Sprite ReadyToBeClaimedOffer_Sprite=null;// swap sprite if offer is claimed
+    [SerializeField]
+    private Sprite ProccessingOffer_Sprite=null;// swap sprite if offer is claimed   
+    [SerializeField]
+    private Image SDG1_Image = null;
+    [SerializeField]
+    private Image SDG2_Image = null;
+    [SerializeField]
+    private Image SDG3_Image = null;
+    [SerializeField]
+    private TMP_Text points_Text = null;
     private int Booster;
-
-    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster)
+    float commitPercentMain;
+    [SerializeField]
+    private Button reportButton=null;
+    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent)
     {
+
         offer = GameMaster.Instance.Offers[INofferIDin];
         titleText = offer.title_Text;
-        subtitleText = offer.main_Text;
         timer = offer.DurationInSec;
         activatedResultsGO = offerResult;
-        canBeClaimed = INcanBeClaimed;
+        canBeClaimed = false;
         Claimed = INClaimed;
         Booster = booster;
-
-        titlteTextComp = GetComponentsInChildren<TMP_Text>()[0];
-        subtitleTextComp = GetComponentsInChildren<TMP_Text>()[1];
+        commitPercentMain = commitPercent;
+        titlteTextComp = GetComponentInChildren<TMP_Text>();
         sliderTimer = GetComponentInChildren<Slider>();
-        claimButton = GetComponentsInChildren<Button>()[1];
-        claimButton.interactable = false;
         titlteTextComp.text = titleText;
-        subtitleTextComp.text = subtitleText;
+
         sliderTimer.maxValue = timer;
         sliderTimer.value = 0;
-        // if can be claimed or Claimed sliderTimer.maxvalue=0.1f;
+        Main_Image.sprite = ProccessingOffer_Sprite;
+        
+        reportButton.interactable = false;
+        GetComponentInParent<LogBookControl>().LogOffers.Add(this);
         StartCoroutine(startCooldown(budgetPaid));
-
     }
 
     IEnumerator startCooldown(int paidBudget)
     {
         while (sliderTimer.value < sliderTimer.maxValue)
         {
-            sliderTimer.value += Time.deltaTime;
-            yield return null;
+            //sliderTimer.value += Time.deltaTime;
+            //yield return null;
+            sliderTimer.value++;
+            yield return new WaitForSeconds(1);
         }
 
-
+        Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
         canBeClaimed = true;
-        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster);
-        claimButton.interactable = true;
+        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this);
+        reportButton.interactable = true;
+        LogBookControl.Instance.ShowWarning();
         yield return null;
     }
 
     public void ButtonPress()
     {
+        LogBookControl.Instance.DeselectOffers();
+        Selected_Image.gameObject.SetActive(true);
         activatedResultsGO.transform.SetAsLastSibling();
+        if (reportButton.interactable == true)
+        {
+            ReportPress();
+        }
+    }
+
+
+    public void ReportPress()
+    {
+        activatedResultsGO.GetComponent<OfferResults>().ShowReportButton();
+        activatedResultsGO.transform.SetAsLastSibling();
+        activatedResultsGO.GetComponent<OfferResults>().Claim_Offer();
+        LogBookControl.Instance.DeselectOffers();
+        Selected_Image.gameObject.SetActive(true);
+        reportButton.interactable = false;
+
+    }
+
+    public void DeselectActivatedOffer()
+    {
+        Selected_Image.gameObject.SetActive(false);
+    }
+
+    public void ClaimedOffer(Sprite SDG1, Sprite SDG2, Sprite SDG3,float points) {
+        Main_Image.sprite = ClaimedOffer_Sprite;
+        Claimed = true;
+
+        SDG1_Image.gameObject.SetActive(true);
+        SDG1_Image.sprite = SDG1;
+
+        SDG2_Image.gameObject.SetActive(true);
+        SDG2_Image.sprite = SDG2;
+
+        SDG3_Image.gameObject.SetActive(true);
+        SDG3_Image.sprite = SDG3;
+        points_Text.text = points.ToString();
+        points_Text.gameObject.SetActive(true);
+        reportButton.gameObject.SetActive(false);
+        sliderTimer.gameObject.SetActive(false);
     }
 
 }

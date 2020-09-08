@@ -1,33 +1,30 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Question_Manager : MonoBehaviour
 {
-    public Question question;
     public TMP_Text question_Text;
     private List<Vector3> position_List = new List<Vector3>();
     private List<Vector3> starting_Pos = new List<Vector3>();
+    public Question[] questions=new Question[3];
     public GameObject[] Answer_Button;
-
-
-
+    public static Question_Manager Instance;
+    public int CorrectAnswers=0;
+    private int questionIndex = 0;
     private void Awake()
     {
         for (int i = 0; i < 4; i++)
         {
             starting_Pos.Add(Answer_Button[i].GetComponent<RectTransform>().anchoredPosition);
-        }
-
-        
+        }       
+        Instance = this;
     }
-    private void OnEnable()
+    public void StartQuestion(Question question) 
     {
 
-        question_Text.text = question.question_Text;
+        question_Text.text = questions[questionIndex].question_Text;
 
         if (starting_Pos != null)
         {
@@ -40,9 +37,11 @@ public class Question_Manager : MonoBehaviour
 
         for(int i = 0; i < 4; i++)
         {
-            if (i < question.answers_Text.Length)
+            if (i < questions[questionIndex].answers_Text.Length)
             {
-                Answer_Button[i].GetComponentInChildren<TMP_Text>().text = question.answers_Text[i];
+               
+                Answer_Button[i].GetComponentInChildren<TMP_Text>().text = questions[questionIndex].answers_Text[i];
+                Answer_Button[i].gameObject.SetActive(true);
                 if (i == 0)
                 {
                     Answer_Button[i].GetComponent<Quiz_Answer_Button>().correct_Answer = true;
@@ -55,9 +54,7 @@ public class Question_Manager : MonoBehaviour
             else
             {
                 Answer_Button[i].SetActive(false);
-            }
-          
-           
+            }          
         }
 
         foreach(GameObject GO in Answer_Button)
@@ -67,52 +64,32 @@ public class Question_Manager : MonoBehaviour
                 position_List.Add(GO.GetComponent<RectTransform>().anchoredPosition);
             }
         }
-        
-       
-
-
+               
         position_List.Shuffle();
 
         for (int i = 0; i < position_List.Count; i++)
         {
             Answer_Button[i].GetComponent<RectTransform>().anchoredPosition = position_List[i];
         }
-
-       
-
-
-    }
-
-   
-
-    public void CloseQuestionManager()
-    {
-        foreach(GameObject GO in Answer_Button)
-        {
-            GO.SetActive(true);
-        }
         position_List.Clear();
-
-      
-
-        StartCoroutine("WaitForPanels");
     }
 
-    public void CloseQuiz()
+
+    public void NextQuestion()
     {
-        GetComponentInParent<QuizManager>().continueQuiz = false;
-    }
-
-    private void DeactivateGO()
-    {
-        gameObject.SetActive(false);
-        GetComponentInParent<QuizManager>().ContinueQuiz();
-    }
-
-
-    private IEnumerator WaitForPanels() {
-        // yield return new WaitWhile(() => panel_Control_Answers.gameObject.activeSelf);
-        yield return new WaitForSeconds(0.5f);
-        DeactivateGO();
+        questionIndex++;
+        if (questionIndex < questions.Length)
+        {
+           // question = questions[questionIndex];
+            StartQuestion(questions[questionIndex]);
+        }
+        else
+        {
+            GetComponent<Panel_Control>().ClosePanel();
+            QuizResults.Instance.ShowResults(CorrectAnswers);
+            CorrectAnswers = 0;
+            questionIndex = 0;
+            //show results
+        }
     }
 }

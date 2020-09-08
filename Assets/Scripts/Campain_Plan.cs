@@ -9,21 +9,21 @@ public class Campain_Plan : MonoBehaviour
     public static Campain_Plan Instance;
     private int[] campaingStars = new int[6];
     private Campaing_Strategy[] campaing_Strategies;
-    public int stars = 5;
-    private int maxStars = 5;
+    public int stars = 3;
+
     public Button StartCampaingButton;
     public Button HideButton;
     public Sprite ReadyToStartSprite;
     public Sprite WaitingForStarsSprite;
     public Panel_Control panel_Control;
     [SerializeField]
-    private RectTransform CampainrectTransform;
+    private RectTransform CampainrectTransform=null;
     [SerializeField]
-    private RectTransform StatsrectTransform;
+    private RectTransform StatsrectTransform=null;
     [SerializeField]
-    private Button toStatsBTN;
+    private Button toStatsBTN=null;
     [SerializeField]
-    private Button toCampainBTN;
+    private Button toCampainBTN=null;
 
     private void Start()
     {
@@ -38,6 +38,7 @@ public class Campain_Plan : MonoBehaviour
         for(int i = 0; i < campaingStars.Length; i++)
         {
             GameMaster.Instance.CampaignStars[i] = campaingStars[i];
+            PieGraph.Instance.AddStrategySprites();
         }
     }
 

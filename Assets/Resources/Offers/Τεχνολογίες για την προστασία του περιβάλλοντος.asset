@@ -15,16 +15,22 @@ MonoBehaviour:
     \u03C4\u03BF\u03C5 \u03C0\u03B5\u03C1\u03B9\u03B2\u03B1\u0301\u03BB\u03BB\u03BF\u03BD\u03C4\u03BF\u03C2"
   m_EditorClassIdentifier: 
   OfferID: 6004
-  budgetCost: 0
+  budgetCost: 1200
   productCost: 0
   peopleCost: 0
-  title_Text: " \u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B5\u03C2
+  title_Text: "\u03A4\u03B5\u03C7\u03BD\u03BF\u03BB\u03BF\u03B3\u03AF\u03B5\u03C2
     \u03B3\u03B9\u03B1 \u03C4\u03B7\u03BD \u03C0\u03C1\u03BF\u03C3\u03C4\u03B1\u03C3\u03AF\u03B1
     \u03C4\u03BF\u03C5 \u03C0\u03B5\u03C1\u03B9\u03B2\u03AC\u03BB\u03BB\u03BF\u03BD\u03C4\u03BF\u03C2"
   main_Text: 
-  expiriencePoints: 0
-  DurationInSec: 0
-  GP: []
+  expiriencePoints: 120
+  DurationInSec: 100
+  GP:
+  - 4
+  - 1
+  - 1
+  - 5
+  - 0
+  - 4
   SDGs:
   - 0
   - 0
@@ -43,6 +49,6 @@ MonoBehaviour:
   - 1
   - 0
   - 0
-  SDG1: {fileID: 0}
-  SDG2: {fileID: 0}
-  SDG3: {fileID: 0}
+  SDG1: {fileID: -5775165713901464177, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  SDG2: {fileID: 4848577049414669200, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  SDG3: {fileID: 1042495092324131493, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}

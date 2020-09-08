@@ -1,15 +1,8 @@
--(Done) Deactivate offer after paying 
-- Inform player that an offer is ready to be claimed
--(Done) Claim Exp after each offer 
--(Done) Implement Exp bar 
--(Done) Reduce resources to budget only 
--(Done) Level up system
--(Done) Increase bugdet ovet time
--(Done) Stop deals when no bugdet
--(Done) pay budget button refreshes button sprites wrongly
--(Done)refresh buttons on money tics;
--(Done) Force player to interact with campaing stars 
--(keep it up)prepare for graphic swap
--unlock tools while leveling
--Create achievement abstract class to parent different Achievements
- Achievement hold a conditions function and a reward function
+-when i spread campainn stars on few offers i get an error
+-Reset Training canvas on Exit
+-Reset Meeting Canvas on Exit
+-Create more meeting projects for testing
+-Add result screen on meeting projects
+-Add quit panel on meeting projects
+-Add "News panel" in office canvas
+-Allow only one canvas to be active each time

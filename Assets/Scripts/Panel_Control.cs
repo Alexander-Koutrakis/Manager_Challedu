@@ -13,13 +13,20 @@ public class Panel_Control : MonoBehaviour
 
     public void OpenPanel()
     {
+
         LeanTween.move(targetPanel, OpenPosition, 0.5f);
-        LeanTween.scale(targetPanel, OpenScale, 0.5f);
+        LeanTween.scale(targetPanel, OpenScale, 0.5f).setOnComplete(Cover_Back_Image.Instance.ShowImage);       
     }
 
     public void ClosePanel()
     {
         LeanTween.move(targetPanel, ClosePosition, 0.5f);
         LeanTween.scale(targetPanel, CloseScale, 0.5f);
+        Cover_Back_Image.Instance.HideImage();
+    }
+
+    private void DisableGO()
+    {
+        targetPanel.gameObject.SetActive(false);
     }
 }

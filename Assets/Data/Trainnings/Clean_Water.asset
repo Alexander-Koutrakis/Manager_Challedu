@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959118295594c2b449e5786c2bc220f9, type: 3}
   m_Name: Clean_Water
   m_EditorClassIdentifier: 
-  trainning_info_text:
-  - '"Clean_Water_0_"+"  \n "+"Clean_Water_0 \n _  Clean\\n_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_Clean_Water_0_'
-  - Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_Clean_Water_1_
-  - Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_Clean_Water_2_
+  trainning_Level: 0
+  trainning_info_text1: []
+  trainning_info_text2: []
+  trainning_info_text3: []
+  trainning_Sprites:
+  - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 2715726532584941515, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  QuizInfo1: []
+  QuizInfo2: []
+  QuizInfo3: []
