@@ -23,7 +23,7 @@ public class Achievement
     private string child;
     public string Child { get => child; set => child = value; }
 
-    private GameObject achievementRef;
+    public GameObject achievementRef;
     private List<Achievement> dependencies = new List<Achievement>();
     public Achievement(string title , string description , int points , int spriteIndex, GameObject achievementRef)
     {

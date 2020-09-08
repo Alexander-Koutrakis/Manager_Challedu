@@ -31,7 +31,7 @@ public class OfferResults : MonoBehaviour
     private Image CoverImage=null;
     [SerializeField]
     private Sprite Claimed_Sprite=null;
-    private Button ClaimButton;
+
     private Offer readyOffer;
     private int claimedPaidBudget;
     private float Exp;
@@ -47,7 +47,7 @@ public class OfferResults : MonoBehaviour
         Booster = booster;
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
-        ClaimButton = GetComponentInChildren<Button>();
+
         connectedActivatedOffer = ConnectedAO;
         GPs = gps;
 
@@ -98,18 +98,7 @@ public class OfferResults : MonoBehaviour
 
 
        // CoverImage.gameObject.SetActive(false); fade it in  a function
-        if (canBeClaimed)
-        {
-            
-            if (!claimed)
-            {
-                ClaimButton.interactable = true;
-            }
-            else
-            {
-                ClaimButton.interactable = false;
-            }
-        }
+      
 
     }
 
@@ -120,7 +109,7 @@ public class OfferResults : MonoBehaviour
         GetComponent<Image>().sprite = Claimed_Sprite;
         connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite, Exp);
         Player.Instance.Expirience += Exp;       
-        ClaimButton.interactable = false;
+    
         Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
         Player.Instance.GetGPs(GPs);

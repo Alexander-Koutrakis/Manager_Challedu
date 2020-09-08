@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private TMP_Text income_text;
     public float Next_Level_Exp=0;
     public float expRate=100;
-    private int budgetRegenerationRate = 20;
+    private int budgetRegenerationRate = 200;
     public int incomeRate;
     public int successfulPresentation = 0;
     public int successfulSDGTrainings = 0;
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Sprite[] initialStrategySprites = null;
     public Sprite[] ActiveStrategySprites=new Sprite[6];
+   private bool lvlUp = false;
     private void Awake()
     {
         Instance = this;
@@ -77,10 +78,12 @@ public class Player : MonoBehaviour
     {
         budget_Text.text = budget.ToString();
         income_text.text = incomeRate.ToString()+" / δ";
-        if(Expirience >= Expirience_Slider.maxValue)
+        bool lvlUp = false;
+        if(Expirience >= Expirience_Slider.maxValue&& !lvlUp)
         {
             //claimLevel_Button.interactable = true;
             level_Up_Panel.LevelUP_Start();
+            lvlUp = true;
         }
         if (expBarRoutine != null){
             StopCoroutine(expBarRoutine);
@@ -93,6 +96,7 @@ public class Player : MonoBehaviour
 
     public void Level_Up()
     {
+        lvlUp = false;
         Campain_Plan.Instance.NewCampaing();
 
         Expirience -= Expirience_Slider.maxValue;

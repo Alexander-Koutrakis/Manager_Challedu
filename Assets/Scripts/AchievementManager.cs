@@ -18,7 +18,16 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager Instance;
     public Panel_Control panel_Control;
     public List<Achievement_Main> achievement_Mains = new List<Achievement_Main>();
-    
+    [SerializeField]
+    private RectTransform achievement_rect_Transform = null;
+    private int currentPage = 1;
+    [SerializeField]
+    private int totalPages = 0;
+    private bool waitButtonBool;
+    [SerializeField]
+    private TMP_Text page_Text = null;
+    private int totalAchievements = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -40,9 +49,10 @@ public class AchievementManager : MonoBehaviour
         foreach (Achievement_Main AM in GetComponents<Achievement_Main>())
         {
             AM.CreateAchievement();
+           
         }
 
-
+      
 
     }
     public void CreateAchievement(string parent, string Title, string Description, int Points, int SpriteIndex, string[] dependencies = null)
@@ -61,6 +71,10 @@ public class AchievementManager : MonoBehaviour
                 newAchievement.AddDependencies(dependency);
             }
         }
+
+        totalAchievements++;
+
+        totalPages = totalAchievements / 8 +1;
     }
   
     private void SetAchievement_Info(string parent , string Title,GameObject achievement)
@@ -86,9 +100,10 @@ public class AchievementManager : MonoBehaviour
     {
        if(achievements[title].EarnAchievement())
         {
+            achievements[title].achievementRef.transform.SetAsFirstSibling();
             GameObject achievement = Instantiate(visualAchievement);
             SetAchievement_Info("EarnAchievementCanvas", title, achievement);
-            pointText.text = "Points : " + PlayerPrefs.GetInt("Points");
+
             StartCoroutine(FadeAchivement(achievement));
             Player.Instance.Calculate_UI_Info();          
        }
@@ -109,8 +124,7 @@ public class AchievementManager : MonoBehaviour
             {
                 AM.Requirements();
             }
-        }
-        
+        }      
     }
 
 
@@ -140,5 +154,34 @@ public class AchievementManager : MonoBehaviour
 
     }
 
-   
+
+    public void NextPage()
+    {
+        int x = (totalPages - 1) * -1180;
+        if (achievement_rect_Transform.anchoredPosition.x > x && !waitButtonBool)
+        {
+            Debug.Log("here");
+            LeanTween.moveLocalX(achievement_rect_Transform.gameObject, achievement_rect_Transform.anchoredPosition.x - 1180, 0.5f).setOnComplete(buttonReady);
+            currentPage++;
+            page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+            waitButtonBool = true;
+
+        }
+    }
+
+    public void PrevPage()
+    {
+        if (achievement_rect_Transform.anchoredPosition.x < -590 && !waitButtonBool)
+        {
+            LeanTween.moveLocalX(achievement_rect_Transform.gameObject, achievement_rect_Transform.anchoredPosition.x + 1180, 0.5f).setOnComplete(buttonReady);
+            currentPage--;
+            page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+            waitButtonBool = true;
+        }
+    }
+
+    private void buttonReady()
+    {
+        waitButtonBool = false;
+    }
 }
