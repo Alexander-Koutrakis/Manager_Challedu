@@ -11,7 +11,7 @@ public class PausePanel : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Office");
+        SceneManager.LoadScene("Main_Menu");
     }
 
     

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,13 +35,14 @@ public class AchievementManager : MonoBehaviour
        
         activeButton.Click();
 
+        Debug.Log("here");
 
-
-        foreach(Achievement_Main AM in GetComponents<Achievement_Main>())
+        foreach (Achievement_Main AM in GetComponents<Achievement_Main>())
         {
-            achievement_Mains.Add(AM);
             AM.CreateAchievement();
         }
+
+
 
     }
     public void CreateAchievement(string parent, string Title, string Description, int Points, int SpriteIndex, string[] dependencies = null)
@@ -101,13 +103,14 @@ public class AchievementManager : MonoBehaviour
 
     public void CheckAchievements()
     {
-        foreach(Achievement_Main AM in achievement_Mains)
+        foreach (Achievement_Main AM in achievement_Mains.ToList())
         {
             if (!AM.activated)
             {
                 AM.Requirements();
             }
         }
+        
     }
 
 
@@ -136,4 +139,6 @@ public class AchievementManager : MonoBehaviour
         
 
     }
+
+   
 }

@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class OfferResults : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text MainText=null;
+    private Image Offer_campaing_image;
     [SerializeField]
-    private TMP_Text SubText = null;
+    private Slider BudgetSlider;
     [SerializeField]
+    private Image Campaing_Support_Image;
+    [SerializeField]   
     private TMP_Text ExpText=null;
     [SerializeField]
     private TMP_Text BudgetText=null;
@@ -34,22 +36,31 @@ public class OfferResults : MonoBehaviour
     private int claimedPaidBudget;
     private float Exp;
     private float Booster;
+    private float[] GPs = new float[6];
+    [SerializeField]
+    private Image OfferStrategyImage = null;
     ActivatedOffer connectedActivatedOffer;
-    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO)
+    [SerializeField]
+    private Image Campaing_Bonus_text_Image;
+    public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO,float[] gps,Sprite CampaingSprite)
     {
         Booster = booster;
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
         ClaimButton = GetComponentInChildren<Button>();
         connectedActivatedOffer = ConnectedAO;
+        GPs = gps;
 
+        Offer_campaing_image.sprite = CampaingSprite;
         if (Booster > 0)
         {
-            MainText.text = "Η προταση που επέλεξες συμβαδίζει με \n τη στρατιγική της εταιρείας";
+            // MainText.text = "Η προταση που επέλεξες συμβαδίζει με \n τη στρατιγική της εταιρείας";
+            Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[1];
         }
         else if(Booster==0)
         {
-            MainText.text = "Η προταση που επέλεξες δεν συμβαδίζει με \n τη στρατιγική της εταιρείας";
+            //  MainText.text = "Η προταση που επέλεξες δεν συμβαδίζει με \n τη στρατιγική της εταιρείας";
+            Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[0];
         }
 
 
@@ -58,9 +69,11 @@ public class OfferResults : MonoBehaviour
         float x = (float)claimedPaidBudget / (float)readyOffer.budgetCost;
         float claimedExp = x * readyOffer.expiriencePoints;
         claimedExp = Mathf.RoundToInt(claimedExp * Booster);
+        BudgetSlider.value = commitPercent/100;
         Exp = claimedExp;
-        SubText.text = "Επέλεξες να υποστηρίξεις την πρόταση κατά " + commitPercent + "% \n Πήρες "+ Exp+" βαθμούς εμπειρίας";
+        //SubText.text = "Επέλεξες να υποστηρίξεις την πρόταση κατά " + commitPercent + "% \n Πήρες "+ Exp+" βαθμούς εμπειρίας";
         BudgetText.text =paidBudgert.ToString();
+        Player.Instance.totalbudgetPaid += paidBudgert;// just for achievement checking
         ExpText.text = Exp.ToString();
         SDG1.sprite = offer.SDG1;
         SDG2.sprite = offer.SDG2;
@@ -103,14 +116,16 @@ public class OfferResults : MonoBehaviour
     public void Claim_Offer()
     {
 
-        MainText.color = Color.black;
-        SubText.color = Color.black;
+       
         GetComponent<Image>().sprite = Claimed_Sprite;
         connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite, Exp);
         Player.Instance.Expirience += Exp;       
         ClaimButton.interactable = false;
         Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
+        Player.Instance.GetGPs(GPs);
+        Player.Instance.offersAccepted++;
+        
         AchievementManager.Instance.CheckAchievements();
         PieGraph.Instance.RefreshGraph();
     }

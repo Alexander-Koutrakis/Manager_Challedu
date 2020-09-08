@@ -58,12 +58,27 @@ public class InfoPanelControl : MonoBehaviour
             trainningSlides = trainning_Info.trainning_info_text3;
             Question_Manager.Instance.questions = trainning_Info.QuizInfo3;
         }
+        else if (trainning_Info.current_Level == 3&&trainning_Info.level_Limit>=4)
+        {
+            trainningSlides = trainning_Info.trainning_info_text4;
+            Question_Manager.Instance.questions = trainning_Info.QuizInfo4;
+        }
+        else if (trainning_Info.current_Level == 4&&trainning_Info.level_Limit >= 5)
+        {
+            trainningSlides = trainning_Info.trainning_info_text5;
+            Question_Manager.Instance.questions = trainning_Info.QuizInfo5;
+        }
+        else if (trainning_Info.current_Level == 5&trainning_Info.level_Limit >= 6)
+        {
+            trainningSlides = trainning_Info.trainning_info_text6;
+            Question_Manager.Instance.questions = trainning_Info.QuizInfo6;
+        }
 
 
 
         // add text and questions according to level
 
-        trainningIndex = 0;
+        trainningIndex =0;
         prevButton.interactable = false;
         nextButton.interactable = true;
         startQuizButton.gameObject.SetActive(false);
@@ -114,7 +129,7 @@ public class InfoPanelControl : MonoBehaviour
 
     private void ReadyToStartQuiz()
     {
-        trainningText.text = readyForQuiz_text;
+        trainningText.text = "Πατώντας το κουμπί Ερωτηματολόγιο θα σου ζητηθεί να απαντήσεις ερωτήσεις σχετικά με όσα έμαθες στο trainning  \n  Αν θες να επαναλάβεις το trainning πάτα τα βελάκια";//readyForQuiz_text;
         startQuizButton.gameObject.SetActive(true);
     }
  

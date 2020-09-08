@@ -13,6 +13,8 @@ public class Question_Manager : MonoBehaviour
     public static Question_Manager Instance;
     public int CorrectAnswers=0;
     private int questionIndex = 0;
+    [SerializeField]
+    private TMP_Text QuestionIndex_text;
     private void Awake()
     {
         for (int i = 0; i < 4; i++)
@@ -72,6 +74,8 @@ public class Question_Manager : MonoBehaviour
             Answer_Button[i].GetComponent<RectTransform>().anchoredPosition = position_List[i];
         }
         position_List.Clear();
+
+        QuestionIndex_text.text = (questionIndex + 1).ToString();
     }
 
 

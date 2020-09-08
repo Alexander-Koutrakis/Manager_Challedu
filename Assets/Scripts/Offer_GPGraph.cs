@@ -24,8 +24,7 @@ public class Offer_GPGraph : MonoBehaviour
       
         //GetSliders();
         for (int i = 0; i < sliders.Length; i++)
-        {
-            //coroutines[i] = CalculateGraph(sliders[i], GPs[i]);
+        {          
             StartCoroutine(CalculateGraph(sliders[i], GPs[i]));
         }
     }

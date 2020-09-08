@@ -8,8 +8,16 @@ public class CanvasLoader : MonoBehaviour
     [SerializeField]
     private Image fadeImage=null;
     [SerializeField]
-    private Canvas targetCanvas=null;  
+    private Canvas targetCanvas=null;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        //  FadeTo(targetCanvas);
+        LeanTween.moveLocalX(fadeImage.gameObject, -2500, 0.5f);
+    }
+
+
     public void FadeTo(Canvas canvas)
     {
         targetCanvas = canvas;
@@ -24,7 +32,8 @@ public class CanvasLoader : MonoBehaviour
 
     private void GameMasterLoad()
     {
-       
+        GameMaster.Instance.DelayedExpAdded();
+        Cover_Back_Image.Instance.HideImage();
         LeanTween.moveLocalX(fadeImage.gameObject, -2500, 0.5f);
     }
 

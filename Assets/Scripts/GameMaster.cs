@@ -24,7 +24,7 @@ public class GameMaster : MonoBehaviour
     public Sprite[] SDG_Sprites = new Sprite[17];
     [SerializeField]
     private Image fadeImage;
-
+    public float DelayedExp;
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
     public int MaxOffers;
@@ -32,22 +32,23 @@ public class GameMaster : MonoBehaviour
     private int total = 0;
     [SerializeField]
     private Canvas[] canvases;
+    public Sprite[] campaingReportSprites = new Sprite[2];
     private void Awake()
     {
         Instance = this;
-        InitializeDictionaries();
-       
+        InitializeDictionaries();      
     }
 
   
     public void StartCampaign()
     {
         MaxOffers = Player.Instance.Player_Level + 2*Player.Instance.Player_Level;
-
+        if (MaxOffers > 12)
+        {
+            MaxOffers = 12;
+        }
         Debug.developerConsoleVisible=true;
-        Offer_Tab_Controller.Instance.PreferedOffers.Clear();
-       
-        
+        Offer_Tab_Controller.Instance.PreferedOffers.Clear();       
         total = 0;
     
       // get the total amount of campain stars in order to find Group Percent
@@ -60,33 +61,19 @@ public class GameMaster : MonoBehaviour
         for (int i = 0; i < CampaignStars.Length; i++)
         {
             float x = (float)CampaignStars[i] / total;
-            Campaign[i] =Mathf.RoundToInt(x * (float)MaxOffers/2);
+            Campaign[i] =Mathf.RoundToInt(x * MaxOffers/2);
+            if (x > 0&& Campaign[i]==0)
+            {
+                Campaign[i] = 1;
+            }
         }
 
-        total = 0;
+        total = 0;// total show how many "Correct" offers will be generted
         foreach (int campaingStat in Campaign)
         {
             total += campaingStat;
         }
 
-        while (total > MaxOffers)
-        {
-            int x = Random.Range(0, Campaign.Length);
-            if (Campaign[x] > 0)
-            {
-                Campaign[x] = Campaign[x] - 1;
-                total--;
-            }
-        }
-
-        while (total < MaxOffers)
-        {
-            int x = Random.Range(0, Campaign.Length);
-            if (Campaign[x] > 0)
-            {               
-                total++; ;
-            }
-        }
 
         // Add number of offers according to Campain index
         for (int i = 0; i < Campaign.Length; i++)
@@ -97,10 +84,7 @@ public class GameMaster : MonoBehaviour
                   Offer_Tab_Controller.Instance.PreferedOffers.Add(OffersGrouped[i][x]);
                 }
         }
-
-
-
-       
+      
 
         // Fill the extra Offers with random "Non strategic" Offers
         int extraOffers = 0;
@@ -122,6 +106,7 @@ public class GameMaster : MonoBehaviour
         }
 
         Offer_Tab_Controller.Instance.FillOfferManagers();
+        Player.Instance.FillStrategyImages();
     }
     public void InitializeDictionaries()
     {
@@ -194,7 +179,7 @@ public class GameMaster : MonoBehaviour
         x = Player.Instance.Player_Level * x * 1000;
         x = Mathf.Round(x / 100) * 100;
         offer.budgetCost = Mathf.RoundToInt(x);
-        int y = Random.Range(1, 10)*10;
+        int y = Random.Range(1, 10)*5;
         offer.DurationInSec = y;
         offer.expiriencePoints =Mathf.RoundToInt(x / 10);
         GetTopSDGs(offer);
@@ -258,6 +243,12 @@ public class GameMaster : MonoBehaviour
        
     }
    
-  
+    public void DelayedExpAdded()
+    {
+        Player.Instance.Expirience += DelayedExp;
+        Debug.Log("Delayed Exp :" + DelayedExp);
+        DelayedExp = 0;
+        Player.Instance.Calculate_UI_Info();
+    }
 
 }

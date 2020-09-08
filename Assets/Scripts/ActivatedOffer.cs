@@ -38,9 +38,14 @@ public class ActivatedOffer : MonoBehaviour
     float commitPercentMain;
     [SerializeField]
     private Button reportButton=null;
-    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent)
-    {
+    [SerializeField]
+    Sprite PlayerCampaingSprite;
+    float[] gps=new float[6];
 
+    public void InitializeActivatedOffer(int INofferIDin,int budgetPaid,GameObject offerResult,bool INcanBeClaimed, bool INClaimed,int booster, float commitPercent, float[] GPs, Sprite CampaingSprite)
+    {
+        PlayerCampaingSprite = CampaingSprite;
+        gps = GPs;
         offer = GameMaster.Instance.Offers[INofferIDin];
         titleText = offer.title_Text;
         timer = offer.DurationInSec;
@@ -74,7 +79,7 @@ public class ActivatedOffer : MonoBehaviour
 
         Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
         canBeClaimed = true;
-        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this);
+        activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this,gps, PlayerCampaingSprite);
         reportButton.interactable = true;
         LogBookControl.Instance.ShowWarning();
         yield return null;
@@ -122,8 +127,10 @@ public class ActivatedOffer : MonoBehaviour
         SDG3_Image.sprite = SDG3;
         points_Text.text = points.ToString();
         points_Text.gameObject.SetActive(true);
-        reportButton.gameObject.SetActive(false);
-        sliderTimer.gameObject.SetActive(false);
+        Destroy(reportButton.gameObject);
+        Destroy(sliderTimer.gameObject);
+       // reportButton.gameObject.SetActive(false);
+       // sliderTimer.gameObject.SetActive(false);
     }
 
 }
