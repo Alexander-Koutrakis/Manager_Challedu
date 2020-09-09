@@ -7,7 +7,7 @@ public class SDG_Focus_Triple_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΣΤΟΧΟΘΕΣΙΑ 2", "Συνέβαλε σε 3 SDG κατά 30 μονάδες", 300, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΣΤΟΧΟΘΕΣΙΑ 2", "Συνέβαλε σε 3 SDG κατά 30 μονάδες", 3, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -35,7 +35,7 @@ public class SDG_Focus_Triple_2 : Achievement_Main
         gameObject.AddComponent<SDG_Focus_Triple_3>();
         GetComponent<SDG_Focus_Triple_3>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 300;
+        Player.Instance.Expirience += 3;
         Player.Instance.Calculate_UI_Info();
     }
 }

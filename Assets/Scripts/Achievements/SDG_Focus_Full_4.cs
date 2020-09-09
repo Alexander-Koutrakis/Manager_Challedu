@@ -7,7 +7,7 @@ public class SDG_Focus_Full_4 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΟΛΙΣΤΙΚΗ ΣΤΟΧΕΥΣΗ 4", "Συνέβαλε σε ολα τα SDG κατά 150 μονάδες", 30000, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΟΛΙΣΤΙΚΗ ΣΤΟΧΕΥΣΗ 4", "Συνέβαλε σε ολα τα SDG κατά 150 μονάδες", 15, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -33,7 +33,7 @@ public class SDG_Focus_Full_4 : Achievement_Main
     public override void Rewards()
     {
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 30000;
+        Player.Instance.Expirience += 15;
         Player.Instance.Calculate_UI_Info();
     }
 }

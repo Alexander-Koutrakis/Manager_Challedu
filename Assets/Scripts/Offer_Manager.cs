@@ -95,27 +95,33 @@ public class Offer_Manager : MonoBehaviour
     {
         if (offer.OfferID < 2000)
         {
-            Booster = GameMaster.Instance.CampaignStars[0]*10;
+            //Booster = GameMaster.Instance.CampaignStars[0]*10;
+            Booster = GameMaster.Instance.CampaignStars[0];
         }
         else if (offer.OfferID < 3000)
         {
-            Booster = GameMaster.Instance.CampaignStars[1] * 10;
+            // Booster = GameMaster.Instance.CampaignStars[1] * 10;
+            Booster = GameMaster.Instance.CampaignStars[1];
         }
         else if (offer.OfferID < 4000)
         {
-            Booster = GameMaster.Instance.CampaignStars[2] * 10;
+            // Booster = GameMaster.Instance.CampaignStars[2] * 10;
+            Booster = GameMaster.Instance.CampaignStars[2];
         }
         else if (offer.OfferID < 5000)
         {
-            Booster = GameMaster.Instance.CampaignStars[3] * 10;
+            // Booster = GameMaster.Instance.CampaignStars[3] * 10;
+            Booster = GameMaster.Instance.CampaignStars[3];
         }
         else if (offer.OfferID < 6000)
         {
-            Booster = GameMaster.Instance.CampaignStars[4] * 10;
+            // Booster = GameMaster.Instance.CampaignStars[4] * 10;
+            Booster = GameMaster.Instance.CampaignStars[4];
         }
         else if (offer.OfferID < 7000)
         {
-            Booster = GameMaster.Instance.CampaignStars[5] * 10;
+            //  Booster = GameMaster.Instance.CampaignStars[5] * 10;
+            Booster = GameMaster.Instance.CampaignStars[5];
         }
     }
 

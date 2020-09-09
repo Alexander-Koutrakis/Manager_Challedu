@@ -7,7 +7,7 @@ public class SDG_Focus : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΣΤΟΧΟΠΡΟΣΗΛΩΣΗ 1", "Συνέβαλε σε  1 SDG κατά 10 μονάδες", 50, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΣΤΟΧΟΠΡΟΣΗΛΩΣΗ 1", "Συνέβαλε σε  1 SDG κατά 10 μονάδες", 1, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -31,7 +31,7 @@ public class SDG_Focus : Achievement_Main
         gameObject.AddComponent<SDG_Focus_Triple_1>();
         GetComponent<SDG_Focus_Triple_1>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 50;
+        Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

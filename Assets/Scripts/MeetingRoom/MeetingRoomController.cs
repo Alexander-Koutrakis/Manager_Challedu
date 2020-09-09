@@ -9,6 +9,8 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
     private GameObject emptyMeetingRoom;
     [SerializeField]
     private List<Drag_n_Drop_Question> All_Questions=new List<Drag_n_Drop_Question>();
+    [SerializeField]
+    private List<Drag_n_Drop_Question> Usable_Questions = new List<Drag_n_Drop_Question>();
     public List<Drag_n_Drop_Question> Active_DnD_Questions=new List<Drag_n_Drop_Question>();
     public static MeetingRoomController Instance;
 
@@ -60,8 +62,16 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
 
     public void AddDnDQuestion()
     {
-        int x = Random.Range(0, All_Questions.Count);
-        Active_DnD_Questions.Add(All_Questions[x]);
+        if (Usable_Questions.Count <= 0)
+        {
+            foreach(Drag_n_Drop_Question DnD_question in All_Questions)
+            {
+                Usable_Questions.Add(DnD_question);
+            }
+        }
+
+        int x = Random.Range(0, Usable_Questions.Count);
+        Active_DnD_Questions.Add(Usable_Questions[x]);
         All_Questions.RemoveAt(x);
         Warning_Panel.Instance.ShowMessege("Νεα Παρουσίαση");
         ShowWarning();

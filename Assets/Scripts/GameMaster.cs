@@ -27,7 +27,8 @@ public class GameMaster : MonoBehaviour
     public float DelayedExp;
     public int[] CampaignStars = new int[6];//<---------add the stars/ players choice
     public int[] Campaign = new int[6];//<----------num of offers per campain
-    public int MaxOffers;
+    public int MaxOffers=2;
+    public int FalseOffers=1;
     [SerializeField]
     private int total = 0;
     [SerializeField]
@@ -42,12 +43,7 @@ public class GameMaster : MonoBehaviour
   
     public void StartCampaign()
     {
-        MaxOffers = Player.Instance.Player_Level + 2*Player.Instance.Player_Level;
-        if (MaxOffers > 12)
-        {
-            MaxOffers = 12;
-        }
-        Debug.developerConsoleVisible=true;
+       // MaxOffers = Player.Instance.Player_Level + 2*Player.Instance.Player_Level;      
         Offer_Tab_Controller.Instance.PreferedOffers.Clear();       
         total = 0;
     
@@ -61,7 +57,7 @@ public class GameMaster : MonoBehaviour
         for (int i = 0; i < CampaignStars.Length; i++)
         {
             float x = (float)CampaignStars[i] / total;
-            Campaign[i] =Mathf.RoundToInt(x * MaxOffers/2);
+            Campaign[i] =Mathf.RoundToInt(x * MaxOffers);
             if (x > 0&& Campaign[i]==0)
             {
                 Campaign[i] = 1;
@@ -74,6 +70,25 @@ public class GameMaster : MonoBehaviour
             total += campaingStat;
         }
 
+        while (total < MaxOffers)
+        {
+            int x = Random.Range(0, 6);
+            if (Campaign[x] > 0)
+            {
+                Campaign[x]++;
+                total++;
+            }
+        }
+
+        while (total > MaxOffers)
+        {
+            int x = Random.Range(0, 6);
+            if (Campaign[x] > 0)
+            {
+                Campaign[x]--;
+                total--;
+            }
+        }
 
         // Add number of offers according to Campain index
         for (int i = 0; i < Campaign.Length; i++)
@@ -88,7 +103,7 @@ public class GameMaster : MonoBehaviour
 
         // Fill the extra Offers with random "Non strategic" Offers
         int extraOffers = 0;
-        while (extraOffers < MaxOffers/2)
+        while (extraOffers < FalseOffers)
         {
             int r1 = Random.Range(0, CampaignStars.Length);
             if (CampaignStars[r1] == 0)
@@ -250,5 +265,7 @@ public class GameMaster : MonoBehaviour
         DelayedExp = 0;
         Player.Instance.Calculate_UI_Info();
     }
+
+    
 
 }

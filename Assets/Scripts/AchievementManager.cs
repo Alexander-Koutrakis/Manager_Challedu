@@ -13,6 +13,7 @@ public class AchievementManager : MonoBehaviour
     private ScrollRect scrollRect;
     public GameObject visualAchievement;
     public Dictionary<string, Achievement> achievements = new Dictionary<string, Achievement>();
+    public Sprite Star_Points_sprite;
     public Sprite unlockedSprite;
     public TMP_Text pointText; 
     public static AchievementManager Instance;
@@ -75,6 +76,7 @@ public class AchievementManager : MonoBehaviour
         totalAchievements++;
 
         totalPages = totalAchievements / 8 +1;
+        page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
     }
   
     private void SetAchievement_Info(string parent , string Title,GameObject achievement)
@@ -83,8 +85,8 @@ public class AchievementManager : MonoBehaviour
         achievement.transform.localScale = new Vector3(1, 1, 0);
         achievement.transform.GetChild(0).GetComponent<TMP_Text>().text = Title;
         achievement.transform.GetChild(1).GetComponent<TMP_Text>().text = achievements[Title].Description;
-        achievement.transform.GetChild(2).GetComponent<TMP_Text>().text = achievements[Title].Points.ToString();
-        achievement.transform.GetChild(3).GetComponent<Image>().sprite = achievementSprites[achievements[Title].SpriteIndex];
+        achievement.transform.GetChild(4).GetComponent<TMP_Text>().text = achievements[Title].Points.ToString();
+        achievement.transform.GetChild(2).GetComponent<Image>().sprite = achievementSprites[achievements[Title].SpriteIndex];
     }
 
     public void ChangeCategory(GameObject button)
@@ -165,7 +167,6 @@ public class AchievementManager : MonoBehaviour
             currentPage++;
             page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
             waitButtonBool = true;
-
         }
     }
 

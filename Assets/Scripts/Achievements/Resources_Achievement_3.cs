@@ -7,7 +7,7 @@ public class Resources_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 3", "Ανέβασε τον ρυθμό ροής χρηματοδότησης σε 700 ευρώ/δευτερόλεπτο", 600, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 3", "Ανέβασε τον ρυθμό ροής χρηματοδότησης σε 700 ευρώ/δευτερόλεπτο", 7, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -27,7 +27,7 @@ public class Resources_Achievement_3 : Achievement_Main
         gameObject.AddComponent<Resources_Achievement_4>();
         GetComponent<Resources_Achievement_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 600;
+        Player.Instance.Expirience += 7;
         Player.Instance.Calculate_UI_Info();
     }
 }

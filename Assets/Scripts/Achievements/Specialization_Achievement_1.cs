@@ -7,7 +7,7 @@ public class Specialization_Achievement_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΙΔΙΚΕΥΣΗ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης εξειδίκευσης προτάσεων", 50, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΙΔΙΚΕΥΣΗ 1", "Συγκέντρωσε 20 μονάδες υποστήριξης εξειδίκευσης προτάσεων", 1, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -27,7 +27,7 @@ public class Specialization_Achievement_1 : Achievement_Main
         gameObject.AddComponent<Specialization_Achievement_2>();
         GetComponent<Specialization_Achievement_2>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 50;
+        Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

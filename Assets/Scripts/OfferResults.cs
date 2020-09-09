@@ -31,7 +31,7 @@ public class OfferResults : MonoBehaviour
     private Image CoverImage=null;
     [SerializeField]
     private Sprite Claimed_Sprite=null;
-
+    private float budget_Commit_Percent;
     private Offer readyOffer;
     private int claimedPaidBudget;
     private float Exp;
@@ -56,21 +56,25 @@ public class OfferResults : MonoBehaviour
         {
             // MainText.text = "Η προταση που επέλεξες συμβαδίζει με \n τη στρατιγική της εταιρείας";
             Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[1];
+
         }
         else if(Booster==0)
         {
             //  MainText.text = "Η προταση που επέλεξες δεν συμβαδίζει με \n τη στρατιγική της εταιρείας";
             Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[0];
+         
         }
 
 
-
-        Booster = (Booster + 100) / 100;
-        float x = (float)claimedPaidBudget / (float)readyOffer.budgetCost;
-        float claimedExp = x * readyOffer.expiriencePoints;
-        claimedExp = Mathf.RoundToInt(claimedExp * Booster);
-        BudgetSlider.value = commitPercent/100;
-        Exp = claimedExp;
+        budget_Commit_Percent = commitPercent;
+        GetOfferPoints();
+        Debug.Log(Exp);
+        //Booster = (Booster + 100) / 100;
+        //float x = (float)claimedPaidBudget / (float)readyOffer.budgetCost;
+        //float claimedExp = x * readyOffer.expiriencePoints;
+        //claimedExp = Mathf.RoundToInt(claimedExp * Booster);
+        //BudgetSlider.value = commitPercent/100;
+        //Exp = claimedExp;
         //SubText.text = "Επέλεξες να υποστηρίξεις την πρόταση κατά " + commitPercent + "% \n Πήρες "+ Exp+" βαθμούς εμπειρίας";
         BudgetText.text =paidBudgert.ToString();
         Player.Instance.totalbudgetPaid += paidBudgert;// just for achievement checking
@@ -125,5 +129,60 @@ public class OfferResults : MonoBehaviour
         CoverImage.raycastTarget = false;
     }
 
+
+    private void GetOfferPoints()
+    {
+        if (Booster == 3) {
+           
+            if (budget_Commit_Percent >= 1.2f)
+            {
+                Exp = 30;
+            }else if(budget_Commit_Percent>=1.0f)
+            {
+                Exp = 27;
+            }else if (budget_Commit_Percent >= 0.3f)
+            {
+                Exp = 18;
+            }
+
+        } else if (Booster == 2) {
+
+            if (budget_Commit_Percent >= 1.2f)
+            {
+                Exp = 25;
+            }
+            else if (budget_Commit_Percent >= 1.0f)
+            {
+                Exp = 20;
+            }
+            else if (budget_Commit_Percent >= 0.3f)
+            {
+                Exp = 15;
+            }
+
+        } else if (Booster == 1)
+        {
+            if (budget_Commit_Percent >= 1.2f)
+            {
+                Exp = 20;
+            }
+            else if (budget_Commit_Percent >= 1.0f)
+            {
+                Exp = 18;
+            }
+            else if (budget_Commit_Percent >= 0.3f)
+            {
+                Exp = 10;
+            }
+
+        } else if (Booster == 0)
+        {
+            Exp = 0;
+        }
+        
+
+
+       
+    }
    
 }

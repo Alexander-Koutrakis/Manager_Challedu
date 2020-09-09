@@ -7,7 +7,7 @@ public class Level_Up_1 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΛΙΞΗ 1", "Ανέβα στο επίπεδο 2", 50, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΛΙΞΗ 1", "Ανέβα στο επίπεδο 2", 1, 0);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
@@ -24,7 +24,7 @@ public class Level_Up_1 : Achievement_Main
 
     public override void Rewards()
     {
-        Player.Instance.Expirience += 50;
+        Player.Instance.Expirience += 1;
         gameObject.AddComponent<Level_Up_4>();
         GetComponent<Level_Up_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);

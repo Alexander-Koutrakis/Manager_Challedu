@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private TMP_Text income_text;
     public float Next_Level_Exp=0;
     public float expRate=100;
-    private int budgetRegenerationRate = 200;
+    private int budgetRegenerationRate = 100;
     public int incomeRate;
     public int successfulPresentation = 0;
     public int successfulSDGTrainings = 0;
@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     private Sprite[,] StrategySprites = new Sprite[6, 4];
     [SerializeField]
     private Sprite[] initialStrategySprites = null;
+    private int maxBudget=4000;
     public Sprite[] ActiveStrategySprites=new Sprite[6];
    private bool lvlUp = false;
     private void Awake()
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour
         RestartTrainnings();
        
         InvokeRepeating("BudgetRate", 1, 1f);
-        incomeRate = budgetRegenerationRate * Player_Level;
+       
         foreach (Trainning_Info TI in trainnings)
         {
             TI.current_Level = 0;
@@ -77,7 +78,7 @@ public class Player : MonoBehaviour
     public void Calculate_UI_Info()
     {
         budget_Text.text = budget.ToString();
-        income_text.text = incomeRate.ToString()+" / δ";
+        income_text.text = budgetRegenerationRate.ToString()+" / δ";
         bool lvlUp = false;
         if(Expirience >= Expirience_Slider.maxValue&& !lvlUp)
         {
@@ -97,34 +98,36 @@ public class Player : MonoBehaviour
     public void Level_Up()
     {
         lvlUp = false;
-        Campain_Plan.Instance.NewCampaing();
+        
 
         Expirience -= Expirience_Slider.maxValue;
         Player_Level++;
         level_Text.text = Player_Level.ToString();
-        incomeRate += budgetRegenerationRate;
-        expRate += expRate * Player_Level * 0.1f;
-        Next_Level_Exp =Mathf.RoundToInt(Player_Level * expRate);
-        Expirience_Slider.maxValue =Next_Level_Exp;       
-               
+
+        NewLevelInfo();
+        // incomeRate += budgetRegenerationRate;
+        // expRate += expRate * Player_Level * 0.1f;
+        // Next_Level_Exp =Mathf.RoundToInt(Player_Level * expRate);
+        // Expirience_Slider.maxValue =Next_Level_Exp;       
+        Campain_Plan.Instance.NewCampaing();
         LogBookControl.Instance.panel_Control.ClosePanel();
         Offer_Tab_Controller.Instance.panel_Control.ClosePanel();
         AchievementManager.Instance.panel_Control.ClosePanel();
         Campain_Plan.Instance.panel_Control.OpenPanel();
         
-        MeetingRoomController.Instance.AddDnDQuestion();
+        //MeetingRoomController.Instance.AddDnDQuestion();
         Expirience_Slider.value = Expirience;
         claimLevel_Button.interactable = false;
-       
+        Calculate_UI_Info();
         AchievementManager.Instance.CheckAchievements();
     }
 
     private void BudgetRate()
     {
 
-        if (budget < Player_Level * 3000)
+        if (budget < maxBudget)
         {
-            budget += incomeRate;
+            budget += budgetRegenerationRate;
             budget_Text.text = budget.ToString();
             if (Offer_Tab_Controller.Instance.shown_Offer_Manager != null)
             {
@@ -164,7 +167,7 @@ public class Player : MonoBehaviour
         }
         while (Mathf.Abs(Expirience_Slider.value - value) > 0.1f)
         {
-            Expirience_Slider.value = Mathf.Lerp(Expirience_Slider.value, value, Time.deltaTime * 2);
+            Expirience_Slider.value = Mathf.Lerp(Expirience_Slider.value, value, Time.deltaTime);
             yield return null;
         }
     }
@@ -211,10 +214,7 @@ public class Player : MonoBehaviour
                     Warning_Panel.Instance.ShowMessege("Νέο trainning");
                     Training_Canvas_Control.Instance.ShowWarning();
             }
-            //else
-            //{
-            //    trainnings[i].max_Level = 0;
-            //}
+           
         
               
         }
@@ -249,4 +249,87 @@ public class Player : MonoBehaviour
         }
 
     }
+
+
+private void NewLevelInfo()
+    {
+        if (Player_Level == 2)
+        {
+            GameMaster.Instance.MaxOffers = 4;
+            GameMaster.Instance.FalseOffers = 2;
+            budgetRegenerationRate = 150;
+            maxBudget = 10000;
+            Next_Level_Exp = 60;
+            Expirience_Slider.maxValue =Next_Level_Exp;
+            budget = 4000;
+
+            MeetingRoomController.Instance.AddDnDQuestion();
+            Debug.Log("going to level 2");
+        }
+        else if (Player_Level == 3)
+        {
+            GameMaster.Instance.MaxOffers = 8;
+            GameMaster.Instance.FalseOffers = 4;
+            budgetRegenerationRate = 170;
+            maxBudget = 20000;
+            Next_Level_Exp = 120;
+            Expirience_Slider.maxValue = Next_Level_Exp;
+            budget = 10000;
+
+            for(int i = 0; i < 3; i++)
+            {
+                MeetingRoomController.Instance.AddDnDQuestion();
+            }
+            Debug.Log("going to level 3");
+        }
+        else if (Player_Level == 4)
+        {
+            GameMaster.Instance.MaxOffers = 12;
+            GameMaster.Instance.FalseOffers = 6;
+            budgetRegenerationRate = 210;
+            maxBudget = 20000;
+            Next_Level_Exp = 240;
+            Expirience_Slider.maxValue = Next_Level_Exp;
+            budget = 40000;
+
+            for (int i = 0; i < 5; i++)
+            {
+                MeetingRoomController.Instance.AddDnDQuestion();
+            }
+            Debug.Log("going to level 4");
+        }
+        else if (Player_Level == 5)
+        {
+            GameMaster.Instance.MaxOffers = 15;
+            GameMaster.Instance.FalseOffers = 5;
+            budgetRegenerationRate = 310;
+            maxBudget = 100000;
+            Next_Level_Exp = 500;
+            Expirience_Slider.maxValue = Next_Level_Exp;
+            budget = 20000;
+
+            for (int i = 0; i < 6; i++)
+            {
+                MeetingRoomController.Instance.AddDnDQuestion();
+            }
+
+            Debug.Log("going to level 4");
+        }
+        else if (Player_Level > 5)
+        {
+            GameMaster.Instance.MaxOffers = 15;
+            GameMaster.Instance.FalseOffers = 5;
+           // budgetRegenerationRate = 310;
+            maxBudget = 1000000;
+            Next_Level_Exp = 60;
+            Expirience_Slider.maxValue = Next_Level_Exp;
+            //  budget = 4000;
+
+            for (int i = 0; i < 6; i++)
+            {
+                MeetingRoomController.Instance.AddDnDQuestion();
+            }
+        }
+    }
+
 }

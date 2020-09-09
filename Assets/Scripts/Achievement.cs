@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Achievement
 {
     private string title;
@@ -47,6 +48,21 @@ public class Achievement
         if (!unlocked && !dependencies.Exists(x=>x.unlocked==false))
         {
             achievementRef.GetComponent<Image>().sprite = AchievementManager.Instance.unlockedSprite;
+
+           
+            foreach(TMP_Text text in this.achievementRef.GetComponentsInChildren<TMP_Text>())
+            {
+                text.color = new Color32(255,255,255,255);
+                text.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            }
+
+          this.achievementRef.GetComponentsInChildren<TMP_Text>()[2].color = new Color32(221, 82, 70, 255);
+          this.achievementRef.GetComponentsInChildren<Image>()[1].color = new Color32(255, 255, 255, 255);
+          this.achievementRef.GetComponentsInChildren<Image>()[2].sprite= AchievementManager.Instance.Star_Points_sprite;
+
+
+
+
             SaveAchievement(true);
 
             if (child != null)
