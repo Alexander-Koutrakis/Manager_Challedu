@@ -7,7 +7,7 @@ public class Innovation_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΚΑΙΝΟΤΟΜΙΑ 3", "Συγκέντρωσε 140 μονάδες υποστήριξης καινοτομία προτάσεων", 7, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΚΑΙΝΟΤΟΜΙΑ 3", "Συγκέντρωσε 140 μονάδες υποστήριξης καινοτομία προτάσεων", 7, 12);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

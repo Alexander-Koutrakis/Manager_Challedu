@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private TMP_Text income_text;
     public float Next_Level_Exp=0;
     public float expRate=100;
-    private int budgetRegenerationRate = 100;
+    public int budgetRegenerationRate = 100;
     public int incomeRate;
     public int successfulPresentation = 0;
     public int successfulSDGTrainings = 0;
@@ -37,17 +37,17 @@ public class Player : MonoBehaviour
     [SerializeField]
     List<Trainning_Info> trainnings = new List<Trainning_Info>();
     [SerializeField]
-    float trainningTheshold_1;
+    float trainningTheshold_1=0;
     [SerializeField]
-    float trainningTheshold_2;
+    float trainningTheshold_2=0;
     [SerializeField]
-    float trainningTheshold_3;
+    float trainningTheshold_3=0;
     [SerializeField]
-    float trainningTheshold_4;
+    float trainningTheshold_4=0;
     [SerializeField]
-    float trainningTheshold_5;
+    float trainningTheshold_5=0;
     [SerializeField]
-    float trainningTheshold_6;
+    float trainningTheshold_6=0;
     [SerializeField]
     private Level_Up_Panel level_Up_Panel = null;
     private Sprite[,] StrategySprites = new Sprite[6, 4];
@@ -104,18 +104,12 @@ public class Player : MonoBehaviour
         Player_Level++;
         level_Text.text = Player_Level.ToString();
 
-        NewLevelInfo();
-        // incomeRate += budgetRegenerationRate;
-        // expRate += expRate * Player_Level * 0.1f;
-        // Next_Level_Exp =Mathf.RoundToInt(Player_Level * expRate);
-        // Expirience_Slider.maxValue =Next_Level_Exp;       
+        NewLevelInfo();   
         Campain_Plan.Instance.NewCampaing();
         LogBookControl.Instance.panel_Control.ClosePanel();
         Offer_Tab_Controller.Instance.panel_Control.ClosePanel();
         AchievementManager.Instance.panel_Control.ClosePanel();
         Campain_Plan.Instance.panel_Control.OpenPanel();
-        
-        //MeetingRoomController.Instance.AddDnDQuestion();
         Expirience_Slider.value = Expirience;
         claimLevel_Button.interactable = false;
         Calculate_UI_Info();

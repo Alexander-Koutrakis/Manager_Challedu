@@ -7,7 +7,7 @@ public class Support_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΥΠΟΣΤΗΡΙΞΗ 3", "Χρηματοδότησε 21 Προτάσεις", 7, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΥΠΟΣΤΗΡΙΞΗ 3", "Χρηματοδότησε 21 Προτάσεις", 7, 16);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

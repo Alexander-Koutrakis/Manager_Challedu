@@ -339,8 +339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.53121, y: -90}
-  m_SizeDelta: {x: 1187.0625, y: 691}
+  m_AnchoredPosition: {x: -4.36, y: -90}
+  m_SizeDelta: {x: 1179.4004, y: 691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6483398616000605097
 CanvasRenderer:
@@ -504,29 +504,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievement_Prefab: {fileID: 632244473423923236, guid: 15a5d73ec8ce8194a897eebe4af2b8cc,
     type: 3}
-  achievementSprites:
-  - {fileID: 21300000, guid: 10b83c2e69d75424fbf197a6130e85a1, type: 3}
-  - {fileID: -3891297627822842150, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 5857322736550339231, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 8957679996302558830, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 4598437565908183449, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 1949561853030578626, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 4992512596943446644, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: -4282042401191970922, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: -9071581021304364303, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 21300000, guid: 10b83c2e69d75424fbf197a6130e85a1, type: 3}
-  - {fileID: -5663501815923344099, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: -557938045902856952, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 6686311931343019854, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: -1845466428746286815, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 6078898524373654734, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: -4806241688389054045, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
-  - {fileID: 1292979121680204972, guid: 90ec6a0eae83e2c479a54817b6deaa8f, type: 3}
+  achievementSprites: []
   activeButton: {fileID: 0}
   visualAchievement: {fileID: 6589293684050570287, guid: 3e71f78fef6e05f4497ac5b9926de879,
     type: 3}
-  Star_Points_sprite: {fileID: 0}
-  unlockedSprite: {fileID: 21300000, guid: 2765086943e23d248970e4492c94b17a, type: 3}
+  Star_Points_sprite: {fileID: 249593087737277074, guid: 3a7d001c37431c24581980f0c4be9056,
+    type: 3}
+  unlockedSprite: {fileID: 9026007296854623297, guid: 2765086943e23d248970e4492c94b17a,
+    type: 3}
   pointText: {fileID: 4771654637697645395}
   panel_Control: {fileID: 0}
   achievement_Mains: []
@@ -916,7 +901,7 @@ RectTransform:
   m_GameObject: {fileID: 4471529568472653929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3532684860632057629}
   - {fileID: 1654796508451918506}

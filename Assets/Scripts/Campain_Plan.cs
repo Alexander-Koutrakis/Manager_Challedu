@@ -52,16 +52,12 @@ public class Campain_Plan : MonoBehaviour
 
     public void RemainingStars()
     {
-
         if (stars <= 0)
         {
-            //StartCampaingButton.GetComponent<Image>().sprite = ReadyToStartSprite;
-            StartCampaingButton.interactable = true;
-           
+            StartCampaingButton.interactable = true;           
         }
         else if(stars>0)
         {
-            //StartCampaingButton.GetComponent<Image>().sprite = WaitingForStarsSprite;
             StartCampaingButton.interactable = false;
         }
     }
@@ -74,8 +70,7 @@ public class Campain_Plan : MonoBehaviour
             // force the player to use all the stars
         }
         else
-        {
-            
+        {            
             ChangePlayerCampaing();
             GameMaster.Instance.StartCampaign();
             LockCampaing();
@@ -101,7 +96,6 @@ public class Campain_Plan : MonoBehaviour
         }
         StartCampaingButton.interactable = true;
         HideButton.interactable = false;
-        //stars = maxStars;
     }
 
     public void NewCampaing()

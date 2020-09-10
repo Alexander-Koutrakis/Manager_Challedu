@@ -173,7 +173,7 @@ public class Offer_Tab_Controller : MonoBehaviour
             warning = true;
             LeanTween.scale(warningSign.gameObject, new Vector3(1.0f, 1.0f, 1.0f), 0.5f).setOnComplete(WarningFollowUp);
         }
-        Warning_Panel.Instance.ShowMessege("Νεες προσφορές");
+        Warning_Panel.Instance.ShowMessege("Νεες προτάσεις");
     }
 
 

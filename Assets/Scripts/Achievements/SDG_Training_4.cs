@@ -7,7 +7,7 @@ public class SDG_Training_4 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ SDG 4", "Ολοκλήρωσε επιτυχώς 45 εκπαιδεύσεις SDG", 15, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ SDG 4", "Ολοκλήρωσε επιτυχώς 45 εκπαιδεύσεις SDG", 15, 2);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

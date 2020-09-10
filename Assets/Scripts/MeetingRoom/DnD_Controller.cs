@@ -98,7 +98,7 @@ public class DnD_Controller : MonoBehaviour
             results.StartPresentration(question.question, answersString[0], answersString[1]);
             presentationPanelControl.OpenPanel();
             congrats_PanelControl.OpenPanel();
-            Player.Instance.incomeRate += 50;
+            Player.Instance.budgetRegenerationRate += 20;
             // show correct messege
         }
         else

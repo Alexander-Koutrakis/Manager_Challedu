@@ -7,7 +7,7 @@ public class Resources_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 3", "Ανέβασε τον ρυθμό ροής χρηματοδότησης σε 700 ευρώ/δευτερόλεπτο", 7, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΑΣΦΑΛΙΣΗ ΠΟΡΩΝ 3", "Ανέβασε τον ρυθμό ροής χρηματοδότησης σε 700 ευρώ/δευτερόλεπτο", 7, 8);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

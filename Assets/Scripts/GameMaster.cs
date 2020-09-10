@@ -33,7 +33,11 @@ public class GameMaster : MonoBehaviour
     private int total = 0;
     [SerializeField]
     private Canvas[] canvases;
+
     public Sprite[] campaingReportSprites = new Sprite[2];
+    public Sprite[] OfferResult_Text = new Sprite[4];
+    public Sprite[] GP_Result_Sprites = new Sprite[6];
+    public Sprite[] Total_Points_Sprites = new Sprite[2];
     private void Awake()
     {
         Instance = this;

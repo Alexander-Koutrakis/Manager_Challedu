@@ -7,7 +7,7 @@ public class Exclusivity_Achievement_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΑΠΟΚΛΕΙΣΤΗΚΟΤΗΤΑ 2", "Συγκέντρωσε 60 μονάδες υποστήριξης αποκλειστηκότητας προτάσεων", 200, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΑΠΟΚΛΕΙΣΤΗΚΟΤΗΤΑ 2", "Συγκέντρωσε 60 μονάδες υποστήριξης αποκλειστηκότητας προτάσεων", 200, 1);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

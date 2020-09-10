@@ -7,7 +7,7 @@ public class SDG_Focus_Triple_4 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΣΤΟΧΟΘΕΣΙΑ 4", "Συνέβαλε σε 3 SDG κατά 150 μονάδες", 15, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΣΤΟΧΟΘΕΣΙΑ 4", "Συνέβαλε σε 3 SDG κατά 150 μονάδες", 15, 14);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

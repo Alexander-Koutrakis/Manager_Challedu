@@ -7,7 +7,7 @@ public class Presentation_Knowledge_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ ΕΚΕ 2", "Ολοκλήρωσε επιτυχώς 3 παρουσιάσεις ΕΚΕ", 3, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΓΝΩΣΗ ΕΚΕ 2", "Ολοκλήρωσε επιτυχώς 3 παρουσιάσεις ΕΚΕ", 3, 3);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

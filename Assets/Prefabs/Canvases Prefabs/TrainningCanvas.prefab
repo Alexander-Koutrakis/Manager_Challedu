@@ -31,7 +31,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -66,7 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02100b2e5f445b8419809d840bb2624a, type: 3}
+  m_Sprite: {fileID: -8082590227061863714, guid: 89b909a7ca4b1794d9cb5f4afad05bff,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -122,6 +123,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5674192899443739231}
         m_TargetAssemblyTypeName: 
         m_MethodName: OpenPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: ShowImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -429,7 +442,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -506,12 +519,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1984866010653680369}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135.00003, y: -126.000046}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 722.28033, y: -413.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866009366139687
 CanvasRenderer:
@@ -623,6 +636,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866009366139868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,8 +697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 930.85, y: -266.0001}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1202.2803, y: -733.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866009469293205
 CanvasRenderer:
@@ -785,6 +810,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866009469293196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,8 +871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 294, y: -266.00006}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1202.2803, y: -573.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866009858950454
 CanvasRenderer:
@@ -947,6 +984,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866009858950451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,8 +1045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135, y: -406}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 722.28033, y: -893.6054}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866009957194505
 CanvasRenderer:
@@ -1109,6 +1158,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866009957194544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,8 +1219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 612.66064, y: -126.000046}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1202.2803, y: -413.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866009981488219
 CanvasRenderer:
@@ -1271,6 +1332,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866009981488192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,8 +1393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 453.34, y: -266.0001}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 722.28033, y: -733.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866010054613109
 CanvasRenderer:
@@ -1433,6 +1506,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866010054613100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,8 +1567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 772.1, y: -126}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 722.28033, y: -573.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866010339338879
 CanvasRenderer:
@@ -1595,6 +1680,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866010339338868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,8 +1741,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 453.34, y: -406}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1042.2803, y: -893.6054}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866010358955209
 CanvasRenderer:
@@ -1757,6 +1854,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866010358955248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,7 +1911,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1984866010653680369}
-  m_RootOrder: 0
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1958,7 +2067,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1984866010491570880}
+  - {fileID: 1307606488214307406}
   - {fileID: 1984866011202229353}
   - {fileID: 1984866010358955252}
   - {fileID: 1984866010894589113}
@@ -1972,16 +2081,17 @@ RectTransform:
   - {fileID: 1984866011050877135}
   - {fileID: 1984866010339338874}
   - {fileID: 1984866009981488198}
-  - {fileID: 1984866009366139682}
-  - {fileID: 7260451567317579522}
   - {fileID: 1659961720741837579}
+  - {fileID: 7260451567317579522}
+  - {fileID: 1984866009366139682}
+  - {fileID: 1984866010491570880}
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172, y: 179}
-  m_SizeDelta: {x: 1059, y: 519}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866010653680371
 CanvasRenderer:
@@ -2011,8 +2121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9021629011567848455, guid: 0004610420694064bbdbe1162ff25472,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1b6f63f63062b44a895e5b129370c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2036,7 +2145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPanel: {fileID: 1984866010653680369}
   OpenPosition: {x: 0, y: 0, z: 0}
-  ClosePosition: {x: 172, y: 179, z: 0}
+  ClosePosition: {x: 0, y: 0, z: 0}
   OpenScale: {x: 1, y: 1, z: 0}
   CloseScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1984866010865359558
@@ -2075,8 +2184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 612.51, y: -266.0001}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 882.28033, y: -733.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866010865359578
 CanvasRenderer:
@@ -2188,6 +2297,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866010865359559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,8 +2358,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 294, y: -406}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 882.28033, y: -893.6054}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866010894589114
 CanvasRenderer:
@@ -2350,6 +2471,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866010894589095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2399,8 +2532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 931.9, y: -126}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 882.28033, y: -573.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866011050877120
 CanvasRenderer:
@@ -2512,6 +2645,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866011050877133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,8 +2706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 612.51, y: -406}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1202.2803, y: -893.6054}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866011202229354
 CanvasRenderer:
@@ -2674,6 +2819,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866011202229271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,8 +2880,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 771.68, y: -266.00006}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1042.2803, y: -733.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866011340376262
 CanvasRenderer:
@@ -2836,6 +2993,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984866011340376259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2885,8 +3054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135, y: -266.0001}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1042.2803, y: -573.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1984866011388071944
 CanvasRenderer:
@@ -2989,6 +3158,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8151547152509067054}
         m_TargetAssemblyTypeName: Panel_Control, Assembly-CSharp
         m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3679,9 +3860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   result_Text: {fileID: 919679218}
-  CorrectSprite: {fileID: 0}
-  FalseSprite: {fileID: 0}
-  ResultImage: {fileID: 0}
+  CorrectSprite: {fileID: 21300000, guid: a4f3e2fe894a53b40a0ebbc6a26931fd, type: 3}
+  FalseSprite: {fileID: 21300000, guid: 0cc88dacf29968048844fdfe4f3bbcdd, type: 3}
+  ResultImage: {fileID: 5674192898719607945}
 --- !u!1 &5674192898088732744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,6 +4007,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: ShowImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5674192898159821933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,8 +4054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.074, y: -33.5}
-  m_SizeDelta: {x: 597.0526, y: 227.41765}
+  m_AnchoredPosition: {x: 121.07, y: -33.5}
+  m_SizeDelta: {x: 677.05237, y: 227.41765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5674192898159821935
 CanvasRenderer:
@@ -3897,7 +4090,7 @@ MonoBehaviour:
     \u03B8\u03B1 \u03C3\u03BF\u03C5 \u03B6\u03B7\u03C4\u03B7\u03B8\u03B5\u03AF \u03BD\u03B1
     \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2 \u03B5\u03C1\u03C9\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2
     \u03C3\u03C7\u03B5\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03CC\u03C3\u03B1 \u03AD\u03BC\u03B1\u03B8\u03B5\u03C2
-    \u03C3\u03C4\u03BF trainning  \\n\n\n\u0391\u03BD \u03B8\u03B5\u03C2 \u03BD\u03B1
+    \u03C3\u03C4\u03BF trainning  \\\\n\n\n\u0391\u03BD \u03B8\u03B5\u03C2 \u03BD\u03B1
     \u03B5\u03C0\u03B1\u03BD\u03B1\u03BB\u03AC\u03B2\u03B5\u03B9\u03C2 \u03C4\u03BF
     trainning\_\u03C0\u03AC\u03C4\u03B1 \u03C4\u03B1 \u03B2\u03B5\u03BB\u03AC\u03BA\u03B9\u03B1"
   m_isRightToLeft: 0
@@ -3927,12 +4120,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.35
+  m_fontSize: 33
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 70
+  m_fontSizeMax: 33
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -4369,7 +4562,7 @@ RectTransform:
   - {fileID: 8827209078689793486}
   - {fileID: 5674192898088732745}
   m_Father: {fileID: 5674192898902793180}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4407,7 +4600,7 @@ MonoBehaviour:
     \u03B8\u03B1 \u03C3\u03BF\u03C5 \u03B6\u03B7\u03C4\u03B7\u03B8\u03B5\u03AF \u03BD\u03B1
     \u03B1\u03C0\u03B1\u03BD\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2 \u03B5\u03C1\u03C9\u03C4\u03AE\u03C3\u03B5\u03B9\u03C2
     \u03C3\u03C7\u03B5\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03CC\u03C3\u03B1 \u03AD\u03BC\u03B1\u03B8\u03B5\u03C2
-    \u03C3\u03C4\u03BF trainning  \\n  \u0391\u03BD \u03B8\u03B5\u03C2 \u03BD\u03B1
+    \u03C3\u03C4\u03BF trainning  \\\\n  \u0391\u03BD \u03B8\u03B5\u03C2 \u03BD\u03B1
     \u03B5\u03C0\u03B1\u03BD\u03B1\u03BB\u03AC\u03B2\u03B5\u03B9\u03C2 \u03C4\u03BF
     trainning\_\u03C0\u03AC\u03C4\u03B1 \u03C4\u03B1 \u03B2\u03B5\u03BB\u03AC\u03BA\u03B9\u03B1"
   startQuizButton: {fileID: 5674192898088732746}
@@ -4606,10 +4799,10 @@ RectTransform:
   m_Children:
   - {fileID: 5674192898201067319}
   - {fileID: 3166676785967496790}
-  - {fileID: 5674192898738773529}
-  - {fileID: 1984866010653680369}
   - {fileID: 457574559}
+  - {fileID: 5674192898738773529}
   - {fileID: 1809709630784983376}
+  - {fileID: 1984866010653680369}
   - {fileID: 4725791411216177500}
   - {fileID: 5674192897431782787}
   - {fileID: 5674192899443739230}
@@ -4695,8 +4888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainningButtons:
   - {fileID: 1984866009366139868}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4107667906906226817}
+  - {fileID: 3460091214004239554}
   - {fileID: 1984866009981488192}
   - {fileID: 1984866010339338868}
   - {fileID: 1984866011050877133}
@@ -4713,10 +4906,10 @@ MonoBehaviour:
   - {fileID: 1984866010491570940}
   warning: 0
   warningSign: {fileID: 0}
-  SDG_buttons_Panel: {fileID: 0}
-  info_Panel_Control: {fileID: 0}
-  fadeImage: {fileID: 0}
-  fadeTransform: {fileID: 0}
+  SDG_buttons_Panel: {fileID: 8151547152509067054}
+  info_Panel_Control: {fileID: 5674192898738773525}
+  fadeImage: {fileID: 3990963971491207035}
+  fadeTransform: {fileID: 1809709630784983376}
 --- !u!1 &5674192899143890470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,7 +5209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel_controls:
   - {fileID: 5674192898397189682}
-  - {fileID: 5674192898738773525}
   - {fileID: 5674192899443739231}
   - {fileID: 5674192897431782845}
 --- !u!1 &6557702224047008790
@@ -5055,8 +5247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 294, y: -126}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 882.28033, y: -413.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8370136686226578615
 CanvasRenderer:
@@ -5168,6 +5360,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4107667906906226817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5257,12 +5461,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1984866010653680369}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 455, y: -126}
-  m_SizeDelta: {x: 130, y: 130}
+  m_AnchoredPosition: {x: 1042.2803, y: -413.60535}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &14456028694209914
 CanvasRenderer:
@@ -5374,6 +5578,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769730796}
+        m_TargetAssemblyTypeName: Training_Canvas_Control, Assembly-CSharp
+        m_MethodName: HideImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3460091214004239554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5387,6 +5603,146 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonInfo: {fileID: 11400000, guid: 70043398676b1504781b5c7e93b8bc2b, type: 2}
+--- !u!1001 &283575168422198715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1984866010653680369}
+    m_Modifications:
+    - target: {fileID: 1282113230485831668, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_Name
+      value: HideButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 286
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831670, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5674192899443739231}
+    - target: {fileID: 1282113230485831670, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282113230485831670, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Panel_Control, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 03b9646bc542cf14c9ef6aa5917fb23c, type: 3}
+--- !u!224 &1307606488214307406 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1282113230485831669, guid: 03b9646bc542cf14c9ef6aa5917fb23c,
+    type: 3}
+  m_PrefabInstance: {fileID: 283575168422198715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5674192897438504317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6635,6 +6991,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5674192897438504317}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &2998253565672495100 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7432390581842133633, guid: 435e52c68e608d443976e8c40eca8399,
+    type: 3}
+  m_PrefabInstance: {fileID: 5674192897438504317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4725791411216177500 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1093154391314926625, guid: 435e52c68e608d443976e8c40eca8399,
@@ -6653,12 +7015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5228447ab05474f43af648d8c6e7bbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &2998253565672495100 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7432390581842133633, guid: 435e52c68e608d443976e8c40eca8399,
-    type: 3}
-  m_PrefabInstance: {fileID: 5674192897438504317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5674192898167618000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6793,6 +7149,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c5053da44b74db4282a0c9f27bd5aff, type: 3}
+--- !u!224 &8827209078689793486 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3764520571790670878, guid: 4c5053da44b74db4282a0c9f27bd5aff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5674192898167618000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1837589835723937124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6286645029081623732, guid: 4c5053da44b74db4282a0c9f27bd5aff,
@@ -6805,12 +7167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &8827209078689793486 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3764520571790670878, guid: 4c5053da44b74db4282a0c9f27bd5aff,
-    type: 3}
-  m_PrefabInstance: {fileID: 5674192898167618000}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5674192898302244034
 PrefabInstance:
   m_ObjectHideFlags: 0

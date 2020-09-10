@@ -7,7 +7,7 @@ public class Publicity_achievement_2 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΔΗΜΟΣΙΟΤΗΤΑ 2", "Συγκέντρωσε 60 μονάδες υποστήριξης δημοσιότητας προτάσεων", 3, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΔΗΜΟΣΙΟΤΗΤΑ 2", "Συγκέντρωσε 60 μονάδες υποστήριξης δημοσιότητας προτάσεων", 3, 5);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

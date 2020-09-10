@@ -7,7 +7,7 @@ public class Invest_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΠΕΝΔΥΣΗ 3", "Διέθεσε 21.000 χρήματα σε χρηματοδότηση προτάσεων", 7, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΠΕΝΔΥΣΗ 3", "Διέθεσε 21.000 χρήματα σε χρηματοδότηση προτάσεων", 7, 10);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 

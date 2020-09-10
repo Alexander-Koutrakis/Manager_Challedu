@@ -22,7 +22,7 @@ public class PieGraph : MonoBehaviour
     [SerializeField]
     private Image[] strategyImages=null;
     [SerializeField]
-    private RectTransform Strategies_Transform;
+    private RectTransform Strategies_Transform=null;
     
     private void Awake()
     {

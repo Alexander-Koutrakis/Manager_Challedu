@@ -84,6 +84,7 @@ public class AchievementManager : MonoBehaviour
         achievement.transform.SetParent(GameObject.Find(parent).transform);
         achievement.transform.localScale = new Vector3(1, 1, 0);
         achievement.transform.GetChild(0).GetComponent<TMP_Text>().text = Title;
+      
         achievement.transform.GetChild(1).GetComponent<TMP_Text>().text = achievements[Title].Description;
         achievement.transform.GetChild(4).GetComponent<TMP_Text>().text = achievements[Title].Points.ToString();
         achievement.transform.GetChild(2).GetComponent<Image>().sprite = achievementSprites[achievements[Title].SpriteIndex];
@@ -103,10 +104,10 @@ public class AchievementManager : MonoBehaviour
        if(achievements[title].EarnAchievement())
         {
             achievements[title].achievementRef.transform.SetAsFirstSibling();
-            GameObject achievement = Instantiate(visualAchievement);
-            SetAchievement_Info("EarnAchievementCanvas", title, achievement);
-
-            StartCoroutine(FadeAchivement(achievement));
+            // GameObject achievement = Instantiate(visualAchievement);
+            //  SetAchievement_Info("EarnAchievementCanvas", title, achievement);
+            //  StartCoroutine(FadeAchivement(achievement));
+            Warning_Panel.Instance.ShowMessege("Νεο Επίτευγμα");
             Player.Instance.Calculate_UI_Info();          
        }
     }

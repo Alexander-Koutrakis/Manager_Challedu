@@ -427,7 +427,7 @@ RectTransform:
   m_Children:
   - {fileID: 2325564967547227892}
   m_Father: {fileID: 2325564967212908058}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -661,7 +661,7 @@ RectTransform:
   m_Children:
   - {fileID: 2325564966820360665}
   m_Father: {fileID: 2325564967212908058}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -748,11 +748,11 @@ RectTransform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 2325564967629797787}
-  - {fileID: 2325564967847808403}
-  - {fileID: 2325564967053957337}
-  - {fileID: 2325564968425254519}
   - {fileID: 2325564967515246506}
   - {fileID: 2325564966766432102}
+  - {fileID: 2325564967053957337}
+  - {fileID: 2325564968425254519}
+  - {fileID: 2325564967847808403}
   m_Father: {fileID: 3069801419428056458}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -783,11 +783,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliders:
   - {fileID: 2325564967629797784}
-  - {fileID: 2325564967847808400}
-  - {fileID: 2325564967053957342}
-  - {fileID: 2325564968425254516}
   - {fileID: 2325564967515246507}
   - {fileID: 2325564966766432103}
+  - {fileID: 2325564967053957342}
+  - {fileID: 2325564968425254516}
+  - {fileID: 2325564967847808400}
 --- !u!1 &2325564967515246501
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ RectTransform:
   m_Children:
   - {fileID: 2325564967545445158}
   m_Father: {fileID: 2325564967212908058}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 2325564967847808403}
   - component: {fileID: 2325564967847808400}
   m_Layer: 5
-  m_Name: Expirience
+  m_Name: Specialization
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1100,7 +1100,7 @@ RectTransform:
   m_Children:
   - {fileID: 2325564966895286771}
   m_Father: {fileID: 2325564967212908058}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 2325564968425254519}
   - component: {fileID: 2325564968425254516}
   m_Layer: 5
-  m_Name: Specialization
+  m_Name: Expirienced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,7 +1337,7 @@ RectTransform:
   m_Children:
   - {fileID: 2325564967806030618}
   m_Father: {fileID: 2325564967212908058}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -33,13 +33,44 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
     - {fileID: 2800000, guid: f0fc8320e2d934346a6ada10c63756af, type: 3}
     - {fileID: 2800000, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
-    totalSpriteSurfaceArea: 4034591
+    - {fileID: 2800000, guid: 4236adb89f0aeff4292056a44c450e6c, type: 3}
+    - {fileID: 2800000, guid: ad3d9e68a535d4640a506d42bbe18df3, type: 3}
+    - {fileID: 2800000, guid: d5ffef29a173a8a43a8daa104a883084, type: 3}
+    - {fileID: 2800000, guid: ddb66ab5d0c40b94a9f173ad4fab223b, type: 3}
+    - {fileID: 2800000, guid: 27226b196712a9941805ec28280b0d8f, type: 3}
+    - {fileID: 2800000, guid: 8a42cba49881e41468d4106b2fa1b406, type: 3}
+    - {fileID: 2800000, guid: 96d71ce97e312c8449e59dbddef61813, type: 3}
+    - {fileID: 2800000, guid: 87ab243bd1f89ee4aaa4ca2ebc4644e1, type: 3}
+    - {fileID: 2800000, guid: c55c2fc06430db9438bc3362a3033dbd, type: 3}
+    - {fileID: 2800000, guid: 6f18f98ce2d646640a9995d9f29a0dd6, type: 3}
+    - {fileID: 2800000, guid: 89b4c82e4388e804bb3f7193abb2bbe6, type: 3}
+    - {fileID: 2800000, guid: 2deca1ec0c31fc947b27ce554b414c79, type: 3}
+    - {fileID: 2800000, guid: 7bf356f5d5bbec544a0cc7f28fa77de2, type: 3}
+    - {fileID: 2800000, guid: 97146d05c527dc34c9bebce138aacf58, type: 3}
+    - {fileID: 2800000, guid: 95083156698fb6f408a4d24f281d5ca8, type: 3}
+    - {fileID: 2800000, guid: cd4408332d0a45e41b12729d4b854c7b, type: 3}
+    - {fileID: 2800000, guid: e17d4038cab93354dade10f900a3fe88, type: 3}
+    - {fileID: 2800000, guid: a6da5fee6dff0674c925f93c010da216, type: 3}
+    - {fileID: 2800000, guid: 2765086943e23d248970e4492c94b17a, type: 3}
+    - {fileID: 2800000, guid: 3a7d001c37431c24581980f0c4be9056, type: 3}
+    - {fileID: 2800000, guid: f8cabdba3495b014983e12b75b99c7f5, type: 3}
+    - {fileID: 2800000, guid: 54142511e743cf84e85b1db7565acabc, type: 3}
+    totalSpriteSurfaceArea: 7948927
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 8438582981687008652, guid: f0fc8320e2d934346a6ada10c63756af, type: 3}
+  - {fileID: 21300000, guid: c55c2fc06430db9438bc3362a3033dbd, type: 3}
+  - {fileID: 7056119389237039866, guid: 54142511e743cf84e85b1db7565acabc, type: 3}
+  - {fileID: 21300000, guid: cd4408332d0a45e41b12729d4b854c7b, type: 3}
+  - {fileID: 5323562206532561855, guid: 8a42cba49881e41468d4106b2fa1b406, type: 3}
+  - {fileID: 21300000, guid: 97146d05c527dc34c9bebce138aacf58, type: 3}
+  - {fileID: 21300000, guid: ddb66ab5d0c40b94a9f173ad4fab223b, type: 3}
+  - {fileID: 21300000, guid: 7bf356f5d5bbec544a0cc7f28fa77de2, type: 3}
+  - {fileID: 21300000, guid: 95083156698fb6f408a4d24f281d5ca8, type: 3}
+  - {fileID: 21300000, guid: e17d4038cab93354dade10f900a3fe88, type: 3}
   - {fileID: -4878181854927419756, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: 984136809713027383, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -4524648559528916035, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
@@ -76,6 +107,15 @@ SpriteAtlas:
   - {fileID: 8278372038580908410, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -1605055230618960953, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
   - {fileID: -6316262900430801238, guid: 4803293891812e742a1dd844a51c9ea2, type: 3}
+  - {fileID: 21300000, guid: ad3d9e68a535d4640a506d42bbe18df3, type: 3}
+  - {fileID: 21300000, guid: 4236adb89f0aeff4292056a44c450e6c, type: 3}
+  - {fileID: 21300000, guid: 27226b196712a9941805ec28280b0d8f, type: 3}
+  - {fileID: 21300000, guid: d5ffef29a173a8a43a8daa104a883084, type: 3}
+  - {fileID: 9026007296854623297, guid: 2765086943e23d248970e4492c94b17a, type: 3}
+  - {fileID: 21300000, guid: 96d71ce97e312c8449e59dbddef61813, type: 3}
+  - {fileID: 6129245792635631730, guid: f8cabdba3495b014983e12b75b99c7f5, type: 3}
+  - {fileID: 21300000, guid: 87ab243bd1f89ee4aaa4ca2ebc4644e1, type: 3}
+  - {fileID: 249593087737277074, guid: 3a7d001c37431c24581980f0c4be9056, type: 3}
   - {fileID: 7883007845951701040, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
   - {fileID: 8051820513734974904, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
   - {fileID: 5269862185011610717, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
@@ -84,8 +124,21 @@ SpriteAtlas:
   - {fileID: 4476723883553560832, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
   - {fileID: 6485203656251199235, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
   - {fileID: 8618452330374987370, guid: 79d2903ce87d2c24582db5e42404284b, type: 3}
+  - {fileID: 21300000, guid: 6f18f98ce2d646640a9995d9f29a0dd6, type: 3}
+  - {fileID: 21300000, guid: 2deca1ec0c31fc947b27ce554b414c79, type: 3}
+  - {fileID: 21300000, guid: 89b4c82e4388e804bb3f7193abb2bbe6, type: 3}
+  - {fileID: 21300000, guid: a6da5fee6dff0674c925f93c010da216, type: 3}
   m_PackedSpriteNamesToIndex:
   - LogBooK_Sprites_Main_0
+  - report+ points
+  - achievements-locked back_0
+  - report-19
+  - new report-back_0
+  - report-17
+  - new report-100%
+  - report-16
+  - report-18
+  - report-back
   - Decent_Work
   - Peace_Justice
   - Responsible_Consumption
@@ -122,6 +175,15 @@ SpriteAtlas:
   - Sustainable_Cities
   - E4233A
   - A61C45
+  - new report+head
+  - new report+
+  - new report-120%
+  - new report-30%
+  - achievements-unlocked back_0
+  - new report-head
+  - achievements-locked star_0
+  - new report-negative
+  - achievements-star_0
   - LogBooK_Sprites_2
   - LogBooK_Sprites_3
   - LogBooK_Sprites_0
@@ -130,5 +192,9 @@ SpriteAtlas:
   - LogBooK_Sprites_7
   - LogBooK_Sprites_4
   - LogBooK_Sprites_5
+  - report- points
+  - report-15
+  - report-14
+  - achievements-board
   m_Tag: Misc_Atlas
   m_IsVariant: 0

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class OfferResults : MonoBehaviour
 {
     [SerializeField]
-    private Image Offer_campaing_image;
-    [SerializeField]
-    private Slider BudgetSlider;
+    private Image Offer_campaing_image;  
     [SerializeField]
     private Image Campaing_Support_Image;
+    [SerializeField]
+    private Image Offer_Info_Text;
     [SerializeField]   
     private TMP_Text ExpText=null;
     [SerializeField]
@@ -29,8 +29,6 @@ public class OfferResults : MonoBehaviour
     private Image SliderFill_Image_3=null;
     [SerializeField]
     private Image CoverImage=null;
-    [SerializeField]
-    private Sprite Claimed_Sprite=null;
     private float budget_Commit_Percent;
     private Offer readyOffer;
     private int claimedPaidBudget;
@@ -39,9 +37,15 @@ public class OfferResults : MonoBehaviour
     private float[] GPs = new float[6];
     [SerializeField]
     private Image OfferStrategyImage = null;
-    ActivatedOffer connectedActivatedOffer;
+    ActivatedOffer connectedActivatedOffer=null;
     [SerializeField]
-    private Image Campaing_Bonus_text_Image;
+    private Image Campaing_Bonus_text_Image=null;
+    [SerializeField]
+    private Image GP_Image=null;
+    [SerializeField]
+    private Image Total_Points_image=null;
+    [SerializeField]
+    private TMP_Text achievement_GP_text=null;
     public void InitializeOfferResults(Offer offer , int paidBudgert, bool canBeClaimed , bool claimed, int booster , float commitPercent, ActivatedOffer ConnectedAO,float[] gps,Sprite CampaingSprite)
     {
         Booster = booster;
@@ -50,38 +54,43 @@ public class OfferResults : MonoBehaviour
 
         connectedActivatedOffer = ConnectedAO;
         GPs = gps;
-
+        GetHighestGP_Sprite(gps);
         Offer_campaing_image.sprite = CampaingSprite;
         if (Booster > 0)
-        {
-            // MainText.text = "Η προταση που επέλεξες συμβαδίζει με \n τη στρατιγική της εταιρείας";
-            Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[1];
-
+        {           
+            Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[0];
+            Total_Points_image.sprite = GameMaster.Instance.Total_Points_Sprites[0];
+            if (Booster == 1)
+            {
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[1];
+            }else if (Booster == 2)
+            {
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[2];
+            }
+            else if (Booster == 3)
+            {
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[3];
+            }
         }
         else if(Booster==0)
         {
-            //  MainText.text = "Η προταση που επέλεξες δεν συμβαδίζει με \n τη στρατιγική της εταιρείας";
-            Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[0];
-         
+            Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[1];
+            Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[0];
+            Total_Points_image.sprite = GameMaster.Instance.Total_Points_Sprites[1];
         }
 
 
         budget_Commit_Percent = commitPercent;
         GetOfferPoints();
-        Debug.Log(Exp);
-        //Booster = (Booster + 100) / 100;
-        //float x = (float)claimedPaidBudget / (float)readyOffer.budgetCost;
-        //float claimedExp = x * readyOffer.expiriencePoints;
-        //claimedExp = Mathf.RoundToInt(claimedExp * Booster);
-        //BudgetSlider.value = commitPercent/100;
-        //Exp = claimedExp;
-        //SubText.text = "Επέλεξες να υποστηρίξεις την πρόταση κατά " + commitPercent + "% \n Πήρες "+ Exp+" βαθμούς εμπειρίας";
-        BudgetText.text =paidBudgert.ToString();
+
+      
+
         Player.Instance.totalbudgetPaid += paidBudgert;// just for achievement checking
         ExpText.text = Exp.ToString();
         SDG1.sprite = offer.SDG1;
         SDG2.sprite = offer.SDG2;
         SDG3.sprite = offer.SDG3;
+
         // change slider collor according to SDG spite name(hex Color ID)
         Color sliderColor = new Color();
         if(ColorUtility.TryParseHtmlString("#" + offer.SDG1.name, out sliderColor))
@@ -110,7 +119,7 @@ public class OfferResults : MonoBehaviour
     {
 
        
-        GetComponent<Image>().sprite = Claimed_Sprite;
+       
         connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite, Exp);
         Player.Instance.Expirience += Exp;       
     
@@ -129,7 +138,45 @@ public class OfferResults : MonoBehaviour
         CoverImage.raycastTarget = false;
     }
 
+    private void GetHighestGP_Sprite(float[] GPs)
+    {
+        float max=0;
+        float GPScore=0;
+        for(int i = 0; i < GPs.Length; i++)
+        {
+            if (GPs[i] > max)
+            {
+                max = GPs[i];
+                GP_Image.sprite = GameMaster.Instance.GP_Result_Sprites[i];
+                GPScore = Player.Instance.GPs[i];
+            }
+        }
 
+        // check max to determine achievement
+
+        if (GPScore >= 140)
+        {
+            achievement_GP_text.text = (GPScore+max).ToString() + " / 300";
+        }
+        else if (GPScore >= 60)
+        {
+            achievement_GP_text.text = (GPScore + max).ToString() + " / 140";
+        }
+        else if (GPScore >= 20)
+        {
+            achievement_GP_text.text = (GPScore + max).ToString() + " / 60";
+        }
+        else if (GPScore < 20)
+        {
+            achievement_GP_text.text = (GPScore + max).ToString() + " / 20";
+        }
+        else
+        {
+            achievement_GP_text.text = "0000";
+        }
+
+
+    }
     private void GetOfferPoints()
     {
         if (Booster == 3) {

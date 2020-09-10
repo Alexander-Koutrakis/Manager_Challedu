@@ -7,7 +7,7 @@ public class Specialization_Achievement_3 : Achievement_Main
 
     public override void CreateAchievement()
     {
-        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΙΔΙΚΕΥΣΗ 3", "Συγκέντρωσε 140 μονάδες υποστήριξης εξειδίκευσης προτάσεων", 7, 0);
+        AchievementManager.Instance.CreateAchievement("General", "ΕΞΕΙΔΙΚΕΥΣΗ 3", "Συγκέντρωσε 140 μονάδες υποστήριξης εξειδίκευσης προτάσεων", 7, 11);
         AchievementManager.Instance.achievement_Mains.Add(this);
     }
 
