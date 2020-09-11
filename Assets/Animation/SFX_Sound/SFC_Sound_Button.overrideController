@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFC_Sound_Button
+  m_Controller: {fileID: 9100000, guid: 1851f41d72fa66b4f8093ce0eb8986cf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 2591834786544783273, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d3dba10201e0314e9c913c78e886cf2, type: 2}
+  - m_OriginalClip: {fileID: 598325833042102224, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 933a0128c69c3f6489e898908044f87a, type: 2}
+  - m_OriginalClip: {fileID: 7370419304123593772, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 37405c95999c67847af1c01204e0cbd7, type: 2}
+  - m_OriginalClip: {fileID: -5487790464820651303, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c6ae768cc8c6e1a478cd9d0cc2325be9, type: 2}
+  - m_OriginalClip: {fileID: -8753169719444374107, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f7e5dede47a7e534bbfed4391b0e168b, type: 2}

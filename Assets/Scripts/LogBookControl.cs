@@ -120,7 +120,7 @@ public class LogBookControl : MonoBehaviour
 
     private void WarningFollowUp()
     {
-        LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setLoopPingPong();
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.5f).setLoopPingPong();
     }
 
     public void HideWarning()
@@ -130,6 +130,14 @@ public class LogBookControl : MonoBehaviour
             warning = false;
             LeanTween.cancel(warningSign.gameObject);
             LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
+        }
+
+        foreach(ActivatedOffer AO in LogOffers)
+        {
+            if (AO.canBeClaimed&&!AO.Claimed)
+            {
+                LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);                
+            }
         }
     }
 

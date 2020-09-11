@@ -57,7 +57,7 @@ public class Achievement
 
           this.achievementRef.GetComponentsInChildren<TMP_Text>()[2].color = new Color32(221, 82, 70, 255);
           this.achievementRef.GetComponentsInChildren<Image>()[1].color = new Color32(255, 255, 255, 255);
-          this.achievementRef.GetComponentsInChildren<Image>()[2].sprite= AchievementManager.Instance.Star_Points_sprite;
+          this.achievementRef.GetComponentsInChildren<Image>()[2].color= new Color32(255, 255, 255, 255);
 
             SaveAchievement(true);
 

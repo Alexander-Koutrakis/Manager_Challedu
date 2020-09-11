@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Background_Sound_Button
+  m_Controller: {fileID: 9100000, guid: 1851f41d72fa66b4f8093ce0eb8986cf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 2591834786544783273, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 65542b9fde438d945b5573159a63a3fd, type: 2}
+  - m_OriginalClip: {fileID: 598325833042102224, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 06abf69d97c5e4e419d071918e89b2bc, type: 2}
+  - m_OriginalClip: {fileID: 7370419304123593772, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2def2ab7ea425e44cb40d1785bd7ed60, type: 2}
+  - m_OriginalClip: {fileID: -5487790464820651303, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 74ffe75b89af73940983aaac2b0261ad, type: 2}
+  - m_OriginalClip: {fileID: -8753169719444374107, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1dc21ddf34e2a0347bcdadbc2b55531a, type: 2}

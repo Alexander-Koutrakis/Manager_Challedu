@@ -14,5 +14,20 @@ public class PausePanel : MonoBehaviour
         SceneManager.LoadScene("Main_Menu");
     }
 
+    public void PauseGame()
+    {
+        StartCoroutine(DelayedPause());
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
     
+
+    private IEnumerator DelayedPause()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
+    }
 }

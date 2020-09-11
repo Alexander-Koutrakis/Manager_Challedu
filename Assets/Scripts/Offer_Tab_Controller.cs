@@ -117,6 +117,7 @@ public class Offer_Tab_Controller : MonoBehaviour
             {
 
                 NoOffersAvailable();
+       
             }
         }
     }
@@ -154,6 +155,7 @@ public class Offer_Tab_Controller : MonoBehaviour
             else if(noAvailableOffers)
             {
                 NoOffersAvailable();
+
             }
         }
     }
@@ -228,6 +230,7 @@ public class Offer_Tab_Controller : MonoBehaviour
 
     public void NoOffersAvailable() {
         noOffersImage.raycastTarget = true;
+        current_Offer_text.text = "0";
         LeanTween.alpha(noOffersImage.rectTransform, 1, 0.5f);   
     }
 

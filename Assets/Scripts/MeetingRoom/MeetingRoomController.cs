@@ -72,7 +72,7 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
 
         int x = Random.Range(0, Usable_Questions.Count);
         Active_DnD_Questions.Add(Usable_Questions[x]);
-        All_Questions.RemoveAt(x);
+       // All_Questions.RemoveAt(x);
         Warning_Panel.Instance.ShowMessege("Νεα Παρουσίαση");
         ShowWarning();
     }

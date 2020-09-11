@@ -28,7 +28,9 @@ public class AchievementManager : MonoBehaviour
     [SerializeField]
     private TMP_Text page_Text = null;
     private int totalAchievements = 0;
-
+    [SerializeField]
+    private RectTransform warningSign;
+    private bool warning = false;
     private void Awake()
     {
         Instance = this;
@@ -107,8 +109,9 @@ public class AchievementManager : MonoBehaviour
             // GameObject achievement = Instantiate(visualAchievement);
             //  SetAchievement_Info("EarnAchievementCanvas", title, achievement);
             //  StartCoroutine(FadeAchivement(achievement));
-            Warning_Panel.Instance.ShowMessege("Νεο Επίτευγμα");
-            Player.Instance.Calculate_UI_Info();          
+            Warning_Panel.Instance.ShowMessege("Νεο \n Επίτευγμα");
+            Player.Instance.Calculate_UI_Info();
+            ShowWarning();
        }
     }
 
@@ -185,5 +188,33 @@ public class AchievementManager : MonoBehaviour
     private void buttonReady()
     {
         waitButtonBool = false;
+    }
+
+
+    public void ShowWarning()
+    {
+        if (!warning)
+        {
+            warning = true;
+            LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
+        }
+        Warning_Panel.Instance.ShowMessege("το Έργο ολοκληρώθηκε");
+    }
+
+
+    private void WarningFollowUp()
+    {
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.5f).setLoopPingPong();
+    }
+
+    public void HideWarning()
+    {
+        if (warning)
+        {
+            warning = false;
+            LeanTween.cancel(warningSign.gameObject);
+            LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
+        }
+
     }
 }

@@ -30,7 +30,7 @@ public class Level_Up_Panel : MonoBehaviour
 
         LeanTween.rotateZ(textTransform.gameObject, -10, 0.5f);
         textTransform.GetComponent<TMP_Text>().text = (Player.Instance.Player_Level+1).ToString();
-        LeanTween.alpha(Background, 0.4f, 0.5f).setOnComplete(OpenInner);        
+        LeanTween.alpha(Background, 0.7f, 0.5f).setOnComplete(OpenInner);        
         StartCoroutine(ShowFireWorks());
     }
 
@@ -47,7 +47,7 @@ public class Level_Up_Panel : MonoBehaviour
     private void RotateText()
     {
         LeanTween.rotateZ(textTransform.gameObject, 10, 0.5f).setLoopPingPong();
-        LeanTween.scale(buttonTransform, new Vector3(1.2f, 1.2f, 1), 0.5f).setLoopPingPong();
+        LeanTween.scale(buttonTransform, new Vector3(1.1f, 1.1f, 1), 0.5f).setLoopPingPong();
     }
 
     private void ResetLevelUP()

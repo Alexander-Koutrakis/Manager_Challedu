@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Return_Button
+  m_Controller: {fileID: 9100000, guid: 1851f41d72fa66b4f8093ce0eb8986cf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 2591834786544783273, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fbe309497aa482448bb723dbb9e29581, type: 2}
+  - m_OriginalClip: {fileID: 598325833042102224, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c58def507a960304c9999ac0337c5fe6, type: 2}
+  - m_OriginalClip: {fileID: 7370419304123593772, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3f4c3db9d1b329042aa5537f2df12a59, type: 2}
+  - m_OriginalClip: {fileID: -5487790464820651303, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 06b4c892bd28f9b44b395da407f4fdf1, type: 2}
+  - m_OriginalClip: {fileID: -8753169719444374107, guid: 1851f41d72fa66b4f8093ce0eb8986cf,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e02c60825fa918246a7cb15a3ce7055d, type: 2}

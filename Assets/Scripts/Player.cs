@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
     {
         RestartTrainnings();
        
-        InvokeRepeating("BudgetRate", 1, 1f);
+        InvokeRepeating("BudgetRate", 1,1f);
        
         foreach (Trainning_Info TI in trainnings)
         {
@@ -130,6 +130,10 @@ public class Player : MonoBehaviour
                     Offer_Tab_Controller.Instance.shown_Offer_Manager.GetButtons();
                 }
             }
+        }
+        else
+        {
+            budget = maxBudget;
         }
     }
 
@@ -281,7 +285,7 @@ private void NewLevelInfo()
             GameMaster.Instance.MaxOffers = 12;
             GameMaster.Instance.FalseOffers = 6;
             budgetRegenerationRate = 210;
-            maxBudget = 20000;
+            maxBudget = 40000;
             Next_Level_Exp = 240;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 40000;

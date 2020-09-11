@@ -51,7 +51,7 @@ public class OfferResults : MonoBehaviour
         Booster = booster;
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
-
+        Debug.Log(commitPercent);
         connectedActivatedOffer = ConnectedAO;
         GPs = gps;
         GetHighestGP_Sprite(gps);
@@ -59,18 +59,7 @@ public class OfferResults : MonoBehaviour
         if (Booster > 0)
         {           
             Campaing_Support_Image.sprite = GameMaster.Instance.campaingReportSprites[0];
-            Total_Points_image.sprite = GameMaster.Instance.Total_Points_Sprites[0];
-            if (Booster == 1)
-            {
-                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[1];
-            }else if (Booster == 2)
-            {
-                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[2];
-            }
-            else if (Booster == 3)
-            {
-                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[3];
-            }
+            Total_Points_image.sprite = GameMaster.Instance.Total_Points_Sprites[0];          
         }
         else if(Booster==0)
         {
@@ -116,18 +105,13 @@ public class OfferResults : MonoBehaviour
     }
 
     public void Claim_Offer()
-    {
-
-       
-       
+    {       
         connectedActivatedOffer.ClaimedOffer(SDG1.sprite,SDG2.sprite,SDG3.sprite, Exp);
-        Player.Instance.Expirience += Exp;       
-    
+        Player.Instance.Expirience += Exp;           
         Player.Instance.GetSDG(readyOffer.SDGs);
         Player.Instance.Calculate_UI_Info();
         Player.Instance.GetGPs(GPs);
-        Player.Instance.offersAccepted++;
-        
+        Player.Instance.offersAccepted++;        
         AchievementManager.Instance.CheckAchievements();
         PieGraph.Instance.RefreshGraph();
     }
@@ -181,45 +165,56 @@ public class OfferResults : MonoBehaviour
     {
         if (Booster == 3) {
            
-            if (budget_Commit_Percent >= 1.2f)
+            if (budget_Commit_Percent == 120f)
             {
                 Exp = 30;
-            }else if(budget_Commit_Percent>=1.0f)
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[3];
+            }
+            else if(budget_Commit_Percent==100f)
             {
                 Exp = 27;
-            }else if (budget_Commit_Percent >= 0.3f)
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[2];
+            }
+            else if (budget_Commit_Percent == 30f)
             {
                 Exp = 18;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[1];
             }
 
         } else if (Booster == 2) {
 
-            if (budget_Commit_Percent >= 1.2f)
+            if (budget_Commit_Percent == 120f)
             {
                 Exp = 25;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[3];
             }
-            else if (budget_Commit_Percent >= 1.0f)
+            else if (budget_Commit_Percent == 100f)
             {
                 Exp = 20;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[2];
             }
-            else if (budget_Commit_Percent >= 0.3f)
+            else if (budget_Commit_Percent == 30f)
             {
                 Exp = 15;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[1];
             }
 
         } else if (Booster == 1)
         {
-            if (budget_Commit_Percent >= 1.2f)
+            if (budget_Commit_Percent == 120f)
             {
                 Exp = 20;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[3];
             }
-            else if (budget_Commit_Percent >= 1.0f)
+            else if (budget_Commit_Percent == 100f)
             {
                 Exp = 18;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[2];
             }
-            else if (budget_Commit_Percent >= 0.3f)
+            else if (budget_Commit_Percent == 30f)
             {
                 Exp = 10;
+                Offer_Info_Text.sprite = GameMaster.Instance.OfferResult_Text[1];
             }
 
         } else if (Booster == 0)

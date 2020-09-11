@@ -13,7 +13,7 @@ public class Cover_Back_Image : MonoBehaviour
         Instance = this;
     }
     public void ShowImage() {
-        LeanTween.alpha(GetComponent<RectTransform>(), 0.4f, 0.5f);
+        LeanTween.alpha(GetComponent<RectTransform>(), 0.5f, 0.5f);
         GetComponent<Image>().raycastTarget = true;
     }
 

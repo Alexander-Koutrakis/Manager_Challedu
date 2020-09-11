@@ -10,6 +10,8 @@ public class QuizResults : MonoBehaviour
     [SerializeField]
     private TMP_Text result_Text;
     [SerializeField]
+    private TMP_Text correctAnswers_text;
+    [SerializeField]
     private Sprite CorrectSprite;
     [SerializeField]
     private Sprite FalseSprite;
@@ -28,13 +30,16 @@ public class QuizResults : MonoBehaviour
             ResultImage.sprite = CorrectSprite;
             GetComponent<Panel_Control>().OpenPanel();
             result_Text.gameObject.SetActive(true);
-            result_Text.text = (correctAnswers * (100)).ToString();
-            GameMaster.Instance.DelayedExp = correctAnswers * 100;
+            result_Text.text = (correctAnswers * (5)).ToString();
+            correctAnswers_text.gameObject.SetActive(true);
+            correctAnswers_text.text = correctAnswers.ToString();
+            GameMaster.Instance.DelayedExp = correctAnswers * 5;
         }
         else
         {
             ResultImage.sprite = FalseSprite;
             result_Text.gameObject.SetActive(false);
+            correctAnswers_text.gameObject.SetActive(false);
             GetComponent<Panel_Control>().OpenPanel();
         }
        

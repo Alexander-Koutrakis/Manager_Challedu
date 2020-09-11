@@ -116,7 +116,7 @@ public class ActivatedOffer : MonoBehaviour
     public void ClaimedOffer(Sprite SDG1, Sprite SDG2, Sprite SDG3,float points) {
         Main_Image.sprite = ClaimedOffer_Sprite;
         Claimed = true;
-
+        canBeClaimed = true;
         SDG1_Image.gameObject.SetActive(true);
         SDG1_Image.sprite = SDG1;
 
@@ -129,8 +129,7 @@ public class ActivatedOffer : MonoBehaviour
         points_Text.gameObject.SetActive(true);
         Destroy(reportButton.gameObject);
         Destroy(sliderTimer.gameObject);
-       // reportButton.gameObject.SetActive(false);
-       // sliderTimer.gameObject.SetActive(false);
+        LogBookControl.Instance.HideWarning();     
     }
 
 }
