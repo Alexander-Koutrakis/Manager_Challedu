@@ -22,9 +22,11 @@ public class LogBookControl : MonoBehaviour
     [SerializeField]
     private RectTransform warningSign;
     private bool waitButtonBool;
+    [SerializeField]
+    private Button[] LogBookButtons = null;
     private void Start()
     {
-        Instance = this;
+        Instance = this;       
     }
     public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent, float[] gps,Sprite CampaingSprite)
     {
@@ -46,8 +48,10 @@ public class LogBookControl : MonoBehaviour
             x--;
         }       
         totalPages = x+1;
-
         page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+
+        LogBookButtons[0].interactable = true;
+        LogBookButtons[1].interactable = true;
     }
 
     public void DeselectOffers()
@@ -131,14 +135,26 @@ public class LogBookControl : MonoBehaviour
             LeanTween.cancel(warningSign.gameObject);
             LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
         }
-
+        bool showWarning = false;
         foreach(ActivatedOffer AO in LogOffers)
         {
             if (AO.canBeClaimed&&!AO.Claimed)
             {
-                LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);                
+                // LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
+                showWarning = true;
             }
         }
+
+        if (showWarning)
+        {
+            LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
+            warning = true;
+            showWarning = false;
+        }
+       
+
+       
+
     }
 
 

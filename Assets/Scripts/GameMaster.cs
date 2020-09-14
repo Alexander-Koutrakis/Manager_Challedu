@@ -130,49 +130,29 @@ public class GameMaster : MonoBehaviour
     public void InitializeDictionaries()
     {
 
-        List<int> indexes = new List<int>();
 
-        // Get All offers
+
+        //// Get All offers
         foreach (Offer offer in Resources.LoadAll<Offer>("Offers"))
         {
             Offers.Add(offer.OfferID, offer);
-            indexes.Add(offer.OfferID);
+          
         }
-
-        // seperate the offers into groups
-        foreach(int index in indexes)
-        {
-            if (Offers[index].OfferID < 2000)
-            {
-                Enviroment_Offers.Add(Offers[index]);
-            }else if(Offers[index].OfferID < 3000)
-            {
-                Education_Offers.Add(Offers[index]);
-            }
-            else if(Offers[index].OfferID < 4000)
-            {
-                Quality_Of_Life_Offers.Add(Offers[index]);
-            }
-            else if (Offers[index].OfferID < 5000)
-            {
-                Economy_Offers.Add(Offers[index]);
-            }
-            else if (Offers[index].OfferID < 6000)
-            {
-                Health_Offers.Add(Offers[index]);
-            }
-            else
-            {
-                Equality_Offers.Add( Offers[index]);
-            }
-        }
-
+ 
         OffersGrouped.Add(Enviroment_Offers);
         OffersGrouped.Add(Education_Offers);
         OffersGrouped.Add(Quality_Of_Life_Offers);
         OffersGrouped.Add(Economy_Offers);
         OffersGrouped.Add(Health_Offers);
         OffersGrouped.Add(Equality_Offers);
+
+        //for(int i = 0; i < OffersGrouped.Count; i++)
+        //{
+        //    for(int j = 0; j < OffersGrouped[i].Count; i++)
+        //    {
+        //        Offers.Add(OffersGrouped[i][j].OfferID, OffersGrouped[i][j]);
+        //    }
+        //}
     }
     private float[] RandomizedGPpoints()
     {
@@ -268,6 +248,7 @@ public class GameMaster : MonoBehaviour
         Debug.Log("Delayed Exp :" + DelayedExp);
         DelayedExp = 0;
         Player.Instance.Calculate_UI_Info();
+        Level_Up_Panel.Instance.CheckForLevelUp();
     }
 
     

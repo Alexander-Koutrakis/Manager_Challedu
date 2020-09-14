@@ -31,6 +31,6 @@ public class Warning_Panel : MonoBehaviour
 
     private void ClosePanel()
     {
-        LeanTween.moveLocalX(gameObject, -1110, 0.5f);
+        LeanTween.moveLocalX(gameObject, -1500, 0.5f);
     }
 }

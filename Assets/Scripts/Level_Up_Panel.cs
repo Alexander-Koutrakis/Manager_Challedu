@@ -17,12 +17,23 @@ public class Level_Up_Panel : MonoBehaviour
     private GameObject fireworkPrefab = null;
     [SerializeField]
     private RectTransform buttonTransform = null;
-
-
-
-    public void LevelUP_Start()
+    public static Level_Up_Panel Instance;
+    [SerializeField]
+    private Panel_Control Ask_for_Campaing_Panel;
+    private void Awake()
     {
-        Debug.Log("Level Up Start");
+        Instance = this;
+    }
+    public void CheckForLevelUp()
+    {
+        if (Player.Instance.lvlUp)
+        {
+            LevelUP_Start();
+        }
+    }
+
+    private void LevelUP_Start()
+    {
         LeanTween.scale(Background, new Vector3(1, 1, 1), 0.1f).setOnComplete(FadeBackGround);
     }
    private void FadeBackGround()
@@ -67,6 +78,7 @@ public class Level_Up_Panel : MonoBehaviour
     {
         LeanTween.alpha(Background, 0f, 0.5f);
         LeanTween.scale(Inner, new Vector3(0, 0, 0), 0.5f).setOnComplete(ResetLevelUP);
+        Ask_for_Campaing_Panel.OpenPanel();
     }
 
     private IEnumerator ShowFireWorks()

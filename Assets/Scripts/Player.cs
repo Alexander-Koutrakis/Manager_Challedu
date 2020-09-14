@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     private Sprite[] initialStrategySprites = null;
     private int maxBudget=4000;
     public Sprite[] ActiveStrategySprites=new Sprite[6];
-   private bool lvlUp = false;
+    public bool lvlUp = false;
     private void Awake()
     {
         Instance = this;
@@ -79,11 +79,10 @@ public class Player : MonoBehaviour
     {
         budget_Text.text = budget.ToString();
         income_text.text = budgetRegenerationRate.ToString()+" / δ";
-        bool lvlUp = false;
         if(Expirience >= Expirience_Slider.maxValue&& !lvlUp)
         {
             //claimLevel_Button.interactable = true;
-            level_Up_Panel.LevelUP_Start();
+            // level_Up_Panel.LevelUP_Start();
             lvlUp = true;
         }
         if (expBarRoutine != null){
@@ -97,19 +96,17 @@ public class Player : MonoBehaviour
 
     public void Level_Up()
     {
-        lvlUp = false;
-        
-
+        lvlUp = false;        
         Expirience -= Expirience_Slider.maxValue;
         Player_Level++;
         level_Text.text = Player_Level.ToString();
 
         NewLevelInfo();   
-        Campain_Plan.Instance.NewCampaing();
+      //Campain_Plan.Instance.NewCampaing();
         LogBookControl.Instance.panel_Control.ClosePanel();
         Offer_Tab_Controller.Instance.panel_Control.ClosePanel();
         AchievementManager.Instance.panel_Control.ClosePanel();
-        Campain_Plan.Instance.panel_Control.OpenPanel();
+     // Campain_Plan.Instance.panel_Control.OpenPanel();
         Expirience_Slider.value = Expirience;
         claimLevel_Button.interactable = false;
         Calculate_UI_Info();
@@ -260,9 +257,8 @@ private void NewLevelInfo()
             Next_Level_Exp = 60;
             Expirience_Slider.maxValue =Next_Level_Exp;
             budget = 4000;
-
+            VideoPlayerControl.Instance.FillPlayer(1);
             MeetingRoomController.Instance.AddDnDQuestion();
-            Debug.Log("going to level 2");
         }
         else if (Player_Level == 3)
         {
@@ -278,7 +274,6 @@ private void NewLevelInfo()
             {
                 MeetingRoomController.Instance.AddDnDQuestion();
             }
-            Debug.Log("going to level 3");
         }
         else if (Player_Level == 4)
         {
@@ -289,12 +284,11 @@ private void NewLevelInfo()
             Next_Level_Exp = 240;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 40000;
-
+            VideoPlayerControl.Instance.FillPlayer(1);
             for (int i = 0; i < 5; i++)
             {
                 MeetingRoomController.Instance.AddDnDQuestion();
             }
-            Debug.Log("going to level 4");
         }
         else if (Player_Level == 5)
         {
@@ -305,23 +299,21 @@ private void NewLevelInfo()
             Next_Level_Exp = 500;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 20000;
-
+            VideoPlayerControl.Instance.FillPlayer(VideoPlayerControl.Instance.AllvideoList.Count);
             for (int i = 0; i < 6; i++)
             {
                 MeetingRoomController.Instance.AddDnDQuestion();
             }
-
-            Debug.Log("going to level 4");
         }
         else if (Player_Level > 5)
         {
             GameMaster.Instance.MaxOffers = 15;
             GameMaster.Instance.FalseOffers = 5;
-           // budgetRegenerationRate = 310;
-            maxBudget = 1000000;
-            Next_Level_Exp = 60;
+
+            maxBudget = 100000+ Player_Level*10000;
+            Next_Level_Exp = 120*Player_Level;
             Expirience_Slider.maxValue = Next_Level_Exp;
-            //  budget = 4000;
+
 
             for (int i = 0; i < 6; i++)
             {

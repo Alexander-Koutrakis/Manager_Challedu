@@ -99,8 +99,7 @@ public class Campain_Plan : MonoBehaviour
     }
 
     public void NewCampaing()
-    {
-       
+    {       
         panel_Control.OpenPanel();
         UnlockCampaing();
     }

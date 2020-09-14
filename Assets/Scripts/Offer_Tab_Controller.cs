@@ -180,7 +180,7 @@ public class Offer_Tab_Controller : MonoBehaviour
 
 
     private void WarningFollowUp() {
-        LeanTween.scale(warningSign.gameObject, new Vector3(1.5f, 1.5f, 1.5f), 0.5f).setLoopPingPong();
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.5f).setLoopPingPong();
     }
 
     public void HideWarning()

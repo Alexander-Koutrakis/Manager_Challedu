@@ -76,8 +76,15 @@ public class AchievementManager : MonoBehaviour
         }
 
         totalAchievements++;
-
-        totalPages = totalAchievements / 8 +1;
+        if(totalAchievements % 8 == 0)
+        {
+            totalPages = totalAchievements / 8 ;
+        }
+        else
+        {
+            totalPages = totalAchievements / 8 + 1;
+        }
+        
         page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
     }
   

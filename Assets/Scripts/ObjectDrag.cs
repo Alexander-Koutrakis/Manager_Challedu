@@ -9,6 +9,7 @@ public class ObjectDrag : MonoBehaviour , IDragHandler , IEndDragHandler  ,IBegi
     private RectTransform rectTransform;   
     private Canvas canvas;
     private CanvasGroup canvasGroup;
+    
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -31,7 +32,6 @@ public class ObjectDrag : MonoBehaviour , IDragHandler , IEndDragHandler  ,IBegi
         {
             transform.SetParent(oldparent);
             rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-
         }
         else
         {

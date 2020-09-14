@@ -78,10 +78,11 @@ public class ActivatedOffer : MonoBehaviour
         }
 
         Main_Image.sprite = ReadyToBeClaimedOffer_Sprite;
-        canBeClaimed = true;
+        
         activatedResultsGO.GetComponent<OfferResults>().InitializeOfferResults(offer, paidBudget, canBeClaimed, Claimed, Booster, commitPercentMain,this,gps, PlayerCampaingSprite);
         reportButton.interactable = true;
         LogBookControl.Instance.ShowWarning();
+        canBeClaimed = true;
         yield return null;
     }
 
@@ -105,7 +106,6 @@ public class ActivatedOffer : MonoBehaviour
         LogBookControl.Instance.DeselectOffers();
         Selected_Image.gameObject.SetActive(true);
         reportButton.interactable = false;
-
     }
 
     public void DeselectActivatedOffer()
