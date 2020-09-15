@@ -18,13 +18,14 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         image = GetComponent<Image>();
-     //   canvasGroup = GetComponent<CanvasGroup>();
+ 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+       
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        image.color = new Color32(255, 255, 255, 255);
+        image.color = new Color32(56, 181, 73, 255);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -36,19 +37,21 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
             transform.SetParent(UnusedBacket_transform);
             rectTransform.anchoredPosition = new Vector3(0, 0, 0);
         }
-        else
-        {
-           // GetComponentInParent<DropSpot>().emptyslot = false;
-        }
+        
 
 
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.color = new Color32(255, 255, 255, 255);
+        
+      //  RectTransformUtility.ScreenPointToLocalPointInRectangle()<-------------------check this
+        image.color = new Color32(56, 181, 73, 255);
+        if (GetComponentInParent<StarDropSpot>() != null)
+        {
+            GetComponentInParent<StarDropSpot>().RemoveStar();
+        }
         oldparent = transform.parent;
-     //   canvasGroup.blocksRaycasts = false;
         transform.SetParent(canvas.transform);
         transform.SetAsLastSibling();
 
@@ -68,6 +71,7 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
             {
                 rectTransform.SetParent(raycastResultsList[i].gameObject.transform);
                 image.color = new Color32(0, 0, 0, 0);
+                raycastResultsList[i].gameObject.GetComponent<StarDropSpot>().AddStar();
                 return true;
             }
             else
@@ -77,5 +81,13 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         }
 
         return false;
+    }
+
+
+    public void ResetStar(){
+        transform.SetParent(UnusedBacket_transform);
+        rectTransform.anchoredPosition = new Vector3(0, 0, 0);
+        image.color = new Color32(56, 181, 73, 255);
+        rectTransform.localScale = new Vector3(1, 1, 1);
     }
 }

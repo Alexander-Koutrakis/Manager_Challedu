@@ -51,8 +51,7 @@ public class AchievementManager : MonoBehaviour
 
         foreach (Achievement_Main AM in GetComponents<Achievement_Main>())
         {
-            AM.CreateAchievement();
-           
+            AM.CreateAchievement();           
         }
 
       
@@ -146,8 +145,6 @@ public class AchievementManager : MonoBehaviour
         CanvasGroup canvasGroup = earnedachievement.GetComponent<CanvasGroup>();
         float startAlpha = 0;
         float endAlpha = 1;
-
-
         for(int i = 0; i < 2; i++)
         {
             float progress = 0.0f;
@@ -162,9 +159,7 @@ public class AchievementManager : MonoBehaviour
             yield return new WaitForSeconds(2);
         }
 
-        Destroy(earnedachievement);
-        
-
+        Destroy(earnedachievement);       
     }
 
 
