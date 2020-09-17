@@ -15,7 +15,7 @@ public class Offer_Manager : MonoBehaviour
     private Button budget30;
     private Button budget100;
     private Button budget120;
-    private Button PayButton;
+    public Button PayButton;
     private Offer_GPGraph offer_GPGraph;
     private int BudgetAmount;
     [SerializeField]
@@ -316,13 +316,7 @@ public class Offer_Manager : MonoBehaviour
     {
         GetBooster();
         Player.Instance.budget -= BudgetAmount;
-        PayButton.interactable = false;
-        // add campaing sprite here
-        //--
-        //--
-        //--
-        //--
-        //---------------------
+        PayButton.interactable = false;     
         LogBookControl.Instance.AddOffer(offer.OfferID, BudgetAmount, true, false,Booster,commitPercent,offer.GP,GetCampaingSprite());
 
         

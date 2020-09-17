@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+
+public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerDownHandler
 {
     private Transform oldparent;
     private RectTransform rectTransform;
@@ -42,6 +43,14 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("Mouse click");
+        Vector3 pos = new Vector3(Camera.main.ScreenToWorldPoint(eventData.position).x, Camera.main.ScreenToWorldPoint(eventData.position).y, 0);
+        rectTransform.position = Input.mousePosition;
+    }
+
+  
     public void OnBeginDrag(PointerEventData eventData)
     {
         

@@ -256,8 +256,8 @@ private void NewLevelInfo()
             maxBudget = 10000;
             Next_Level_Exp = 60;
             Expirience_Slider.maxValue =Next_Level_Exp;
+          
             budget = 4000;
-            VideoPlayerControl.Instance.FillPlayer(1);
             MeetingRoomController.Instance.AddDnDQuestion();
         }
         else if (Player_Level == 3)
@@ -284,7 +284,7 @@ private void NewLevelInfo()
             Next_Level_Exp = 240;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 40000;
-            VideoPlayerControl.Instance.FillPlayer(1);
+            Networking_Controller.instance.AddSlider();
             for (int i = 0; i < 5; i++)
             {
                 MeetingRoomController.Instance.AddDnDQuestion();
@@ -299,7 +299,13 @@ private void NewLevelInfo()
             Next_Level_Exp = 500;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 20000;
-            VideoPlayerControl.Instance.FillPlayer(VideoPlayerControl.Instance.AllvideoList.Count);
+
+
+            for (int i = 0; i < Networking_Controller.instance.Allslideshows.Count; i++)
+            {
+                Networking_Controller.instance.AddSlider();
+            }
+
             for (int i = 0; i < 6; i++)
             {
                 MeetingRoomController.Instance.AddDnDQuestion();
@@ -314,6 +320,7 @@ private void NewLevelInfo()
             Next_Level_Exp = 120*Player_Level;
             Expirience_Slider.maxValue = Next_Level_Exp;
 
+           
 
             for (int i = 0; i < 6; i++)
             {

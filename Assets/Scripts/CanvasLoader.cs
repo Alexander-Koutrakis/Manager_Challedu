@@ -10,9 +10,10 @@ public class CanvasLoader : MonoBehaviour
     [SerializeField]
     private Canvas targetCanvas=null;
     // Start is called before the first frame update
-
+    public static CanvasLoader Instance;
     private void Start()
     {
+        Instance = this;
         //  FadeTo(targetCanvas);
         LeanTween.moveLocalX(fadeImage.gameObject, -2500, 0.5f);
     }

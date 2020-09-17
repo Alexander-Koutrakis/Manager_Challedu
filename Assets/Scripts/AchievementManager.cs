@@ -46,9 +46,6 @@ public class AchievementManager : MonoBehaviour
         }
        
         activeButton.Click();
-
-        Debug.Log("here");
-
         foreach (Achievement_Main AM in GetComponents<Achievement_Main>())
         {
             AM.CreateAchievement();           

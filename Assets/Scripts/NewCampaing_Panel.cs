@@ -10,8 +10,8 @@ public class NewCampaing_Panel : MonoBehaviour
     private int[] campaingStars = new int[6];
     [SerializeField]
     private Image LockCampaingImage = null;
-    [SerializeField]
-    private Button StartCampaingButton = null;
+ 
+    public Button StartCampaingButton = null;
 
 
     private void Awake()

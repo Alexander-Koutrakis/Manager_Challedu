@@ -36,6 +36,7 @@ public class Level_Up_Panel : MonoBehaviour
     {
         LeanTween.scale(Background, new Vector3(1, 1, 1), 0.1f).setOnComplete(FadeBackGround);
     }
+
    private void FadeBackGround()
     {
 

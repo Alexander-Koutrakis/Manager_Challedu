@@ -4,38 +4,125 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Networking_Controller : MonoBehaviour
 {
+    
     [SerializeField]
-    private List<Slideshow> slideshows = new List<Slideshow>();
+    private List<Slideshow> ActiveSlideshows = new List<Slideshow>();
+    [SerializeField]
+    private Button networkingButton;
+    public List<Slideshow> Allslideshows = new List<Slideshow>();
     [SerializeField]
     private Image image;
     Slideshow currentSlideshow;
     private int index=0;
-
-
-    private void Start()
+    public static Networking_Controller instance;
+    public bool warning = false;
+    [SerializeField]
+    private RectTransform warningSign;
+    [SerializeField]
+    private Panel_Control rewardPanelControl;
+    [SerializeField]
+    Canvas OfficeCanvas;
+    [SerializeField]
+    private float pageHoldTime;
+    private void Awake()
     {
-        index = 0;
-        currentSlideshow = slideshows[0];
-        Star_Show();
+        instance = this;
+        gameObject.SetActive(false);
     }
 
 
-    public void Star_Show()
+    public void AddSlider()
     {
+        if (Allslideshows.Count > 0)
+        {
+            int x = Random.Range(0, Allslideshows.Count);
+            ActiveSlideshows.Add(Allslideshows[x]);
+            Allslideshows.RemoveAt(x);
+            networkingButton.interactable = true;
+            ShowWarning();
+        }
+
+
+    }
+
+
+    private void OnEnable()
+    {
+        StartCoroutine(Startshow());
+    }
+
+    private IEnumerator Startshow()
+    {        
+       
+        int x = Random.Range(0, ActiveSlideshows.Count);
+        currentSlideshow = ActiveSlideshows[x];
+        ActiveSlideshows.RemoveAt(x);
+
+        index = 0;
         image.sprite = currentSlideshow.Slides[index];
+
+        yield return new WaitForSeconds(0.5f);
+
         StartCoroutine(HoldImage());
     }
 
+
+
     private IEnumerator HoldImage()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(pageHoldTime);
        
-        if (index < currentSlideshow.Slides.Length)
+        if (index < currentSlideshow.Slides.Length-1)
         {
             index++;
             image.sprite = currentSlideshow.Slides[index];
             StartCoroutine(HoldImage());
         }
+        else
+        {
+            // reward
+            rewardPanelControl.OpenPanel();
+            CanvasLoader.Instance.FadeTo(OfficeCanvas);
+
+           
+        }
     }
-  
+
+    public void ShowWarning()
+    {
+        if (!warning)
+        {
+            warning = true;
+            LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
+        }
+        Warning_Panel.Instance.ShowMessege("Νεo Networking");
+    }
+
+
+    private void WarningFollowUp()
+    {
+        LeanTween.scale(warningSign.gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.5f).setLoopPingPong();
+    }
+
+    public void HideWarning()
+    {
+        if (warning)
+        {
+            warning = false;
+            LeanTween.cancel(warningSign.gameObject);
+            LeanTween.scale(warningSign.gameObject, Vector3.zero, 0.5f);
+        }
+      
+    }
+
+    public void NetworkingReward()
+    {
+        if (ActiveSlideshows.Count <= 0)
+        {
+            networkingButton.interactable = false;
+            HideWarning();
+        }
+        GameMaster.Instance.StartCampaign();
+    }
+
 }

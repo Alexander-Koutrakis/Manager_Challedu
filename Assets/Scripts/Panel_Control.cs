@@ -9,19 +9,19 @@ public class Panel_Control : MonoBehaviour
     public Vector3 ClosePosition;
     public Vector3 OpenScale;
     public Vector3 CloseScale;
-
+    public float speed = 0.5f;
 
     public void OpenPanel()
     {
 
-        LeanTween.move(targetPanel, OpenPosition, 0.5f);
-        LeanTween.scale(targetPanel, OpenScale, 0.5f).setOnComplete(Cover_Back_Image.Instance.ShowImage);       
+        LeanTween.move(targetPanel, OpenPosition, speed);
+        LeanTween.scale(targetPanel, OpenScale, speed).setOnComplete(Cover_Back_Image.Instance.ShowImage);       
     }
 
     public void ClosePanel()
     {
-        LeanTween.move(targetPanel, ClosePosition, 0.5f);
-        LeanTween.scale(targetPanel, CloseScale, 0.5f);
+        LeanTween.move(targetPanel, ClosePosition, speed);
+        LeanTween.scale(targetPanel, CloseScale, speed);
         Cover_Back_Image.Instance.HideImage();
     }
 
