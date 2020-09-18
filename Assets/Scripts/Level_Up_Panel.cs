@@ -20,6 +20,8 @@ public class Level_Up_Panel : MonoBehaviour
     public static Level_Up_Panel Instance;
     [SerializeField]
     private Panel_Control Ask_for_Campaing_Panel;
+    [SerializeField]
+    private ChangeCampaingPanel changeCampaingPanel;
     private void Awake()
     {
         Instance = this;
@@ -72,14 +74,17 @@ public class Level_Up_Panel : MonoBehaviour
         Background.localScale = new Vector3(0, 0, 0);
         Inner.localScale = new Vector3(0, 0, 0);
         textTransform.rotation = Quaternion.Euler(new Vector3(0, 0, -10));
-        
-    }       
+        //  Ask_for_Campaing_Panel.OpenPanel();
 
-    public void CloseLevelUPPanel()
+        changeCampaingPanel.StartQuestion();
+
+}
+
+public void CloseLevelUPPanel()
     {
         LeanTween.alpha(Background, 0f, 0.5f);
         LeanTween.scale(Inner, new Vector3(0, 0, 0), 0.5f).setOnComplete(ResetLevelUP);
-        Ask_for_Campaing_Panel.OpenPanel();
+        
     }
 
     private IEnumerator ShowFireWorks()

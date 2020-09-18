@@ -17,6 +17,11 @@ public class NewCampaing_Panel : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+       
+    }
+
+    private void Start()
+    {
         ResetCampaing();
     }
 

@@ -19,8 +19,21 @@ public class Intro_Controller : MonoBehaviour
     [SerializeField]
     private Panel_Control offer_Panel_Control;
 
+
+
+    [SerializeField]
+    private GameObject HideOldExit;
+    [SerializeField]
+    private GameObject showExit;
+
+    [SerializeField]
+    private GameObject waringGameobject;
+    
     [SerializeField]
     private GameObject final_Images;
+
+    private bool first = false;
+    private bool second = false;
 
     public void IntroStartCampaing()
     {
@@ -47,15 +60,37 @@ public class Intro_Controller : MonoBehaviour
 
     public void DestroyIntro()
     {
+        Time.timeScale = 1;
+        waringGameobject.SetActive(true);
         Destroy(gameObject);
     }
 
 
     private void Update()
     {
-        if (Player.Instance.Player_Level > 1)
+
+        if (Player.Instance.offersAccepted > 0 && !first)
         {
-            final_Images.SetActive(true);
+            first = true;
+            HideOldExit.SetActive(false);
+            showExit.SetActive(true);
+            // do stuff
         }
+        
+        
+        if (Player.Instance.Player_Level > 1&& !second)
+        {
+            second = true;
+            StartCoroutine(waitForLevelUpEnd());
+        }
+
+
+    }
+
+    private IEnumerator waitForLevelUpEnd()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Time.timeScale = 0;
+        final_Images.SetActive(true);
     }
 }

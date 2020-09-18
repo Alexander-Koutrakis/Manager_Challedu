@@ -24,6 +24,8 @@ public class Networking_Controller : MonoBehaviour
     Canvas OfficeCanvas;
     [SerializeField]
     private float pageHoldTime;
+    [SerializeField]
+    private Button UIButton=null;
     private void Awake()
     {
         instance = this;
@@ -42,7 +44,6 @@ public class Networking_Controller : MonoBehaviour
             ShowWarning();
         }
 
-
     }
 
 
@@ -52,8 +53,7 @@ public class Networking_Controller : MonoBehaviour
     }
 
     private IEnumerator Startshow()
-    {        
-       
+    {              
         int x = Random.Range(0, ActiveSlideshows.Count);
         currentSlideshow = ActiveSlideshows[x];
         ActiveSlideshows.RemoveAt(x);
@@ -62,7 +62,10 @@ public class Networking_Controller : MonoBehaviour
         image.sprite = currentSlideshow.Slides[index];
 
         yield return new WaitForSeconds(0.5f);
-
+        if (ActiveSlideshows.Count <= 0)
+        {
+            UIButton.interactable = false;
+        }
         StartCoroutine(HoldImage());
     }
 
@@ -82,9 +85,7 @@ public class Networking_Controller : MonoBehaviour
         {
             // reward
             rewardPanelControl.OpenPanel();
-            CanvasLoader.Instance.FadeTo(OfficeCanvas);
-
-           
+            CanvasLoader.Instance.FadeTo(OfficeCanvas);           
         }
     }
 

@@ -45,7 +45,6 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Mouse click");
         Vector3 pos = new Vector3(Camera.main.ScreenToWorldPoint(eventData.position).x, Camera.main.ScreenToWorldPoint(eventData.position).y, 0);
         rectTransform.position = Input.mousePosition;
     }

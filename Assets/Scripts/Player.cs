@@ -256,7 +256,7 @@ private void NewLevelInfo()
             maxBudget = 10000;
             Next_Level_Exp = 60;
             Expirience_Slider.maxValue =Next_Level_Exp;
-          
+            Networking_Controller.instance.AddSlider();
             budget = 4000;
             MeetingRoomController.Instance.AddDnDQuestion();
         }

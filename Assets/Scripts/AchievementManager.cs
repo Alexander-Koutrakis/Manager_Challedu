@@ -81,7 +81,7 @@ public class AchievementManager : MonoBehaviour
             totalPages = totalAchievements / 8 + 1;
         }
         
-        page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+       // page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
     }
   
     private void SetAchievement_Info(string parent , string Title,GameObject achievement)
@@ -197,7 +197,7 @@ public class AchievementManager : MonoBehaviour
             warning = true;
             LeanTween.scale(warningSign.gameObject, new Vector3(1f, 1f, 1f), 0.5f).setOnComplete(WarningFollowUp);
         }
-        Warning_Panel.Instance.ShowMessege("το Έργο ολοκληρώθηκε");
+       // Warning_Panel.Instance.ShowMessege("νεο Επιτευγμα");
     }
 
 

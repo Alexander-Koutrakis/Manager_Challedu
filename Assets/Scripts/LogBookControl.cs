@@ -24,9 +24,14 @@ public class LogBookControl : MonoBehaviour
     private bool waitButtonBool;
     [SerializeField]
     private Button[] LogBookButtons = null;
+    [SerializeField]
+    private Button nextButton;
+    [SerializeField]
+    private Button prevButton;
     private void Start()
     {
-        Instance = this;       
+        Instance = this;
+
     }
     public void AddOffer(int offerID,int paidBudget, bool canBeClaimed, bool Claimed, int booster, float commitPercent, float[] gps,Sprite CampaingSprite)
     {
@@ -52,6 +57,8 @@ public class LogBookControl : MonoBehaviour
 
         LogBookButtons[0].interactable = true;
         LogBookButtons[1].interactable = true;
+
+
     }
 
     public void DeselectOffers()
@@ -74,6 +81,9 @@ public class LogBookControl : MonoBehaviour
             waitButtonBool = true;
             
         }
+
+        CheckPageButtons();
+
     }
 
     public void PrevPage()
@@ -85,6 +95,9 @@ public class LogBookControl : MonoBehaviour
             page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
             waitButtonBool = true;
         }
+
+        CheckPageButtons();
+
     }
 
 
@@ -93,6 +106,7 @@ public class LogBookControl : MonoBehaviour
         LogBookRect.anchoredPosition=new Vector3(0,0,0);
         currentPage = 1;
         page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+        CheckPageButtons();
     }
 
     public void OrganiseActivatedOffers()
@@ -164,4 +178,25 @@ public class LogBookControl : MonoBehaviour
         waitButtonBool = false;
     }
 
+
+    private void CheckPageButtons()
+    {
+        if (currentPage == 1)
+        {
+            prevButton.interactable = false;
+        }
+        else
+        {
+            prevButton.interactable = true;
+        }
+
+        if (currentPage == totalPages)
+        {
+            nextButton.interactable = false;
+        }
+        else
+        {
+            nextButton.interactable = true;
+        }
+    }
 }

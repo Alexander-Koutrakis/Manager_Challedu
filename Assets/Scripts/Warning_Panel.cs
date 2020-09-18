@@ -8,6 +8,7 @@ public class Warning_Panel : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        gameObject.SetActive(false);
     }
 
 
