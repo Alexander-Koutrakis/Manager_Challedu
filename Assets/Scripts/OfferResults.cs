@@ -51,7 +51,6 @@ public class OfferResults : MonoBehaviour
         Booster = booster;
         readyOffer = offer;
         claimedPaidBudget = paidBudgert;
-        Debug.Log(commitPercent);
         connectedActivatedOffer = ConnectedAO;
         GPs = gps;
         GetHighestGP_Sprite(gps);

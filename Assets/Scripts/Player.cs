@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     private int maxBudget=4000;
     public Sprite[] ActiveStrategySprites=new Sprite[6];
     public bool lvlUp = false;
+    public int offerARGCost=1000;
     private void Awake()
     {
         Instance = this;
@@ -258,6 +259,7 @@ private void NewLevelInfo()
             Expirience_Slider.maxValue =Next_Level_Exp;
             Networking_Controller.instance.AddSlider();
             budget = 4000;
+            offerARGCost = 3000;
             MeetingRoomController.Instance.AddDnDQuestion();
         }
         else if (Player_Level == 3)
@@ -269,7 +271,7 @@ private void NewLevelInfo()
             Next_Level_Exp = 120;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 10000;
-
+            offerARGCost = 7000;
             for(int i = 0; i < 3; i++)
             {
                 MeetingRoomController.Instance.AddDnDQuestion();
@@ -283,7 +285,8 @@ private void NewLevelInfo()
             maxBudget = 40000;
             Next_Level_Exp = 240;
             Expirience_Slider.maxValue = Next_Level_Exp;
-            budget = 40000;
+            budget = 15000;
+            offerARGCost = 13000;
             Networking_Controller.instance.AddSlider();
             for (int i = 0; i < 5; i++)
             {
@@ -299,7 +302,7 @@ private void NewLevelInfo()
             Next_Level_Exp = 500;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 20000;
-
+            offerARGCost = 20000;
 
             for (int i = 0; i < Networking_Controller.instance.Allslideshows.Count; i++)
             {
@@ -319,8 +322,9 @@ private void NewLevelInfo()
             maxBudget = 100000+ Player_Level*10000;
             Next_Level_Exp = 120*Player_Level;
             Expirience_Slider.maxValue = Next_Level_Exp;
+            offerARGCost = 45000 + Player_Level * 1000;
 
-           
+
 
             for (int i = 0; i < 6; i++)
             {

@@ -175,7 +175,7 @@ public class GameMaster : MonoBehaviour
     {
         offer.GP = RandomizedGPpoints();
         float x = Random.Range(1, 1.21f);
-        x = Player.Instance.Player_Level * x * 1000;
+        x = Player.Instance.offerARGCost * x;
         x = Mathf.Round(x / 100) * 100;
         offer.budgetCost = Mathf.RoundToInt(x);
         int y = Random.Range(1, 10)*5;

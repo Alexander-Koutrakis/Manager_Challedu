@@ -10,7 +10,8 @@ public class LogBookControl : MonoBehaviour
     public Transform OfferResults_Log; 
     public GameObject activatedOfferGO;
     public GameObject OfferResultsGO;
-    public Panel_Control panel_Control;  
+    public Panel_Control panel_Control;
+    public OfferResults offerResults;
     public List<ActivatedOffer> LogOffers = new List<ActivatedOffer>();
     [SerializeField]
     private RectTransform LogBookRect=null;
@@ -103,6 +104,7 @@ public class LogBookControl : MonoBehaviour
 
     public void OpenLogBook()
     {
+        
         LogBookRect.anchoredPosition=new Vector3(0,0,0);
         currentPage = 1;
         page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();

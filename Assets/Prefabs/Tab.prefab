@@ -1772,8 +1772,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2815,6 +2815,7 @@ MonoBehaviour:
   title_Text: {fileID: 0}
   offerBudget: 0
   budget_Text: {fileID: 1146671092235365789}
+  PayButton: {fileID: 0}
   Duration_text: {fileID: 9125217730505475200}
   availableButton30: {fileID: -1733818076761585428, guid: 89b909a7ca4b1794d9cb5f4afad05bff,
     type: 3}

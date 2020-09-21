@@ -11,7 +11,7 @@ public class AchievementManager : MonoBehaviour
     public Sprite[] achievementSprites;
     public Achievement_Button activeButton;
     private ScrollRect scrollRect;
-    public GameObject visualAchievement;
+ //   public GameObject visualAchievement;
     public Dictionary<string, Achievement> achievements = new Dictionary<string, Achievement>();
     public Sprite Star_Points_sprite;
     public Sprite unlockedSprite;
@@ -137,27 +137,7 @@ public class AchievementManager : MonoBehaviour
     }
 
 
-    private IEnumerator FadeAchivement(GameObject earnedachievement)
-    {
-        CanvasGroup canvasGroup = earnedachievement.GetComponent<CanvasGroup>();
-        float startAlpha = 0;
-        float endAlpha = 1;
-        for(int i = 0; i < 2; i++)
-        {
-            float progress = 0.0f;
-            while (progress < 1.0)
-            {
-                canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, progress);
-                progress += Time.deltaTime *0.5f;
-                yield return null;
-            }
-            startAlpha = 1;
-            endAlpha = 0;
-            yield return new WaitForSeconds(2);
-        }
-
-        Destroy(earnedachievement);       
-    }
+  
 
 
     public void NextPage()
@@ -168,7 +148,7 @@ public class AchievementManager : MonoBehaviour
             Debug.Log("here");
             LeanTween.moveLocalX(achievement_rect_Transform.gameObject, achievement_rect_Transform.anchoredPosition.x - 1180, 0.5f).setOnComplete(buttonReady);
             currentPage++;
-            page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+           // page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
             waitButtonBool = true;
         }
     }

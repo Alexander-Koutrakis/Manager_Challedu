@@ -12,6 +12,8 @@ public class Networking_Controller : MonoBehaviour
     public List<Slideshow> Allslideshows = new List<Slideshow>();
     [SerializeField]
     private Image image;
+    [SerializeField]
+    private List<Slideshow> TotalSlideshow = new List<Slideshow>();
     Slideshow currentSlideshow;
     private int index=0;
     public static Networking_Controller instance;
@@ -42,6 +44,15 @@ public class Networking_Controller : MonoBehaviour
             Allslideshows.RemoveAt(x);
             networkingButton.interactable = true;
             ShowWarning();
+        }
+        else
+        {
+            Allslideshows.Clear();
+            foreach (Slideshow slide in TotalSlideshow)
+            {
+                Allslideshows.Add(slide);
+            }
+            AddSlider();
         }
 
     }

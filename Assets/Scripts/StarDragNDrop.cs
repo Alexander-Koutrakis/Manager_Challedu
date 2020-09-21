@@ -96,6 +96,6 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         transform.SetParent(UnusedBacket_transform);
         rectTransform.anchoredPosition = new Vector3(0, 0, 0);
         image.color = new Color32(56, 181, 73, 255);
-        rectTransform.localScale = new Vector3(1, 1, 1);
+        rectTransform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
     }
 }
