@@ -62,6 +62,7 @@ public class StarDragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         oldparent = transform.parent;
         transform.SetParent(canvas.transform);
         transform.SetAsLastSibling();
+        NewCampaing_Panel.Instance.GetStars();
 
     }
 

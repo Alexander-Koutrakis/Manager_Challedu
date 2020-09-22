@@ -56,6 +56,7 @@ public class Offer_Manager : MonoBehaviour
     private Color32 minimumGreen=new Color32(41,120,51,255);
     private Color32 mediumGreen= new Color32(57,181,74,255);
     private Color32 fullGreen=new Color32(75,236,97,255);
+    public int Offer_Index;
     private void Awake()
     {
         InitializeValues();

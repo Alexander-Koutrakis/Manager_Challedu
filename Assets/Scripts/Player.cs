@@ -304,7 +304,7 @@ private void NewLevelInfo()
             budget = 20000;
             offerARGCost = 20000;
 
-            for (int i = 0; i < Networking_Controller.instance.Allslideshows.Count; i++)
+            for (int i = 0; i < 30; i++)
             {
                 Networking_Controller.instance.AddSlider();
             }
@@ -324,7 +324,10 @@ private void NewLevelInfo()
             Expirience_Slider.maxValue = Next_Level_Exp;
             offerARGCost = 45000 + Player_Level * 1000;
 
-
+            for (int i = 0; i < 30; i++)
+            {
+                Networking_Controller.instance.AddSlider();
+            }
 
             for (int i = 0; i < 6; i++)
             {

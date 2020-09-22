@@ -24,7 +24,7 @@ public class Level_Up_1 : Achievement_Main
 
     public override void Rewards()
     {
-        Player.Instance.Expirience += 1;
+       // Player.Instance.Expirience += 1;
         gameObject.AddComponent<Level_Up_4>();
         GetComponent<Level_Up_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);

@@ -27,7 +27,7 @@ public class Exclusivity_Achievement_2 : Achievement_Main
         gameObject.AddComponent<Exclusivity_Achievement_3>();
         GetComponent<Exclusivity_Achievement_3>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 3;
+       // Player.Instance.Expirience += 3;
         Player.Instance.Calculate_UI_Info();
     }
 }

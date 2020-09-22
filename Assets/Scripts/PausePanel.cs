@@ -30,4 +30,6 @@ public class PausePanel : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Time.timeScale = 0;
     }
+
+   
 }

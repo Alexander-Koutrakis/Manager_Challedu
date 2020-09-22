@@ -27,7 +27,7 @@ public class SDG_Training_1 : Achievement_Main
         gameObject.AddComponent<SDG_Training_2>();
         GetComponent<SDG_Training_2>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 1;
+      //  Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

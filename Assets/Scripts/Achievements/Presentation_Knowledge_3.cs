@@ -27,7 +27,7 @@ public class Presentation_Knowledge_3 : Achievement_Main
         gameObject.AddComponent<Presentation_Knowledge_4>();
         GetComponent<Presentation_Knowledge_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 7;
+       // Player.Instance.Expirience += 7;
         Player.Instance.Calculate_UI_Info();
     }
 }

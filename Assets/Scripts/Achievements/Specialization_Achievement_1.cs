@@ -27,7 +27,7 @@ public class Specialization_Achievement_1 : Achievement_Main
         gameObject.AddComponent<Specialization_Achievement_2>();
         GetComponent<Specialization_Achievement_2>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 1;
+    //    Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

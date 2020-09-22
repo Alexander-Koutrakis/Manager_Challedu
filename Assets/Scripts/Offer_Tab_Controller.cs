@@ -82,7 +82,6 @@ public class Offer_Tab_Controller : MonoBehaviour
 
         ShowWarning();
         closedOffers_Num = used_Managers.Count;
-        // currentTabIndex = GameMaster.Instance.MaxOffers - 1;
         currentTabIndex = used_Managers.Count - 1;
     }
 
@@ -111,7 +110,12 @@ public class Offer_Tab_Controller : MonoBehaviour
                 LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(buttonReady);
                 shown_Offer_Manager.OpenOfferTab();
                 waitButtonBool = true;
-                current_Offer_text.text = (currentTabIndex+1).ToString();
+
+                OfferPageControl();
+
+
+               
+               // current_Offer_text.text = (currentTabIndex+1).ToString();
             }
             else if(noAvailableOffers)
             {
@@ -150,7 +154,8 @@ public class Offer_Tab_Controller : MonoBehaviour
                 shown_Offer_Manager.OpenOfferTab();
                 LeanTween.moveLocalX(used_Managers[currentTabIndex].gameObject, CentralPos.x, 0.5f).setOnComplete(buttonReady);
                 waitButtonBool = true;
-                current_Offer_text.text = (currentTabIndex+1).ToString();
+                OfferPageControl();
+               // current_Offer_text.text = (currentTabIndex+1).ToString();
             }
             else if(noAvailableOffers)
             {
@@ -234,6 +239,21 @@ public class Offer_Tab_Controller : MonoBehaviour
         LeanTween.alpha(noOffersImage.rectTransform, 1, 0.5f);   
     }
 
+
+    public void OfferPageControl()
+    {
+        int remaingManagers = 0;
+        foreach (Offer_Manager OM in used_Managers)
+        {
+            if (!OM.offerClosed)
+            {
+                remaingManagers++;
+                OM.Offer_Index = remaingManagers;
+            }
+        }
+
+        current_Offer_text.text = shown_Offer_Manager.Offer_Index.ToString() + " / " + remaingManagers.ToString();
+    }
 }
 
    

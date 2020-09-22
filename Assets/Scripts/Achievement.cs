@@ -58,8 +58,9 @@ public class Achievement
           this.achievementRef.GetComponentsInChildren<TMP_Text>()[2].color = new Color32(221, 82, 70, 255);
           this.achievementRef.GetComponentsInChildren<Image>()[1].color = new Color32(255, 255, 255, 255);
           this.achievementRef.GetComponentsInChildren<Image>()[2].color= new Color32(255, 255, 255, 255);
+          this.achievementRef.GetComponent<Button>().interactable = true;
 
-            SaveAchievement(true);
+          SaveAchievement(true);
 
             if (child != null)
             {

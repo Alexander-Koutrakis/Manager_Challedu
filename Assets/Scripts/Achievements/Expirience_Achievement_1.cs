@@ -27,7 +27,7 @@ public class Expirience_Achievement_1 : Achievement_Main
         gameObject.AddComponent<Expirience_Achievement_2>();
         GetComponent<Expirience_Achievement_2>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 1;
+      //  Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

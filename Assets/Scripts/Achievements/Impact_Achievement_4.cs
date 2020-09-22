@@ -27,7 +27,7 @@ public class Impact_Achievement_4 : Achievement_Main
         gameObject.AddComponent<Impact_Achievement_4>();
         GetComponent<Impact_Achievement_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 15;
+      //  Player.Instance.Expirience += 15;
         Player.Instance.Calculate_UI_Info();
     }
 }

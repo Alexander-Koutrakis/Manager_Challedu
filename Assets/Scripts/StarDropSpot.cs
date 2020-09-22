@@ -53,6 +53,7 @@ public class StarDropSpot : MonoBehaviour, IDropHandler
                 starImages[i].SetActive(false);
             }
         }
+       
     }
 
 

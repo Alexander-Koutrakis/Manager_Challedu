@@ -27,7 +27,7 @@ public class Publicity_Achievement_3 : Achievement_Main
         gameObject.AddComponent<Publicity_Achievement_4>();
         GetComponent<Publicity_Achievement_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 7;
+    //    Player.Instance.Expirience += 7;
         Player.Instance.Calculate_UI_Info();
     }
 }

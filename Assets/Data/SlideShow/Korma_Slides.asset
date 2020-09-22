@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51bb8f4883bc8c438a403f1804fdd74, type: 3}
+  m_Name: Korma_Slides
+  m_EditorClassIdentifier: 
+  Slides:
+  - {fileID: 21300000, guid: d74b1e74a35a0784f9db3ce6336660e7, type: 3}
+  - {fileID: 21300000, guid: 8a51cd060947b7146ad4cd8d1f876830, type: 3}
+  - {fileID: 21300000, guid: ef786b25c2da6a34ea323a47342b2091, type: 3}
+  - {fileID: 21300000, guid: bfa5a97eccc293c4ca689b1645b83b3a, type: 3}
+  - {fileID: 21300000, guid: 01185ba657ef0c54aa8f181e7d02bd47, type: 3}
+  - {fileID: 21300000, guid: 1149f5218a7d51b42abef7620dbbd5f4, type: 3}
+  - {fileID: 21300000, guid: 79563233cd4aa044fa714c6270eae7ba, type: 3}

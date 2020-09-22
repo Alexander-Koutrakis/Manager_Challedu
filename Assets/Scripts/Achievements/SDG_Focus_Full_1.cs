@@ -35,7 +35,7 @@ public class SDG_Focus_Full_1 : Achievement_Main
         gameObject.AddComponent<SDG_Focus_Full_2>();
         GetComponent<SDG_Focus_Full_2>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 1;
+      //  Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

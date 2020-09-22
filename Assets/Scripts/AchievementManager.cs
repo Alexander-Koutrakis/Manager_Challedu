@@ -159,7 +159,7 @@ public class AchievementManager : MonoBehaviour
         {
             LeanTween.moveLocalX(achievement_rect_Transform.gameObject, achievement_rect_Transform.anchoredPosition.x + 1180, 0.5f).setOnComplete(buttonReady);
             currentPage--;
-            page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
+           // page_Text.text = currentPage.ToString() + " / " + totalPages.ToString();
             waitButtonBool = true;
         }
     }

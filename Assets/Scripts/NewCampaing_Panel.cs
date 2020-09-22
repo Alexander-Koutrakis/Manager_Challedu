@@ -7,10 +7,18 @@ public class NewCampaing_Panel : MonoBehaviour
     public static NewCampaing_Panel Instance;
     [SerializeField]
     private Transform[] star_buckets = new Transform[6];
+    [SerializeField]
     private int[] campaingStars = new int[6];
     [SerializeField]
     private Image LockCampaingImage = null;
- 
+    [SerializeField]
+    private RectTransform CampainrectTransform = null;
+    [SerializeField]
+    private RectTransform StatsrectTransform = null;
+    [SerializeField]
+    private Button toStatsBTN = null;
+    [SerializeField]
+    private Button toCampainBTN = null;
     public Button StartCampaingButton = null;
 
 
@@ -96,5 +104,22 @@ public class NewCampaing_Panel : MonoBehaviour
             ChangePlayerCampaing();
             GameMaster.Instance.StartCampaign();
             LockCampaing();
+    }
+
+
+    public void ToStats()
+    {
+        LeanTween.moveLocalX(StatsrectTransform.gameObject, 0, 0.5f);
+        LeanTween.moveLocalX(CampainrectTransform.gameObject, -1920, 0.5f);
+        toStatsBTN.interactable = false;
+        toCampainBTN.interactable = true;
+    }
+
+    public void ToCampain()
+    {
+        LeanTween.moveLocalX(CampainrectTransform.gameObject, 0, 0.5f);
+        LeanTween.moveLocalX(StatsrectTransform.gameObject, 1920, 0.5f);
+        toStatsBTN.interactable = true;
+        toCampainBTN.interactable = false;
     }
 }

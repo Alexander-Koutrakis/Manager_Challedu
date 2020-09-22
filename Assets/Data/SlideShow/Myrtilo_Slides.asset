@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51bb8f4883bc8c438a403f1804fdd74, type: 3}
+  m_Name: Myrtilo_Slides
+  m_EditorClassIdentifier: 
+  Slides:
+  - {fileID: 21300000, guid: 63f6a7d999b185541804bb8a17b0bfdb, type: 3}
+  - {fileID: 21300000, guid: 328d36945a5175340879085675996b69, type: 3}
+  - {fileID: 21300000, guid: fa73303d5387702459055b76793bc933, type: 3}
+  - {fileID: 21300000, guid: 6f167e5368a9baf41891a47306da9e1c, type: 3}
+  - {fileID: 21300000, guid: e22d35c7a555c23499a4e408de90cbaa, type: 3}
+  - {fileID: 21300000, guid: 80cb01f16e7d8004585aaa9ac33383a7, type: 3}
+  - {fileID: 21300000, guid: d8ccf423f7c2321459ca8ba85be0d30a, type: 3}

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster Instance;
+    public Sprite achievementComplete_Sprite;
     public Dictionary<int, Offer> Offers = new Dictionary<int, Offer>();// toal amount of Offers
     [SerializeField]
     private List<Offer> Enviroment_Offers = new List<Offer>();// Offers belong to Strategy A; 

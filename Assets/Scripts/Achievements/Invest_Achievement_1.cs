@@ -27,7 +27,7 @@ public class Invest_Achievement_1 : Achievement_Main
         gameObject.AddComponent<Invest_Achievement_2>();
         GetComponent<Invest_Achievement_2>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 1;
+      //  Player.Instance.Expirience += 1;
         Player.Instance.Calculate_UI_Info();
     }
 }

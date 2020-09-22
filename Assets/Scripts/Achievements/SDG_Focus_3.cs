@@ -29,7 +29,7 @@ public class SDG_Focus_3 : Achievement_Main
         gameObject.AddComponent<SDG_Focus_4>();
         GetComponent<SDG_Focus_4>().CreateAchievement();
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 7;
+     //   Player.Instance.Expirience += 7;
         Player.Instance.Calculate_UI_Info();
     }
 }

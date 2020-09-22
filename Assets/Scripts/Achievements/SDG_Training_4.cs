@@ -25,7 +25,7 @@ public class SDG_Training_4 : Achievement_Main
     public override void Rewards()
     {
         AchievementManager.Instance.achievement_Mains.Remove(this);
-        Player.Instance.Expirience += 15;
+     //   Player.Instance.Expirience += 15;
         Player.Instance.Calculate_UI_Info();
     }
 }
