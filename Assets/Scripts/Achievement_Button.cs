@@ -31,6 +31,7 @@ public class Achievement_Button : MonoBehaviour
             st.highlightedSprite = neutral_Sprite;
         }
         thisButton.spriteState = st;
+        Audio_Manager.Instance.Play_Sound("Button_Click");
     }
 
     

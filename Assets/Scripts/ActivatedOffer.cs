@@ -91,6 +91,7 @@ public class ActivatedOffer : MonoBehaviour
         LogBookControl.Instance.DeselectOffers();
         Selected_Image.gameObject.SetActive(true);
         activatedResultsGO.transform.SetAsLastSibling();
+        Audio_Manager.Instance.Play_Sound("Button_Click");
         if (reportButton.interactable == true)
         {
             ReportPress();
