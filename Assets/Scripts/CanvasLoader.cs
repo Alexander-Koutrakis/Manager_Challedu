@@ -23,6 +23,7 @@ public class CanvasLoader : MonoBehaviour
     {
         targetCanvas = canvas;
         LeanTween.moveLocalX(fadeImage.gameObject, 100, 0.5f).setOnComplete(WaitForReset);
+        Audio_Manager.Instance.Play_Sound("Fade");
     }
 
     private void WaitForReset()

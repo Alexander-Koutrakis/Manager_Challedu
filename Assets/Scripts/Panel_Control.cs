@@ -15,7 +15,9 @@ public class Panel_Control : MonoBehaviour
     {
 
         LeanTween.move(targetPanel, OpenPosition, speed);
-        LeanTween.scale(targetPanel, OpenScale, speed).setOnComplete(Cover_Back_Image.Instance.ShowImage);       
+        LeanTween.scale(targetPanel, OpenScale, speed).setOnComplete(Cover_Back_Image.Instance.ShowImage);
+
+        Audio_Manager.Instance.Play_Sound("Open_Panel");
     }
 
     public void ClosePanel()

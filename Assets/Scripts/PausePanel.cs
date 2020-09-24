@@ -57,7 +57,7 @@ public class PausePanel : MonoBehaviour
             SFX_image.sprite = MuteSFX_Sprite;
         }
 
-        if (Audio_Manager.Instance.BackMusicSource.volume > 0)
+        if (BackGround_AudioControl.Instance.BackMusicSource.volume > 0)
         {
             BG_Image.sprite = NormalBG_Sprite;
         }
@@ -86,9 +86,9 @@ public class PausePanel : MonoBehaviour
 
     public void CheckBGSprite()
     {
-        Audio_Manager.Instance.MuteBackMusic();
+        BackGround_AudioControl.Instance.MuteBackMusic();
 
-        if (Audio_Manager.Instance.BackMusicSource.volume > 0)
+        if (BackGround_AudioControl.Instance.BackMusicSource.volume > 0)
         {
             BG_Image.sprite = NormalBG_Sprite;
         }

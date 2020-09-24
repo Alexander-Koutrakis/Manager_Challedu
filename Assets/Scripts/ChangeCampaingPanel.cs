@@ -25,11 +25,11 @@ public class ChangeCampaingPanel : MonoBehaviour
             button.gameObject.SetActive(true);
         }
         LeanTween.moveLocalX(fadeImage.gameObject, 100, 0.5f).setOnComplete(ShowQuestion);
+        Audio_Manager.Instance.Play_Sound("Fade");
     }
     
     private void ShowQuestion()
-    {
-        
+    {        
         LeanTween.moveLocalX(fadeImage.gameObject, -2500, 0.5f);
         gameObject.SetActive(true);
     }

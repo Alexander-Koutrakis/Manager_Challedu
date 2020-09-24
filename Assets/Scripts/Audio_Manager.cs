@@ -8,9 +8,7 @@ public class Audio_Manager : MonoBehaviour
     private AudioClip[] audioClips;
 
     public AudioSource SFXaudioSource;
-    public AudioSource BackMusicSource;
     public static Audio_Manager Instance;
-    public float BackgroundVolume;
     public void Awake()
     {
         if (Instance == null)
@@ -20,9 +18,7 @@ public class Audio_Manager : MonoBehaviour
         }else if (Instance != null)
         {
             Debug.Log("second audio");
-            this.SFXaudioSource.volume = Audio_Manager.Instance.SFXaudioSource.volume;
-            this.BackMusicSource.volume = Audio_Manager.Instance.BackgroundVolume;
-            this.BackgroundVolume = Audio_Manager.Instance.BackgroundVolume;
+            this.SFXaudioSource.volume = Audio_Manager.Instance.SFXaudioSource.volume;           
             Destroy(Audio_Manager.Instance.gameObject);
             Instance = this;
         }
@@ -31,19 +27,6 @@ public class Audio_Manager : MonoBehaviour
       
     }
 
-
-    private void Start()
-    {
-       
-        BackMusicSource.Play();
-    }
-
-
-
-    public void FadeoutSound()
-    {
-        StartCoroutine(FadeBackgroundTrack());
-    }
 
     public void Play_Sound(string audioclip)
     {
@@ -72,26 +55,9 @@ public class Audio_Manager : MonoBehaviour
         }
     }
 
-    public void MuteBackMusic()
-    {
-        if (BackMusicSource.volume > 0)
-        {
-            BackMusicSource.volume = 0;
-        }
-        else
-        {
-            BackMusicSource.volume = 1;
-        }
-    }
+    
 
-    private IEnumerator FadeBackgroundTrack()
-    {
-        while (BackMusicSource.volume > 0)
-        {
-            BackMusicSource.volume--;
-            yield return new WaitForSeconds(0.05f);
-        }
-    }
+  
 
     
 }

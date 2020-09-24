@@ -37,6 +37,7 @@ public class Level_Up_Panel : MonoBehaviour
     private void LevelUP_Start()
     {
         LeanTween.scale(Background, new Vector3(1, 1, 1), 0.1f).setOnComplete(FadeBackGround);
+        Audio_Manager.Instance.Play_Sound("Level_Up");
     }
 
    private void FadeBackGround()
