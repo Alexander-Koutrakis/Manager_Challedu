@@ -28,6 +28,8 @@ public class Networking_Controller : MonoBehaviour
     private float pageHoldTime;
     [SerializeField]
     private Button UIButton=null;
+    [SerializeField]
+    private Button Phone_Button = null;
     private void Awake()
     {
         instance = this;
@@ -76,6 +78,7 @@ public class Networking_Controller : MonoBehaviour
         if (ActiveSlideshows.Count <= 0)
         {
             UIButton.interactable = false;
+            Phone_Button.interactable = false;
         }
         StartCoroutine(HoldImage());
     }
