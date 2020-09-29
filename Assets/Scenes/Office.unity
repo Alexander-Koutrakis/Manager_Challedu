@@ -7281,7 +7281,7 @@ MonoBehaviour:
   claimLevel_Button: {fileID: 76960242}
   level_Text: {fileID: 1570609989}
   income_text: {fileID: 1591171933}
-  Next_Level_Exp: 20
+  Next_Level_Exp: 10
   expRate: 0
   budgetRegenerationRate: 100
   incomeRate: 0

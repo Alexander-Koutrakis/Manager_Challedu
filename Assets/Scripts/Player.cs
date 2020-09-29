@@ -268,7 +268,7 @@ private void NewLevelInfo()
             GameMaster.Instance.FalseOffers = 4;
             budgetRegenerationRate = 170;
             maxBudget = 20000;
-            Next_Level_Exp = 100;
+            Next_Level_Exp = 120;
             Expirience_Slider.maxValue = Next_Level_Exp;
             budget = 10000;
             offerARGCost = 7000;
