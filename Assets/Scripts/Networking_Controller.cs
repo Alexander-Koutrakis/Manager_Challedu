@@ -30,6 +30,8 @@ public class Networking_Controller : MonoBehaviour
     private Button UIButton=null;
     [SerializeField]
     private Button Phone_Button = null;
+    [SerializeField]
+    private AudioClip officeSong;
     private void Awake()
     {
         instance = this;
@@ -99,7 +101,8 @@ public class Networking_Controller : MonoBehaviour
         {
             // reward
             rewardPanelControl.OpenPanel();
-            CanvasLoader.Instance.FadeTo(OfficeCanvas);           
+            CanvasLoader.Instance.FadeTo(OfficeCanvas);
+            Audio_Manager.Instance.FadeBackgroundMusic(officeSong);
         }
     }
 

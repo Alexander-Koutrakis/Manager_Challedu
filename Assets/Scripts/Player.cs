@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private TMP_Text level_Text;
     [SerializeField]
     private TMP_Text income_text;
-    public float Next_Level_Exp=0;
+    public float Next_Level_Exp=10;
     public float expRate=100;
     public int budgetRegenerationRate = 100;
     public int incomeRate;
@@ -57,6 +57,10 @@ public class Player : MonoBehaviour
     public Sprite[] ActiveStrategySprites=new Sprite[6];
     public bool lvlUp = false;
     public int offerARGCost=1000;
+    [SerializeField]
+    private Button trainingButton;
+    [SerializeField]
+    private Button presentationButton;
     private void Awake()
     {
         Instance = this;
@@ -251,6 +255,8 @@ private void NewLevelInfo()
     {
         if (Player_Level == 2)
         {
+            trainingButton.interactable = true;
+            presentationButton.interactable = true;
             GameMaster.Instance.MaxOffers = 4;
             GameMaster.Instance.FalseOffers = 2;
             budgetRegenerationRate = 150;

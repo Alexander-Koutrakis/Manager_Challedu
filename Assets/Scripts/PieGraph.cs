@@ -147,6 +147,8 @@ public class PieGraph : MonoBehaviour
             if (GameMaster.Instance.CampaignStars[i] > 0)
             {
                 selectedSprite = StrategySprites[i,GameMaster.Instance.CampaignStars[i]-1];
+                Debug.Log(selectedSprite.name);
+                Debug.Log(count);
                 strategyImages[count].sprite = selectedSprite;
                
                 count++;

@@ -28,12 +28,15 @@ public class Training_Canvas_Control : MonoBehaviour, IMiniGame
  
     public void ShowWarning()
     {
-        if (!warning)
+        if (Player.Instance.Player_Level > 1)
         {
-            warning = true;
-            LeanTween.scale(warningSign.gameObject, new Vector3(1.0f, 1.0f, 1.0f), 0.5f).setOnComplete(WarningFollowUp);
+            if (!warning)
+            {
+                warning = true;
+                LeanTween.scale(warningSign.gameObject, new Vector3(1.0f, 1.0f, 1.0f), 0.5f).setOnComplete(WarningFollowUp);
+            }
+            Warning_Panel.Instance.ShowMessege("Νέα εκπαίδευση");
         }
-        Warning_Panel.Instance.ShowMessege("Νέα εκπαίδευση");
     }
 
 

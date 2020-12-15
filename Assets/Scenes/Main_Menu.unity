@@ -2003,9 +2003,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9b172daaff6a2f944a67ff8d4982bb74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fc7c52a947e107d449088cf01d92eb21, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2102,6 +2102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackMusicSource: {fileID: 0}
+  OfficeClip: {fileID: 0}
+  OtherClip: {fileID: 0}
 --- !u!4 &1830390514
 Transform:
   m_ObjectHideFlags: 0

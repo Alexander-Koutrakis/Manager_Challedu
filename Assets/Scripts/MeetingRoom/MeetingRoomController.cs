@@ -79,12 +79,15 @@ public class MeetingRoomController : MonoBehaviour , IMiniGame
 
     public void ShowWarning()
     {
-        if (!warning)
+        if (Player.Instance.Player_Level > 1)
         {
-            warning = true;
-            LeanTween.scale(warningSign.gameObject, new Vector3(1.0f, 1.0f, 1.0f), 0.5f).setOnComplete(WarningFollowUp);
+            if (!warning)
+            {
+                warning = true;
+                LeanTween.scale(warningSign.gameObject, new Vector3(1.0f, 1.0f, 1.0f), 0.5f).setOnComplete(WarningFollowUp);
+            }
+            Warning_Panel.Instance.ShowMessege("Νεες προσφορές");
         }
-        Warning_Panel.Instance.ShowMessege("Νεες προσφορές");
     }
 
 

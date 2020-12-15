@@ -38,8 +38,9 @@ public class NewCampaing_Panel : MonoBehaviour
         for (int i = 0; i < campaingStars.Length; i++)
         {
             GameMaster.Instance.CampaignStars[i] = campaingStars[i];
-            PieGraph.Instance.AddStrategySprites();
+            
         }
+        PieGraph.Instance.AddStrategySprites();
     }
 
     public void GetStars()

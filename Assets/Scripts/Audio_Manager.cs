@@ -9,6 +9,7 @@ public class Audio_Manager : MonoBehaviour
 
     public AudioSource SFXaudioSource;
     public static Audio_Manager Instance;
+    
     public void Awake()
     {
         if (Instance == null)
@@ -57,7 +58,11 @@ public class Audio_Manager : MonoBehaviour
 
     
 
-  
+        public void FadeBackgroundMusic(AudioClip newclip){
+
+        BackGround_AudioControl.Instance.FadeOutMusic(newclip);
+
+        }
 
     
 }
